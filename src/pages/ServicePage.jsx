@@ -423,7 +423,7 @@ const ServicePage = () => {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="/financial_planning_hero_1778128026138.png" 
+            src={`${import.meta.env.BASE_URL}financial_planning_hero_1778128026138.png`} 
             alt="Financial Planning Hero" 
             className="w-full h-full object-cover"
           />

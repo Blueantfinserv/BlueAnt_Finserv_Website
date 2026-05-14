@@ -116,9 +116,9 @@ const AboutPreview = () => {
                 loop 
                 muted 
                 playsInline 
+                src={`${import.meta.env.BASE_URL}Video.mp4`}
                 className="w-full h-full object-contain transition-transform duration-[2000ms] ease-out"
               >
-                <source src="/Video.mp4" type="video/mp4" />
               </video>
 
               {/* Glassmorphic Inset Shadow Overlay */}

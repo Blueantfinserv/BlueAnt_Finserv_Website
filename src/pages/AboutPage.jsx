@@ -84,7 +84,7 @@ const AboutPage = () => {
               <div className="relative flex justify-center lg:justify-end items-center" data-aos="fade-left">
                 <div className="relative w-full max-w-[500px]">
                   <div className="absolute inset-0 bg-blue-50/50 rounded-full blur-3xl transform scale-110"></div>
-                  <img src="/ant_3d_coins.png" alt="Blueant Identity" className="relative z-10 w-full h-auto object-contain drop-shadow-2xl" />
+                  <img src={`${import.meta.env.BASE_URL}ant_3d_coins.png`} alt="Blueant Identity" className="relative z-10 w-full h-auto object-contain drop-shadow-2xl" />
                 </div>
               </div>
             </div>
@@ -161,7 +161,7 @@ const AboutPage = () => {
               </div>
               <div data-aos="zoom-in" className="relative">
                 <div className="relative w-full aspect-square rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white bg-white z-10">
-                  <video src="/Video.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover" />
+                  <video src={`${import.meta.env.BASE_URL}Video.mp4`} autoPlay loop muted playsInline className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute -top-6 -left-6 bg-white/90 backdrop-blur-md border border-gray-100 py-4 px-8 rounded-2xl shadow-xl z-20 flex items-center gap-3">
                    <span className="text-2xl">🎓</span>

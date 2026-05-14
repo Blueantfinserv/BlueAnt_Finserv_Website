@@ -76,7 +76,7 @@ const Hero = () => {
             <div className="absolute inset-0 bg-[#00afef]/10 rounded-[100px] lg:rounded-[150px] rotate-6 scale-95 blur-[100px] -z-10"></div>
             <div className="relative rounded-[80px] lg:rounded-[120px] overflow-hidden shadow-[0_80px_150px_-30px_rgba(15,23,42,0.4)] border-[16px] border-white group">
               <img 
-                src="/first slider.jpg" 
+                src={`${import.meta.env.BASE_URL}first slider.jpg`} 
                 alt="Financial Growth" 
                 className="w-full h-full object-cover aspect-[4/5] lg:aspect-[5/6] group-hover:scale-110 transition-transform duration-1000" 
               />

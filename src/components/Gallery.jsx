@@ -70,7 +70,7 @@ const Gallery = () => {
             >
               <div className="relative h-48 overflow-hidden bg-slate-100">
                 <img 
-                  src={img.src} 
+                  src={`${import.meta.env.BASE_URL}${img.src}`} 
                   alt={img.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
@@ -102,7 +102,7 @@ const Gallery = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <img 
-              src={selectedImage.src} 
+              src={`${import.meta.env.BASE_URL}${selectedImage.src}`} 
               alt={selectedImage.title}
               className="w-full h-full object-cover"
               loading="lazy"

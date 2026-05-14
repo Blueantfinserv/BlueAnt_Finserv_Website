@@ -67,7 +67,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex flex-col items-center flex-shrink-0">
           <Link to="/" className="block">
-            <img src="/blueAnt.png" alt="Blueant Logo" style={{ height: "26px", width: "auto", display: "block", objectFit: "contain" }} />
+            <img src={`${import.meta.env.BASE_URL}blueAnt.png`} alt="Blueant Logo" style={{ height: "26px", width: "auto", display: "block", objectFit: "contain" }} />
           </Link>
           <div style={{
             backgroundColor: "#FFD700", color: "#000000", fontSize: "8.5px", fontWeight: "900",

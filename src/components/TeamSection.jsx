@@ -3,21 +3,21 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const teamMembers = [
-  { id: 1, name: "Mr. Rohit Raman", text: "Founder", img: "/Rohit Raman.png" },
-  { id: 2, name: "Mr. Sachin Narang", text: "Vice President", img: "/Sachin Narang.png" },
-  { id: 3, name: "Mr. Rahul Kumar", text: "Asst. Vice President", img: "/Rahul Kumar.png" },
-  { id: 4, name: "Mr. Avesh Prajapati", text: "Asst. Vice President", img: "/Avesh Kumar Prajapati.png" },
-  { id: 5, name: "Mr. Rajnish Kumar", text: "Asst. Vice President", img: "/Rajnish Kumar.png" },
-  { id: 6, name: "Mr. Akash Yadav", text: "Manager", img: "/Akash Yadav.png" },
-  { id: 7, name: "Mr. Vishnu Dutt", text: "Manager", img: "/Vishnu Dutt.png" },
-  { id: 8, name: "Mr. Jitendra Kumar", text: "Insurance Sales Manager", img: "/Jitendra Kumar.png" },
-  { id: 9, name: "Mr. Harsh Pandey", text: "Asst. RM", img: "/Harsh Pandey.png" },
-  { id: 10, name: "Mrs. Preeti Mahara", text: "Asst. CRM", img: "/Preeti Mahara.png" },
-  { id: 11, name: "Mrs. Monika Soni", text: "Asst. CRM", img: "/Monika Soni.png" },
-  { id: 12, name: "Mr. Vikram Agarwal", text: "Asst. RM", img: "/Vikram_Agarwal.png" },
-  { id: 13, name: "Mr. Yogendra Kumar", text: "Asst. RM", img: "/Yogendra_Kumar.png" },
-  { id: 14, name: "Mr. Mukesh Kumar", text: "Asst. RM", img: "/Mukesh_Kumar.png" },
-  { id: 15, name: "Mrs. Renu Verma", text: "Asst. CRM", img: "/Renu Verma.png" },
+  { id: 1, name: "Mr. Rohit Raman", text: "Founder", img: "Rohit Raman.png" },
+  { id: 2, name: "Mr. Sachin Narang", text: "Vice President", img: "Sachin Narang.png" },
+  { id: 3, name: "Mr. Rahul Kumar", text: "Asst. Vice President", img: "Rahul Kumar.png" },
+  { id: 4, name: "Mr. Avesh Prajapati", text: "Asst. Vice President", img: "Avesh Kumar Prajapati.png" },
+  { id: 5, name: "Mr. Rajnish Kumar", text: "Asst. Vice President", img: "Rajnish Kumar.png" },
+  { id: 6, name: "Mr. Akash Yadav", text: "Manager", img: "Akash Yadav.png" },
+  { id: 7, name: "Mr. Vishnu Dutt", text: "Manager", img: "Vishnu Dutt.png" },
+  { id: 8, name: "Mr. Jitendra Kumar", text: "Insurance Sales Manager", img: "Jitendra Kumar.png" },
+  { id: 10, name: "Mr. Harsh Pandey", text: "Asst. RM", img: "Harsh Pandey.png" },
+  { id: 11, name: "Mrs. Preeti Mahara", text: "Asst. CRM", img: "Preeti Mahara.png" },
+  { id: 12, name: "Mrs. Monika Soni", text: "Asst. CRM", img: "Monika Soni.png" },
+  { id: 13, name: "Mr. Vikram Agarwal", text: "Asst. RM", img: "Vikram_Agarwal.png" },
+  { id: 14, name: "Mr. Yogendra Kumar", text: "Asst. RM", img: "Yogendra_Kumar.png" },
+  { id: 15, name: "Mr. Mukesh Kumar", text: "Asst. RM", img: "Mukesh_Kumar.png" },
+  { id: 16, name: "Mrs. Renu Verma", text: "Asst. CRM", img: "Renu Verma.png" },
 ];
 
 const TeamSection = () => {
@@ -50,7 +50,7 @@ const TeamSection = () => {
             >
               <div className="w-24 h-24 md:w-32 md:h-32 rounded-full mb-6 overflow-hidden bg-slate-100 border-4 border-slate-50 group-hover:border-blue-100 transition-colors">
                 <img 
-                  src={member.img} 
+                  src={`${import.meta.env.BASE_URL}${member.img}`} 
                   alt={member.name} 
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"

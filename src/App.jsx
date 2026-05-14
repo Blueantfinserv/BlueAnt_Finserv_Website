@@ -43,7 +43,7 @@ const LoadingFallback = () => (
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter basename="/BlueAnt_Finserv_Website">
       <ScrollToTop />
 
       <Navbar />

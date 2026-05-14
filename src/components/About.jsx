@@ -108,7 +108,7 @@ const About = () => {
               <div className="relative w-[400px] h-[400px] sm:w-[460px] sm:h-[460px]">
                 <div className="w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-white bg-white relative z-10">
                   <video
-                    src="/Video.mp4"
+                    src={`${import.meta.env.BASE_URL}Video.mp4`}
                     autoPlay
                     loop
                     muted

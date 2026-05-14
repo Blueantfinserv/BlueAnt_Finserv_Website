@@ -88,7 +88,7 @@ const Footer = () => {
           {/* Column 1: Branding */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-[320px]">
             <Link to="/" className="inline-block transition-all duration-500 mb-1 logo-glow">
-              <img src="/blueAnt.png" alt="Blueant Logo" className="h-5 md:h-6 w-auto object-contain" />
+              <img src={`${import.meta.env.BASE_URL}blueAnt.png`} alt="Blueant Logo" className="h-5 md:h-6 w-auto object-contain" />
             </Link>
             <div className="bg-[#fbbf24] px-3 py-1 rounded-sm mb-3 inline-block">
               <span className="text-[#0f172a] text-[8px] font-black uppercase tracking-[1.5px] whitespace-nowrap">AMFI Registered Mutual Fund Distributor</span>

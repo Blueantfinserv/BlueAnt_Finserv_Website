@@ -1,12 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  plugins: [react()],
-  base: '/BlueAnt_Finserv/',
+  plugins: [
+    react(),
+    tailwindcss(),
+  ],
 
-  build: {
-    sourcemap: false,
-    minify: false,
-  }
+  base: '/BlueAnt_Finserv_Website/',
 })
+
