@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./styles/App.css";
 
@@ -45,7 +45,6 @@ function App() {
   return (
     <BrowserRouter basename="/BlueAnt_Finserv_Website">
       <ScrollToTop />
-
       <Navbar />
 
       <Suspense fallback={<LoadingFallback />}>
@@ -66,9 +65,8 @@ function App() {
 
       <StickyWhatsApp />
       <ConsultationModal />
-
       <Footer />
-    </Router>
+    </BrowserRouter>
   );
 }
 
