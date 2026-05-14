@@ -1,0 +1,235 @@
+.fsd-section {
+  padding: 100px 6vw;
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+.fsd-bg-light {
+  background-color: #f8fafc; /* Very light blue/gray matching Figma */
+}
+.fsd-bg-gradient {
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+}
+
+.fsd-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+.fsd-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Image column */
+.fsd-image-col {
+  flex: 1.1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.fsd-image {
+  width: 100%;
+  height: auto;
+  min-height: 500px;
+  max-height: 600px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+.fsd-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+}
+
+/* Content column */
+.fsd-content-col {
+  flex: 0.9;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.fsd-pill {
+  display: inline-flex;
+  align-items: center;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.fsd-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+.fsd-desc {
+  font-size: 1.05rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+/* Stats boxes */
+.fsd-stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+.fsd-stat-box {
+  flex: 1;
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.fsd-bg-light .fsd-stat-box {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.fsd-stat-val {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+.fsd-stat-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 2px;
+}
+.fsd-stat-sub {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* Features list */
+.fsd-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.fsd-feature {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.fsd-feature-single {
+  align-items: center;
+}
+.fsd-feat-icon {
+  margin-top: 2px;
+  background: rgba(37, 99, 235, 0.08);
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fsd-feature-single .fsd-feat-icon {
+  margin-top: 0;
+}
+.fsd-feat-content {
+  display: flex;
+  flex-direction: column;
+}
+.fsd-feat-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 4px;
+}
+.fsd-feat-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.fsd-actions-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.fsd-buttons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.fsd-btn {
+  display: inline-flex;
+  align-items: center;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  font-family: inherit;
+}
+.fsd-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.fsd-btn-outline {
+  background: transparent !important;
+  border: 2px solid;
+}
+.fsd-btn-outline:hover {
+  background: rgba(0,0,0,0.03) !important;
+}
+
+.fsd-trust-text {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .fsd-inner, .fsd-inner.fsd-reverse {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .fsd-image-col {
+    width: 100%;
+  }
+  .fsd-image {
+    min-height: 300px;
+    max-height: 400px;
+  }
+}
+@media (max-width: 640px) {
+  .fsd-section {
+    padding: 60px 4vw;
+  }
+  .fsd-title {
+    font-size: 2rem;
+  }
+  .fsd-stats {
+    flex-direction: column;
+  }
+}

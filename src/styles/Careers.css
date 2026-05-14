@@ -1,0 +1,496 @@
+.careersContainer {
+  font-family: 'Inter', sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.careersHero {
+  padding: 140px 20px 100px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroContent {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.heroContent h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 24px;
+  line-height: 1.1;
+  background: linear-gradient(to right, #fff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroContent p {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* Why Join Us */
+.whyJoinSection {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionHeader h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #0f172a;
+}
+
+.textBlue {
+  color: #00AEEF;
+}
+
+.textRed {
+  color: #ED1C24;
+}
+
+.sectionHeader p {
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+.valueGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.valueCard {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid #f1f5f9;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.valueCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+}
+
+.valueIcon {
+  width: 50px;
+  height: 50px;
+  background: #fde047;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+}
+
+.valueCard h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.valueCard p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Open Positions */
+.positionsSection {
+  padding: 100px 20px;
+  background: #ffffff;
+}
+
+.positionsList {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.positionItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #4f46e5;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.positionItem:hover {
+  transform: translateX(10px);
+  border-color: #4f46e5;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.posInfo h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.posMeta {
+  display: flex;
+  gap: 24px;
+  color: #64748b;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.posMeta span i {
+  margin-right: 8px;
+  color: #2563eb;
+}
+
+.applyBtn {
+  background: #2563eb;
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.positionItem:hover .applyBtn {
+  background: #0f172a;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.2);
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.jobModal {
+  background: #ffffff;
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  border-radius: 24px;
+  position: relative;
+  overflow-y: auto;
+  box-shadow: 0 50px 100px rgba(0,0,0,0.2);
+  animation: modalIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.95) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.closeModal {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 36px;
+  height: 36px;
+  background: #f1f5f9;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.closeModal:hover {
+  background: #e2e8f0;
+  transform: rotate(90deg);
+}
+
+.modalHeader {
+  padding: 40px 40px 30px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.modalHeader h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #0f172a;
+}
+
+.modalMeta {
+  display: flex;
+  gap: 20px;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.modalMeta span i {
+  margin-right: 8px;
+  color: #2563eb;
+}
+
+.modalBody {
+  padding: 30px 40px 40px;
+}
+
+.detailSection {
+  margin-bottom: 30px;
+}
+
+.detailSection h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #0f172a;
+}
+
+.detailSection p {
+  color: #475569;
+  line-height: 1.7;
+}
+
+.respList, .reqList {
+  list-style: none;
+  padding: 0;
+}
+
+.respList li, .reqList li {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: #475569;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.respList li i, .reqList li i {
+  margin-top: 4px;
+  font-size: 1rem;
+}
+
+.applyCard {
+  background: #0f172a;
+  padding: 40px;
+  border-radius: 24px;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 40px;
+}
+
+.applyCard h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.applyCard p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.modalApplyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #fde047;
+  color: #0f172a;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.modalApplyBtn:hover {
+  background: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* Life at BlueAnt */
+.lifeSection {
+  padding: 100px 20px;
+  background: #f8fafc;
+}
+
+.lifeGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.lifeContent h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.lifeContent p {
+  color: #64748b;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.lifeStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.statItem {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.statItem:hover {
+  transform: translateY(-5px);
+}
+
+.statItem h4 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #4f46e5;
+  margin-bottom: 4px;
+}
+
+.statItem p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.lifeImage {
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+}
+
+.lifeImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.heroBadges {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* CTA Section */
+.careersCta {
+  padding: 100px 20px;
+  background: #ffffff;
+}
+
+.ctaCard {
+  max-width: 800px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  padding: 60px;
+  border-radius: 30px;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.2);
+}
+
+.ctaCard h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.ctaCard p {
+  color: #94a3b8;
+  margin-bottom: 32px;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 14px 32px;
+  background: #fde047;
+  color: #0f172a;
+  border-radius: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  background: #ffffff;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .lifeGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .positionItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .applyBtn {
+    width: 100%;
+  }
+
+  .ctaCard {
+    padding: 40px 20px;
+  }
+}

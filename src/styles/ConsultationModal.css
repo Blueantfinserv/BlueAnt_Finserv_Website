@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&display=swap');
+
+/* ConsultationModal.css - Premium Fintech UI */
+
+.cm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.cm-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.cm-modal {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  background: #F8F8F6;
+  border-radius: 34px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.18);
+  overflow: hidden;
+  z-index: 10;
+  border-top: 6px solid #F4B400;
+  padding: 38px 52px 42px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cm-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #EEF2F7;
+  color: #64748B;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 20;
+}
+
+.cm-close-btn:hover {
+  background: #E2E8F0;
+}
+
+.cm-header {
+  text-align: left;
+  margin-bottom: 34px;
+  padding-right: 50px; /* Space for close button if needed on small screens */
+}
+
+.cm-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.1;
+  margin: 0 0 10px 0;
+  font-family: 'Outfit', 'Inter', sans-serif;
+}
+
+.cm-subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: #64748B;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.cm-tabs-container {
+  height: 64px;
+  background: #EDEFF4;
+  border-radius: 18px;
+  padding: 6px;
+  display: flex;
+  gap: 4px;
+  margin-bottom: 32px;
+}
+
+.cm-tab-btn {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #64748B;
+  background: transparent;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cm-tab-btn.active {
+  background: #FFFFFF;
+  color: #0F172A;
+  box-shadow: 0 2px 8px rgba(15,23,42,0.06);
+}
+
+.cm-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cm-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.cm-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cm-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #7C8AA5;
+  margin: 0;
+}
+
+.cm-input, .cm-select {
+  height: 58px;
+  border-radius: 14px;
+  background: #FFFFFF;
+  border: 1px solid #DCE3EC;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #0F172A;
+  outline: none;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.cm-input::placeholder {
+  color: #94A3B8;
+}
+
+.cm-input:focus, .cm-select:focus {
+  border-color: #F4B400;
+  box-shadow: 0 0 0 3px rgba(244,180,0,0.12);
+}
+
+.cm-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%230F172A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 16px;
+}
+
+.cm-submit-btn {
+  height: 72px;
+  border-radius: 18px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #0F172A;
+  background: linear-gradient(180deg, #FFC107, #F4B400);
+  box-shadow: 0 10px 24px rgba(244,180,0,0.22);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.cm-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: linear-gradient(180deg, #FFD54F, #FFC107);
+  box-shadow: 0 14px 28px rgba(244,180,0,0.28);
+}
+
+.cm-submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.cm-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.cm-trust-text {
+  text-align: center;
+  margin: 26px 0 0 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #7C8AA5;
+}
+
+/* Success State Styles */
+.cm-success-container {
+  display: flex;
+  flex-direction: column;
+  items-center: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.cm-success-icon {
+  width: 80px;
+  height: 80px;
+  background: #DCFCE7;
+  color: #166534;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.cm-success-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 8px;
+}
+
+.cm-success-desc {
+  font-size: 16px;
+  color: #64748B;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .cm-modal {
+    padding: 30px 24px;
+    border-radius: 24px;
+  }
+  
+  .cm-close-btn {
+    top: 24px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .cm-title {
+    font-size: 32px;
+    padding-right: 40px;
+  }
+  
+  .cm-form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .cm-tabs-container {
+    height: 56px;
+  }
+  
+  .cm-submit-btn {
+    height: 64px;
+    font-size: 18px;
+  }
+}

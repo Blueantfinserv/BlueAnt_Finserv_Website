@@ -1,0 +1,105 @@
+/* ── CTA Banner — Figma Blue-to-Teal ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+.cta-banner {
+  padding: 80px 6vw;
+  background: linear-gradient(135deg, #0b1f3a 0%, #1a3a6b 100%);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+  top: -150px;
+  right: -80px;
+  pointer-events: none;
+}
+.cta-banner::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+  bottom: -80px;
+  left: 60px;
+  pointer-events: none;
+}
+
+.cta-banner-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-banner-heading {
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 18px;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.cta-banner-sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.75;
+  margin: 0 0 36px;
+}
+
+.cta-banner-btns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 34px;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.28s ease;
+  font-family: 'Inter', sans-serif;
+  white-space: nowrap;
+}
+
+.cta-btn-white {
+  background: #ffffff;
+  color: #1d4ed8;
+  border: none;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+.cta-btn-white:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+}
+
+.cta-btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255,255,255,0.5);
+}
+.cta-btn-outline:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.8);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+  .cta-banner { padding: 60px 5vw; }
+  .cta-banner-btns { flex-direction: column; align-items: center; }
+  .cta-btn { width: 100%; justify-content: center; }
+}

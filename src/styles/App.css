@@ -1,0 +1,62 @@
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@100..900&display=swap');
+
+/* ── Design Tokens ── */
+:root {
+  --color-navy:     #0f172a;
+  --color-blue:     #00afef;
+  --color-red:      #ed3237;
+  --color-gold:     #FFD700;
+  --color-bg:       #000000; /* Deep Black */
+  --color-text:     #ffffff; /* White text for contrast */
+  --color-muted:    #94a3b8;
+}
+
+/* ── Global Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Outfit", "Inter", sans-serif;
+  font-size: 16px;
+  color: var(--color-text);
+  background: var(--color-bg);
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-navy);
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+/* Ensure Tailwind colors work as expected */
+.text-navy { color: var(--color-navy); }
+.text-blue { color: var(--color-blue); }
+.bg-navy { background-color: var(--color-navy); }
+.bg-blue { background-color: var(--color-blue); }

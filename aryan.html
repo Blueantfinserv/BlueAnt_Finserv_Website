@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blueant Finserv</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body,
+        html {
+            height: 100%;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Navbar with margin and transparent background */
+        .navbar {
+            background-color: rgba(0, 45, 79, 0.85);
+            padding: 20px 40px;
+            margin-top: 20px;
+            margin-left: 50px;
+            margin-right: 50px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .nav-links li a:hover {
+            color: #00bcd4;
+        }
+
+        /* Swiper Styles */
+        .swiper {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .swiper-slide {
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        .hero-btn {
+            background-color: #00bcd4;
+            color: white;
+            text-decoration: none;
+            padding: 14px 28px;
+            font-size: 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero-btn:hover {
+            background-color: #0097a7;
+        }
+
+        section {
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .about,
+        .services,
+        .calculators,
+        .contact {
+            background-color: #fff;
+        }
+
+        .services {
+            background-color: #f0f8ff;
+        }
+
+        .service-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .service {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 280px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact {
+            background-color: #002d4f;
+            color: white;
+        }
+
+        .contact-btn {
+            background-color: #00bcd4;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .contact-btn:hover {
+            background-color: #0097a7;
+        }
+
+        footer {
+            background-color: #001f36;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            position: relative;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #002d4f;
+            padding: 10px 0;
+            border-radius: 6px;
+            min-width: 160px;
+            z-index: 999;
+        }
+
+        .dropdown-menu li a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #00bcd4;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar with transparent background and margins -->
+    <nav class="navbar">
+        <div class="logo">Blueant Finserv</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+
+            <li class="dropdown">
+                <a href="#about">About<span class="arrow">▼</span></a></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#company-profile">Company Profile</a></li>
+                    <li><a href="#our-team">Our Team</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#services">Services<span class="arrow">▼</span></a></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#Taxes">Taxes</a></li>
+                    <li><a href="#Budgeting">Budgeting</a></li>
+                    <li><a href="#Retirement">Retirement</a></li>
+                    <li><a href="#Kid's Needs">Kid's Needs</a></li>
+                    <li><a href="#Will & Legacy">Will & Legacy</a></li>
+                    <li><a href="#Loan Advisory">Loan Advisory</a></li>
+                    <li><a href="#Insurance Advisory">Insurance Advisory</a></li>
+                    <li><a href="#Investing for Financial Freedom">Investing for Financial Freedom</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#workshop">Workshop</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li class="dropdown">
+                <a href="#Calculator">Calculator<span class="arrow">▼</span></a></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#SIP Calculator">SIP Calculator</a></li>
+                    <li><a href="#My 1st Crore">My 1st Crore</a></li>
+                    <li><a href="#Loan Calculator">Loan Calculator</a></li>
+                    <li><a href="#Future Value">Future Value</a></li>
+                    <li><a href="#Retirement Corpus">Retirement Corpus</a></li>
+                    <li><a href="#Child Education">Child Education</a></li>
+                    <li><a href="#Marriage Calculator">Marriage Calculator</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#login">Login</a></li>
+        </ul>
+    </nav>
+
+
+
+    <!-- Hero Section Slider -->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"
+                style="background-image: url('shutterstock_1153859527-800x430.jpg'); background-size: cover; background-position: center;">
+
+                <div class="slide-overlay"></div>
+                <div class="hero-content">
+                    <h1>Smart Finance for Smart Futures</h1>
+                    <p>Plan your investments, grow your wealth, and achieve financial freedom with Blueant Finserv.</p>
+                    <a href="#calculators" class="hero-btn">Explore Calculators</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide"
+                style="background-image:url('https://images.unsplash.com/photo-1556740772-1a741367b93e?auto=format&fit=crop&w=1470&q=80')">
+                <div class="slide-overlay"></div>
+                <div class="hero-content">
+                    <h1>Secure Your Retirement</h1>
+                    <p>Use our tools to build a retirement plan that matches your lifestyle goals.</p>
+                    <a href="#services" class="hero-btn">See Services</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide"
+                style="background-image:url('https://images.unsplash.com/photo-1612832021590-4ff07a8e5fdd?auto=format&fit=crop&w=1470&q=80')">
+                <div class="slide-overlay"></div>
+                <div class="hero-content">
+                    <h1>Build Wealth Confidently</h1>
+                    <p>Grow your portfolio with calculated and goal-based investments.</p>
+                    <a href="#about" class="hero-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="about" id="about">
+        <h2>About Blueant Finserv</h2>
+        <p>We provide personalized financial tools to help individuals plan and secure their future. Whether you're
+            saving for retirement, planning your child's education, or building wealth — we’re here to help.</p>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="service-boxes">
+            <div class="service">
+                <h3>SIP Planning</h3>
+                <p>Systematic Investment Plans tailored to your goals.</p>
+            </div>
+            <div class="service">
+                <h3>Retirement Planning</h3>
+                <p>Plan your retirement corpus and monthly needs.</p>
+            </div>
+            <div class="service">
+                <h3>Loan Calculator</h3>
+                <p>Understand EMIs and make better loan decisions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="calculators" id="calculators">
+        <h2>Financial Calculators</h2>
+        <p>Explore our easy-to-use SIP, Future Value, Retirement, and other calculators.</p>
+        <a href="#" class="hero-btn">Try Now</a>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Get in Touch</h2>
+        <p>Reach out to our team for personalized financial advice.</p>
+        <a href="mailto:info@blueantfinserv.com" class="contact-btn">Email Us</a>
+    </section>
+
+    <footer>
+        <p>© 2025 Blueant Finserv. All rights reserved.</p>
+    </footer>
+
+    <!-- Swiper Script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            effect: 'slide',
+            speed: 1000,
+        });
+    </script>
+</body>
+
+</html>

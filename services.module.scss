@@ -1,0 +1,132 @@
+.carousel-container {
+    font-family: 'Segoe UI', sans-serif;
+    padding: 40px 20px;
+    background: linear-gradient(to bottom, #f0f4f8, #ffffff);
+    color: #333;
+    text-align: center;
+  }
+  
+  .title h1 {
+    font-size: 2.5rem;
+    color: #1e293b;
+    margin-bottom: 10px;
+  }
+  
+  .title .subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-bottom: 30px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .wheel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .wheel {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    overflow-x: hidden;
+    width: 90vw;
+    max-width: 1000px;
+    padding: 20px 0;
+    scroll-behavior: smooth;
+  }
+  
+  .service {
+    width: 120px;
+    height: 150px;
+    opacity: 0.5;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    cursor: pointer;
+  }
+  
+  .service img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .service p {
+    margin-top: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+  
+  .service.center {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+  
+  .service.left,
+  .service.right {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  
+  .service.next-left,
+  .service.next-right {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  
+  .arrow {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #334155;
+    transition: transform 0.2s ease;
+  }
+  
+  .arrow:hover {
+    transform: scale(1.2);
+  }
+  
+  .details {
+    max-width: 600px;
+    background-color: #f8fafc;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    margin-top: 10px;
+  }
+  
+  .details h2 {
+    font-size: 1.8rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+  }
+  
+  .details p {
+    font-size: 1rem;
+    color: #475569;
+    margin-bottom: 15px;
+  }
+  
+  .btn {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #1d4ed8;
+  }
+  
