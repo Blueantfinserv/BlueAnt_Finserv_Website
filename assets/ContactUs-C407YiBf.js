@@ -1,4 +1,4 @@
-import{r as l,A as E,j as e,L as w,F as I,i as A,k,l as R,n as N,p as b}from"./index-DMyCnUVC.js";const T=async c=>{const o={access_key:"e65bee15-4fca-4c4e-8af4-8656b0557d7c",subject:`New Consultation Request - ${c.service}`,from_name:"BlueAnt Finserv",name:c.name,email:c.email,phone:c.phone,city:c.city,service:c.service,message:`
+import{r as l,A as E,j as e,L as w,F as I,b as A,d as k,e as R,f as N,g as b}from"./index-CCVKJY_s.js";const T=async c=>{const o={access_key:"e65bee15-4fca-4c4e-8af4-8656b0557d7c",subject:`New Consultation Request - ${c.service}`,from_name:"BlueAnt Finserv",name:c.name,email:c.email,phone:c.phone,city:c.city,service:c.service,message:`
 New Consultation Request
 
 Name: ${c.name}
