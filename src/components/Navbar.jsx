@@ -5,16 +5,16 @@ import { openConsultationModal } from "./ConsultationModal";
 
 const dropdowns = {
   "About Us": [
-    { label: "Company Overview", desc: "Who we are & our story", path: "/about#overview", icon: "🏢" },
-    { label: "Mission & Vision", desc: "Our purpose and goals", path: "/about#mission", icon: "🎯" },
-    { label: "Our Team", desc: "Meet the experts", path: "/about#team", icon: "👥" },
-    { label: "Impact Stories", desc: "Client success journeys", path: "/about#impact", icon: "🌟" },
+    { label: "Company Overview", desc: "Who we are & our story", path: "/about/company", icon: "🏢" },
+    { label: "Mission & Vision", desc: "Our purpose and goals", path: "/about/mission", icon: "🎯" },
+    { label: "Our Team", desc: "Meet the experts", path: "/about/team", icon: "👥" },
+    { label: "Impact Stories", desc: "Client success journeys", path: "/about/stories", icon: "🌟" },
   ],
   Services: [
-    { label: "Wealth Creation", desc: "Strategic investment solutions for long-term prosperity", path: "/services#wealth-creation", icon: "📈" },
-    { label: "Wealth Protection", desc: "Secure your life, family, and financial goals", path: "/services#wealth-protection", icon: "🛡️" },
-    { label: "Wealth Preservation", desc: "Maintain long-term financial stability and security", path: "/services#wealth-preservation", icon: "💰" },
-    { label: "Stock Market Services", desc: "Research-driven market insights and investment support", path: "/services#stock-market-services", icon: "📊" },
+    { label: "Wealth Creation", desc: "Strategic investment solutions for long-term prosperity", path: "/services/wealth-creation", icon: "📈" },
+    { label: "Wealth Protection", desc: "Secure your life, family, and financial goals", path: "/services/wealth-protection", icon: "🛡️" },
+    { label: "Wealth Preservation", desc: "Maintain long-term financial stability and security", path: "/services/wealth-preservation", icon: "💰" },
+    { label: "Stock Market Services", desc: "Research-driven market insights and investment support", path: "/services/stock-market-services", icon: "📊" },
   ],
   Resources: [
     { label: "Gallery", desc: "Our journey in pictures", path: "/gallery", icon: "🖼️" },
@@ -74,7 +74,7 @@ const Navbar = () => {
             padding: "3px 12px", borderRadius: "6px", marginTop: "1px", marginBottom: "-8px",
             border: "1px solid #EAB308", whiteSpace: "nowrap", letterSpacing: "0.02em", textAlign: "center"
           }}>
-            AMFI REGISTERED MUTUAL FUND DISTRIBUTOR
+            AMFI REGISTERED MUTUAL FUND DISTRIBUTOR – ARN: 129543
           </div>
         </div>
 

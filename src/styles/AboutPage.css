@@ -1,0 +1,354 @@
+:root {
+    --fintech-blue: #0066ff;
+    --fintech-blue-gradient: linear-gradient(135deg, #2563eb, #1d4ed8);
+    --fintech-text: #0f172a;
+    --fintech-sub: #5b6475;
+    --brand-gradient: linear-gradient(135deg, #0084ff, #2563eb);
+    
+    /* Design System Polish */
+    --radius-md: 24px;
+    --radius-lg: 32px;
+    --global-shadow: 0 4px 20px rgba(15,23,42,0.03);
+    --premium-shadow: 0 40px 80px rgba(37, 99, 235, 0.12), 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.company-body {
+    background: 
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.06), transparent 30%),
+        #f8fbff;
+    background-image: 
+        radial-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-attachment: fixed;
+}
+
+.company-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.company-container {
+    max-width: 1400px; /* Increased to allow wider cards */
+    width: 100%;
+    margin: 0 auto;
+    padding-inline: 40px;
+}
+
+/* 1. HERO SECTION REDESIGN - INDUSTRY POLISHED */
+.company-hero {
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 70px;
+}
+
+.hero-grid-layout {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 60px;
+}
+
+@media (max-width: 1024px) {
+    .hero-grid-layout { grid-template-columns: 1fr; gap: 40px; }
+}
+
+.hero-text-block {
+    position: relative;
+    z-index: 10;
+}
+
+.company-hero-title {
+    font-size: clamp(40px, 4.5vw, 64px);
+    line-height: 0.95;
+    letter-spacing: -2.5px;
+    font-weight: 800;
+    color: var(--fintech-text);
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--fintech-sub);
+    font-weight: 500;
+    margin-bottom: 28px;
+    max-width: 520px;
+}
+
+.hero-description strong {
+    color: #0b1220;
+    font-weight: 700;
+}
+
+/* 6. BUTTONS INDUSTRY SCALE */
+.btn-primary-premium {
+    height: 52px;
+    padding: 0 28px;
+    border-radius: 14px;
+    font-weight: 800;
+    font-size: 14.5px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8, #0f172a);
+    color: white;
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px rgba(37, 99, 235, 0.25);
+}
+
+.btn-secondary-glass {
+    height: 52px;
+    padding: 0 28px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 14.5px;
+    background: transparent;
+    border: 1.5px solid rgba(15, 23, 42, 0.08);
+    color: var(--fintech-text);
+    transition: all 0.35s ease;
+}
+
+/* 4. IMAGE CONTAINER - 3D CIRCLE FRAME */
+.hero-image-card {
+    background: 
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(135deg, #dbeafe, #eff6ff) border-box;
+    border: 1px solid transparent;
+    backdrop-filter: blur(12px);
+    border-radius: 50%;
+    box-shadow: var(--premium-shadow);
+    padding: 12px;
+    position: relative;
+    max-width: 440px;
+    aspect-ratio: 1/1;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    perspective: 1200px;
+    transform-style: preserve-3d;
+    animation: hero3D 8s infinite ease-in-out;
+}
+
+@keyframes hero3D {
+    0%, 100% { transform: rotateY(-6deg) rotateX(4deg) translateY(0); }
+    50% { transform: rotateY(6deg) rotateX(-4deg) translateY(-12px); }
+}
+
+.hero-main-img {
+    width: 96%;
+    height: 96%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-image-card:hover {
+    animation-play-state: paused;
+}
+
+.image-glow {
+    position: absolute;
+    inset: -10%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.15), transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+/* 5. FLOATING ELEMENTS */
+.floating-icon {
+    position: absolute;
+    width: 54px;
+    height: 54px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    z-index: 20;
+    animation: float 4s ease-in-out infinite;
+}
+
+.floating-stats-card {
+    position: absolute;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    z-index: 30;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.fi-tr { top: 10px; right: 10px; }
+.fi-ml { top: 40%; left: -24px; animation-delay: 1s; }
+.fi-br { bottom: 30px; right: 10px; animation-delay: 2s; }
+
+/* 6. TRUST BADGES COMPACT */
+.trust-chip {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(37, 99, 235, 0.12);
+    padding: 8px 14px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--fintech-text);
+}
+
+/* 7. RATING SECTION ALIGNED */
+.rating-section-horizontal {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px; /* Spacing system point 12 */
+}
+
+.avatar-group-refined {
+    display: flex;
+    align-items: center;
+    opacity: 0.8;
+}
+
+/* 8. STATS CARDS - 3D ANIMATED */
+.stat-card-premium {
+    height: 160px;
+    padding: 24px 20px;
+    background: white;
+    border-radius: 20px;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    position: relative;
+    perspective: 800px;
+    transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: statFloat 5s infinite ease-in-out;
+}
+
+.stat-card-premium:nth-child(even) {
+    animation-delay: 1s;
+}
+
+@keyframes statFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+.stat-card-premium:hover {
+    transform: translateY(-10px) scale(1.05) rotateX(4deg);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.08);
+    border-color: #2563eb;
+}
+
+.stat-num-xl {
+    font-size: 48px;
+    line-height: 1;
+    font-weight: 800;
+    color: var(--fintech-text);
+    letter-spacing: -1.5px;
+    transform: translateZ(15px); /* 3D Pop */
+}
+
+.stat-label-premium {
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--fintech-blue);
+    margin-top: 10px;
+}
+
+.stat-desc-refined {
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--fintech-sub);
+    margin-top: 6px;
+}
+
+/* 10. IDENTITY CARDS - 3D MODERN */
+.identity-card-premium {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    padding: 32px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: floatCard 6s infinite ease-in-out;
+}
+
+.ic-blue { 
+    border-top: 4px solid #2563eb; 
+    animation-delay: 0s;
+}
+.ic-ant { 
+    border-top: 4px solid #0f172a; 
+    animation-delay: 1s;
+}
+
+@keyframes floatCard {
+    0%, 100% { transform: translateY(0) rotateX(0); }
+    50% { transform: translateY(-10px) rotateX(2deg); }
+}
+
+.identity-card-premium:hover {
+    transform: translateY(-15px) rotateY(8deg) rotateX(4deg) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* 11. ANALOGY BANNER - REFINED */
+.analogy-banner-premium {
+    background: transparent;
+    border-radius: 0;
+    padding: 20px 0;
+    text-align: center;
+    color: var(--fintech-text);
+    max-width: 900px;
+    margin: 20px auto 0;
+}
+
+.analogy-banner-premium p {
+    font-size: 32px;
+    line-height: 1.4;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--fintech-text);
+    opacity: 0.9;
+}
+
+.analogy-cta-pill {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--fintech-blue);
+    display: inline-block;
+}

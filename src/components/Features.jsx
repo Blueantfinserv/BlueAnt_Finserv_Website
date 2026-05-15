@@ -7,16 +7,16 @@ const features = [
     iconBg: "rgba(6, 182, 212, 0.2)",
     iconColor: "#06b6d4",
     badge: "100%\nCompliant",
-    title: "SEBI & IRDAI Registered",
-    desc: "Fully regulated by SEBI for investments and IRDAI for insurance. Your money is safe with us.",
+    title: "AMFI Registered",
+    desc: "Fully regulated by AMFI for mutual fund distribution and working with IRDAI for insurance. Your money is safe with us.",
   },
   {
     icon: "👥",
     iconBg: "rgba(192, 132, 252, 0.2)",
     iconColor: "#c084fc",
     badge: "50+\nExperts",
-    title: "SEBI Certified Advisors",
-    desc: "Get personalized guidance from SEBI-registered investment advisors with 10+ years experience.",
+    title: "AMFI Certified Advisors",
+    desc: "Get personalized guidance from AMFI-registered advisors with 10+ years experience.",
   },
   {
     icon: "🔒",
@@ -99,7 +99,7 @@ function Features() {
     <section className={styles.featuresSection}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <div className={styles.pill}>⭐ Why 50,000+ Investors Trust Us</div>
+          <div className={styles.pill}>⭐ Why 10,000+ Investors Trust Us</div>
           <h2>Industry-Leading Features & Benefits</h2>
           <p>
             Experience the perfect blend of cutting-edge technology, regulatory compliance, and

@@ -17,11 +17,11 @@ const Youtube = () => {
       <div className="youtube-container">
         <div className="content">
           <h1>
-            Secure Your Financial <br />
-            <span className="youtube-headline-accent">Freedom Today</span>
+            Plan Your Long-term <br />
+            <span className="youtube-headline-accent">Wealth Today</span>
           </h1>
           <p>
-            Join over 50,000+ investors building their wealth with Blueant Finserv. Experience smart, transparent financial solutions. Open an account for free.
+            Join over 10,000+ investors building their wealth with Blueant Finserv. Experience suitable financial solutions with a transparent process. Open an account for free.
           </p>
           
           <div className="cta-wrapper">
@@ -31,15 +31,15 @@ const Youtube = () => {
             <div className="trust-pills">
               <div className="trust-pill">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>SEBI Registered</span>
+                <span>AMFI Registered – ARN: 129543</span>
               </div>
               <div className="trust-pill">
                 <Users className="w-3.5 h-3.5 text-blue-400" />
-                <span>50,000+ Investors</span>
+                <span>10,000+ Investors</span>
               </div>
               <div className="trust-pill">
                 <Lock className="w-3.5 h-3.5 text-indigo-400" />
-                <span>Secure Platform</span>
+                <span>Transparent Process</span>
               </div>
             </div>
           </div>

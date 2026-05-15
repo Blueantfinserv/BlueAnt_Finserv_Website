@@ -7,8 +7,8 @@ const testimonials = [
     role: "IT Professional, Bangalore",
     image: "https://i.pravatar.cc/150?img=11",
     color: "#0ea5e9",
-    text: "Started my SIP journey with Blueant 5 years ago with just ₹5,000/month. Today my portfolio has grown to ₹18.5 lakhs! The returns have been consistently better than fixed deposits. Their financial advisors helped me choose the right mix of equity and debt funds.",
-    badge: "📈 ₹18.5L Portfolio",
+    text: "Started my SIP journey with Blueant 5 years ago with disciplined monthly investments. Today my portfolio has grown significantly! The experience has been consistently better than traditional savings. Their financial advisors helped me choose the right mix of equity and debt funds.",
+    badge: "📈 Long-term Wealth",
   },
   {
     name: "Priya Sharma",
@@ -31,8 +31,8 @@ const testimonials = [
     role: "Software Engineer, Hyderabad",
     image: "https://i.pravatar.cc/150?img=9",
     color: "#0891b2",
-    text: "As a first-time investor, the stock trading platform was perfect for me. Zero brokerage on delivery trades saved me thousands. The research reports and educational content helped me make informed investment decisions. Already made 35% returns this year!",
-    badge: "📈 35% Returns",
+    text: "As a first-time investor, the stock trading platform was perfect for me. Zero brokerage on delivery trades saved me thousands. The research reports and educational content helped me make informed investment decisions. Already seeing great results this year!",
+    badge: "📈 Positive Growth",
   },
   {
     name: "Vikram Singh",
@@ -54,9 +54,9 @@ const testimonials = [
 
 const stats = [
   { value: "4.9/5", label: "Average Rating", stars: true },
-  { value: "12,000+", label: "Customer Reviews" },
+  { value: "10,000+", label: "Customer Reviews" },
   { value: "98.5%", label: "Satisfaction Rate" },
-  { value: "50K+", label: "Active Investors" },
+  { value: "10,000+", label: "Active Investors" },
 ];
 
 function Testimonials() {
@@ -64,8 +64,8 @@ function Testimonials() {
     <section className={styles.testimonialsSection}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <div className={styles.pill}>⭐ Trusted by 50,000+ Investors</div>
-          <h2>Success Stories from Our Clients</h2>
+          <div className={styles.pill}>⭐ Trusted by 10,000+ Investors</div>
+          <h2>What Our Clients Say</h2>
           <p>
             Real experiences from real people who transformed their financial lives with Blueant Finserv
           </p>

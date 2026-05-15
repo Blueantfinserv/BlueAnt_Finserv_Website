@@ -13,7 +13,7 @@ export const servicesSummary = [
     title: "Wealth Creation",
     description: "Accelerate your financial journey with professionally guided SIPs, diversified mutual funds, and personalized wealth-building strategies.",
     features: ["Systematic Investment Plans (SIPs)", "Mutual Fund Portfolio Planning", "Wealth Growth Strategies"],
-    link: "/services#wealth-creation",
+    link: "/services/wealth-creation",
     ctaText: "Start Building Wealth →"
   },
   {
@@ -28,7 +28,7 @@ export const servicesSummary = [
     title: "Wealth Protection",
     description: "Protect your income, health, and future with comprehensive insurance planning solutions designed for complete peace of mind.",
     features: ["Term Life Insurance", "Health Insurance Plans", "Critical Illness Cover"],
-    link: "/services#wealth-protection",
+    link: "/services/wealth-protection",
     ctaText: "Secure Your Future →"
   },
   {
@@ -43,7 +43,7 @@ export const servicesSummary = [
     title: "Wealth Preservation",
     description: "Preserve and manage your wealth through retirement-focused and low-risk financial planning strategies.",
     features: ["Retirement Planning", "Portfolio Management", "Capital Preservation"],
-    link: "/services#wealth-preservation",
+    link: "/services/wealth-preservation",
     ctaText: "Preserve Wealth →"
   },
   {
@@ -58,7 +58,7 @@ export const servicesSummary = [
     title: "Stock Market Services",
     description: "Explore equity investments, trading opportunities, and portfolio guidance with professional market expertise.",
     features: ["Zero Delivery Brokerage", "Advanced Market Analysis", "Equity Research Reports"],
-    link: "/services#stock-market-services",
+    link: "/services/stock-market-services",
     ctaText: "Start Trading →"
   }
 ];

@@ -26,7 +26,7 @@ const CTASection = () => {
               Start Your Wealth Journey Today!
             </h2>
             <p className="text-blue-100 text-lg max-w-2xl mx-auto fintech-subtitle font-medium">
-              Open your free account now and get exclusive benefits worth ₹10,000. Join 50,000+ investors who are already building their financial future with Blueant Finserv.
+              Open your free account now and get exclusive benefits. Join 10,000+ investors who are already building their financial future with Blueant Finserv.
             </p>
 
             {/* 3 Pills */}
@@ -115,7 +115,7 @@ const CTASection = () => {
                 <div className="w-10 h-10 rounded-full bg-orange-400 border-2 border-indigo-600 flex items-center justify-center text-white text-xs font-bold">10k+</div>
               </div>
               <div className="text-left">
-                <p className="text-white font-bold text-sm">Join 50,000+ Happy Investors</p>
+                <p className="text-white font-bold text-sm">Join 10,000+ Happy Investors</p>
                 <p className="text-blue-200 text-xs">Rated 4.9/5 on Google & App Store</p>
               </div>
             </div>
@@ -152,7 +152,7 @@ const CTASection = () => {
               </svg>
             </div>
             <h4 className="text-slate-900 font-bold mb-2">100% Secure & Safe</h4>
-            <p className="text-slate-500 text-xs leading-relaxed">Bank-grade security with SEBI & IRDAI regulatory compliance.</p>
+            <p className="text-slate-500 text-xs leading-relaxed">Bank-grade security with AMFI & IRDAI regulatory compliance.</p>
           </div>
         </div>
 

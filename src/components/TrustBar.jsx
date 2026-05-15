@@ -2,7 +2,6 @@ import React from "react";
 
 const logos = [
   { name: "AMFI", src: "amfi.png" },
-  { name: "SEBI", src: "Sebi logo.png" },
   { name: "NSE", src: "nse.png" },
   { name: "BSE", src: "bse.png" },
   { name: "MCX", src: "mcx.png" },

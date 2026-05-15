@@ -24,6 +24,18 @@ const BlogPage = lazy(() => import("./pages/BlogPage"));
 const ResourcesPage = lazy(() => import("./pages/ResourcesPage"));
 const FAQPage = lazy(() => import("./pages/FAQPage"));
 
+// About Sub-pages
+const CompanyPage = lazy(() => import("./pages/About/CompanyPage"));
+const MissionPage = lazy(() => import("./pages/About/MissionPage"));
+const TeamPage = lazy(() => import("./pages/About/TeamPage"));
+const ImpactStoriesPage = lazy(() => import("./pages/About/ImpactStoriesPage"));
+
+// Service Sub-pages
+const WealthCreationPage = lazy(() => import("./pages/Services/WealthCreationPage"));
+const WealthProtectionPage = lazy(() => import("./pages/Services/WealthProtectionPage"));
+const WealthPreservationPage = lazy(() => import("./pages/Services/WealthPreservationPage"));
+const StockMarketServicesPage = lazy(() => import("./pages/Services/StockMarketServicesPage"));
+
 // Loading Fallback
 const LoadingFallback = () => (
   <div
@@ -51,12 +63,20 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/about/company" element={<CompanyPage />} />
+          <Route path="/about/mission" element={<MissionPage />} />
+          <Route path="/about/team" element={<TeamPage />} />
+          <Route path="/about/stories" element={<ImpactStoriesPage />} />
           <Route path="/services" element={<ServicePage />} />
+          <Route path="/services/wealth-creation" element={<WealthCreationPage />} />
+          <Route path="/services/wealth-protection" element={<WealthProtectionPage />} />
+          <Route path="/services/wealth-preservation" element={<WealthPreservationPage />} />
+          <Route path="/services/stock-market-services" element={<StockMarketServicesPage />} />
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/calculators" element={<CalculatorPage />} />
-          <Route path="/team" element={<AboutPage />} />
+          <Route path="/team" element={<TeamPage />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/blogs" element={<BlogPage />} />
           <Route path="/faq" element={<FAQPage />} />

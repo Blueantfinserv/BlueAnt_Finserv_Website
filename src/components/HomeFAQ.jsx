@@ -82,7 +82,7 @@ const faqs = [
       },
       {
         q: "Is my money safe with Blueant Finserv?",
-        a: "Yes. Blueant Finserv is SEBI registered, and all your investments are held in your name in SEBI-regulated depositories (CDSL/NSDL). We are purely advisors — your funds are never held by us directly."
+        a: "Yes. Blueant Finserv is an AMFI Registered Mutual Fund Distributor, and all your investments are held in your name in SEBI-regulated depositories (CDSL/NSDL). We are purely facilitators — your funds are never held by us directly."
       }
     ]
   },
@@ -93,8 +93,8 @@ const faqs = [
     bgColor: "bg-indigo-500",
     items: [
       {
-        q: "Is Blueant Finserv SEBI and IRDAI registered?",
-        a: "Yes. Blueant Finserv is an AMFI Registered Mutual Fund Distributor and works with IRDAI-approved insurance providers. All our products and advice comply fully with SEBI and IRDAI regulations."
+        q: "Is Blueant Finserv AMFI and IRDAI registered?",
+        a: "Yes. Blueant Finserv is an AMFI Registered Mutual Fund Distributor (ARN: 129543) and works with IRDAI-approved insurance providers. All our products and process comply fully with AMFI and IRDAI regulations."
       },
       {
         q: "How do I get started with Blueant Finserv?",

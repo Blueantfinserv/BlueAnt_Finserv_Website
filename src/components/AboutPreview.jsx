@@ -5,9 +5,9 @@ import { CheckCircle2, ShieldCheck, UserCheck, TrendingUp, Clock, Users, Award, 
 const AboutPreview = () => {
   const bulletPoints = [
     { text: "Disciplined investment approach", icon: <CheckCircle2 className="w-4 h-4 text-emerald-500" /> },
-    { text: "Transparent financial advisory", icon: <CheckCircle2 className="w-4 h-4 text-emerald-500" /> },
+    { text: "Transparent investment process", icon: <CheckCircle2 className="w-4 h-4 text-emerald-500" /> },
     { text: "Long-term wealth planning", icon: <CheckCircle2 className="w-4 h-4 text-emerald-500" /> },
-    { text: "SEBI & IRDAI aligned guidance", icon: <CheckCircle2 className="w-4 h-4 text-emerald-500" /> },
+    { text: "AMFI & IRDAI aligned guidance", icon: <CheckCircle2 className="w-4 h-4 text-emerald-500" /> },
   ];
 
   const stats = [
@@ -21,7 +21,7 @@ const AboutPreview = () => {
       icon: <Users className="w-5 h-5 text-indigo-600" />,
       number: "15,000+",
       label: "Happy Families",
-      desc: "Empowering households with smart wealth strategies.",
+      desc: "Empowering households with investment support.",
     },
     {
       icon: <Award className="w-5 h-5 text-purple-600" />,
@@ -74,7 +74,7 @@ const AboutPreview = () => {
               <p className="text-[17px] text-slate-600 font-semibold leading-[1.7] max-w-[560px]">
                 At BlueAnt Finserv, we believe in one simple philosophy — <span className="text-blue-600 font-black italic">“We don’t sell, we educate.”</span>
                 <br /><br />
-                We empower individuals and families with <span className="text-slate-900 font-black border-b-2 border-blue-100">disciplined SIP investments</span>, personalized financial planning, and transparent advisory services to build <span className="text-slate-900 font-black">long-term wealth</span> with confidence.
+                We empower individuals and families with <span className="text-slate-900 font-black border-b-2 border-blue-100">disciplined SIP investments</span>, personalized financial planning, and transparent investment process to build <span className="text-slate-900 font-black">long-term wealth</span> with confidence.
               </p>
             </div>
 
@@ -151,8 +151,8 @@ const AboutPreview = () => {
                 <ShieldCheck className="w-4 h-4" />
               </div>
               <div className="flex flex-col">
-                <span className="text-[10px] font-black text-[#0f172a] uppercase tracking-wider leading-tight">Secure Vault</span>
-                <span className="text-[7.5px] font-bold text-slate-400 uppercase mt-0.5 tracking-[0.05em] whitespace-nowrap">SEBI Compliant</span>
+                <span className="text-[10px] font-black text-[#0f172a] uppercase tracking-wider leading-tight">Transparent Process</span>
+                <span className="text-[7.5px] font-bold text-slate-400 uppercase mt-0.5 tracking-[0.05em] whitespace-nowrap">Regulation-aligned</span>
               </div>
             </div>
           </div>

@@ -19,7 +19,7 @@ const About = () => {
     {
       icon: <Award className="w-5 h-5 text-blue-600" />,
       number: "10+",
-      label: "Expert Advisors",
+      label: "Support Advisors",
       sub: "Dedicated professionals guiding your wealth journey with care.",
     },
     {
@@ -43,12 +43,12 @@ const About = () => {
       pos: "top-8 -left-4 sm:-left-12",
     },
     {
-      text: "Expert Guidance",
+      text: "Disciplined Guidance",
       icon: "📊",
       pos: "top-1/4 -right-4 sm:-right-8",
     },
     {
-      text: "Secure & Compliant",
+      text: "Transparent & Aligned",
       icon: "🛡️",
       pos: "bottom-12 -left-2 sm:-left-8",
     },

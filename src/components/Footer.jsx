@@ -87,11 +87,13 @@ const Footer = () => {
           
           {/* Column 1: Branding */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-[320px]">
-            <Link to="/" className="inline-block transition-all duration-500 mb-1 logo-glow">
-              <img src={`${import.meta.env.BASE_URL}blueAnt.png`} alt="Blueant Logo" className="h-5 md:h-6 w-auto object-contain" />
-            </Link>
-            <div className="bg-[#fbbf24] px-3 py-1 rounded-sm mb-3 inline-block">
-              <span className="text-[#0f172a] text-[8px] font-black uppercase tracking-[1.5px] whitespace-nowrap">AMFI Registered Mutual Fund Distributor</span>
+            <div className="flex flex-col items-stretch mb-4 w-fit">
+              <Link to="/" className="inline-block transition-all duration-500 mb-1.5 logo-glow">
+                <img src={`${import.meta.env.BASE_URL}blueAnt.png`} alt="Blueant Logo" className="h-5 md:h-6 w-auto object-contain mx-auto md:mx-0" />
+              </Link>
+              <div className="bg-[#fbbf24] px-2 py-1 rounded-[4px] border border-[#EAB308] flex items-center justify-center">
+                <span className="text-[#0f172a] text-[8px] font-black uppercase tracking-[0.1px] whitespace-nowrap">AMFI Registered Mutual Fund Distributor – ARN: 129543</span>
+              </div>
             </div>
             
             <div className="mb-4">
@@ -203,6 +205,15 @@ const Footer = () => {
             </div>
           </div>
 
+        </div>
+
+        {/* Mutual Fund Disclaimer Section */}
+        <div className="py-6 border-b border-white/5">
+          <p className="text-white/40 text-[11px] leading-relaxed text-right font-medium">
+            <span className="text-white/50 font-bold">
+              Mutual fund investments are subject to market risks. Please read all scheme-related documents carefully before investing. 
+            </span>
+          </p>
         </div>
 
         {/* Bottom Bar Section */}

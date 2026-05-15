@@ -101,10 +101,10 @@ export default function FigmaSIPCalculator() {
             <polyline points="16 7 22 7 22 13"></polyline>
           </svg>
         </div>
-        <h2 className="f-sip-title">SIP Calculator</h2>
+        <h2 className="f-sip-title">Illustrative SIP Calculator</h2>
         <p className="f-sip-subtitle">
           Plan your wealth creation journey with our professional-grade investment tool. 
-          Analyze market projections and compound growth at a glance.
+          Analyze market projections and disciplined growth at a glance.
         </p>
       </div>
 
@@ -124,7 +124,7 @@ export default function FigmaSIPCalculator() {
           </div>
 
           <div className="f-sip-input-group">
-            <label className="f-sip-label-row">Expected Return (% p.a.)</label>
+            <label className="f-sip-label-row">Assumed Return (% p.a.)</label>
             <input
               type="number"
               value={rate || ""}
@@ -152,7 +152,7 @@ export default function FigmaSIPCalculator() {
               <span className="f-sip-live-dot"></span>
               Live SIP Projection
             </div>
-            <div className="f-sip-cagr-pill">{rate}% Expected CAGR</div>
+            <div className="f-sip-cagr-pill">{rate}% Assumed Annual Return</div>
           </div>
           <div className="f-sip-chart-wrapper">
             <ResponsiveContainer width="100%" height={200}>
@@ -225,20 +225,20 @@ export default function FigmaSIPCalculator() {
             <h4 className="f-sip-res-val">
               <AnimatedNumber value={totalValue} formatter={formatCurrency} />
             </h4>
-            <span className="f-sip-res-subtext">Projected maturity amount</span>
+            <span className="f-sip-res-subtext">Estimated value based on selected assumptions</span>
           </div>
         </div>
 
         {/* 4. Expert Insights & CTA */}
         <div className="f-sip-card f-sip-info-card">
           <div className="f-sip-insights-content">
-            <h3 className="f-sip-card-title">Expert Insights</h3>
+            <h3 className="f-sip-card-title">Disciplined Insights</h3>
             <div className="f-sip-info-list">
               <div className="f-sip-info-item">
                 <div className="f-sip-info-num">1</div>
                 <div className="f-sip-info-text">
-                  <h4>Compounding Mastery</h4>
-                  <p>Exponential growth by reinvesting market returns.</p>
+                  <h4>Compounding Potential</h4>
+                  <p>Long-term growth by reinvesting market returns.</p>
                 </div>
               </div>
               <div className="f-sip-info-item">
@@ -258,10 +258,18 @@ export default function FigmaSIPCalculator() {
               Start Wealth Journey
             </button>
             <div className="f-sip-trust-strip">
-              100% Secure • Free Consultation
+              Transparent Process • Free Consultation
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="f-sip-disclaimer mt-12 px-6 py-4 bg-slate-100 rounded-2xl text-[11px] text-slate-500 leading-relaxed max-w-4xl mx-auto text-center">
+        <span className="text-slate-900 font-bold">
+          Mutual fund investments are subject to market risks. Please read all scheme-related documents carefully before investing.
+          <br />
+          All illustrations and calculations are for informational purposes only.
+        </span>
       </div>
     </section>
   );

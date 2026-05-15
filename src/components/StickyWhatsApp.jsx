@@ -5,18 +5,36 @@ import { openConsultationModal } from "./ConsultationModal";
 
 function StickyWhatsApp() {
   const [visible, setVisible] = useState(false);
+  const [isAtFooter, setIsAtFooter] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
       // Show buttons after scrolling past the Hero section (approx 400px)
       setVisible(window.scrollY > 400);
     };
+
+    // Observer to detect when footer is reached
+    const footer = document.querySelector('footer');
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsAtFooter(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (footer) observer.observe(footer);
+    
     window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (footer) observer.unobserve(footer);
+    };
   }, []);
 
+  const showFabs = visible && !isAtFooter;
+
   return (
-    <div className={`sticky-fab-group ${visible ? "sticky-fab-visible" : ""}`}>
+    <div className={`sticky-fab-group ${showFabs ? "sticky-fab-visible" : ""}`}>
       {/* Call Now */}
       <a
         href="tel:+919990218899"

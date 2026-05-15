@@ -23,14 +23,14 @@ function HeroFigma() {
             </div>
 
             <h1 className="hf-headline">
-              Build Wealth That <br />
-              <span className="hf-headline-accent">Grows While You Sleep</span>
+              Build Wealth with <br />
+              <span className="hf-headline-accent">Discipline, Patience & Planning</span>
             </h1>
  
             <p className="hf-subtext" data-aos="fade-up" data-aos-delay="300">
-              Plan your wealth with disciplined SIP investments, reliable 
-              insurance solutions, and smart stock & share strategies — guided 
-              by experts and aligned with SEBI & IRDAI regulations.
+              Plan your wealth with disciplined SIP investments, suitable 
+              insurance solutions, and investment support — transparent 
+              process and aligned with AMFI & IRDAI regulations.
             </p>
 
             <div className="hf-ctas" data-aos="fade-up" data-aos-delay="400">
@@ -53,15 +53,15 @@ function HeroFigma() {
             <div className="hf-micro-trust" data-aos="fade-up" data-aos-delay="500">
               <span>✔ No hidden charges</span>
               <span className="hf-dot">•</span>
-              <span>✔ Transparent advisory</span>
+              <span>✔ Transparent investment process</span>
               <span className="hf-dot">•</span>
-              <span>✔ Fully compliant</span>
+              <span>✔ Regulation-aligned</span>
             </div>
 
             <div className="hf-trust-cards">
               {[
-                { icon: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>, title: "SEBI Registered", sub: "Fully Compliant", color: "blue" },
-                { icon: <circle cx="12" cy="12" r="10"></circle>, title: "50K+ Users", sub: "Trusted Platform", color: "red" },
+                { icon: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>, title: "AMFI Registered", sub: "ARN: 129543", color: "blue" },
+                { icon: <circle cx="12" cy="12" r="10"></circle>, title: "10,000+ Users", sub: "Trusted Platform", color: "red" },
                 { icon: <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>, title: "4.9/5 Rating", sub: "Highly Rated", color: "purple" }
               ].map((card, i) => (
                 <div key={i} className="hf-trust-card" data-aos="fade-up" data-aos-delay={600 + (i * 100)}>
