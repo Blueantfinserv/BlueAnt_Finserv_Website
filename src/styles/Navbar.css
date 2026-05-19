@@ -1,1 +1,199 @@
-/* Tailwind is used for Navbar.jsx */
+/* ── ELITE FINTECH GLOBAL NAVIGATION SYSTEM ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+.nav-bar-wrapper {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: 'Inter', sans-serif;
+  border-bottom: 1px solid rgba(241, 245, 249, 0.6);
+}
+
+.nav-bar-scrolled {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(28px) !important;
+  -webkit-backdrop-filter: blur(28px) !important;
+  border-bottom: 1px solid rgba(37, 99, 235, 0.08) !important;
+  box-shadow: 
+    0 10px 30px rgba(15, 23, 42, 0.015),
+    0 1px 3px rgba(37, 99, 235, 0.03) !important;
+}
+
+/* Nav Desktop Link Accents */
+.nav-link-desktop {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14px;
+  color: #0f172a !important;
+  transition: all 0.3s ease;
+  padding: 8px 2px;
+}
+
+.nav-link-desktop::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, #00afef, #2563eb);
+  border-radius: 10px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link-desktop:hover {
+  color: #00afef !important;
+}
+
+.nav-link-desktop:hover::after {
+  width: 100%;
+}
+
+/* High-Contrast Dropdown Card Panel */
+.nav-dropdown-card {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    0 4px 20px rgba(15, 23, 42, 0.01),
+    0 25px 60px rgba(15, 23, 42, 0.08),
+    0 0 0 1px rgba(15, 23, 42, 0.01) inset;
+  padding: 12px;
+  min-width: 320px;
+  z-index: 200;
+  transform-origin: top center;
+  animation: navFadeSlide 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Glass Card Pointer Arrow */
+.nav-dropdown-pointer {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 16px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  border-left: 1px solid rgba(255, 255, 255, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.95);
+  pointer-events: none;
+}
+
+/* Interactive Dropdown Row Item */
+.nav-dropdown-item {
+  display: flex;
+  align-items: start;
+  gap: 16px;
+  padding: 12px 16px;
+  border-radius: 18px;
+  text-decoration: none;
+  background: transparent;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-dropdown-item:hover {
+  background: rgba(37, 99, 235, 0.035);
+  transform: translateX(4px);
+}
+
+/* Glowing Icon Chambers */
+.nav-dropdown-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.03);
+  font-size: 20px;
+  flex-shrink: 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(15, 23, 42, 0.01);
+}
+
+.nav-dropdown-item:hover .nav-dropdown-icon-wrapper {
+  background: rgba(0, 175, 239, 0.12);
+  transform: scale(1.1) rotate(4deg);
+  border-color: rgba(0, 175, 239, 0.2);
+  box-shadow: 
+    0 8px 16px rgba(0, 175, 239, 0.12),
+    0 0 0 1px rgba(0, 175, 239, 0.1) inset;
+}
+
+/* Dropdown Item Typography */
+.nav-dropdown-item-label {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 2px;
+  transition: color 0.3s ease;
+  letter-spacing: -0.2px;
+}
+
+.nav-dropdown-item:hover .nav-dropdown-item-label {
+  color: #00afef;
+}
+
+.nav-dropdown-item-desc {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #64748b;
+  line-height: 1.35;
+  transition: color 0.3s ease;
+}
+
+.nav-dropdown-item:hover .nav-dropdown-item-desc {
+  color: #475569;
+}
+
+/* 3D Tactile Glowing CTA Button */
+.nav-cta-btn-3d {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+  color: #ffffff !important;
+  padding: 14px 32px !important;
+  border-radius: 100px !important;
+  font-size: 11px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  display: block;
+  text-decoration: none;
+  box-shadow: 
+    0 4px 12px rgba(15, 23, 42, 0.15),
+    0 1px 2px rgba(255, 255, 255, 0.15) inset;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  border: 1px solid rgba(15, 23, 42, 0.8) !important;
+}
+
+.nav-cta-btn-3d:hover {
+  background: linear-gradient(135deg, #00afef 0%, #2563eb 100%) !important;
+  border-color: rgba(37, 99, 235, 0.2) !important;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 8px 24px rgba(37, 99, 235, 0.25),
+    0 1px 3px rgba(255, 255, 255, 0.3) inset;
+}
+
+.nav-cta-btn-3d:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Keyframes Animations */
+@keyframes navFadeSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}

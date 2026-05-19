@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { openConsultationModal } from "./ConsultationModal";
+import "../styles/Navbar.css";
 
 const dropdowns = {
   "About Us": [
@@ -61,7 +62,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 py-3 ${isScrolled ? "bg-white shadow-xl" : "bg-white"}`}>
+    <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 py-3 nav-bar-wrapper ${isScrolled ? "nav-bar-scrolled" : "bg-white"}`}>
       <div className="max-w-[1280px] mx-auto px-6 lg:px-12 flex items-center justify-between">
 
         {/* Logo */}
@@ -89,15 +90,9 @@ const Navbar = () => {
             >
               <Link
                 to={link.path}
-                className="flex items-center gap-1 group"
-                style={{ textDecoration: "none" }}
+                className="nav-link-desktop"
               >
-                <span
-                  className="group-hover:text-[#00afef] transition-colors"
-                  style={{ color: "#000000", fontWeight: "900", fontSize: "14.5px" }}
-                >
-                  {link.name}
-                </span>
+                <span>{link.name}</span>
                 {link.hasDropdown && (
                   <ChevronDown
                     className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${activeDropdown === link.name ? "rotate-180 text-[#00afef]" : ""}`}
@@ -108,13 +103,12 @@ const Navbar = () => {
               {/* Dropdown Panel */}
               {link.hasDropdown && activeDropdown === link.name && (
                 <div
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 min-w-[280px] z-[200]"
+                  className="nav-dropdown-card"
                   onMouseEnter={() => clearTimeout(closeTimer.current)}
                   onMouseLeave={handleMouseLeave}
-                  style={{ animation: "fadeSlideDown 0.18s ease" }}
                 >
                   {/* Triangle pointer */}
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-l border-t border-slate-100 rotate-45" />
+                  <div className="nav-dropdown-pointer" />
 
                   <div className="relative z-10 flex flex-col gap-1">
                     {dropdowns[link.name]?.map((item) => (
@@ -123,14 +117,14 @@ const Navbar = () => {
                         to={item.path}
                         state={item.state}
                         onClick={() => setActiveDropdown(null)}
-                        className="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-all group/item"
+                        className="nav-dropdown-item"
                       >
-                        <span className="text-xl mt-0.5 shrink-0">{item.icon}</span>
+                        <span className="nav-dropdown-icon-wrapper">{item.icon}</span>
                         <div>
-                          <div className="text-[#0F172A] font-bold text-[13.5px] group-hover/item:text-[#00afef] transition-colors leading-tight">
+                          <div className="nav-dropdown-item-label">
                             {item.label}
                           </div>
-                          <div className="text-slate-400 text-[11.5px] font-medium mt-0.5 leading-tight">
+                          <div className="nav-dropdown-item-desc">
                             {item.desc}
                           </div>
                         </div>
@@ -148,12 +142,7 @@ const Navbar = () => {
           <Link
             to="#"
             onClick={(e) => { e.preventDefault(); openConsultationModal(); }}
-            style={{
-              backgroundColor: "#0f172a", padding: "12px 30px", borderRadius: "9999px",
-              color: "white", display: "block", textDecoration: "none",
-              fontSize: "10.5px", fontWeight: "900", letterSpacing: "0.12em", textTransform: "uppercase"
-            }}
-            className="hidden lg:block hover:bg-[#00afef] transition-all shadow-lg active:scale-95 whitespace-nowrap"
+            className="hidden lg:block nav-cta-btn-3d"
           >
             Get Free Consultation
           </Link>
@@ -201,12 +190,12 @@ const Navbar = () => {
                       to={item.path}
                       state={item.state}
                       onClick={() => { setIsMenuOpen(false); setMobileExpanded(null); }}
-                      className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-all"
+                      className="nav-dropdown-item"
                     >
-                      <span className="text-lg">{item.icon}</span>
+                      <span className="nav-dropdown-icon-wrapper">{item.icon}</span>
                       <div>
-                        <div className="text-[#0F172A] font-bold text-[13px]">{item.label}</div>
-                        <div className="text-slate-400 text-[11px] font-medium">{item.desc}</div>
+                        <div className="nav-dropdown-item-label">{item.label}</div>
+                        <div className="nav-dropdown-item-desc">{item.desc}</div>
                       </div>
                     </Link>
                   ))}
@@ -224,14 +213,6 @@ const Navbar = () => {
           </Link>
         </div>
       )}
-
-      {/* Dropdown fade animation */}
-      <style>{`
-        @keyframes fadeSlideDown {
-          from { opacity: 0; transform: translateX(-50%) translateY(-6px); }
-          to   { opacity: 1; transform: translateX(-50%) translateY(0); }
-        }
-      `}</style>
     </nav>
   );
 };

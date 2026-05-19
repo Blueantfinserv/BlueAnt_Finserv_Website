@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from "recharts";
+import { AreaChart, Area, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from "recharts";
+import { TrendingUp, Shield, Sparkles, DollarSign, Percent, Calendar } from "lucide-react";
 import "../styles/FigmaSIPCalculator.css";
 
 // 🚀 Animated Counter Helper for that "Expensive Product" feel
@@ -95,14 +96,17 @@ export default function FigmaSIPCalculator() {
       <div className="f-sip-noise"></div>
       
       <div className="f-sip-header">
-        <div className="f-sip-icon-wrapper">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
-            <polyline points="16 7 22 7 22 13"></polyline>
-          </svg>
+        {/* Elite upper floating badge */}
+        <div className="f-sip-top-badge" data-aos="fade-down">
+          <Sparkles className="w-3.5 h-3.5 text-[#00afef] animate-pulse" />
+          <span>Interactive Compounding Engine</span>
         </div>
-        <h2 className="f-sip-title">Illustrative SIP Calculator</h2>
-        <p className="f-sip-subtitle">
+
+        <h2 className="f-sip-title" data-aos="fade-up">
+          Illustrative <span className="f-sip-title-gradient">SIP Calculator</span>
+        </h2>
+        
+        <p className="f-sip-subtitle" data-aos="fade-up" data-aos-delay="100">
           Plan your wealth creation journey with our professional-grade investment tool. 
           Analyze market projections and disciplined growth at a glance.
         </p>
@@ -113,33 +117,88 @@ export default function FigmaSIPCalculator() {
         <div className="f-sip-card f-sip-inputs-card">
           <h3 className="f-sip-card-title">Investment Parameters</h3>
           
+          {/* Monthly Investment Input + Synced Range Slider */}
           <div className="f-sip-input-group">
-            <label className="f-sip-label-row">Monthly Investment (₹)</label>
-            <input
-              type="number"
-              value={monthly || ""}
+            <div className="f-sip-input-meta">
+              <label className="f-sip-label-row">Monthly Investment</label>
+              <span className="f-sip-live-indicator">{formatCurrency(monthly)}</span>
+            </div>
+            <div className="f-sip-input-container">
+              <input
+                type="number"
+                min="500"
+                max="1000000"
+                value={monthly || ""}
+                onChange={(e) => setMonthly(Number(e.target.value))}
+                className="f-sip-manual-input"
+              />
+              <span className="f-sip-input-unit">₹/mo</span>
+            </div>
+            <input 
+              type="range" 
+              min="500" 
+              max="200000" 
+              step="500" 
+              value={monthly} 
               onChange={(e) => setMonthly(Number(e.target.value))}
-              className="f-sip-manual-input"
+              className="f-sip-range-slider"
             />
           </div>
 
+          {/* Assumed Return Input + Synced Range Slider */}
           <div className="f-sip-input-group">
-            <label className="f-sip-label-row">Assumed Return (% p.a.)</label>
-            <input
-              type="number"
-              value={rate || ""}
+            <div className="f-sip-input-meta">
+              <label className="f-sip-label-row">Assumed Return (% p.a.)</label>
+              <span className="f-sip-live-indicator">{rate}%</span>
+            </div>
+            <div className="f-sip-input-container">
+              <input
+                type="number"
+                min="1"
+                max="30"
+                step="0.1"
+                value={rate || ""}
+                onChange={(e) => setRate(Number(e.target.value))}
+                className="f-sip-manual-input"
+              />
+              <span className="f-sip-input-unit">% p.a.</span>
+            </div>
+            <input 
+              type="range" 
+              min="5" 
+              max="30" 
+              step="0.5" 
+              value={rate} 
               onChange={(e) => setRate(Number(e.target.value))}
-              className="f-sip-manual-input"
+              className="f-sip-range-slider"
             />
           </div>
 
+          {/* Investment Period Input + Synced Range Slider */}
           <div className="f-sip-input-group">
-            <label className="f-sip-label-row">Investment Period (Years)</label>
-            <input
-              type="number"
-              value={years || ""}
+            <div className="f-sip-input-meta">
+              <label className="f-sip-label-row">Investment Period</label>
+              <span className="f-sip-live-indicator">{years} Years</span>
+            </div>
+            <div className="f-sip-input-container">
+              <input
+                type="number"
+                min="1"
+                max="40"
+                value={years || ""}
+                onChange={(e) => setYears(Number(e.target.value))}
+                className="f-sip-manual-input"
+              />
+              <span className="f-sip-input-unit">Years</span>
+            </div>
+            <input 
+              type="range" 
+              min="1" 
+              max="40" 
+              step="1" 
+              value={years} 
               onChange={(e) => setYears(Number(e.target.value))}
-              className="f-sip-manual-input"
+              className="f-sip-range-slider"
             />
           </div>
         </div>
@@ -148,15 +207,17 @@ export default function FigmaSIPCalculator() {
         <div className="f-sip-card f-sip-chart-card">
           <div className="f-sip-chart-header">
             <h3 className="f-sip-card-title">Growth Projection</h3>
-            <div className="f-sip-live-badge">
-              <span className="f-sip-live-dot"></span>
-              Live SIP Projection
+            <div className="f-sip-badges-container">
+              <div className="f-sip-live-badge">
+                <span className="f-sip-live-dot"></span>
+                Live SIP Projection
+              </div>
+              <div className="f-sip-cagr-pill">{rate}% Assumed Annual Return</div>
             </div>
-            <div className="f-sip-cagr-pill">{rate}% Assumed Annual Return</div>
           </div>
           <div className="f-sip-chart-wrapper">
-            <ResponsiveContainer width="100%" height={200}>
-              <AreaChart data={chartData} margin={{ top: 10, right: 0, left: -20, bottom: 0 }}>
+            <ResponsiveContainer width="100%" height={290}>
+              <AreaChart data={chartData} margin={{ top: 10, right: 10, left: 5, bottom: 0 }}>
                 <defs>
                   <linearGradient id="colorInvested" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.25}/>
@@ -167,8 +228,10 @@ export default function FigmaSIPCalculator() {
                     <stop offset="95%" stopColor="#10b981" stopOpacity={0}/>
                   </linearGradient>
                 </defs>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(148, 163, 184, 0.08)" />
+
                 <XAxis dataKey="year" tickLine={false} axisLine={false} tick={{ fill: '#94a3b8', fontSize: 11, fontWeight: 600 }} dy={10} />
-                <YAxis tickFormatter={formatAxis} tickLine={false} axisLine={false} tick={{ fill: '#94a3b8', fontSize: 11, fontWeight: 600 }} />
+                <YAxis tickFormatter={formatAxis} width={55} tickLine={false} axisLine={false} tick={{ fill: '#94a3b8', fontSize: 11, fontWeight: 600 }} />
                 <Tooltip 
                   contentStyle={{ 
                     borderRadius: '16px', 
@@ -202,9 +265,10 @@ export default function FigmaSIPCalculator() {
           </div>
         </div>
 
-        {/* 3. Metrics Section */}
+        {/* 3. Metrics Section (Redesigned as premium wealth pods) */}
         <div className="f-sip-results-row">
           <div className="f-sip-result-box f-sip-blue">
+            <div className="f-sip-res-accent"></div>
             <span className="f-sip-res-label">Invested</span>
             <h4 className="f-sip-res-val">
               <AnimatedNumber value={totalInvested} formatter={formatCurrency} />
@@ -213,6 +277,7 @@ export default function FigmaSIPCalculator() {
           </div>
 
           <div className="f-sip-result-box f-sip-green">
+            <div className="f-sip-res-accent"></div>
             <span className="f-sip-res-label">Returns</span>
             <h4 className="f-sip-res-val">
               <AnimatedNumber value={estimatedReturns} formatter={formatCurrency} />
@@ -221,11 +286,12 @@ export default function FigmaSIPCalculator() {
           </div>
 
           <div className="f-sip-result-box f-sip-purple">
+            <div className="f-sip-res-accent"></div>
             <span className="f-sip-res-label">Total Value</span>
             <h4 className="f-sip-res-val">
               <AnimatedNumber value={totalValue} formatter={formatCurrency} />
             </h4>
-            <span className="f-sip-res-subtext">Estimated value based on selected assumptions</span>
+            <span className="f-sip-res-subtext">Estimated compounding value</span>
           </div>
         </div>
 
@@ -235,17 +301,21 @@ export default function FigmaSIPCalculator() {
             <h3 className="f-sip-card-title">Disciplined Insights</h3>
             <div className="f-sip-info-list">
               <div className="f-sip-info-item">
-                <div className="f-sip-info-num">1</div>
+                <div className="f-sip-info-num-glow">
+                  <Sparkles className="w-4 h-4" />
+                </div>
                 <div className="f-sip-info-text">
                   <h4>Compounding Potential</h4>
-                  <p>Long-term growth by reinvesting market returns.</p>
+                  <p>Exponential growth by reinvesting market returns over long intervals.</p>
                 </div>
               </div>
               <div className="f-sip-info-item">
-                <div className="f-sip-info-num">2</div>
+                <div className="f-sip-info-num-glow">
+                  <Shield className="w-4 h-4" />
+                </div>
                 <div className="f-sip-info-text">
                   <h4>Timing Shield</h4>
-                  <p>Average out costs across all market cycles.</p>
+                  <p>Rupee-cost averaging filters market noise and volatile cycles.</p>
                 </div>
               </div>
             </div>
@@ -264,11 +334,13 @@ export default function FigmaSIPCalculator() {
         </div>
       </div>
 
-      <div className="f-sip-disclaimer mt-12 px-6 py-4 bg-slate-100 rounded-2xl text-[11px] text-slate-500 leading-relaxed max-w-4xl mx-auto text-center">
-        <span className="text-slate-900 font-bold">
+      <div className="f-sip-disclaimer mt-12 px-6 py-4 bg-slate-100/60 backdrop-blur rounded-2xl text-[11px] text-slate-500 leading-relaxed max-w-4xl mx-auto text-center border border-slate-200/50">
+        <span className="text-slate-700 font-bold block mb-1">
+          AMFI Registered Mutual Fund Distributor • ARN-129543
+        </span>
+        <span className="text-slate-500 block">
           Mutual fund investments are subject to market risks. Please read all scheme-related documents carefully before investing.
-          <br />
-          All illustrations and calculations are for informational purposes only.
+          Calculations are illustrative and for informational purposes only. We represent independent financial education.
         </span>
       </div>
     </section>

@@ -11,10 +11,10 @@ const ImpactStoriesPage = () => {
   }, []);
 
   return (
-    <div className="bg-white font-outfit pt-20">
+    <div className="bg-white font-outfit pt-32">
       <main className="flex flex-col">
         <div className="about-belief-wrapper">
-          <section className="stories-section beliefSection py-28 bg-slate-50">
+          <section className="stories-section beliefSection pt-36 pb-28 bg-slate-50">
             <div className="container mx-auto px-6 lg:px-12">
               <ImpactStories />
             </div>

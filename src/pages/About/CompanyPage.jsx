@@ -78,7 +78,7 @@ const CompanyPage = () => {
                   <p className="text-[#5b6475] text-[10px] font-bold tracking-tight opacity-75">Trusted by 10,000+ families across India</p>
                 </motion.div>
 
-                <motion.div variants={reveal} className="flex flex-wrap gap-3 mb-9">
+                <motion.div variants={reveal} className="hero-badges">
                   {["AMFI Registered", "SEBI Compliant", "Nationwide Presence"].map((text, i) => (
                     <div key={i} className="trust-chip">
                       <CheckCircle className="w-4 h-4 text-emerald-500" />
@@ -87,7 +87,7 @@ const CompanyPage = () => {
                   ))}
                 </motion.div>
 
-                <motion.div variants={reveal} className="flex flex-wrap gap-5">
+                <motion.div variants={reveal} className="hero-cta-group">
                   <button className="btn-primary-premium">
                     Start Investing <ArrowRight className="w-5 h-5" />
                   </button>
@@ -121,19 +121,21 @@ const CompanyPage = () => {
         </section>
 
         {/* 2. STATS SECTION - COMPACT INDUSTRY STYLE */}
-        <section className="company-section">
+        <section className="company-section pt-0">
           <div className="company-container">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {stats.map((stat, idx) => (
-                <motion.div key={idx} variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} className="stat-card-premium">
-                  <h4 className="stat-num-xl">
-                    <CountUp end={stat.end} duration={3} enableScrollSpy scrollSpyOnce />
-                    {stat.suffix}
-                  </h4>
-                  <p className="stat-label-premium">{stat.label}</p>
-                  <p className="stat-desc-refined font-bold">{stat.sub}</p>
-                </motion.div>
-              ))}
+            <div className="stats-section">
+              <div className="stats-grid">
+                {stats.map((stat, idx) => (
+                  <motion.div key={idx} variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} className="stat-card">
+                    <h4 className="stat-num-xl">
+                      <CountUp end={stat.end} duration={3} enableScrollSpy scrollSpyOnce />
+                      {stat.suffix}
+                    </h4>
+                    <p className="stat-label-premium">{stat.label}</p>
+                    <p className="stat-desc-refined font-bold">{stat.sub}</p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -141,7 +143,7 @@ const CompanyPage = () => {
         {/* 3. IDENTITY SECTION (BLUE / ANT) */}
         <section className="company-section">
           <div className="company-container">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <span className="text-blue-600 font-black text-[11px] uppercase tracking-[4px] mb-3 inline-block">The Foundation</span>
               <h2 className="text-4xl font-black text-slate-900 tracking-tight">A Name Rooted in <br /> Purpose and Progress</h2>
             </div>

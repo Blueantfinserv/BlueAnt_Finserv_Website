@@ -11,11 +11,11 @@ const TeamPage = () => {
   }, []);
 
   return (
-    <div className="bg-white font-outfit pt-20">
+    <div className="bg-white font-outfit pt-32">
       <main className="flex flex-col">
         <div className="about-belief-wrapper">
-          <section className="team-section beliefSection py-28 bg-white">
-            <div className="container mx-auto px-6 lg:px-12">
+          <section className="team-section">
+            <div className="team-container">
               <TeamSection />
             </div>
           </section>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Star, Quote, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import "../styles/ImpactStories.css";
 
 const stories = [
@@ -7,42 +8,42 @@ const stories = [
         id: 1,
         name: 'Sneha Jain',
         title: 'TEAM LEADER',
-        quote: 'Blueant Finserv has been a game-changer for my small business. Their loan services are quick, reliable, and completely transparent. I didn\'t have to deal with unnecessary paperwork or delays. The team guided me throughout the process and offered financial advice tailored to my goals. Their professionalism and customer-first approach gave me confidence. It\'s rare to find a finance company that treats small business owners with such care and respect. I highly recommend Blueant Finserv to anyone looking for trustworthy financial support.',
+        quote: 'Blueant Finserv has been a game-changer for my financial literacy journey. Their masterclasses on <span class="impact-highlight highlight-cyan">wealth creation and smart budgeting</span> are incredibly detailed, easy to understand, and completely objective. Since they don\'t sell any financial products or push loans, I knew their guidance was <span class="impact-highlight highlight-blue">100% unbiased</span>. The team guided me on how to analyze my cash flows and plan my business growth through knowledge. Highly recommend them for <span class="impact-highlight highlight-emerald">pure, authentic education</span>!',
         image: '1.png'
     },
     {
         id: 2,
         name: 'Rohit Sharma',
         title: 'OWNER',
-        quote: 'I\'ve never been great with financial planning, but Blueant Finserv changed that. I used their retirement and investment tools and was impressed by how simple and clear everything was. Their team took the time to explain options based on my income, savings, and goals. They truly care about helping customers make informed decisions. For the first time, I feel in control of my financial future. I\'m thankful to have found a partner like Blueant Finserv that makes finances feel easy and approachable.',
+        quote: 'I\'ve never been great with financial planning, but Blueant Finserv changed that completely. I used their SIP calculators and educational tools, and was blown away by how simple and clear everything was. Instead of selling me mutual funds, they took the time to explain the core concepts of <span class="impact-highlight highlight-rose">compounding, risk management, and long-term goal setting</span>. They truly care about empowering individuals to make <span class="impact-highlight highlight-cyan">independent, informed decisions</span>.',
         image: '2.png'
     },
     {
         id: 3,
         name: 'Siddharth Suman',
         title: 'OWNER',
-        quote: 'As a parent planning for my child\'s future, I was constantly worried about education costs. Blueant Finserv offered a customized savings strategy and calculators that helped me understand exactly how much I need to save. Their expert advice gave me clarity and peace of mind. The team is very knowledgeable and genuinely listens to your concerns. With their support, I\'ve set a clear path toward my child\'s education goal. I highly recommend Blueant Finserv for any parent looking to secure their family\'s financial future.',
+        quote: 'As a parent planning for my child\'s future, I was constantly worried about rising education costs. Blueant Finserv\'s wealth creation modules and simplified planning calculators gave me <span class="impact-highlight highlight-indigo">absolute clarity</span>. Since they are purely educational and do not sell insurance or investment schemes, their advice was completely honest and focused on what works for my family. With their support, I have built a <span class="impact-highlight highlight-emerald">self-directed path</span> toward my child\'s goals.',
         image: '3.png'
     },
     {
         id: 4,
         name: 'Gautam Singhania',
         title: 'OWNER',
-        quote: 'Blueant Finserv has been incredibly helpful in simplifying my finances. I was confused about how to balance savings, investments, and insurance. Their advisors offered personalized guidance and broke everything down in a way that made sense. I especially liked their user-friendly calculators and dashboards that gave me real-time projections. Thanks to Blueant Finserv, I now have a clear financial plan. They\'re not just another finance company — they\'re genuinely interested in helping you grow financially.',
+        quote: 'Blueant Finserv has been incredibly helpful in <span class="impact-highlight highlight-cyan">simplifying personal finance</span> for me. I was confused about how to balance savings, long-term wealth building, and risk management. Their educational resources broke down complex financial jargon in a way that just clicked. Since they don\'t sell products, their calculators and tools are designed solely to give you <span class="impact-highlight highlight-amber">accurate projections</span>. They are a genuine hub of financial empowerment.',
         image: '4.png'
     },
     {
         id: 5,
         name: 'Neha Gupta',
         title: 'OWNER',
-        quote: 'After retirement, I wanted to make sure my savings were well-managed. Blueant Finserv provided honest, clear advice and helped me invest wisely based on my needs and risk comfort. Their team was very respectful and explained every step, ensuring I felt confident in every decision. What I appreciate most is their personal touch — they don\'t push products but focus on what\'s best for you. I now feel secure about my future and thankful I chose Blueant Finserv.',
+        quote: 'After retirement, I wanted to make sure I understood how to <span class="impact-highlight highlight-emerald">protect and grow my nest egg</span>. Blueant Finserv provided clean, transparent, and easy-to-follow education. What I appreciate most is their philosophy—they never push any schemes or sell plans, but focus purely on teaching you how the financial markets work. I now feel <span class="impact-highlight highlight-blue">fully secure and capable</span> of managing my retirement savings.',
         image: '5.png'
     },
     {
         id: 6,
         name: 'Anamika Sharma',
         title: 'M.D.',
-        quote: 'Starting a new business comes with many financial uncertainties, but Blueant Finserv made things smoother. From guiding me on business loans to helping with long-term planning, their team was proactive and professional. The application process was straightforward, and they were always available for support. Their financial insights helped me make better decisions for my startup. I felt more confident knowing I had a strong financial partner. I recommend Blueant Finserv to any entrepreneur looking for a dependable and transparent finance company.',
+        quote: 'Starting a new business comes with many financial uncertainties, and having solid financial knowledge is key. Blueant Finserv\'s entrepreneurship and wealth preservation modules were incredibly insightful. They helped me understand <span class="impact-highlight highlight-violet">debt, equity, and asset allocation</span> without any sales pitches. I felt more confident knowing I was learning from experts who sell absolutely nothing. Highly recommend for <span class="impact-highlight highlight-cyan">pure, unbiased finance education</span>.',
         image: '6.png'
     },
 ];
@@ -50,34 +51,99 @@ const stories = [
 const ImpactStories = () => {
     const [active, setActive] = useState(0);
 
-    // Auto-rotate every 6 seconds
+    // Auto-rotate every 8 seconds
     useEffect(() => {
         const interval = setInterval(() => {
             setActive((prev) => (prev + 1) % stories.length);
-        }, 6000);
+        }, 8000);
         return () => clearInterval(interval);
     }, []);
 
+    const handlePrev = () => {
+        setActive((prev) => (prev - 1 + stories.length) % stories.length);
+    };
+
+    const handleNext = () => {
+        setActive((prev) => (prev + 1) % stories.length);
+    };
+
+    const getInitials = (name) => {
+        const parts = name.split(' ');
+        if (parts.length >= 2) {
+            return `${parts[0][0]}${parts[1][0]}`;
+        }
+        return name.slice(0, 2).toUpperCase();
+    };
+
+    const getAvatarGradient = (idx) => {
+        const gradients = [
+            'from-blue-600 to-cyan-400 text-blue-50 shadow-[0_0_20px_rgba(37,99,235,0.25)]',
+            'from-rose-500 to-orange-400 text-rose-50 shadow-[0_0_20px_rgba(244,63,94,0.25)]',
+            'from-indigo-600 to-purple-400 text-indigo-50 shadow-[0_0_20px_rgba(79,70,229,0.25)]',
+            'from-emerald-500 to-teal-400 text-emerald-50 shadow-[0_0_20px_rgba(16,185,129,0.25)]',
+            'from-amber-500 to-yellow-400 text-amber-50 shadow-[0_0_20px_rgba(245,158,11,0.25)]',
+            'from-violet-600 to-fuchsia-400 text-violet-50 shadow-[0_0_20px_rgba(124,58,237,0.25)]'
+        ];
+        return gradients[idx % gradients.length];
+    };
+
     return (
         <div className="impact-container">
-            <h3 className="feedback-title">⭐ IMPACT STORIES</h3>
+            {/* Ambient Background Light Blobs */}
+            <div className="impact-ambient-blob-1"></div>
+            <div className="impact-ambient-blob-2"></div>
+            
+            <div className="flex items-center justify-between mb-8 w-full relative z-10">
+                <h3 className="feedback-title">⭐ IMPACT STORIES</h3>
+                <div className="impact-slider-arrows flex gap-3">
+                    <button onClick={handlePrev} className="impact-arrow-btn" aria-label="Previous story">
+                        <ChevronLeft className="w-5 h-5" />
+                    </button>
+                    <button onClick={handleNext} className="impact-arrow-btn" aria-label="Next story">
+                        <ChevronRight className="w-5 h-5" />
+                    </button>
+                </div>
+            </div>
 
             <div className="impact-center">
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={stories[active].id}
-                        initial={{ opacity: 0, y: 24 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -24 }}
-                        transition={{ duration: 0.45, ease: 'easeOut' }}
-                        className="story"
+                        initial={{ opacity: 0, x: 40 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -40 }}
+                        transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+                        className="story-wrapper-split"
                     >
-                        <div className="story-right">
-                            <p className="story-text">{stories[active].quote}</p>
-                            <div className="story-meta">
-                                <p className="name">{stories[active].name}</p>
-                                <p className="title">{stories[active].title}</p>
+                        {/* Left visual column */}
+                        <div className="story-left-card">
+                            <div className="avatar-halo-wrapper">
+                                <div className={`avatar-initials-box bg-gradient-to-br ${getAvatarGradient(active)}`}>
+                                    {getInitials(stories[active].name)}
+                                </div>
                             </div>
+                            
+                            <div className="client-rating-stars mt-5">
+                                {[...Array(5)].map((_, i) => (
+                                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400 stroke-[1.5]" />
+                                ))}
+                            </div>
+
+                            <div className="story-meta-block mt-4">
+                                <p className="client-name">{stories[active].name}</p>
+                                <p className="client-title">{stories[active].title}</p>
+                            </div>
+
+                            <div className="verified-badge-pill mt-4">
+                                <CheckCircle className="w-3.5 h-3.5 text-emerald-500 fill-emerald-50" />
+                                <span>VERIFIED ADVISORY</span>
+                            </div>
+                        </div>
+
+                        {/* Right content column */}
+                        <div className="story-right-content">
+                            <Quote className="story-quote-icon-bg" />
+                            <p className="story-quote-text" dangerouslySetInnerHTML={{ __html: `"${stories[active].quote}"` }} />
                         </div>
                     </motion.div>
                 </AnimatePresence>

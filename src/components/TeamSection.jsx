@@ -26,46 +26,49 @@ const TeamSection = () => {
   }, []);
 
   return (
-    <div className="bg-transparent overflow-hidden" id="team-inner">
-      <div className="container mx-auto">
+    <div className="bg-transparent relative" id="team-inner">
+      {/* Premium Grid Pattern Background Overlay */}
+      <div className="team-grid-pattern"></div>
+      
+      <div className="container mx-auto relative z-10">
         
         {/* Header */}
-        <div className="text-center mb-16" data-aos="fade-up">
-          <span className="text-[#00afef] font-black text-xs uppercase tracking-widest mb-4 inline-block">OUR EXPERTS</span>
-          <h2 className="text-4xl font-black text-[#0f172a] mb-4">Meet Our <span className="text-[#00afef]">Family</span></h2>
-          <div className="w-20 h-1.5 bg-[#00afef] mx-auto rounded-full mb-8"></div>
-          <p className="text-slate-500 text-lg font-medium leading-relaxed max-w-3xl mx-auto">
+        <div className="team-header text-center" data-aos="fade-up">
+          <span className="text-[#2563eb] font-black text-xs uppercase tracking-widest mb-4 inline-block">OUR EXPERTS</span>
+          <h2 className="team-title">Meet Our <span>Family</span></h2>
+          <div className="w-20 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full mb-8"></div>
+          <p className="team-subtitle">
             Behind every successful portfolio is a team of dedicated experts. Meet the minds powering your financial growth with decades of combined experience.
           </p>
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 md:gap-4 md:gap-8">
+        <div className="team-grid">
           {teamMembers.map((member, idx) => (
             <div 
               key={member.id} 
-              className="bg-white rounded-3xl p-6 flex flex-col items-center text-center shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
+              className="team-card group"
               data-aos="fade-up"
               data-aos-delay={(idx % 5) * 100}
             >
-              <div className="w-24 h-24 md:w-32 md:h-32 rounded-full mb-6 overflow-hidden bg-slate-100 border-4 border-slate-50 group-hover:border-blue-100 transition-colors">
+              <div className="team-image-wrapper">
                 <img 
                   src={`${import.meta.env.BASE_URL}${member.img}`} 
                   alt={member.name} 
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="team-image"
                   onError={(e) => {
                     e.target.onerror = null;
                     e.target.src = 'https://ui-avatars.com/api/?name=' + member.name + '&background=0D8ABC&color=fff';
                   }}
                 />
               </div>
-              <h3 className="text-slate-900 font-bold text-sm md:text-base mb-1 group-hover:text-blue-600 transition-colors">
+              <h3 className="team-name">
                 {member.name}
               </h3>
-              <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider">
+              <span className="team-role-badge">
                 {member.text}
-              </p>
+              </span>
             </div>
           ))}
         </div>

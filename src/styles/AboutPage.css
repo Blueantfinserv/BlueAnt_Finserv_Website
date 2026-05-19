@@ -13,71 +13,69 @@
 }
 
 .company-body {
-    background: 
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.06), transparent 30%),
-        #f8fbff;
-    background-image: 
-        radial-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px);
-    background-size: 24px 24px;
-    background-attachment: fixed;
-}
-
-.company-section {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    position: relative;
-    max-width: 1400px;
-    margin: 0 auto;
+    background: linear-gradient(180deg, #f8fbff 0%, #f4f7fc 100%);
+    font-family: 'Outfit', sans-serif;
+    min-height: auto;
 }
 
 .company-container {
-    max-width: 1400px; /* Increased to allow wider cards */
-    width: 100%;
+    max-width: 1320px;
     margin: 0 auto;
-    padding-inline: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 100%;
+    position: relative;
 }
 
-/* 1. HERO SECTION REDESIGN - INDUSTRY POLISHED */
+.company-section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+    position: relative;
+}
+
+/* 1. HERO SECTION - PREMIUM 2-COLUMN GRID */
 .company-hero {
-    min-height: auto;
-    display: flex;
-    align-items: center;
-    padding-top: 80px;
-    padding-bottom: 70px;
+    padding-top: 110px;
+    padding-bottom: 48px;
+    position: relative;
 }
 
 .hero-grid-layout {
     display: grid;
     grid-template-columns: 1.05fr 0.95fr;
     align-items: center;
-    gap: 60px;
+    gap: 72px;
 }
 
 @media (max-width: 1024px) {
-    .hero-grid-layout { grid-template-columns: 1fr; gap: 40px; }
+    .hero-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
 }
 
 .hero-text-block {
+    max-width: 620px;
     position: relative;
     z-index: 10;
 }
 
 .company-hero-title {
-    font-size: clamp(40px, 4.5vw, 64px);
-    line-height: 0.95;
-    letter-spacing: -2.5px;
+    font-size: clamp(3rem, 5.5vw, 6.5rem);
+    line-height: 0.92;
+    letter-spacing: -4px;
     font-weight: 800;
     color: var(--fintech-text);
-    margin-bottom: 20px;
+    margin-bottom: 32px;
 }
 
 .hero-description {
-    font-size: 17px;
-    line-height: 1.8;
-    color: var(--fintech-sub);
+    font-size: 1.18rem;
+    line-height: 1.9;
+    color: #5b6475;
+    max-width: 640px;
+    margin-bottom: 40px;
     font-weight: 500;
-    margin-bottom: 28px;
-    max-width: 520px;
 }
 
 .hero-description strong {
@@ -85,96 +83,152 @@
     font-weight: 700;
 }
 
-/* 6. BUTTONS INDUSTRY SCALE */
+/* 2. RATING & TRUST SECTION HORIZONTAL ALIGNMENT */
+.rating-section-horizontal {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    margin-bottom: 32px;
+}
+
+.avatar-group-refined {
+    display: flex;
+    align-items: center;
+    opacity: 0.95;
+}
+
+/* 3. TRUST CHIPS & BADGES */
+.hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 28px;
+    margin-bottom: 40px;
+}
+
+.trust-chip {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    padding: 8px 16px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--fintech-text);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+    transition: all 0.3s ease;
+}
+
+.trust-chip:hover {
+    transform: translateY(-2px);
+    border-color: rgba(37, 99, 235, 0.25);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.05);
+}
+
+/* 4. BUTTONS ROW */
+.hero-cta-group {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-top: 40px;
+}
+
 .btn-primary-premium {
-    height: 52px;
-    padding: 0 28px;
-    border-radius: 14px;
+    height: 54px;
+    padding: 0 34px;
+    border-radius: 16px;
     font-weight: 800;
-    font-size: 14.5px;
+    font-size: 15px;
     background: linear-gradient(135deg, #2563eb, #1d4ed8, #0f172a);
     color: white;
-    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.15);
     display: inline-flex;
     align-items: center;
     gap: 8px;
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    border: none;
 }
 
 .btn-primary-premium:hover {
     transform: translateY(-2px);
-    box-shadow: 0 16px 30px rgba(37, 99, 235, 0.25);
+    box-shadow: 0 16px 32px rgba(37, 99, 235, 0.25);
 }
 
 .btn-secondary-glass {
-    height: 52px;
-    padding: 0 28px;
-    border-radius: 14px;
+    height: 54px;
+    padding: 0 34px;
+    border-radius: 16px;
     font-weight: 700;
-    font-size: 14.5px;
+    font-size: 15px;
     background: transparent;
     border: 1.5px solid rgba(15, 23, 42, 0.08);
     color: var(--fintech-text);
     transition: all 0.35s ease;
-}
-
-/* 4. IMAGE CONTAINER - 3D CIRCLE FRAME */
-.hero-image-card {
-    background: 
-        linear-gradient(#fff, #fff) padding-box,
-        linear-gradient(135deg, #dbeafe, #eff6ff) border-box;
-    border: 1px solid transparent;
-    backdrop-filter: blur(12px);
-    border-radius: 50%;
-    box-shadow: var(--premium-shadow);
-    padding: 12px;
-    position: relative;
-    max-width: 440px;
-    aspect-ratio: 1/1;
-    margin-left: auto;
-    display: flex;
+    cursor: pointer;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    z-index: 1;
-    perspective: 1200px;
-    transform-style: preserve-3d;
-    animation: hero3D 8s infinite ease-in-out;
 }
 
-@keyframes hero3D {
-    0%, 100% { transform: rotateY(-6deg) rotateX(4deg) translateY(0); }
-    50% { transform: rotateY(6deg) rotateX(-4deg) translateY(-12px); }
+.btn-secondary-glass:hover {
+    background: rgba(15, 23, 42, 0.02);
+    border-color: rgba(15, 23, 42, 0.15);
+}
+
+/* 5. RIGHT IMAGE SECTION - PREMIUM DEPTH */
+.hero-image-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    animation: none;
+}
+
+.hero-image-card::before {
+    content: '';
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, rgba(59,130,246,0.15), transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
 }
 
 .hero-main-img {
-    width: 96%;
-    height: 96%;
-    object-fit: cover;
-    border-radius: 50%;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 100%;
+    max-width: 560px;
+    object-fit: contain;
+    animation: float-slow 8s ease-in-out infinite;
 }
 
-.hero-image-card:hover {
-    animation-play-state: paused;
+@keyframes float-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
 }
 
-.image-glow {
-    position: absolute;
-    inset: -10%;
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.15), transparent 70%);
-    z-index: -1;
-    pointer-events: none;
-    border-radius: 50%;
-}
-
-/* 5. FLOATING ELEMENTS */
+/* FLOATING ELEMENTS OVER IMAGE */
 .floating-icon {
     position: absolute;
     width: 54px;
     height: 54px;
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
-    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -183,172 +237,1060 @@
     animation: float 4s ease-in-out infinite;
 }
 
-.floating-stats-card {
-    position: absolute;
-    padding: 14px 18px;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    border-radius: 18px;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.06);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    z-index: 30;
-    animation: float 4s ease-in-out infinite;
-}
-
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
 }
 
-.fi-tr { top: 10px; right: 10px; }
-.fi-ml { top: 40%; left: -24px; animation-delay: 1s; }
-.fi-br { bottom: 30px; right: 10px; animation-delay: 2s; }
+.fi-tr { top: 10%; right: 5%; }
+.fi-ml { top: 45%; left: 0%; animation-delay: 1s; }
+.fi-br { bottom: 15%; right: 5%; animation-delay: 2s; }
 
-/* 6. TRUST BADGES COMPACT */
-.trust-chip {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(37, 99, 235, 0.12);
-    padding: 8px 14px;
-    border-radius: 100px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--fintech-text);
+/* 6. STATS GRID & COMPACT PREMIUM CARDS */
+.stats-section {
+    margin-top: 24px;
+    width: 100%;
 }
 
-/* 7. RATING SECTION ALIGNED */
-.rating-section-horizontal {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-top: 24px; /* Spacing system point 12 */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    width: 100%;
 }
 
-.avatar-group-refined {
-    display: flex;
-    align-items: center;
-    opacity: 0.8;
+@media (max-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-/* 8. STATS CARDS - 3D ANIMATED */
-.stat-card-premium {
-    height: 160px;
-    padding: 24px 20px;
+@media (max-width: 640px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.stat-card {
     background: white;
-    border-radius: 20px;
-    border: 1px solid #f1f5f9;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 24px;
+    padding: 32px 24px;
+    transition: 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
     position: relative;
-    perspective: 800px;
-    transform-style: preserve-3d;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    animation: statFloat 5s infinite ease-in-out;
+    text-align: center;
 }
 
-.stat-card-premium:nth-child(even) {
-    animation-delay: 1s;
-}
-
-@keyframes statFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-}
-
-.stat-card-premium:hover {
-    transform: translateY(-10px) scale(1.05) rotateX(4deg);
-    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.08);
-    border-color: #2563eb;
+.stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.06);
 }
 
 .stat-num-xl {
-    font-size: 48px;
+    font-size: 38px;
     line-height: 1;
     font-weight: 800;
     color: var(--fintech-text);
     letter-spacing: -1.5px;
-    transform: translateZ(15px); /* 3D Pop */
 }
 
 .stat-label-premium {
     font-size: 11px;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     font-weight: 800;
     text-transform: uppercase;
     color: var(--fintech-blue);
-    margin-top: 10px;
+    margin: 0;
 }
 
 .stat-desc-refined {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.4;
     color: var(--fintech-sub);
-    margin-top: 6px;
+    margin: 0;
+    font-weight: 600;
 }
 
-/* 10. IDENTITY CARDS - 3D MODERN */
+/* 7. IDENTITY CARDS SECTION */
 .identity-card-premium {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(12px);
-    padding: 32px;
-    border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-    position: relative;
-    overflow: hidden;
-    perspective: 1000px;
-    transform-style: preserve-3d;
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    animation: floatCard 6s infinite ease-in-out;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 42px 34px;
+    border-radius: 32px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.02);
+    transition: all 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
-.ic-blue { 
-    border-top: 4px solid #2563eb; 
-    animation-delay: 0s;
-}
-.ic-ant { 
-    border-top: 4px solid #0f172a; 
-    animation-delay: 1s;
+.ic-blue {
+    border-top: 6px solid #2563eb;
 }
 
-@keyframes floatCard {
-    0%, 100% { transform: translateY(0) rotateX(0); }
-    50% { transform: translateY(-10px) rotateX(2deg); }
+.ic-ant {
+    border-top: 6px solid #0f172a;
 }
 
 .identity-card-premium:hover {
-    transform: translateY(-15px) rotateY(8deg) rotateX(4deg) scale(1.02);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
-    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
 }
 
-/* 11. ANALOGY BANNER - REFINED */
+.quote-area-refined {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* 8. ANALOGY BANNER */
 .analogy-banner-premium {
     background: transparent;
-    border-radius: 0;
-    padding: 20px 0;
+    padding: 48px 0;
     text-align: center;
-    color: var(--fintech-text);
     max-width: 900px;
-    margin: 20px auto 0;
+    margin: 48px auto 0;
 }
 
 .analogy-banner-premium p {
-    font-size: 32px;
+    font-size: 28px;
     line-height: 1.4;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 24px;
     color: var(--fintech-text);
-    opacity: 0.9;
+    letter-spacing: -1px;
 }
 
 .analogy-cta-pill {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 3px;
     color: var(--fintech-blue);
+    background: #eff6ff;
+    padding: 8px 20px;
+    border-radius: 100px;
     display: inline-block;
 }
+
+/* 9. OUR EXPERTS / TEAM SECTION - PREMIUM SaaS LAYOUT */
+.team-section {
+    position: relative;
+    padding-top: 140px;
+    padding-bottom: 140px;
+    margin-top: 40px;
+    overflow: hidden !important;
+    background: 
+        radial-gradient(circle at top, rgba(37, 99, 235, 0.08), transparent 45%),
+        linear-gradient(180deg, #f8fbff 0%, #f4f7fc 100%);
+}
+
+/* Glow behind title */
+.team-section::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(rgba(37, 99, 235, 0.15), transparent 70%);
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(40px);
+}
+
+/* Floating particles in background */
+.team-section::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(rgba(124, 58, 237, 0.06), transparent 70%);
+    bottom: -150px;
+    right: -150px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.team-grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(37, 99, 235, 0.08) 1.5px, transparent 1.5px);
+    background-size: 36px 36px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.85;
+}
+
+.team-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.team-header {
+    margin-bottom: 72px;
+    position: relative;
+    z-index: 5;
+}
+
+.team-title {
+    font-size: clamp(2.8rem, 6vw, 4.8rem);
+    line-height: 1.05;
+    letter-spacing: -3px;
+    font-weight: 900;
+    margin-bottom: 24px;
+    color: #0f172a;
+}
+
+.team-title span {
+    background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    display: inline-block;
+}
+
+/* Elegant underlining flourish on active title word */
+.team-title span::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #2563eb, #06b6d4);
+    border-radius: 100px;
+    opacity: 0.3;
+}
+
+.team-subtitle {
+    max-width: 780px;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-size: 19px;
+    color: #475569;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 48px 36px;
+    margin-top: 64px;
+    width: 100%;
+}
+
+.team-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 36px;
+    padding: 40px 24px;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 
+        0 4px 30px rgba(15, 23, 42, 0.015),
+        0 15px 45px rgba(37, 99, 235, 0.02);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Premium Top Border Accent */
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #2563eb, #06b6d4, #7c3aed);
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.team-card:hover::before {
+    opacity: 1;
+}
+
+/* Beautiful soft ambient glow backing expanding on hover behind avatar */
+.team-card::after {
+    content: '';
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(rgba(6, 182, 212, 0.18), transparent 70%);
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.6);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.team-card:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.3);
+}
+
+.team-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(37, 99, 235, 0.2);
+    box-shadow: 
+        0 20px 50px rgba(15, 23, 42, 0.06),
+        0 30px 70px rgba(37, 99, 235, 0.15);
+}
+
+.team-image-wrapper {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin-bottom: 28px;
+    z-index: 2;
+    border-radius: 50%;
+}
+
+.team-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Glowing rotating gradient border around avatar on hover */
+.team-image-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2563eb, #06b6d4, #7c3aed);
+    z-index: -1;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.team-card:hover .team-image-wrapper::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.team-card:hover .team-image {
+    transform: scale(1.03);
+    border-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 12px 35px rgba(37, 99, 235, 0.18);
+}
+
+.team-name {
+    font-size: 21px;
+    font-weight: 900;
+    line-height: 1.25;
+    letter-spacing: -0.6px;
+    margin-bottom: 12px;
+    color: #0f172a;
+    transition: color 0.3s ease;
+    z-index: 2;
+}
+
+.team-card:hover .team-name {
+    color: #2563eb;
+}
+
+/* High-end role badge pill */
+.team-role-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 16px;
+    background: #f1f5f9;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #475569;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    z-index: 2;
+}
+
+.team-card:hover .team-role-badge {
+    background: rgba(37, 99, 235, 0.08);
+    color: #2563eb;
+    border-color: rgba(37, 99, 235, 0.15);
+    transform: translateY(-2px);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 10. MISSION & VISION SECTION - ELITE FINTECH PARITY */
+.mission-vision-section {
+    position: relative;
+    padding-top: 140px;
+    padding-bottom: 120px;
+    overflow: hidden;
+    background: 
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.05), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(239, 68, 68, 0.04), transparent 40%),
+        linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.mission-vision-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -3px;
+    color: #0f172a;
+    background: linear-gradient(135deg, #0f172a 30%, #1e40af 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Beautiful Glowing Horizontal Line underneath title */
+.title-glow-line {
+    width: 120px;
+    height: 6px;
+    background: linear-gradient(90deg, #2563eb, #ed3237);
+    border-radius: 100px;
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
+    margin: 24px auto 0;
+}
+
+/* Elite Glassmorphism Split Cards */
+.mission-vision-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 36px;
+    padding: 48px 40px;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 
+        0 4px 30px rgba(15, 23, 42, 0.01),
+        0 15px 50px rgba(15, 23, 42, 0.03);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.mission-vision-card:hover {
+    transform: translateY(-10px) scale(1.01);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.mission-card-hover:hover {
+    border-color: rgba(37, 99, 235, 0.25);
+    box-shadow: 
+        0 20px 40px rgba(15, 23, 42, 0.04),
+        0 30px 70px rgba(37, 99, 235, 0.12);
+}
+
+.vision-card-hover:hover {
+    border-color: rgba(239, 68, 68, 0.25);
+    box-shadow: 
+        0 20px 40px rgba(15, 23, 42, 0.04),
+        0 30px 70px rgba(239, 68, 68, 0.1);
+}
+
+/* Glowing backplane expand on hover for each card */
+.mission-vision-card::after {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    top: -50px;
+    right: -50px;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+    pointer-events: none;
+    filter: blur(35px);
+}
+
+.mission-card-hover::after {
+    background: radial-gradient(rgba(37, 99, 235, 0.12), transparent 70%);
+}
+
+.vision-card-hover::after {
+    background: radial-gradient(rgba(239, 68, 68, 0.1), transparent 70%);
+}
+
+.mission-vision-card:hover::after {
+    opacity: 1;
+    transform: scale(1.3);
+}
+
+/* 3D Modern Icon Containers */
+.icon-box-3d {
+    width: 72px;
+    height: 72px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.mission-icon-box {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    box-shadow: 
+        inset 0 2px 6px rgba(255, 255, 255, 0.8),
+        0 10px 20px rgba(37, 99, 235, 0.08);
+}
+
+.vision-icon-box {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    box-shadow: 
+        inset 0 2px 6px rgba(255, 255, 255, 0.8),
+        0 10px 20px rgba(239, 68, 68, 0.08);
+}
+
+.mission-vision-card:hover .icon-box-3d {
+    transform: translateY(-4px) scale(1.05);
+}
+
+.mission-vision-card:hover .mission-icon-box {
+    box-shadow: 
+        inset 0 2px 6px rgba(255, 255, 255, 0.8),
+        0 15px 30px rgba(37, 99, 235, 0.2);
+}
+
+.mission-vision-card:hover .vision-icon-box {
+    box-shadow: 
+        inset 0 2px 6px rgba(255, 255, 255, 0.8),
+        0 15px 30px rgba(239, 68, 68, 0.18);
+}
+
+/* Quotes Floating Pill Badges */
+.quote-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    height: 38px;
+    padding: 0 18px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.mission-quote-pill {
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    color: #2563eb;
+}
+
+.vision-quote-pill {
+    border: 1px solid rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+}
+
+.mission-vision-card:hover .quote-badge-pill {
+    transform: translateY(-2px);
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.mission-vision-card:hover .mission-quote-pill {
+    border-color: rgba(37, 99, 235, 0.35);
+}
+
+.mission-vision-card:hover .vision-quote-pill {
+    border-color: rgba(239, 68, 68, 0.35);
+}
+
+/* Sleek Highlight Typography Block */
+.highlight-pill {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 8px;
+    font-weight: 800;
+    color: #0f172a;
+    transition: all 0.4s ease;
+}
+
+.mission-highlight {
+    background: rgba(37, 99, 235, 0.06);
+    border: 1px solid rgba(37, 99, 235, 0.15);
+}
+
+.vision-highlight {
+    background: rgba(239, 68, 68, 0.05);
+    border: 1px solid rgba(239, 68, 68, 0.15);
+}
+
+.mission-vision-card:hover .mission-highlight {
+    background: rgba(37, 99, 235, 0.1);
+    border-color: rgba(37, 99, 235, 0.25);
+}
+
+.mission-vision-card:hover .vision-highlight {
+    background: rgba(239, 68, 68, 0.08);
+    border-color: rgba(239, 68, 68, 0.25);
+}
+
+/* Modern Compliance Chips */
+.compliance-chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: default;
+}
+
+.compliance-chip:hover {
+    transform: translateY(-4px);
+    background: #ffffff;
+    border-color: rgba(37, 99, 235, 0.15);
+    box-shadow: 
+        0 10px 25px rgba(0, 0, 0, 0.03),
+        0 12px 30px rgba(37, 99, 235, 0.06);
+}
+
+/* 11. CORE VALUES DIAL INTERACTIVITY - SaaS WOW FACTOR */
+@keyframes spin-clockwise {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-ring {
+    0%, 100% { transform: scale(1); opacity: 0.2; }
+    50% { transform: scale(1.06); opacity: 0.45; }
+}
+
+.values-hub-outer {
+    position: absolute;
+    inset: -25px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px dashed rgba(6, 182, 212, 0.4);
+    animation: spin-clockwise 20s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.values-hub-outer-glow {
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    border: 2px solid rgba(6, 182, 212, 0.15);
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.2);
+    animation: pulse-ring 4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.values-hub-core {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    border: 4px solid rgba(6, 182, 212, 0.5);
+    background: linear-gradient(135deg, rgba(255, 241, 242, 0.9) 0%, rgba(255, 228, 230, 0.9) 100%);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 10px 45px rgba(6, 182, 212, 0.12),
+        inset 0 0 20px rgba(255, 255, 255, 0.8);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.values-hub-core:hover {
+    transform: scale(1.05);
+    border-color: rgba(6, 182, 212, 0.8);
+    box-shadow: 
+        0 20px 60px rgba(6, 182, 212, 0.3),
+        inset 0 0 30px rgba(255, 255, 255, 0.9);
+}
+
+.values-item-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 24px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.015);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 100%;
+    min-height: 84px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Slide-in colored stripe on hover */
+.values-item-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 2;
+}
+
+.values-item-card.card-client-first::before { background: #f43f5e; }
+.values-item-card.card-conflict-free::before { background: #3b82f6; }
+.values-item-card.card-confidentiality::before { background: #eab308; }
+.values-item-card.card-education::before { background: #8b5cf6; }
+.values-item-card.card-service::before { background: #f97316; }
+.values-item-card.card-freedom::before { background: #10b981; }
+
+.values-item-card:hover::before {
+    opacity: 1;
+}
+
+/* Inner hover soft color overlay matching card theme */
+.values-item-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: all 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.values-item-card.card-client-first::after { background: radial-gradient(circle at right, rgba(244, 63, 94, 0.04), transparent 70%); }
+.values-item-card.card-conflict-free::after { background: radial-gradient(circle at right, rgba(59, 130, 246, 0.04), transparent 70%); }
+.values-item-card.card-confidentiality::after { background: radial-gradient(circle at right, rgba(234, 179, 8, 0.03), transparent 70%); }
+.values-item-card.card-education::after { background: radial-gradient(circle at right, rgba(139, 92, 246, 0.04), transparent 70%); }
+.values-item-card.card-service::after { background: radial-gradient(circle at right, rgba(249, 115, 22, 0.04), transparent 70%); }
+.values-item-card.card-freedom::after { background: radial-gradient(circle at right, rgba(16, 185, 129, 0.04), transparent 70%); }
+
+.values-item-card:hover::after {
+    opacity: 1;
+}
+
+.values-item-card:hover {
+    transform: translateX(12px) translateY(-3px);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.values-item-card.card-client-first:hover { box-shadow: 0 15px 35px rgba(244, 63, 94, 0.08); border-color: rgba(244, 63, 94, 0.15); }
+.values-item-card.card-conflict-free:hover { box-shadow: 0 15px 35px rgba(59, 130, 246, 0.08); border-color: rgba(59, 130, 246, 0.15); }
+.values-item-card.card-confidentiality:hover { box-shadow: 0 15px 35px rgba(234, 179, 8, 0.08); border-color: rgba(234, 179, 8, 0.15); }
+.values-item-card.card-education:hover { box-shadow: 0 15px 35px rgba(139, 92, 246, 0.08); border-color: rgba(139, 92, 246, 0.15); }
+.values-item-card.card-service:hover { box-shadow: 0 15px 35px rgba(249, 115, 22, 0.08); border-color: rgba(249, 115, 22, 0.15); }
+.values-item-card.card-freedom:hover { box-shadow: 0 15px 35px rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.15); }
+
+/* Cutting-edge CSS :has() selector for synchronized neon glowing paths */
+.values-section-wrapper:has(.card-client-first:hover) .val-path-0 {
+    stroke-width: 3.5px !important;
+    opacity: 1 !important;
+    filter: drop-shadow(0 0 8px #f43f5e) !important;
+}
+
+.values-section-wrapper:has(.card-conflict-free:hover) .val-path-1 {
+    stroke-width: 3.5px !important;
+    opacity: 1 !important;
+    filter: drop-shadow(0 0 8px #3b82f6) !important;
+}
+
+.values-section-wrapper:has(.card-confidentiality:hover) .val-path-2 {
+    stroke-width: 3.5px !important;
+    opacity: 1 !important;
+    filter: drop-shadow(0 0 8px #eab308) !important;
+}
+
+.values-section-wrapper:has(.card-education:hover) .val-path-3 {
+    stroke-width: 3.5px !important;
+    opacity: 1 !important;
+    filter: drop-shadow(0 0 8px #8b5cf6) !important;
+}
+
+.values-section-wrapper:has(.card-service:hover) .val-path-4 {
+    stroke-width: 3.5px !important;
+    opacity: 1 !important;
+    filter: drop-shadow(0 0 8px #f97316) !important;
+}
+
+.values-section-wrapper:has(.card-freedom:hover) .val-path-5 {
+    stroke-width: 3.5px !important;
+    opacity: 1 !important;
+    filter: drop-shadow(0 0 8px #10b981) !important;
+}
+
+.animate-dash-flow {
+    stroke-dasharray: 8 12;
+    animation: dash-flow 12s linear infinite;
+    stroke-linecap: round;
+    transition: all 0.4s ease;
+}
+
+/* ── PREMIUM FINTECH ABOUT HUB DECK (NO-CLIPPING DESIGN) ── */
+.about-hub-section {
+  background: 
+    radial-gradient(circle at top right, rgba(0, 175, 239, 0.06), transparent 50%),
+    radial-gradient(circle at bottom left, rgba(37, 99, 235, 0.04), transparent 50%),
+    linear-gradient(180deg, #f8fbff 0%, #f3f7ff 100%);
+  font-family: 'Outfit', sans-serif;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding-top: 140px; /* Spacious top gap to comfortably clear fixed global navbar */
+  padding-bottom: 120px; /* Luxurious bottom breathing space */
+}
+
+/* Elegant ambient glowing light spots behind the grid */
+.about-hub-section::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  left: -150px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(rgba(0, 175, 239, 0.08), transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.about-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px; /* Tighter 32px grid gap for compact balance */
+  width: 100%;
+}
+
+.about-hub-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 290px; /* Reduced from 360px to 290px for compact box footprint */
+  padding: 36px 32px; /* Tightened padding for elegant, condensed container sizes */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-radius: 28px; /* Slightly tighter border-radius to match the compact dimensions */
+  box-shadow: 
+    0 10px 30px rgba(15, 23, 42, 0.01),
+    0 30px 60px rgba(37, 99, 235, 0.03);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
+}
+
+/* Subtle background financial grid mesh to add premium texture */
+.about-hub-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(15, 23, 42, 0.01) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.01) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+/* Elite Top Gradient Shining Accent Stripe on Hover */
+.about-hub-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 5;
+}
+
+/* Specific theme accents for top stripes */
+.about-hub-card.card-blue::before { background: linear-gradient(90deg, #00afef, #2563eb); }
+.about-hub-card.card-red::before { background: linear-gradient(90deg, #f43f5e, #ef4444); }
+.about-hub-card.card-green::before { background: linear-gradient(90deg, #10b981, #059669); }
+.about-hub-card.card-purple::before { background: linear-gradient(90deg, #a78bfa, #8b5cf6); }
+
+.about-hub-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Customized, High-Fidelity Glowing Color Shadows on Hover */
+.about-hub-card.card-blue:hover {
+  border-color: rgba(37, 99, 235, 0.25);
+  box-shadow: 
+    0 15px 30px rgba(37, 99, 235, 0.04),
+    0 30px 60px rgba(37, 99, 235, 0.06),
+    0 0 0 1px rgba(37, 99, 235, 0.02) inset;
+}
+
+.about-hub-card.card-red:hover {
+  border-color: rgba(239, 68, 68, 0.25);
+  box-shadow: 
+    0 15px 30px rgba(239, 68, 68, 0.04),
+    0 30px 60px rgba(239, 68, 68, 0.06),
+    0 0 0 1px rgba(239, 68, 68, 0.02) inset;
+}
+
+.about-hub-card.card-green:hover {
+  border-color: rgba(16, 185, 129, 0.25);
+  box-shadow: 
+    0 15px 30px rgba(16, 185, 129, 0.04),
+    0 30px 60px rgba(16, 185, 129, 0.06),
+    0 0 0 1px rgba(16, 185, 129, 0.02) inset;
+}
+
+.about-hub-card.card-purple:hover {
+  border-color: rgba(139, 92, 246, 0.25);
+  box-shadow: 
+    0 15px 30px rgba(139, 92, 246, 0.04),
+    0 30px 60px rgba(139, 92, 246, 0.06),
+    0 0 0 1px rgba(139, 92, 246, 0.02) inset;
+}
+
+.about-hub-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Glowing Icon Platform */
+.about-hub-card-icon-box {
+  width: 56px; /* Reduced from 68px to 56px */
+  height: 56px;
+  border-radius: 14px; /* Matches more compact shape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; /* Reduced from 28px to 20px */
+  flex-shrink: 0;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-hub-card:hover .about-hub-card-icon-box {
+  transform: scale(1.1) rotate(4deg);
+}
+
+/* Icon custom theme colors */
+.about-hub-card-icon-box.icon-blue { background: rgba(37, 99, 235, 0.06); border: 1px solid rgba(37, 99, 235, 0.15); color: #2563eb; }
+.about-hub-card-icon-box.icon-red { background: rgba(239, 68, 68, 0.06); border: 1px solid rgba(239, 68, 68, 0.15); color: #ef4444; }
+.about-hub-card-icon-box.icon-green { background: rgba(16, 185, 129, 0.06); border: 1px solid rgba(16, 185, 129, 0.15); color: #10b981; }
+.about-hub-card-icon-box.icon-purple { background: rgba(139, 92, 246, 0.06); border: 1px solid rgba(139, 92, 246, 0.15); color: #8b5cf6; }
+
+.about-hub-card:hover .about-hub-card-icon-box.icon-blue { box-shadow: 0 6px 15px rgba(37, 99, 235, 0.12); }
+.about-hub-card:hover .about-hub-card-icon-box.icon-red { box-shadow: 0 6px 15px rgba(239, 68, 68, 0.12); }
+.about-hub-card:hover .about-hub-card-icon-box.icon-green { box-shadow: 0 6px 15px rgba(16, 185, 129, 0.12); }
+.about-hub-card:hover .about-hub-card-icon-box.icon-purple { box-shadow: 0 6px 15px rgba(139, 92, 246, 0.12); }
+
+/* Card Content Typography */
+.about-hub-card-title {
+  font-size: 22px; /* Reduced from 26px to 22px for sleek hierarchy */
+  font-weight: 900;
+  color: #0f172a;
+  margin: 0 0 10px;
+  letter-spacing: -0.4px;
+}
+
+.about-hub-card-desc {
+  font-size: 13.5px; /* Reduced from 14.5px to 13.5px for readable compactness */
+  color: #5b6475;
+  line-height: 1.65;
+  font-weight: 500;
+  margin: 0 0 24px; /* Reduced from 32px to 24px */
+  max-width: 95%;
+}
+
+/* Action Line and Arrow Styling */
+.about-hub-card-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #00afef;
+  font-size: 11px; /* Reduced from 11.5px to 11px */
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+  margin-top: auto; /* Guarantees layout pushes action completely down safely */
+}
+
+.about-hub-card:hover .about-hub-card-action {
+  color: #2563eb;
+}
+
+.about-hub-action-arrow {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-hub-card:hover .about-hub-action-arrow {
+  transform: translateX(6px);
+}
+
+/* Responsive Grid stack */
+@media (max-width: 991px) {
+  .about-hub-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .about-hub-card {
+    padding: 32px 28px;
+    min-height: 270px;
+  }
+}
+
+
+
+
+
