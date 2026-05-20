@@ -63,7 +63,7 @@ const ServicePage = () => {
             <div className="h-12 w-px bg-slate-100 hidden lg:block"></div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-20">
               <div data-aos="fade-up" data-aos-delay="100">
-                <div className="text-2xl font-black text-[#0f172a]">12+ Years</div>
+                <div className="text-2xl font-black text-[#0f172a]">13+ Years</div>
                 <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Experience</div>
               </div>
               <div data-aos="fade-up" data-aos-delay="200">

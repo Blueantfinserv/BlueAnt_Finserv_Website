@@ -1,6 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaPhoneAlt, FaEnvelope, FaGlobe, FaComments, FaYoutube } from "react-icons/fa";
+import { 
+  FaFacebookF, 
+  FaTwitter, 
+  FaLinkedinIn, 
+  FaInstagram, 
+  FaYoutube 
+} from "react-icons/fa";
+import { 
+  Link as LinkIcon, 
+  Briefcase, 
+  Phone, 
+  Mail, 
+  Globe, 
+  TrendingUp, 
+  ShieldCheck, 
+  LineChart, 
+  FileText, 
+  PieChart, 
+  Clock, 
+  ShieldAlert,
+  ArrowRight
+} from "lucide-react";
+import { openConsultationModal } from "./ConsultationModal";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -14,225 +36,608 @@ const Footer = () => {
     { name: "Contact", path: "/contact" },
   ];
 
-  const servicesLinks = [
-    { name: "SIP Investment", path: "/services", state: { selectedIndex: 5 } },
-    { name: "Insurance Advisory", path: "/services", state: { selectedIndex: 7 } },
-    { name: "Stock Trading", path: "/services", state: { selectedIndex: 6 } },
-    { name: "Tax Planning", path: "/services", state: { selectedIndex: 0 } },
-    { name: "Mutual Funds", path: "/services", state: { selectedIndex: 5 } },
-    { name: "Retirement Planning", path: "/services", state: { selectedIndex: 4 } },
-  ];
-
   const socialLinks = [
-    { 
-      Icon: FaFacebookF, 
-      url: "https://www.facebook.com/blueantindia/", 
-      label: "Facebook", 
-      baseStyle: "bg-gradient-to-br from-[#1877F2] to-[#0A5BD1] border-[#ffffff20] text-white shadow-[0_8px_16px_-4px_rgba(24,119,242,0.4)]", 
-      hoverStyle: "hover:shadow-[0_12px_24px_-6px_rgba(24,119,242,0.6)] hover:scale-110" 
-    },
-    { 
-      Icon: FaInstagram, 
-      url: "https://www.instagram.com/blueantindia/", 
-      label: "Instagram", 
-      baseStyle: "bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] border-[#ffffff20] text-white shadow-[0_8px_16px_-4px_rgba(220,39,67,0.4)]", 
-      hoverStyle: "hover:shadow-[0_12px_24px_-6px_rgba(220,39,67,0.6)] hover:scale-110" 
-    },
-    { 
-      Icon: FaLinkedinIn, 
-      url: "https://www.linkedin.com/in/rohit-raman-0aa69490/", 
-      label: "LinkedIn", 
-      baseStyle: "bg-gradient-to-br from-[#0A66C2] to-[#004182] border-[#ffffff20] text-white shadow-[0_8px_16px_-4px_rgba(10,102,194,0.4)]", 
-      hoverStyle: "hover:shadow-[0_12px_24px_-6px_rgba(10,102,194,0.6)] hover:scale-110" 
-    },
-    { 
-      Icon: FaTwitter, 
-      url: "https://x.com/blueantfinserv", 
-      label: "Twitter", 
-      baseStyle: "bg-gradient-to-br from-[#222] to-[#000] border-[#ffffff20] text-white shadow-[0_8px_16px_-4px_rgba(255,255,255,0.1)]", 
-      hoverStyle: "hover:shadow-[0_12px_24px_-6px_rgba(255,255,255,0.2)] hover:scale-110" 
-    },
-    { 
-      Icon: FaYoutube, 
-      url: "https://www.youtube.com/@RohitBlueant", 
-      label: "YouTube", 
-      baseStyle: "bg-gradient-to-br from-[#FF0000] to-[#B30000] border-[#ffffff20] text-white shadow-[0_8px_16px_-4px_rgba(255,0,0,0.4)]", 
-      hoverStyle: "hover:shadow-[0_12px_24px_-6px_rgba(255,0,0,0.6)] hover:scale-110" 
-    },
+    { Icon: FaFacebookF, url: "https://www.facebook.com/blueantindia/", label: "Facebook" },
+    { Icon: FaInstagram, url: "https://www.instagram.com/blueantindia/", label: "Instagram" },
+    { Icon: FaLinkedinIn, url: "https://www.linkedin.com/in/rohit-raman-0aa69490/", label: "LinkedIn" },
+    { Icon: FaTwitter, url: "https://x.com/blueantfinserv", label: "Twitter" },
+    { Icon: FaYoutube, url: "https://www.youtube.com/@RohitBlueant", label: "YouTube" },
   ];
 
   return (
-    <footer className="bg-[#050B17] text-white pt-10 pb-6 border-t border-white/5 font-outfit relative overflow-hidden">
-      {/* Premium Background Decorations */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-red-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+    <footer className="footer font-outfit">
+      
+      {/* Background Top Right Glow Effect */}
+      <div className="footer-glow-top-right"></div>
 
       <style>{`
-        @keyframes social-float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-5px); }
+        /* 1. PREMIUM BACKGROUND WITH COMPACT PADDING */
+        .footer {
+          background:
+            radial-gradient(circle at top left, rgba(37,99,235,0.10), transparent 30%),
+            radial-gradient(circle at bottom right, rgba(124,58,237,0.08), transparent 30%),
+            #020617;
+          position: relative;
+          overflow: hidden;
+          
+          /* ✅ 1. REDUCE FOOTER HEIGHT FURTHER */
+          padding-top: 32px;
+          padding-bottom: 12px;
+          border-top: 1px solid rgba(255, 255, 255, 0.04);
         }
-        .social-animate {
-          animation: social-float 3s ease-in-out infinite;
+
+        /* 13. ADD SMALL GLOW EFFECT */
+        .footer-glow-top-right {
+          content: '';
+          position: absolute;
+          width: 400px;
+          height: 400px;
+          background: radial-gradient(rgba(59, 130, 246, 0.12), transparent 70%);
+          top: -200px;
+          right: -100px;
+          pointer-events: none;
+          z-index: 1;
         }
-        .logo-glow:hover {
-          filter: drop-shadow(0 0 15px rgba(0, 175, 239, 0.3));
+
+        /* ✅ 2. REDUCE COLUMN GAP & ALIGN-ITEMS START */
+        .footer-grid {
+          display: grid;
+          grid-template-columns: 1.2fr 0.8fr 1.2fr 1fr;
+          gap: 22px;
+          max-width: 1240px;
+          margin: 0 auto;
+          
+          /* ✅ 12. REDUCE CONTAINER PADDING */
+          padding-left: 24px;
+          padding-right: 24px;
+          position: relative;
+          z-index: 10;
+          align-items: flex-start;
+        }
+
+        @media (max-width: 1024px) {
+          .footer-grid {
+            grid-template-columns: 1.1fr 0.9fr 1fr;
+            gap: 18px;
+          }
+        }
+        @media (max-width: 768px) {
+          .footer-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+          }
+        }
+
+        /* 10. ADD SUBTLE DIVIDERS */
+        .footer-column {
+          border-right: 1px solid rgba(255, 255, 255, 0.06);
+          padding-right: 10px;
+        }
+        @media (max-width: 1024px) {
+          .footer-column {
+            border-right: none;
+            padding-right: 0;
+          }
+        }
+
+        /* ✅ 4. REDUCE LOGO SECTION SPACING */
+        .footer-brand {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        /* ✅ 10. REDUCE HEADING SIZE SLIGHTLY & ✅ 6. ADD PREMIUM UNDERLINE */
+        .footer-heading {
+          font-size: 16px;
+          line-height: 1.1;
+          letter-spacing: -0.5px;
+          font-weight: 800;
+          color: #ffffff;
+          text-transform: uppercase;
+          margin-bottom: 12px;
+          position: relative;
+          display: inline-block;
+        }
+        .footer-heading::after {
+          content: '';
+          display: block;
+          width: 50px;
+          height: 3px;
+          margin-top: 6px;
+          border-radius: 20px;
+          background: linear-gradient(90deg, #0ea5e9, #2563eb);
+        }
+
+        /* ✅ 5. REDUCE PARAGRAPH LINE HEIGHT & ✅ 11. IMPROVE TYPOGRAPHY */
+        .footer p {
+          color: #94a3b8;
+          line-height: 1.45;
+          font-size: 13.5px;
+        }
+        .footer li,
+        .footer-links a,
+        .footer-bottom-text {
+          color: #94a3b8;
+          line-height: 1.5;
+          font-size: 13.5px;
+        }
+
+        /* ✅ 7. REDUCE QUICK LINKS GAP */
+        .footer-links li {
+          margin-bottom: 6px;
+        }
+
+        /* ✅ 6. REDUCE SERVICE LINK GAP */
+        .footer-services {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        /* 7. BETTER LINK HOVER */
+        .footer-links a {
+          transition: all .3s ease;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+        }
+        .footer-links a:hover {
+          color: #38bdf8;
+          transform: translateX(4px);
+        }
+
+        /* ✅ 3. REDUCE CONTACT BOX padding */
+        .footer-contact-box {
+          background: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(14px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 16px;
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+          padding: 12px;
+          position: relative;
+          overflow: hidden;
+          transition: all 0.3s ease;
+        }
+        .footer-contact-box:hover {
+          border-color: rgba(37, 99, 235, 0.25);
+          box-shadow: 0 12px 40px rgba(37, 99, 235, 0.12);
+          background: rgba(255, 255, 255, 0.045);
+        }
+
+        /* ✅ 11. COMPACT CONTACT INFO */
+        .contact-item {
+          margin-bottom: 8px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .dotted-world-map {
+          background-image: radial-gradient(rgba(0, 175, 239, 0.05) 1px, transparent 1px);
+          background-size: 5px 5px;
+          position: absolute;
+          inset: 0;
+          opacity: 0.2;
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        /* ✅ 9. REDUCE SOCIAL ICON SIZE */
+        .social-icon {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid rgba(255, 255, 255, 0.06);
+          transition: all .35s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #94a3b8;
+        }
+        .social-icon:hover {
+          transform: translateY(-3px);
+          background: linear-gradient(135deg, #2563eb, #7c3aed);
+          box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+          color: #ffffff;
+          border-color: transparent;
+        }
+
+        /* 9. PREMIUM BUTTON */
+        .footer-btn {
+          background: linear-gradient(135deg, #0ea5e9, #2563eb);
+          border: none;
+          border-radius: 12px;
+          font-weight: 700;
+          transition: .35s;
+          color: #ffffff;
+          padding: 6px 12px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+          font-size: 13px;
+          cursor: pointer;
+        }
+        .footer-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+          color: #ffffff;
+        }
+
+        /* ✅ 8. REDUCE BOTTOM COPYRIGHT AREA */
+        .footer-bottom {
+          margin-top: 18px;
+          padding-top: 10px;
+          border-top: 1px solid rgba(255, 255, 255, 0.06);
+          max-width: 1240px;
+          margin-left: auto;
+          margin-right: auto;
+          padding-left: 24px;
+          padding-right: 24px;
+          position: relative;
+          z-index: 10;
+        }
+
+        .verified-amfi-badge-pill {
+          background: rgba(251, 191, 36, 0.04);
+          border: 1px solid rgba(251, 191, 36, 0.25);
+          color: #fbbf24;
+          font-size: 8.5px;
+          font-weight: 800;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+          padding: 2.5px 7px;
+          border-radius: 6px;
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          transition: all 0.2s ease;
+          text-shadow: 0 0 4px rgba(251, 191, 36, 0.15);
+        }
+        .verified-amfi-badge-pill::before {
+          content: '';
+          width: 4px;
+          height: 4px;
+          background-color: #fbbf24;
+          border-radius: 50%;
+          display: inline-block;
+          box-shadow: 0 0 5px #fbbf24;
+          animation: breathing-badge 2s infinite ease-in-out;
+        }
+        @keyframes breathing-badge {
+          0%, 100% {
+            transform: scale(0.85);
+            opacity: 0.6;
+          }
+          50% {
+            transform: scale(1.25);
+            opacity: 1;
+            box-shadow: 0 0 8px #fbbf24;
+          }
+        }
+        .verified-amfi-badge-pill:hover {
+          background: rgba(251, 191, 36, 0.08);
+          border-color: rgba(251, 191, 36, 0.45);
+          box-shadow: 0 0 10px rgba(251, 191, 36, 0.2);
+          transform: translateY(-0.5px);
+        }
+
+        .philosophy-quote-glow {
+          background: linear-gradient(135deg, #ffffff 30%, #38bdf8 75%, #2563eb 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          display: inline-block;
+          font-weight: 800;
+          font-style: italic;
+          padding-right: 6px;
+        }
+
+        .pulse-indicator-dot {
+          width: 6px;
+          height: 6px;
+          background-color: #00afef;
+          border-radius: 50%;
+          display: inline-block;
+          box-shadow: 0 0 6px #00afef;
+          animation: breathing-dot 2s infinite ease-in-out;
+        }
+
+        @keyframes breathing-dot {
+          0%, 100% {
+            transform: scale(0.85);
+            opacity: 0.5;
+            box-shadow: 0 0 3px rgba(0, 175, 239, 0.4);
+          }
+          50% {
+            transform: scale(1.15);
+            opacity: 1;
+            box-shadow: 0 0 8px rgba(0, 175, 239, 1);
+          }
+        }
+
+        .partner-glow-pill {
+          background: rgba(0, 175, 239, 0.02);
+          border: 1px solid rgba(0, 175, 239, 0.15);
+          box-shadow: 0 0 8px rgba(0, 175, 239, 0.05);
+          border-radius: 12px;
+          padding: 4px 12px;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+        }
+
+        .footer-logo-img {
+          height: 24px !important;
+          width: auto !important;
+          display: block;
+        }
+
+        .quick-link-bullet {
+          width: 5px;
+          height: 5px;
+          background-color: rgba(56, 189, 248, 0.5);
+          border-radius: 50%;
+          display: inline-block;
+          transition: all 0.22s ease;
+        }
+        .footer-links a:hover .quick-link-bullet {
+          background-color: #38bdf8;
+          box-shadow: 0 0 6px #38bdf8;
+          transform: scale(1.4);
+        }
+
+        .service-outline-card {
+          width: 24px;
+          height: 24px;
+          border-radius: 8px;
+          border: 1px solid rgba(255, 255, 255, 0.06);
+          background: rgba(255, 255, 255, 0.02);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.2s ease;
+          color: #38bdf8;
+        }
+        .footer-links a:hover .service-outline-card {
+          border-color: rgba(56, 189, 248, 0.3);
+          background: rgba(56, 189, 248, 0.06);
+          box-shadow: 0 0 8px rgba(56, 189, 248, 0.15);
         }
       `}</style>
 
-      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+      {/* Main Grid Layout */}
+      <div className="footer-grid">
         
-        {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1.2fr] gap-8 lg:gap-10 pb-10 items-start border-b border-white/5">
+        {/* Column 1: Branding & Philosophy */}
+        <div className="footer-brand footer-column">
+          <Link to="/" className="inline-block">
+            <img 
+              src={`${import.meta.env.BASE_URL}blueAnt.png`} 
+              alt="Blueant Logo" 
+              className="footer-logo-img object-contain" 
+              style={{ filter: "drop-shadow(0 0 8px rgba(14, 165, 233, 0.25))" }}
+            />
+          </Link>
           
-          {/* Column 1: Branding */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-[320px]">
-            <div className="flex flex-col items-stretch mb-4 w-fit">
-              <Link to="/" className="inline-block transition-all duration-500 mb-1.5 logo-glow">
-                <img src={`${import.meta.env.BASE_URL}blueAnt.png`} alt="Blueant Logo" className="h-5 md:h-6 w-auto object-contain mx-auto md:mx-0" />
-              </Link>
-              <div className="bg-[#fbbf24] px-2 py-1 rounded-[4px] border border-[#EAB308] flex items-center justify-center">
-                <span className="text-[#0f172a] text-[8px] font-black uppercase tracking-[0.1px] whitespace-nowrap">AMFI Registered Mutual Fund Distributor – ARN: 129543</span>
-              </div>
+          <div>
+            <div className="verified-amfi-badge-pill">
+              AMFI Registered ARN: 129543
             </div>
-            
-            <div className="mb-4">
-              <div className="flex items-center gap-2 mb-1.5">
-                <div className="w-6 h-px bg-gradient-to-r from-[#fbbf24] to-transparent"></div>
-                <span className="text-[#fbbf24] text-[10px] font-black uppercase tracking-[3px]">Our Philosophy</span>
-              </div>
-              <p className="text-white/90 text-[16px] font-semibold italic leading-[1.4]">
-                "We don't sell, we educate."
-              </p>
-            </div>
-            
-            <p className="text-white/60 text-[14px] leading-[1.6] font-medium tracking-wide">
-              Blueant Finserv is a trusted financial advisory company delivering 
-              comprehensive wealth management, insurance, and investment solutions 
-              across India, managing your complete financial lifecycle.
-            </p>
-            
-            <div className="flex gap-4 mt-6">
-              {socialLinks.map(({ Icon, url, label, baseStyle, hoverStyle }, idx) => (
-                <a 
-                  key={idx} 
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-500 social-animate shadow-lg backdrop-blur-md ${baseStyle} ${hoverStyle}`}
-                  style={{ animationDelay: `${idx * 0.4}s` }}
+          </div>
+          
+          <div className="w-full">
+            <span className="text-[#0ea5e9] text-[9px] font-black uppercase tracking-[1.5px] block mb-1">
+              OUR PHILOSOPHY
+            </span>
+            <h4 className="text-[11.5px] leading-tight philosophy-quote-glow">
+              "We don't sell, we educate."
+            </h4>
+          </div>
+          
+          <p className="text-[#94a3b8] text-[13.5px] leading-[1.6] max-w-[220px]">
+            Trusted Mutual Fund Distributor & complete wealth management advisory in India, managing your complete financial lifecycle.
+          </p>
+
+          {/* Social Icons with Premium Styles */}
+          <div className="flex gap-2 mt-1">
+            {socialLinks.map(({ Icon, url, label }, idx) => (
+              <a 
+                key={idx} 
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="social-icon"
+              >
+                <Icon size={14} />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Column 2: Quick Links */}
+        <div className="flex flex-col items-start w-full footer-links footer-column">
+          <h3 className="footer-heading">
+            QUICK LINKS
+          </h3>
+          <ul className="flex flex-col gap-0.5 items-start w-full">
+            {quickLinks.map((link) => (
+              <li key={link.name} className="w-full text-left">
+                <Link 
+                  to={link.path} 
+                  className="text-slate-300 font-semibold text-[14.5px] hover:text-[#38bdf8] flex items-center justify-start gap-2.5"
                 >
-                  <Icon size={15} />
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Column 2: Quick Links */}
-          <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-white text-[12px] font-black uppercase tracking-[3px] mb-6 relative inline-block whitespace-nowrap">
-              Quick Links
-              <span className="absolute -bottom-2 left-0 w-10 h-[2px] bg-gradient-to-r from-[#00afef] to-transparent hidden md:block"></span>
-            </h3>
-            <ul className="flex flex-col gap-3 items-center md:items-start">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link to={link.path} className="text-white/70 text-[14.5px] font-semibold hover:text-[#00afef] transition-all duration-300 flex items-center gap-3 group">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#00afef] opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"></span>
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">
-                      {link.name}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 3: Services */}
-          <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-white text-[12px] font-black uppercase tracking-[3px] mb-6 relative inline-block whitespace-nowrap">
-              Our Services
-              <span className="absolute -bottom-2 left-0 w-10 h-[2px] bg-gradient-to-r from-[#00afef] to-transparent hidden md:block"></span>
-            </h3>
-            <ul className="flex flex-col gap-3 items-center md:items-start">
-              {servicesLinks.map((link) => (
-                <li key={link.name}>
-                  <Link to={link.path} state={link.state} className="text-white/70 text-[14.5px] font-semibold hover:text-[#00afef] transition-all duration-300 flex items-center gap-3 group">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#00afef] opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"></span>
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">
-                      {link.name}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 4: Contact & Info */}
-          <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-white text-[12px] font-black uppercase tracking-[3px] mb-6 relative inline-block whitespace-nowrap">
-              Contact Us
-              <span className="absolute -bottom-2 left-0 w-10 h-[2px] bg-gradient-to-r from-[#00afef] to-transparent hidden md:block"></span>
-            </h3>
-            <div className="flex flex-col gap-4 items-center md:items-start">
-              <div className="flex items-center gap-4 group">
-                <div className="w-10 h-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#00afef] shrink-0 group-hover:bg-[#00afef] group-hover:text-white group-hover:scale-110 transition-all duration-500 shadow-xl">
-                  <FaEnvelope size={16} />
-                </div>
-                <a href="mailto:info@blueantfinserv.com" className="text-white/80 text-[14px] font-semibold hover:text-[#00afef] transition-colors">
-                  info@blueantfinserv.com
-                </a>
-              </div>
-
-              <div className="flex items-center gap-4 group">
-                <div className="w-10 h-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#00afef] shrink-0 group-hover:bg-[#00afef] group-hover:text-white group-hover:scale-110 transition-all duration-500 shadow-xl">
-                  <FaPhoneAlt size={16} />
-                </div>
-                <a href="tel:+919990218899" className="text-white/80 text-[14px] font-semibold hover:text-[#00afef] transition-colors">
-                  +91-9990218899
-                </a>
-              </div>
-
-              <div className="flex items-center gap-4 group">
-                <div className="w-10 h-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#00afef] shrink-0 group-hover:bg-[#00afef] group-hover:text-white group-hover:scale-110 transition-all duration-500 shadow-xl">
-                  <FaGlobe size={16} />
-                </div>
-                <a href="https://www.blueantfinserv.com" target="_blank" rel="noreferrer" className="text-white/80 text-[14px] font-semibold hover:text-[#00afef] transition-colors">
-                  www.blueantfinserv.com
-                </a>
-              </div>
-            </div>
-          </div>
-
+                  <span className="quick-link-bullet shrink-0"></span>
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        {/* Mutual Fund Disclaimer Section */}
-        <div className="py-6 border-b border-white/5">
-          <p className="text-white/40 text-[11px] leading-relaxed text-right font-medium">
-            <span className="text-white/50 font-bold">
-              Mutual fund investments are subject to market risks. Please read all scheme-related documents carefully before investing. 
-            </span>
-          </p>
-        </div>
-
-        {/* Bottom Bar Section */}
-        <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-6 w-full">
-          <p className="text-white/30 text-[13px] md:text-[14px] font-medium text-center md:text-left">
-            © {currentYear} Blueant Finserv Pvt. Ltd. All rights reserved.
-          </p>
+        {/* Column 3: Our Services */}
+        <div className="flex flex-col items-start w-full footer-links footer-column">
+          <h3 className="footer-heading">
+            OUR SERVICES
+          </h3>
           
-          <div className="flex items-center gap-6">
-            <span className="text-[#64748B] text-[12px] font-black uppercase tracking-[3px] opacity-50">
-              Financial Growth Partner
-            </span>
-            <div className="w-8 h-px bg-white/10 hidden md:block"></div>
+          <div className="footer-services w-full">
+            {/* Row 1 */}
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2.5">
+              <Link to="/services" state={{ selectedIndex: 5 }} className="flex items-center text-left text-slate-300 hover:text-[#38bdf8] transition-all">
+                <div className="service-outline-card shrink-0">
+                  <TrendingUp size={11} />
+                </div>
+                <span className="text-[14px] font-semibold ml-2 leading-tight">SIP Investment</span>
+              </Link>
+              <Link to="/services" state={{ selectedIndex: 0 }} className="flex items-center text-left text-slate-300 hover:text-[#38bdf8] transition-all">
+                <div className="service-outline-card shrink-0">
+                  <FileText size={11} />
+                </div>
+                <span className="text-[14px] font-semibold ml-2 leading-tight">Tax Planning</span>
+              </Link>
+            </div>
+
+            {/* Row 2 */}
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2.5">
+              <Link to="/services" state={{ selectedIndex: 7 }} className="flex items-center text-left text-slate-300 hover:text-[#38bdf8] transition-all">
+                <div className="service-outline-card shrink-0">
+                  <ShieldCheck size={11} />
+                </div>
+                <span className="text-[14px] font-semibold ml-2 leading-tight">Insurance Plan</span>
+              </Link>
+              <Link to="/services" state={{ selectedIndex: 5 }} className="flex items-center text-left text-slate-300 hover:text-[#38bdf8] transition-all">
+                <div className="service-outline-card shrink-0">
+                  <PieChart size={11} />
+                </div>
+                <span className="text-[14px] font-semibold ml-2 leading-tight">Mutual Funds</span>
+              </Link>
+            </div>
+
+            {/* Row 3 */}
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2.5">
+              <Link to="/services" state={{ selectedIndex: 6 }} className="flex items-center text-left text-slate-300 hover:text-[#38bdf8] transition-all">
+                <div className="service-outline-card shrink-0">
+                  <LineChart size={11} />
+                </div>
+                <span className="text-[14px] font-semibold ml-2 leading-tight">Stock Trading</span>
+              </Link>
+              <Link to="/services" state={{ selectedIndex: 4 }} className="flex items-center text-left text-slate-300 hover:text-[#38bdf8] transition-all">
+                <div className="service-outline-card shrink-0">
+                  <Clock size={11} />
+                </div>
+                <span className="text-[14px] font-semibold ml-2 leading-tight">Retirement</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Column 4: Contact Us Glass Panel */}
+        <div className="flex flex-col items-start w-full">
+          <h3 className="footer-heading">
+            CONTACT US
+          </h3>
+          
+          <div className="footer-contact-box w-full">
+            {/* Coordinate map overlay */}
+            <div className="dotted-world-map"></div>
+            
+            <div className="flex flex-col relative z-10">
+              {/* Email entry */}
+              <div className="contact-item">
+                <div className="w-6 h-6 rounded-full bg-[#0ea5e9]/10 border border-[#0ea5e9]/20 flex items-center justify-center text-[#38bdf8] shrink-0">
+                  <Mail size={11} />
+                </div>
+                <div className="text-left">
+                  <span className="text-[#94a3b8]/50 text-[8.5px] font-black uppercase block tracking-wider leading-none">Email Us</span>
+                  <a href="mailto:info@blueantfinserv.com" className="text-slate-200 hover:text-[#38bdf8] text-[13.5px] font-bold transition-colors leading-none block mt-1">
+                    info@blueantfinserv.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Call entry */}
+              <div className="contact-item">
+                <div className="w-6 h-6 rounded-full bg-[#0ea5e9]/10 border border-[#0ea5e9]/20 flex items-center justify-center text-[#38bdf8] shrink-0">
+                  <Phone size={11} />
+                </div>
+                <div className="text-left">
+                  <span className="text-[#94a3b8]/50 text-[8.5px] font-black uppercase block tracking-wider leading-none">Call Us</span>
+                  <a href="tel:+919990218899" className="text-slate-200 hover:text-[#38bdf8] text-[13.5px] font-bold transition-colors leading-none block mt-1">
+                    +91-9990218899
+                  </a>
+                </div>
+              </div>
+
+              {/* Visit entry */}
+              <div className="contact-item">
+                <div className="w-6 h-6 rounded-full bg-[#0ea5e9]/10 border border-[#0ea5e9]/20 flex items-center justify-center text-[#38bdf8] shrink-0">
+                  <Globe size={11} />
+                </div>
+                <div className="text-left">
+                  <span className="text-[#94a3b8]/50 text-[8.5px] font-black uppercase block tracking-wider leading-none">Visit Us</span>
+                  <a href="https://www.blueantfinserv.com" target="_blank" rel="noreferrer" className="text-slate-200 hover:text-[#38bdf8] text-[13.5px] font-bold transition-colors leading-none block mt-1">
+                    blueantfinserv.com
+                  </a>
+                </div>
+              </div>
+
+              {/* CTA & Button */}
+              <div className="border-t border-white/5 pt-2 mt-0.5">
+                <p className="text-[11px] leading-relaxed text-slate-400 font-semibold mb-2">
+                  Let’s build your financial future together.
+                </p>
+                <button 
+                  onClick={openConsultationModal} 
+                  className="footer-btn w-full"
+                >
+                  GET IN TOUCH
+                  <ArrowRight size={10} />
+                </button>
+              </div>
+
+            </div>
           </div>
         </div>
 
       </div>
-    </footer>
 
+      {/* 12. MAKE COPYRIGHT SECTION CLEAN */}
+      <div className="footer-bottom">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-4 py-0.5 text-center lg:text-left text-[13px] w-full">
+          
+          {/* Left: Disclaimer info warning block */}
+          <div className="flex items-center gap-2 max-w-full lg:max-w-[45%]">
+            <div className="w-5 h-5 rounded-md border border-white/5 bg-white/[0.005] flex items-center justify-center text-[#38bdf8] shrink-0">
+              <ShieldAlert size={11} />
+            </div>
+            <p className="text-slate-400 text-left font-semibold leading-relaxed text-[12px]">
+              Mutual fund investments are subject to market risks. Please read all scheme-related documents carefully.
+            </p>
+          </div>
+
+          {/* Center: Copyright */}
+          <p className="text-slate-500 font-bold text-[13px] self-center">
+            © {currentYear} Blueant Finserv Pvt. Ltd. All rights reserved.
+          </p>
+
+          {/* Right: Partner Tag */}
+          <div className="flex items-center self-center">
+            <div className="partner-glow-pill">
+              <span className="pulse-indicator-dot"></span>
+              <span className="text-slate-200 text-[11px] font-black uppercase tracking-[1px]">
+                Financial Growth Partner
+              </span>
+              <TrendingUp size={11} className="text-[#38bdf8]" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </footer>
   );
 };
 

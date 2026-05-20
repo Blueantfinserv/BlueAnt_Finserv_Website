@@ -19,7 +19,7 @@ function HeroFigma() {
           <div className="hf-left" data-aos="fade-right">
             <div className="hf-top-badge" data-aos="fade-down" data-aos-delay="200">
               <span className="hf-star">⭐</span>
-              <span>Trusted by 10,000+ investors across India</span>
+              <span>Trusted by 2,600+ investors across India</span>
             </div>
 
             <h1 className="hf-headline">
@@ -61,7 +61,7 @@ function HeroFigma() {
             <div className="hf-trust-cards">
               {[
                 { icon: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>, title: "AMFI Registered", sub: "ARN: 129543", color: "blue" },
-                { icon: <circle cx="12" cy="12" r="10"></circle>, title: "10,000+ Users", sub: "Trusted Platform", color: "red" },
+                { icon: <circle cx="12" cy="12" r="10"></circle>, title: "2,600+ Users", sub: "Trusted Platform", color: "red" },
                 { icon: <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>, title: "4.9/5 Rating", sub: "Highly Rated", color: "purple" }
               ].map((card, i) => (
                 <div key={i} className="hf-trust-card" data-aos="fade-up" data-aos-delay={600 + (i * 100)}>

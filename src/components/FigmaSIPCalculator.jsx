@@ -42,7 +42,7 @@ import { openConsultationModal } from "./ConsultationModal";
 
 export default function FigmaSIPCalculator() {
   const [monthly, setMonthly] = useState(5000);
-  const [years, setYears] = useState(10);
+  const [years, setYears] = useState(25);
   const [rate, setRate] = useState(12);
   const [totalInvested, setTotalInvested] = useState(0);
   const [estimatedReturns, setEstimatedReturns] = useState(0);

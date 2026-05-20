@@ -6,9 +6,9 @@ const About = () => {
   const stats = [
     {
       icon: <Clock className="w-5 h-5 text-blue-600" />,
-      number: "12+ Years",
-      label: "Industry Excellence",
-      sub: "Delivering consistent financial growth since 2012.",
+      number: "13+ Years",
+      label: "Blueant Legacy",
+      sub: "Delivering 13+ years of Blueant legacy.",
     },
     {
       icon: <Users className="w-5 h-5 text-blue-600" />,

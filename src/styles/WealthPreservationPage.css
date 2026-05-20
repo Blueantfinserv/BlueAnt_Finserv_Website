@@ -1,0 +1,294 @@
+/* Wealth Preservation Page Custom Stylesheet - Deep Violet Theme */
+.wpr-wrapper {
+  background-color: #030712;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.wpr-hero {
+  position: relative;
+  background: radial-gradient(circle at 80% 20%, #2e1065 0%, #030712 100%);
+  padding: 160px 0 120px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.08);
+}
+
+.wpr-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(139, 92, 246, 0.04) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.wpr-hero-glow {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: rgba(139, 92, 246, 0.12);
+  filter: blur(120px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Sub-badges */
+.wpr-badge {
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  color: #c084fc;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 6px 16px;
+  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.wpr-hero-title {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -2px;
+  line-height: 1.15;
+  color: #ffffff !important;
+}
+
+.wpr-hero-title span {
+  background: linear-gradient(135deg, #c084fc 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Advisory Content Section */
+.wpr-advisory-section {
+  background-color: #030712;
+  padding: 100px 0;
+  position: relative;
+}
+
+.wpr-section-glow {
+  position: absolute;
+  bottom: 10%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: rgba(139, 92, 246, 0.08);
+  filter: blur(100px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.wpr-shield-icon {
+  background: rgba(139, 92, 246, 0.08) !important;
+  color: #c084fc !important;
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.wpr-shield-icon:hover {
+  transform: scale(1.08) rotate(5deg);
+  background: #7c3aed !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+}
+
+/* Glassmorphic Fiduciary Advisory card */
+.wpr-glass-card {
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 36px;
+  padding: 48px;
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.5),
+    inset 0 0 30px rgba(255, 255, 255, 0.02),
+    0 0 40px rgba(139, 92, 246, 0.03);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.wpr-glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 36px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.01) 60%, rgba(139, 92, 246, 0.1) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.wpr-glass-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  border-color: rgba(139, 92, 246, 0.25);
+  box-shadow: 
+    0 40px 80px rgba(0, 0, 0, 0.6),
+    0 0 50px rgba(139, 92, 246, 0.12);
+}
+
+.wpr-glass-card h3 {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.5px;
+  color: #ffffff !important;
+  line-height: 1.3;
+}
+
+.wpr-glass-card h4 {
+  color: #c084fc !important;
+}
+
+.wpr-pillar-card h4 {
+  color: #ffffff !important;
+}
+
+.wpr-stat-badge {
+  background: rgba(139, 92, 246, 0.06);
+  border: 1px solid rgba(139, 92, 246, 0.18);
+  border-radius: 20px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.wpr-stat-badge:hover {
+  background: rgba(139, 92, 246, 0.12);
+  border-color: rgba(139, 92, 246, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Interactive Educational Cards & Grid Layouts */
+.wpr-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.wpr-pillar-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 28px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.wpr-pillar-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0) 50%, rgba(139, 92, 246, 0.05) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.wpr-pillar-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(139, 92, 246, 0.3);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(139, 92, 246, 0.1);
+}
+
+.wpr-pillar-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.wpr-pillar-card:hover .wpr-pillar-icon-box {
+  transform: scale(1.15) rotate(-5deg);
+  box-shadow: 0 0 20px currentColor;
+}
+
+/* Blueprint / Auditing Section */
+.wpr-blueprint-section {
+  background: linear-gradient(180deg, #030712 0%, #050b18 100%);
+  padding: 100px 0;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.wpr-blueprint-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-top: 50px;
+}
+
+.wpr-blueprint-card {
+  background: radial-gradient(135deg, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.03) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 32px;
+  padding: 40px;
+  position: relative;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.wpr-blueprint-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 32px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.01) 50%, rgba(139, 92, 246, 0.08) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.wpr-blueprint-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(139, 92, 246, 0.35);
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.5),
+    0 0 45px rgba(139, 92, 246, 0.15);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.wpr-blueprint-num {
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #c084fc 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  display: block;
+  margin-bottom: 24px;
+}

@@ -61,12 +61,12 @@
 }
 
 .company-hero-title {
-    font-size: clamp(3rem, 5.5vw, 6.5rem);
-    line-height: 0.92;
-    letter-spacing: -4px;
-    font-weight: 800;
-    color: var(--fintech-text);
-    margin-bottom: 32px;
+    font-size: clamp(2.25rem, 3.8vw, 3.75rem);
+    line-height: 1.1;
+    letter-spacing: -2px;
+    font-weight: 900;
+    color: #0f172a;
+    margin-bottom: 28px;
 }
 
 .hero-description {

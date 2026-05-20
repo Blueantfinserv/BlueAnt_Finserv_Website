@@ -54,9 +54,9 @@ const testimonials = [
 
 const stats = [
   { value: "4.9/5", label: "Average Rating", stars: true },
-  { value: "10,000+", label: "Customer Reviews" },
+  { value: "2,600+", label: "Customer Reviews" },
   { value: "98.5%", label: "Satisfaction Rate" },
-  { value: "10,000+", label: "Active Investors" },
+  { value: "2,600+", label: "Active Investors" },
 ];
 
 function Testimonials() {
@@ -64,7 +64,7 @@ function Testimonials() {
     <section className={styles.testimonialsSection}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <div className={styles.pill}>⭐ Trusted by 10,000+ Investors</div>
+          <div className={styles.pill}>⭐ Trusted by 2,600+ Investors</div>
           <h2>What Our Clients Say</h2>
           <p>
             Real experiences from real people who transformed their financial lives with Blueant Finserv

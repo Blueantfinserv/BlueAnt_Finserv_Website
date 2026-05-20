@@ -26,7 +26,7 @@ const CTASection = () => {
               Start Your Wealth Journey Today!
             </h2>
             <p className="text-blue-100 text-lg max-w-2xl mx-auto fintech-subtitle font-medium">
-              Open your free account now and get exclusive benefits. Join 10,000+ investors who are already building their financial future with Blueant Finserv.
+              Open your free account now and get exclusive benefits. Join 2,600+ investors who are already building their financial future with Blueant Finserv.
             </p>
 
             {/* 3 Pills */}
@@ -112,10 +112,10 @@ const CTASection = () => {
                 <div className="w-10 h-10 rounded-full bg-blue-400 border-2 border-indigo-600 flex items-center justify-center text-white text-xs font-bold">RK</div>
                 <div className="w-10 h-10 rounded-full bg-purple-400 border-2 border-indigo-600 flex items-center justify-center text-white text-xs font-bold">SM</div>
                 <div className="w-10 h-10 rounded-full bg-emerald-400 border-2 border-indigo-600 flex items-center justify-center text-white text-xs font-bold">AP</div>
-                <div className="w-10 h-10 rounded-full bg-orange-400 border-2 border-indigo-600 flex items-center justify-center text-white text-xs font-bold">10k+</div>
+                <div className="w-10 h-10 rounded-full bg-orange-400 border-2 border-indigo-600 flex items-center justify-center text-white text-xs font-bold">2.6k+</div>
               </div>
               <div className="text-left">
-                <p className="text-white font-bold text-sm">Join 10,000+ Happy Investors</p>
+                <p className="text-white font-bold text-sm">Join 2,600+ Happy Investors</p>
                 <p className="text-blue-200 text-xs">Rated 4.9/5 on Google & App Store</p>
               </div>
             </div>

@@ -14,20 +14,20 @@ const AboutPreview = () => {
   const stats = [
     {
       icon: <Clock className="w-5 h-5" />,
-      number: "12+ Years",
-      label: "Industry Excellence",
-      desc: "Delivering consistent financial growth since 2012.",
+      number: "13+ Years",
+      label: "Blueant Legacy",
+      desc: "Delivering 13+ years of Blueant legacy.",
     },
     {
       icon: <Users className="w-5 h-5" />,
-      number: "15,000+",
+      number: "2,600+",
       label: "Happy Families",
       desc: "Empowering households with investment support.",
     },
     {
       icon: <Award className="w-5 h-5" />,
-      number: "Expert",
-      label: "Advisory Team",
+      number: "50+",
+      label: "Expert Team service",
       desc: "Dedicated professionals guiding your wealth journey.",
     },
     {
