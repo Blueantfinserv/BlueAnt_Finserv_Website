@@ -334,18 +334,7 @@ export default function FigmaSIPCalculator() {
         </div>
       </div>
 
-      <div className="f-sip-disclaimer mt-12 px-6 py-4 bg-slate-100/60 backdrop-blur rounded-2xl text-[11px] text-slate-500 leading-relaxed max-w-4xl mx-auto text-center border border-slate-200/50">
-        <span className="text-slate-700 font-bold block mb-1">
-          AMFI Registered Mutual Fund Distributor • ARN-129543
-        </span>
-        <span className="text-amber-500 font-bold block mb-1 text-[11.5px]">
-          For illustration only. Returns are not guaranteed. Actual returns may vary.
-        </span>
-        <span className="text-slate-500 block">
-          Mutual fund investments are subject to market risks. Please read all scheme-related documents carefully before investing.
-          Calculations are illustrative and for informational purposes only. We represent independent financial education.
-        </span>
-      </div>
+
     </section>
   );
 }

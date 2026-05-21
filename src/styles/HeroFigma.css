@@ -45,23 +45,63 @@
   color: #fbbf24; /* Gold star */
 }
 
-.hf-headline {
-  font-family: 'Inter', 'Outfit', sans-serif;
-  font-size: 54px;
-  font-weight: 900;
-  line-height: 1.0; /* Adjusted for smaller size */
-  margin-bottom: 24px;
-  letter-spacing: -1.5px; /* Less aggressive for smaller text */
-  color: #ffffff; /* Pure white as requested */
+.hf-dynamic-headline-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+  gap: 4px;
 }
 
-.hf-headline-accent {
-  background: linear-gradient(90deg, #a855f7, #3b82f6);
+.hf-dynamic-headline {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: clamp(56px, 6.5vw, 84px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.hf-text-gradient-1 {
+  color: #ffffff;
+  text-shadow: 0 4px 30px rgba(255, 255, 255, 0.2);
+}
+
+.hf-text-gradient-2 {
+  background: linear-gradient(135deg, #f1f5f9 0%, #cbd5e1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-  display: inline-block;
+}
+
+.hf-text-gradient-3 {
+  background: linear-gradient(135deg, #38bdf8 0%, #2563eb 50%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 4px 24px rgba(37, 99, 235, 0.3));
+}
+
+.hf-dynamic-dash {
+  font-weight: 300;
+  margin-left: 20px;
+  font-size: clamp(40px, 5vw, 60px);
+  transform: translateY(-2px);
+  opacity: 0.5;
+}
+
+.hf-headline {
+  /* Kept as fallback if needed elsewhere */
+  font-family: 'Inter', 'Outfit', sans-serif;
+  font-size: 54px;
+  font-weight: 900;
+  line-height: 1.0; 
+  margin-bottom: 24px;
+  letter-spacing: -1.5px; 
+  color: #ffffff; 
 }
 
 .hf-subtext {

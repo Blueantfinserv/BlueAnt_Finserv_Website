@@ -345,6 +345,16 @@ const WealthCreationPage = () => {
                         Pure Fiduciary Mandate • No hidden distribution commissions
                       </p>
                     </div>
+
+                    <div className="flex items-center gap-4 mt-8 pt-6" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                      <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 flex-shrink-0">
+                        <Shield size={20} strokeWidth={2.5} />
+                      </div>
+                      <div>
+                        <div className="text-white font-black text-sm tracking-wide">AMFI Registered Distributor</div>
+                        <div className="text-slate-400 text-xs font-bold tracking-wider mt-1">ARN: 129543</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

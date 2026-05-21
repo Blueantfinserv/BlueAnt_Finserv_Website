@@ -734,7 +734,7 @@ const Footer = () => {
               <div className="mt-0.5">
                 <strong className="text-slate-200 text-[11px]">Market Risk Warning</strong>
                 <div className="compliance-warning-box">
-                  "Mutual Fund investments are subject to market risks. Please read all scheme-related documents carefully before investing. Past performance is not indicative of future returns."
+                  "Mutual fund investments are subject to market risks. Please read all scheme-related documents carefully before investing. Calculations are illustrative and for informational purposes only. We represent independent financial education."
                 </div>
               </div>
             </div>

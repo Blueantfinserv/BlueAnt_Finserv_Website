@@ -22,14 +22,23 @@ function HeroFigma() {
               <span>Trusted by 3,000+ families across India</span>
             </div>
 
-            <h1 className="hf-headline">
-              When money decisions are clear, <br />
-              <span className="hf-headline-accent">life feels more confident.</span>
-            </h1>
+            <div className="hf-dynamic-headline-group">
+              <h1 className="hf-dynamic-headline">
+                <span className="hf-text-gradient-1">Clarity</span>
+                <span className="hf-dynamic-dash" style={{ color: 'rgba(255,255,255,0.2)' }}> -</span>
+              </h1>
+              <h1 className="hf-dynamic-headline">
+                <span className="hf-text-gradient-2">Create</span>
+                <span className="hf-dynamic-dash" style={{ color: 'rgba(255,255,255,0.2)' }}> -</span>
+              </h1>
+              <h1 className="hf-dynamic-headline">
+                <span className="hf-text-gradient-3">Wealth</span>
+                <span className="hf-dynamic-dash" style={{ color: '#3b82f6' }}> -</span>
+              </h1>
+            </div>
  
             <p className="hf-subtext" data-aos="fade-up" data-aos-delay="300">
-              Blueant helps families build that clarity with discipline, 
-              thoughtful protection, and long-term financial confidence.
+              When money decisions are clear, life feels more confident. Blueant helps families build that clarity with discipline, thoughtful protection, and long-term financial confidence.
             </p>
 
             <div className="hf-ctas" data-aos="fade-up" data-aos-delay="400">
@@ -57,7 +66,7 @@ function HeroFigma() {
 
             <div className="hf-trust-cards">
               {[
-                { icon: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>, title: "AMFI Registered", sub: "ARN: 129543", color: "blue" },
+                { icon: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>, title: "AMFI Registered Distributor", sub: "ARN: 129543", color: "blue" },
                 { icon: <circle cx="12" cy="12" r="10"></circle>, title: "3,000+ Families", sub: "Trusted across India", color: "red" },
                 { icon: <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>, title: "4.9+ Rating", sub: "Rated 4.9★ APP users. Trusted digitally.", color: "purple" }
               ].map((card, i) => (
