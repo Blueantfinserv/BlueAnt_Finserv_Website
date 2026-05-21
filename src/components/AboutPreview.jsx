@@ -20,7 +20,7 @@ const AboutPreview = () => {
     },
     {
       icon: <Users className="w-5 h-5" />,
-      number: "2,600+",
+      number: "3,000+",
       label: "Happy Families",
       desc: "Empowering households with investment support.",
     },
@@ -34,7 +34,7 @@ const AboutPreview = () => {
       icon: <MapPin className="w-5 h-5" />,
       number: "Pan-India",
       label: "Presence",
-      desc: "Seamless support across 25+ states in India.",
+      desc: "Serving clients efficiently across 200+ pincodes nationwide.",
     },
   ];
 

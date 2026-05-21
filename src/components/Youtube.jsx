@@ -23,7 +23,7 @@ const Youtube = () => {
             <span className="youtube-headline-accent">Wealth Today</span>
           </h1>
           <p>
-            Join over 2,600+ investors building their wealth with Blueant Finserv. Experience suitable financial solutions with a transparent process. Open an account for free.
+            Join over 3,000+ families building their wealth with Blueant Finserv. Experience suitable financial solutions with a transparent process. Open an account for free.
           </p>
           
           <div className="cta-wrapper">
@@ -37,7 +37,7 @@ const Youtube = () => {
               </div>
               <div className="trust-pill">
                 <Users className="w-3.5 h-3.5 text-blue-400" />
-                <span>2,600+ Investors</span>
+                <span>3,000+ Families</span>
               </div>
               <div className="trust-pill">
                 <Lock className="w-3.5 h-3.5 text-indigo-400" />

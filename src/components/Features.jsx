@@ -99,7 +99,7 @@ function Features() {
     <section className={styles.featuresSection}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <div className={styles.pill}>⭐ Why 2,600+ Investors Trust Us</div>
+          <div className={styles.pill}>⭐ Why 3,000+ Families Trust Us</div>
           <h2>Industry-Leading Features & Benefits</h2>
           <p>
             Experience the perfect blend of cutting-edge technology, regulatory compliance, and

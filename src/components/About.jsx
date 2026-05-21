@@ -12,21 +12,21 @@ const About = () => {
     },
     {
       icon: <Users className="w-5 h-5 text-blue-600" />,
-      number: "50,000+",
+      number: "3,000+",
       label: "Happy Families",
-      sub: "Empowering households with smart wealth strategies nationwide.",
+      sub: "Empowering households with investment support.",
     },
     {
       icon: <Award className="w-5 h-5 text-blue-600" />,
-      number: "10+",
-      label: "Support Advisors",
-      sub: "Dedicated professionals guiding your wealth journey with care.",
+      number: "50+",
+      label: "Expert Team service",
+      sub: "Dedicated professionals guiding your wealth journey.",
     },
     {
       icon: <MapPin className="w-5 h-5 text-blue-600" />,
       number: "Pan-India",
       label: "Presence",
-      sub: "Seamless financial support across 25+ states in India.",
+      sub: "Serving clients efficiently across 200+ pincodes nationwide.",
     },
   ];
 

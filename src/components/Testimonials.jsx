@@ -53,10 +53,10 @@ const testimonials = [
 ];
 
 const stats = [
-  { value: "4.9/5", label: "Average Rating", stars: true },
-  { value: "2,600+", label: "Customer Reviews" },
+  { value: "4.9★", label: "Rated 4.9★ APP users. Trusted digitally.", stars: true },
+  { value: "3,000+", label: "Families across India" },
   { value: "98.5%", label: "Satisfaction Rate" },
-  { value: "2,600+", label: "Active Investors" },
+  { value: "3,000+", label: "Happy Families" },
 ];
 
 function Testimonials() {
@@ -64,10 +64,10 @@ function Testimonials() {
     <section className={styles.testimonialsSection}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <div className={styles.pill}>⭐ Trusted by 2,600+ Investors</div>
-          <h2>What Our Clients Say</h2>
+          <div className={styles.pill}>⭐ Trusted by 3,000+ Families</div>
+          <h2>Trusted by Families, Year After Year</h2>
           <p>
-            Real experiences from real people who transformed their financial lives with Blueant Finserv
+            Client experiences that reflect our focus on clarity, discipline, and long-term confidence.
           </p>
         </div>
 

@@ -19,41 +19,38 @@ function HeroFigma() {
           <div className="hf-left" data-aos="fade-right">
             <div className="hf-top-badge" data-aos="fade-down" data-aos-delay="200">
               <span className="hf-star">⭐</span>
-              <span>Trusted by 2,600+ investors across India</span>
+              <span>Trusted by 3,000+ families across India</span>
             </div>
 
             <h1 className="hf-headline">
-              Build Wealth with <br />
-              <span className="hf-headline-accent">Discipline, Patience & Planning</span>
+              When money decisions are clear, <br />
+              <span className="hf-headline-accent">life feels more confident.</span>
             </h1>
  
             <p className="hf-subtext" data-aos="fade-up" data-aos-delay="300">
-              Plan your wealth with disciplined SIP investments, suitable 
-              insurance solutions, and investment support — transparent 
-              process and aligned with AMFI & IRDAI regulations.
+              Blueant helps families build that clarity with discipline, 
+              thoughtful protection, and long-term financial confidence.
             </p>
 
             <div className="hf-ctas" data-aos="fade-up" data-aos-delay="400">
               <button onClick={openConsultationModal} className="hf-btn-primary">
-                Start Investing <span className="hf-arrow">→</span>
+                Start a Conversation <span className="hf-arrow">→</span>
               </button>
-              <a 
-                href="https://wa.me/+919990218899?text=Hi%2C%20I%20need%20financial%20advice" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <Link 
+                to="/services" 
                 className="hf-btn-outline-link"
                 style={{ textDecoration: 'none' }}
               >
                 <button className="hf-btn-outline">
-                  Talk to Expert
+                  Explore Our Services
                 </button>
-              </a>
+              </Link>
             </div>
 
             <div className="hf-micro-trust" data-aos="fade-up" data-aos-delay="500">
               <span>✔ No hidden charges</span>
               <span className="hf-dot">•</span>
-              <span>✔ Transparent investment process</span>
+              <span>✔ Transparent process</span>
               <span className="hf-dot">•</span>
               <span>✔ Regulation-aligned</span>
             </div>
@@ -61,8 +58,8 @@ function HeroFigma() {
             <div className="hf-trust-cards">
               {[
                 { icon: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>, title: "AMFI Registered", sub: "ARN: 129543", color: "blue" },
-                { icon: <circle cx="12" cy="12" r="10"></circle>, title: "2,600+ Users", sub: "Trusted Platform", color: "red" },
-                { icon: <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>, title: "4.9/5 Rating", sub: "Highly Rated", color: "purple" }
+                { icon: <circle cx="12" cy="12" r="10"></circle>, title: "3,000+ Families", sub: "Trusted across India", color: "red" },
+                { icon: <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>, title: "4.9+ Rating", sub: "Rated 4.9★ APP users. Trusted digitally.", color: "purple" }
               ].map((card, i) => (
                 <div key={i} className="hf-trust-card" data-aos="fade-up" data-aos-delay={600 + (i * 100)}>
                   <div className={`hf-card-icon ${card.color}`}>
@@ -143,7 +140,7 @@ function HeroFigma() {
               <div className="hf-advisor-box animate-float">
                 <span className="hf-advisor-dot animate-ping-custom"></span>
                 <div className="hf-advisor-text">
-                  <p>Advisor</p>
+                  <p>Support</p>
                   <strong>Available</strong>
                 </div>
               </div>

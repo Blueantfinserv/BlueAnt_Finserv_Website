@@ -6,7 +6,7 @@ function CTABanner() {
       <div className="cta-banner-inner">
         <h2 className="cta-banner-heading">Ready to Get Started?</h2>
         <p className="cta-banner-sub">
-          Join 2,600+ investors who are already building wealth with Blueant
+          Join 3,000+ families who are already building wealth with Blueant
           Finserv. Open your account in less than 10 minutes and start investing today.
         </p>
         <div className="cta-banner-btns">

@@ -188,6 +188,23 @@ const SIPCalculator = () => {
           </div>
         )}
       </div>
+
+      <div className="cp-calc-disclaimer" style={{
+        marginTop: '20px',
+        padding: '12px 16px',
+        background: 'rgba(255, 255, 255, 0.02)',
+        border: '1px solid rgba(255, 255, 255, 0.05)',
+        borderRadius: '12px',
+        fontSize: '11.5px',
+        color: '#94a3b8',
+        textAlign: 'center',
+        lineHeight: '1.5'
+      }}>
+        <strong style={{ color: '#fbbf24', display: 'block', marginBottom: '4px' }}>
+          For illustration only. Returns are not guaranteed. Actual returns may vary.
+        </strong>
+        Mutual fund investments are subject to market risks. Please read all scheme-related documents carefully before investing.
+      </div>
     </div>
   );
 };
@@ -279,6 +296,23 @@ const LumpsumCalculator = () => {
             </div>
           </div>
         )}
+      </div>
+
+      <div className="cp-calc-disclaimer" style={{
+        marginTop: '20px',
+        padding: '12px 16px',
+        background: 'rgba(255, 255, 255, 0.02)',
+        border: '1px solid rgba(255, 255, 255, 0.05)',
+        borderRadius: '12px',
+        fontSize: '11.5px',
+        color: '#94a3b8',
+        textAlign: 'center',
+        lineHeight: '1.5'
+      }}>
+        <strong style={{ color: '#fbbf24', display: 'block', marginBottom: '4px' }}>
+          For illustration only. Returns are not guaranteed. Actual returns may vary.
+        </strong>
+        Mutual fund investments are subject to market risks. Please read all scheme-related documents carefully before investing.
       </div>
     </div>
   );

@@ -28,10 +28,10 @@ const CompanyPage = () => {
   };
 
   const stats = [
-    { icon: <Clock />, end: 12, suffix: "+", label: "Years of Industry Understanding", sub: "Built through continuous learning, evolving market understanding, and client-focused financial guidance." },
-    { icon: <Users />, end: 2600, suffix: "+", label: "Families Across India", sub: "Supporting individuals and families with structured financial awareness and planning-oriented solutions." },
-    { icon: <Award />, end: 50, suffix: "+", label: "Experienced Financial Professionals", sub: "A collaborative team focused on simplifying financial concepts and investment understanding." },
-    { icon: <Wallet />, end: 25, suffix: "+", label: "Pan-India Reach", sub: "Serving clients across multiple cities and regions through digital and relationship-driven engagement." },
+    { icon: <Clock />, end: 13, suffix: "+", label: "Years Blueant Legacy", sub: "Delivering 13+ years of Blueant legacy." },
+    { icon: <Users />, end: 3000, suffix: "+", label: "Happy Families", sub: "Empowering households with investment support." },
+    { icon: <Award />, end: 50, suffix: "+", label: "Expert Team service", sub: "Dedicated professionals guiding your wealth journey." },
+    { icon: <Wallet />, end: 200, suffix: "+", label: "Pan-India Presence", sub: "Serving clients efficiently across 200+ pincodes nationwide." },
   ];
 
   return (
@@ -45,56 +45,51 @@ const CompanyPage = () => {
               
               {/* LEFT CONTENT */}
               <motion.div initial="hidden" animate="visible" variants={stagger} className="hero-text-block" data-aos="fade-up">
-                <motion.div variants={reveal} className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/80 backdrop-blur-md text-blue-600 rounded-full border border-blue-50 shadow-sm mb-6 w-fit">
-                  <Sparkles className="w-3 h-3 text-amber-400" />
-                  <span className="text-[9px] font-black uppercase tracking-[2.5px]">Elite Financial Guidance</span>
+                
+                {/* TOP BADGE */}
+                <motion.div variants={reveal} className="hero-top-badge">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                  <span>Elite Financial Guidance</span>
                 </motion.div>
  
                 <motion.h1 variants={reveal} className="company-hero-title">
                   Designing Financial <br />
-                  Clarity for Modern India
+                  <span className="text-gradient-blue">Clarity</span> for Modern India
                 </motion.h1>
 
                 <motion.p variants={reveal} className="hero-description">
-                  Blueant Finserv delivers research-driven financial guidance focused on structured planning, long-term thinking, and informed decision-making. Our approach combines financial understanding, disciplined processes, and client-focused support designed to help individuals and families navigate evolving financial goals with greater confidence.
+                  Blueant Finserv delivers research-driven financial guidance focused on structured planning and informed decision-making. We combine deep market understanding with disciplined processes to help families navigate their financial goals with confidence.
                 </motion.p>
 
-                {/* TRUST SECTION - HORIZONTAL REFINED */}
-                <motion.div variants={reveal} className="rating-section-horizontal pb-6 border-b border-slate-100/60 mb-6">
-                  <div className="avatar-group-refined -space-x-3 scale-90 origin-left">
+                {/* MODERN TRUST ROW */}
+                <motion.div variants={reveal} className="hero-trust-row">
+                  <div className="trust-rating-box">
+                    <div className="trust-stars">
+                      {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="w-3.5 h-3.5 fill-current" />)}
+                    </div>
+                    <span className="trust-score">4.9/5 Rating</span>
+                  </div>
+                  <div className="trust-divider"></div>
+                  <div className="trust-avatars">
                     {[1, 2, 3, 4].map((i) => (
-                      <div key={i} className="w-9 h-9 rounded-full border-2 border-white bg-slate-50 flex items-center justify-center shadow-sm overflow-hidden">
-                        <Users className="w-5 h-5 text-slate-300" />
+                      <div key={i} className="trust-avatar">
+                        <Users className="w-4 h-4 text-slate-400" />
                       </div>
                     ))}
+                    <span className="trust-text">Trusted by 3,000+ Families</span>
                   </div>
-                  <div className="flex items-center gap-1.5 ml-1">
-                    <div className="flex text-amber-400">
-                      {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="w-2.5 h-2.5 fill-current" />)}
-                    </div>
-                    <span className="text-[#0f172a] font-black text-[12px]">4.9/5</span>
-                  </div>
-                  <div className="h-3.5 w-px bg-slate-200"></div>
-                  <p className="text-[#5b6475] text-[10.5px] font-black tracking-tight text-blue-600">
-                    Trusted Financial Learning & Guidance Platform
-                  </p>
                 </motion.div>
 
-                {/* Rated Highly Caption */}
-                <motion.p variants={reveal} className="text-[#5b6475] text-[11.5px] font-bold tracking-tight mb-6 flex items-center gap-1">
-                  <span>⭐ Rated highly by clients across India for financial awareness and structured support.</span>
-                </motion.p>
-
-                <motion.div variants={reveal} className="hero-badges">
+                {/* CLEAN FEATURES GRID */}
+                <motion.div variants={reveal} className="hero-features-grid">
                   {[
                     "Research-Oriented Approach", 
                     "AMFI Registered", 
-                    "Compliance-Focused Practices", 
-                    "Digital-First Experience", 
-                    "Nationwide Client Network"
+                    "Compliance-Focused", 
+                    "Digital-First Experience"
                   ].map((text, i) => (
-                    <div key={i} className="trust-chip">
-                      <CheckCircle className="w-4 h-4 text-emerald-500" />
+                    <div key={i} className="hero-feature-item">
+                      <CheckCircle className="w-4.5 h-4.5 text-emerald-500" />
                       <span>{text}</span>
                     </div>
                   ))}
@@ -102,10 +97,7 @@ const CompanyPage = () => {
 
                 <motion.div variants={reveal} className="hero-cta-group">
                   <button 
-                    onClick={() => {
-                      const modalBtn = document.getElementById("start-investing-btn") || document.querySelector('[data-consultation-btn]');
-                      if (modalBtn) modalBtn.click();
-                    }}
+                    onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
                     className="btn-primary-premium"
                   >
                     Start Investing <ArrowRight className="w-5 h-5" />
@@ -122,24 +114,25 @@ const CompanyPage = () => {
                 </motion.div>
               </motion.div>
 
-              {/* RIGHT IMAGE SECTION - PREMIUM DEPTH */}
+              {/* RIGHT IMAGE SECTION - PREMIUM CARD FRAME */}
               <motion.div 
-                initial={{ opacity: 0, scale: 0.98 }} 
-                animate={{ opacity: 1, scale: 1 }} 
+                initial={{ opacity: 0, x: 20 }} 
+                animate={{ opacity: 1, x: 0 }} 
                 transition={{ duration: 1.2, ease: "easeOut" }} 
-                className="hero-image-card hidden lg:block"
-                data-aos="zoom-in"
+                className="hero-image-container hidden lg:flex"
+                data-aos="fade-left"
               >
-                <img 
-                  src={`${import.meta.env.BASE_URL}ant_3d_coins.png`} 
-                  alt="Blueant Wealth" 
-                  className="hero-main-img" 
-                />
-                
-                {/* FLOATING ICONS */}
-                <div className="floating-icon fi-tr"><TrendingUp className="w-7 h-7 text-blue-500" /></div>
-                <div className="floating-icon fi-ml"><BarChart3 className="w-7 h-7 text-indigo-500" /></div>
-                <div className="floating-icon fi-br"><Shield className="w-7 h-7 text-emerald-500" /></div>
+                <div className="premium-image-card">
+                  {/* Decorative corner accents */}
+                  <div className="card-accent top-left"></div>
+                  <div className="card-accent bottom-right"></div>
+                  
+                  <img 
+                    src={`${import.meta.env.BASE_URL}ant_3d_coins.png`} 
+                    alt="Blueant Wealth" 
+                    className="hero-main-img-clean" 
+                  />
+                </div>
               </motion.div>
             </div>
           </div>
@@ -174,31 +167,47 @@ const CompanyPage = () => {
         {/* 3. IDENTITY SECTION (BLUE / ANT) */}
         <section className="company-section">
           <div className="company-container">
-            <div className="text-center mb-10">
+            <div className="text-center" style={{ marginBottom: '56px' }}>
               <span className="text-blue-600 font-black text-[11px] uppercase tracking-[4px] mb-3 inline-block">The Meaning Behind Blueant</span>
               <h2 className="text-4xl font-black text-slate-900 tracking-tight">A Name Inspired by <br /> Trust, Discipline & Consistency</h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} className="identity-card-premium ic-blue">
-                <h3 className="text-2xl font-black text-slate-900 mb-4 uppercase tracking-tight">BLUE</h3>
-                <p className="text-lg text-[#5b6475] leading-relaxed font-medium">
-                  Blue represents <strong>clarity, trust, professionalism, stability, and transparency</strong>.
+              <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} className="identity-card-premium ic-blue group">
+                <div className="ic-bg-icon">
+                  <Shield />
+                </div>
+                <div className="ic-header">
+                  <div className="ic-icon-wrapper blue-glow">
+                    <Shield className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="ic-title blue-text-gradient">BLUE</h3>
+                </div>
+                <p className="ic-desc">
+                  Blue represents <strong className="text-slate-900">clarity, trust, professionalism, stability, and transparency</strong>.
                 </p>
-                <div className="quote-area-refined">
-                  <p className="text-[14px] text-slate-500 leading-relaxed italic">
+                <div className="quote-area-refined blue-quote">
+                  <p>
                     In finance, these values reflect the importance of thoughtful planning, structured processes, and long-term financial awareness. Our approach emphasizes clarity and informed decision-making at every stage of the financial journey.
                   </p>
                 </div>
               </motion.div>
 
-              <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} className="identity-card-premium ic-ant">
-                <h3 className="text-2xl font-black text-slate-900 mb-4 uppercase tracking-tight">ANT</h3>
-                <p className="text-lg text-[#5b6475] leading-relaxed font-medium">
-                  Ants symbolize <strong>consistency, patience, teamwork, discipline, and collective progress</strong>.
+              <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} className="identity-card-premium ic-ant group">
+                <div className="ic-bg-icon">
+                  <TrendingUp />
+                </div>
+                <div className="ic-header">
+                  <div className="ic-icon-wrapper slate-glow">
+                    <TrendingUp className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="ic-title slate-text-gradient">ANT</h3>
+                </div>
+                <p className="ic-desc">
+                  Ants symbolize <strong className="text-slate-900">consistency, patience, teamwork, discipline, and collective progress</strong>.
                 </p>
-                <div className="quote-area-refined">
-                  <p className="text-[14px] text-slate-500 leading-relaxed italic">
+                <div className="quote-area-refined slate-quote">
+                  <p>
                     Their ability to build sustainably through small, continuous efforts reflects the philosophy behind long-term financial planning and disciplined wealth creation.
                   </p>
                 </div>
