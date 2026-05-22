@@ -9,7 +9,7 @@ function HeroSection() {
       <div className="hero-footer-row">
         <div className="hero-badge">🇮🇳 Trusted Since 2012</div>
         <Link to="#" onClick={(e) => { e.preventDefault(); openConsultationModal(); }} className="hero-btn hero-btn-primary">
-          Get Free Consultation
+          Get Personalized Guidance
         </Link>
         <span className="hero-trust-pill">✅ AMFI Registered</span>
         <span className="hero-trust-pill">✅ RBI Compliant</span>

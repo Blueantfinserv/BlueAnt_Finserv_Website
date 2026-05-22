@@ -137,7 +137,7 @@ const Navbar = () => {
             onClick={(e) => { e.preventDefault(); openConsultationModal(); }}
             className="hidden lg:block nav-cta-btn-3d"
           >
-            Get Free Consultation
+            Get Personalized Guidance
           </Link>
 
           {/* Mobile hamburger */}
@@ -202,7 +202,7 @@ const Navbar = () => {
             onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); openConsultationModal(); }}
             className="mt-4 block text-center bg-[#0f172a] text-white py-3 px-6 rounded-full font-black text-[12px] tracking-widest uppercase hover:bg-[#00afef] transition-all"
           >
-            Get Free Consultation
+            Get Personalized Guidance
           </Link>
         </div>
       )}

@@ -336,7 +336,7 @@ BlueAnt Finserv Team
                       )}
 
                       <button type="submit" className="cu-submit-btn" disabled={isSubmitting}>
-                        {isSubmitting ? 'SUBMITTING...' : 'GET FREE CONSULTATION →'}
+                        {isSubmitting ? 'SUBMITTING...' : 'GET PERSONALIZED GUIDANCE →'}
                       </button>
                       <span className="cu-trust-note">TRUSTED BY 50,000+ CUSTOMERS ACROSS INDIA</span>
                     </form>

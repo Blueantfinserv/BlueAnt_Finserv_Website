@@ -8,7 +8,7 @@ const teamMembers = [
   { id: 3, name: "Mr. Rahul Kumar", text: "Asst. Vice President", img: "Rahul Kumar.png" },
   { id: 4, name: "Mr. Avesh Prajapati", text: "Asst. Vice President", img: "Avesh Kumar Prajapati.png" },
   { id: 5, name: "Mr. Rajnish Kumar", text: "Asst. Vice President", img: "Rajnish Kumar.png" },
-  { id: 6, name: "Mr. Akash Yadav", text: "Manager", img: "Akash Yadav.png" },
+  { id: 6, name: "", text: "", img: "" }, // Placeholder for Mr. Akash Yadav
   { id: 7, name: "Mr. Vishnu Dutt", text: "Manager", img: "Vishnu Dutt.png" },
   { id: 8, name: "Mr. Jitendra Kumar", text: "Insurance Sales Manager", img: "Jitendra Kumar.png" },
   { id: 10, name: "Mr. Harsh Pandey", text: "Asst. RM", img: "Harsh Pandey.png" },
@@ -17,7 +17,8 @@ const teamMembers = [
   { id: 13, name: "Mr. Vikram Agarwal", text: "Asst. RM", img: "Vikram_Agarwal.png" },
   { id: 14, name: "Mr. Yogendra Kumar", text: "Asst. RM", img: "Yogendra_Kumar.png" },
   { id: 15, name: "Mr. Mukesh Kumar", text: "Asst. RM", img: "Mukesh_Kumar.png" },
-  { id: 16, name: "Mrs. Renu Verma", text: "Asst. CRM", img: "Renu Verma.png" },
+  { id: 16, name: "", text: "", img: "" }, // Placeholder for Mrs. Renu Verma
+  { id: 17, name: "", text: "", img: "" }, // Additional Empty Placeholder
 ];
 
 const TeamSection = () => {
@@ -52,23 +53,31 @@ const TeamSection = () => {
               data-aos-delay={(idx % 5) * 100}
             >
               <div className="team-image-wrapper">
-                <img 
-                  src={`${import.meta.env.BASE_URL}${member.img}`} 
-                  alt={member.name} 
-                  loading="lazy"
-                  className="team-image"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = 'https://ui-avatars.com/api/?name=' + member.name + '&background=0D8ABC&color=fff';
-                  }}
-                />
+                {member.img && (
+                  <img 
+                    src={`${import.meta.env.BASE_URL}${member.img}`} 
+                    alt={member.name} 
+                    loading="lazy"
+                    className="team-image"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = 'https://ui-avatars.com/api/?name=' + member.name + '&background=0D8ABC&color=fff';
+                    }}
+                  />
+                )}
               </div>
               <h3 className="team-name">
-                {member.name}
+                {member.name || "\u00A0"}
               </h3>
-              <span className="team-role-badge">
-                {member.text}
-              </span>
+              {member.text ? (
+                <span className="team-role-badge">
+                  {member.text}
+                </span>
+              ) : (
+                <span className="team-role-badge" style={{ opacity: 0 }}>
+                  Placeholder
+                </span>
+              )}
             </div>
           ))}
         </div>

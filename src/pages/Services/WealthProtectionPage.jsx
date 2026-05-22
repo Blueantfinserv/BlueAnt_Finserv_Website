@@ -19,28 +19,47 @@ const WealthProtectionPage = () => {
         <section className="wpp-hero">
           <div className="wpp-hero-glow"></div>
           <div className="max-w-[1200px] mx-auto px-8 md:px-12 lg:px-16 relative z-10">
-            <div className="max-w-4xl" data-aos="fade-right">
-              <div className="wpp-badge mb-8">
-                <span className="w-2 h-2 rounded-full bg-[#34d399] animate-pulse"></span>
-                <span>Risk Awareness & Financial Protection Education</span>
-              </div>
-              <h1 className="wpp-hero-title text-6xl md:text-8xl font-black mb-8">
-                Wealth <br />
-                <span>Protection.</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-slate-400 font-medium leading-relaxed max-w-3xl mb-8">
-                Protecting wealth begins with understanding risk, financial preparedness, and long-term structural planning. Our educational approach focuses on helping individuals evaluate financial vulnerabilities, understand protection frameworks, and strengthen decision-making through research-driven guidance.
-              </p>
-              
-              {/* Secure Info Widget */}
-              <div className="wcp-hero-widget mt-8" data-aos="zoom-in" data-aos-delay="200" style={{ background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.05)', color: '#ffffff' }}>
-                <div className="wcp-widget-icon" style={{ background: 'rgba(16, 185, 129, 0.12)', color: '#34d399' }}>
-                  <Shield size={22} />
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+              <div className="w-full lg:w-1/2" data-aos="fade-right">
+                <div className="wpp-badge mb-6">
+                  <span className="w-2 h-2 rounded-full bg-[#34d399] animate-pulse"></span>
+                  <span>Risk Awareness & Financial Protection Education</span>
                 </div>
-                <div className="wcp-widget-content">
-                  <span className="text-[10px] font-black uppercase tracking-wider text-emerald-400">Structured Protection Learning</span>
-                  <h4 style={{ marginTop: '2px', color: '#ffffff' }}>Understanding Risk Hedging Frameworks</h4>
-                  <p style={{ color: '#94a3b8' }}>Explore the math of family security buffers, emergency liquidity reserves, and defensive asset allocations. Learn how proper risk insulation prevents equity liquidation during market corrections.</p>
+                <h1 className="wpp-hero-title text-5xl lg:text-7xl font-black mb-6">
+                  Wealth <br />
+                  <span>Protection.</span>
+                </h1>
+                <p className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed max-w-2xl mb-8">
+                  Protecting wealth begins with understanding risk, financial preparedness, and long-term structural planning. Our educational approach focuses on helping individuals evaluate financial vulnerabilities, understand protection frameworks, and strengthen decision-making through research-driven guidance.
+                </p>
+                
+                {/* Secure Info Widget */}
+                <div className="wcp-hero-widget mt-8" data-aos="zoom-in" data-aos-delay="200">
+                  <div className="wcp-widget-icon" style={{ background: 'rgba(16, 185, 129, 0.12)', color: '#34d399' }}>
+                    <Shield size={22} />
+                  </div>
+                  <div className="wcp-widget-content">
+                    <span className="text-[10px] font-black uppercase tracking-wider text-emerald-500">Structured Protection Learning</span>
+                    <h4 style={{ marginTop: '2px' }}>Understanding Risk Hedging Frameworks</h4>
+                    <p>Explore the math of family security buffers, emergency liquidity reserves, and defensive asset allocations. Learn how proper risk insulation prevents equity liquidation during market corrections.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Hero Image - Top Right */}
+              <div className="w-full lg:w-1/2 hidden lg:block" data-aos="fade-left" data-aos-delay="300">
+                <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl group w-full aspect-[4/3] lg:aspect-[16/10]">
+                  <div className="absolute inset-0 bg-emerald-500/0 group-hover:bg-emerald-600/10 transition-colors duration-500 z-10 pointer-events-none"></div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=80" 
+                    alt="Wealth Protection" 
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:brightness-95"
+                  />
+                  <div className="absolute top-6 right-6 w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg z-20">
+                    <svg className="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>

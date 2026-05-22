@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from html.vikinglab.agency/finazze/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Feb 2025 06:37:33 GMT -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blueant</title>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9SCKPR5QT2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9SCKPR5QT2');
+</script>
+  <!--=====FAB ICON=======-->
+  <link rel="shortcut icon" href="assets/img/logo/fav-logo1.png" type="image/x-icon">
+
+  <!--===== CSS LINK =======-->
+  <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/aos.css">
+  <link rel="stylesheet" href="assets/css/plugins/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/plugins/owlcarousel.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/sidebar.css">
+  <link rel="stylesheet" href="assets/css/plugins/slick-slider.css">
+  <link rel="stylesheet" href="assets/css/plugins/nice-select.css">
+  <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <!--=====  JS SCRIPT LINK =======-->
+  <script src="assets/js/plugins/jquery-3-7-1.min.js"></script>
+</head>
+
+<body>
+
+
+
+  <!--===== PROGRESS STARTS=======-->
+  <div class="paginacontainer">
+    <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+  </div>
+  <!--===== PROGRESS ENDS=======-->
+
+  <!--=====HEADER START=======-->
+  <header class="homepage1-body">
+    <div id="vl-header-sticky" class="vl-header-area vl-transparent-header">
+
+      <div class="container header-part" style="background: #f6f6f6!important;
+      padding: 15px!important;
+      border-radius: 14px!important;">
+
+        <div class="row align-items-center">
+          <div class="col-lg-2 col-md-6 col-6">
+            <div class="vl-logo">
+              <a href="index.html"><img src="assets/img/logo/logo1.png" alt=""></a>
+            </div>
+          </div>
+          <div class="col-lg-8 d-none d-lg-block">
+            <div class="vl-main-menu text-center">
+              <nav class="vl-mobile-menu-active">
+                <ul>
+                  <li><a href="index.html">HOME</a></li>
+                  <li class="has-dropdown">
+                    <a href="#">ABOUT <span><i class="fa-solid fa-angle-down d-lg-inline d-none"></i></span></a>
+                    <ul class="sub-menu">
+                      <li><a href="about.html">COMPANY PROFILE</a></li>
+                      <li><a href="team.html">OUR TEAM</a></li>
+
+                    </ul>
+                  </li>
+                  <li class="has-dropdown">
+                    <a href="#">SERVICES <span><i class="fa-solid fa-angle-down d-lg-inline d-none"></i></span></a>
+                    <ul class="sub-menu">
+                      <li><a href="taxes.html">TAXES</a></li>
+                      <li><a href="budgeting.html">BUDGETING</a></li>
+                      <li><a href="retirement.html">RETIREMENT</a></li>
+                      <li><a href="kid-need.html">KID'S NEEDS</a></li>
+                      <li><a href="will-legacy.html">WILL & LEGACY</a></li>
+                      <li><a href="loan-advisory.html">LOAN ADVISORY</a></li>
+                      <li><a href="insurance-advisory.html">INSURANCE ADVISORY</a></li>
+                      <li><a href="investing-for-financial-freedom.html">INVESTING FOR FINANCIAL FREEDOM</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="workshop.html">WORKSHOP</a></li>
+                  <li><a href="impact-stories.html">IMPACT STORIES</a></li>
+                  <li><a href="#">BLOG</a></li>
+                  <li><a href="#">LOGIN</a></li>
+                  <li><a href="contact.html">CONTACT</a></li>
+
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 col-6">
+            <div class="vl-hero-btn d-none d-lg-block text-end">
+              <div class="head-btn">
+
+                <span class="vl-btn-wrap text-end">
+                  <span class="icons">
+                    <img src="assets/img/icons/phone1.svg" alt="">
+                  </span>
+                  <span class="text">
+                    <a href="tel:9990218899">999-021-8899</a>
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="vl-header-action-item d-block d-lg-none">
+              <button type="button" class="vl-offcanvas-toggle">
+                <i class="fa-solid fa-bars-staggered"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+  <!--=====HEADER END =======-->
+  <!--===== MOBILE HEADER STARTS =======-->
+  <div class="homepage1-body">
+    <div class="vl-offcanvas">
+      <div class="vl-offcanvas-wrapper">
+        <div class="vl-offcanvas-header d-flex justify-content-between align-items-center mb-90">
+          <div class="vl-offcanvas-logo">
+            <a href="index.html"><img src="assets/img/logo/logo1.png" alt=""></a>
+          </div>
+          <div class="vl-offcanvas-close">
+            <button class="vl-offcanvas-close-toggle"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+        </div>
+
+        <div class="vl-offcanvas-menu d-lg-none mb-40">
+          <nav></nav>
+        </div>
+
+        <div class="space20"></div>
+        <div class="vl-offcanvas-info">
+          <h3 class="vl-offcanvas-sm-title">Contact Us</h3>
+          <!-- <div class="space20"></div>
+          <span><a href="#"> <i class="fa-regular fa-envelope"></i> +57 9954 6476</a></span>
+          <span><a href="#"><i class="fa-solid fa-phone"></i> hello@exdos.com</a></span>
+          <span><a href="#"><i class="fa-solid fa-location-dot"></i> Bhemeara,Kushtia</a></span>
+        </div> -->
+          <div class="space20"></div>
+          <div class="vl-offcanvas-social">
+            <h3 class="vl-offcanvas-sm-title">Follow Us</h3>
+            <div class="space20"></div>
+            <a href="https://www.facebook.com/blueantindia/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/blueantfinserv?t=CWqEC2MxO7Hamk4s3wED5w&s=09" target="_blank"><i
+                class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/blueantindia/" target="_blank"><i class="fab fa-instagram"></i></a>
+
+            <a href="https://www.youtube.com/@rohits-take" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+
+        </div>
+      </div>
+      <div class="vl-offcanvas-overlay"></div>
+    </div>
+    <!--===== MOBILE HEADER STARTS =======-->
+
+    <!--===== MOBILE HEADER STARTS =======-->
+    <div class="homepage1-body">
+      <div class="vl-offcanvas">
+        <div class="vl-offcanvas-wrapper">
+          <div class="vl-offcanvas-header d-flex justify-content-between align-items-center mb-90">
+            <div class="vl-offcanvas-logo">
+              <a href="index.html"><img src="assets/img/website-img/logo.png" alt=""></a>
+            </div>
+            <div class="vl-offcanvas-close">
+              <button class="vl-offcanvas-close-toggle"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+          </div>
+
+          <div class="vl-offcanvas-menu d-lg-none mb-40">
+            <nav></nav>
+          </div>
+
+          <div class="space20"></div>
+          <div class="space20"></div>
+          <div class="vl-offcanvas-social">
+            <h3 class="vl-offcanvas-sm-title">Follow Us</h3>
+            <div class="space20"></div>
+            <a href="https://www.facebook.com/blueantindia/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/blueantfinserv?t=CWqEC2MxO7Hamk4s3wED5w&s=09" target="_blank"><i
+                class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/blueantindia/" target="_blank"><i class="fab fa-instagram"></i></a>
+
+            <a href="https://www.youtube.com/@rohits-take" target="_blank"><i class="fab fa-youtube"></i></a>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="vl-offcanvas-overlay"></div>
+    </div>
+    <!--===== MOBILE HEADER STARTS =======-->
+
+    <!--===== SIDEBAR STARTS=======-->
+    <div class="header-search-form-wrapper">
+      <div class="tx-search-close tx-close"><i class="fa-solid fa-xmark"></i></div>
+      <div class="header-search-container">
+        <!-- <form role="search" class="search-form">
+      <input type="search"  class="search-field" placeholder="Search …" value="" name="s">
+      <button type="submit" class="search-submit"><img src="assets/img/icons/search1.svg" alt=""></button>
+      </form> -->
+      </div>
+    </div>
+    <div class="body-overlay"></div>
+    <!--===== SIDEBAR ENDS STARTS=======-->
+
+    <!--===== HERO AREA STARTS =======-->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="assets/img/website-img/banner-new.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/website-img/banner-2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/website-img/banner-3.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!--===== HERO AREA ENDS =======-->
+
+    <!----=== box start===-->
+    <section class="main-box">
+      <div class="container">
+        <div class="row">
+          <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-2 col-sm-12 col-12"></div>
+          <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-5 col-sm-12 col-12">
+            <div class="box-card card mb-3" id="card-1" data-aos="fade-up" data-aos-duration="1000">
+              <div class="row g-0">
+                <div class="col-md-3 col-sm-3 col-3">
+                  <div class="img-1">
+                    <img src="assets/img/website-img/icon/tax-white.png" class="img-fluid" alt="...">
+                  </div>
+                </div>
+                <div class="col-md-9 col-sm-9 col-9">
+                  <div class="box-card-body card-body">
+                    <h5 class="box-card-title card-title">Taxes</h5>
+                    <p class="box-card-text card-text">Tax encourage investments and entrepreneurship.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-5 col-sm-12 col-12">
+            <div class="box-card card mb-3" id="card-2" data-aos="fade-up" data-aos-duration="1000">
+              <div class="row g-0">
+                <div class="col-md-3 col-sm-3 col-3">
+                  <div class="img-1">
+                    <img src="assets/img/website-img/icon/retirement-white.png" class="img-fluid" alt="...">
+                  </div>
+                </div>
+                <div class="col-md-9 col-sm-9 col-9">
+                  <div class="box-card-body card-body">
+                    <h5 class="box-card-title card-title">Retirement</h5>
+                    <p class="box-card-text card-text">Reduces risk by investing in multiple securities</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!----=== box end===-->
+
+    <!--===== ABOUT AREA STARTS =======-->
+    <div class="about1-section-area sp1">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-1"></div>
+          <div class="col-lg-5">
+            <div class="about-images-area">
+              <div class="img1 reveal">
+                <img src="assets/img/website-img/about-3.jpg" alt="">
+              </div>
+              <img src="assets/img/website-img/12-year-1.jpg" alt="" class="exp-img elements6 aniamtion-key-1">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="about-heading heading1">
+              <h5 data-aos="fade-left" data-aos-duration="800">About Us</h5>
+              <div class="space16"></div>
+              <h2 class="text-anime-style-3">Blueant: A Name Built on <br />Trust,Growth, and Strength </h2>
+              <div class="space16"></div>
+              <p data-aos="fade-left" data-aos-duration="900">The name <b>Blueant</b> represents our core values and our
+                commitment towards helping individuals and families to build a secure financial future.</p>
+              <div class="space16"></div>
+              <p data-aos="fade-left" data-aos-duration="900">It is derived from two meaningful words:</p>
+              <div class="space10"></div>
+              <p data-aos="fade-left" data-aos-duration="900"><strong style="color:#00afef;">BLUE : </strong>A color
+                that symbolizes trust, credibility, professionalism, and confidence.</p>
+              <div class="space5"></div>
+              <div class="space10"></div>
+              <p data-aos="fade-left" data-aos-duration="900"><strong style="color:#ed3237;">ANT : </strong>A creature
+                known for its discipline, persistence, and teamwork.</p>
+              <div class="space16"></div>
+              <p data-aos="fade-left" data-aos-duration="900">At <b>Blueant</b>, we believe in <b>the power of small but
+                  consistent savings.</b> Just as ants build strong colonies step by step, we help our clients achieve
+                <b>financial success through steady and smart financial decisions.</b></p>
+              <div class="space18"></div>
+              <div class="btn-area1" data-aos="fade-left" data-aos-duration="1000">
+                <a href="about.html" class="vl-btn1">Read More</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===== ABOUT AREA ENDS =======-->
+    <!--===== SERVICE AREA STARTS =======-->
+    <div class="service1-section-area sp1"
+      style="background-image: url(assets/img/website-img/service-bg-1.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9">
+            <div class="heading1 space-margin60">
+              <h5>OUR SERVICE</h5>
+              <div class="space20"></div>
+              <h2 class="text-anime-style-3 text-white">We help you identify investment products for your different
+                financial goals
+                and priorities</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12" data-aos="fade-up" data-aos-duration="1000">
+            <div class="service-single-slider owl-carousel">
+              <div class="service-boxarea">
+                <div class="img1">
+                  <img src="assets/img/website-img/service/retirement.jpg" alt="">
+                  <div class="arrow">
+                    <a href="retirement.html"><i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="content-area">
+                  <div class="icons">
+                    <img src="assets/img/website-img/icon/retirement-plan.png" alt="">
+                  </div>
+                  <div class="space24"></div>
+                  <a href="retirement.html">Retirement</a>
+                </div>
+              </div>
+
+              <div class="service-boxarea">
+                <div class="img1">
+                  <img src="assets/img/website-img/service/investment-finacial-freedom-1.jpg" alt="">
+                  <div class="arrow">
+                    <a href="investing-for-financial-freedom.html"><i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="content-area">
+                  <div class="icons">
+                    <img src="assets/img/website-img/icon/financial-freedom.png" alt="">
+                  </div>
+                  <div class="space24"></div>
+                  <a href="investing-for-financial-freedom.html">Investing for financial freedom</a>
+                </div>
+              </div>
+
+              <div class="service-boxarea">
+                <div class="img1">
+                  <img src="assets/img/website-img/service/tax.jpg" alt="">
+                  <div class="arrow">
+                    <a href="taxes.html"><i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="content-area">
+                  <div class="icons">
+                    <img src="assets/img/website-img/icon/pie-chart.png" alt="">
+                  </div>
+                  <div class="space24"></div>
+                  <a href="taxes.html">Taxes</a>
+                </div>
+              </div>
+              <div class="service-boxarea">
+                <div class="img1">
+                  <img src="assets/img/website-img/service/will-legacy.jpg" alt="">
+                  <div class="arrow">
+                    <a href="will-legacy.html"><i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="content-area">
+                  <div class="icons">
+                    <img src="assets/img/website-img/icon/will.png" alt="">
+                  </div>
+                  <div class="space24"></div>
+                  <a href="will-legacy.html">Will & legacy</a>
+                </div>
+              </div>
+              <div class="service-boxarea">
+                <div class="img1">
+                  <img src="assets/img/website-img/service/insurance-advisary.jpg" alt="">
+                  <div class="arrow">
+                    <a href="insurance-advisory.html"><i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="content-area">
+                  <div class="icons">
+                    <img src="assets/img/website-img/icon/health-insurance.png" alt="">
+                  </div>
+                  <div class="space24"></div>
+                  <a href="insurance-advisory.html">Insurance advisory</a>
+                </div>
+              </div>
+              <div class="service-boxarea">
+                <div class="img1">
+                  <img src="assets/img/website-img/service/kids-need.jpg" alt="">
+                  <div class="arrow">
+                    <a href="kid-need.html"><i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="content-area">
+                  <div class="icons">
+                    <img src="assets/img/website-img/icon/family-insurance.png" alt="">
+                  </div>
+                  <div class="space24"></div>
+                  <a href="kid-need.html">Kid’s needs</a>
+                </div>
+              </div>
+              <div class="service-boxarea">
+                <div class="img1">
+                  <img src="assets/img/website-img/service/loan-advisary.jpg" alt="">
+                  <div class="arrow">
+                    <a href="loan-advisory.html"><i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="content-area">
+                  <div class="icons">
+                    <img src="assets/img/website-img/icon/loan.png" alt="">
+                  </div>
+                  <div class="space24"></div>
+                  <a href="loan-advisory.html">Loan advisory</a>
+                </div>
+              </div>
+              <div class="service-boxarea">
+                <div class="img1">
+                  <img src="assets/img/website-img/service/budgeting.jpg" alt="">
+                  <div class="arrow">
+                    <a href="budgeting.html"><i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="content-area">
+                  <div class="icons">
+                    <img src="assets/img/website-img/icon/budget.png" alt="">
+                  </div>
+                  <div class="space24"></div>
+                  <a href="budgeting.html">Budgeting</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===== SERVICE AREA ENDS =======-->
+    <!--workshop start-->
+    <section class="workshop">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="heading1 space-margin60 text-center">
+              <h5>Our Workshop</h5>
+              <div class="space20"></div>
+              <h2 class="text-anime-style-3">Grow Your Wealth, Secure Your Tomorrow </h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12-col-12">
+            <div class="ws-img" data-aos="zoom-in-right" data-aos-duration="1500">
+              <img src="assets/img/website-img/workshop/workshop-1.jpg" class="img-fluid" />
+            </div>
+          </div>
+          <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12-col-12">
+            <div class="ws-img" data-aos="zoom-in-right" data-aos-duration="1500">
+              <img src="assets/img/website-img/workshop/workshop-9.jpg" class="img-fluid" />
+            </div>
+          </div>
+          <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12-col-12">
+            <div class="ws-img" data-aos="zoom-in-right" data-aos-duration="1500">
+              <img src="assets/img/website-img/workshop/workshop-15.jpg" class="img-fluid" />
+            </div>
+          </div>
+          <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12-col-12">
+            <div class="ws-img" data-aos="zoom-in-left" data-aos-duration="1500">
+              <img src="assets/img/website-img/workshop/workshop-4.jpg" class="img-fluid" />
+            </div>
+          </div>
+          <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12-col-12">
+            <div class="ws-img" data-aos="zoom-in-left" data-aos-duration="1500">
+              <img src="assets/img/website-img/workshop/workshop-2.jpg" class="img-fluid" />
+            </div>
+          </div>
+          <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12-col-12">
+            <div class="ws-img" data-aos="zoom-in-left" data-aos-duration="1500">
+              <img src="assets/img/website-img/workshop/workshop-18.jpg" class="img-fluid" />
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="space48"></div>
+          <div class="btn-area1 text-center">
+            <a href="workshop.html" class="vl-btn1">View More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--workshop end-->
+    <!--===== TESTIMONIAL AREA STARTS =======-->
+    <div class="testimonial5-section-area sp1">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="heading5">
+              <h5 data-aos="fade-left" data-aos-duration="800">Impact Stories</h5>
+              <div class="space16"></div>
+              <h2 class="text-anime-style-3">See How We’ve Helped Businesses Achieve.</h2>
+              <div class="space16"></div>
+              <p data-aos="fade-left" data-aos-duration="900">Their personalized approach and dedication our success set
+                them apart. We saw tangible results within months and couldn’t happier with the outcome.’ We are honored
+                to play a part in helping.</p>
+              <div class="space32"></div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-1"></div>
+          <div class="col-lg-6">
+            <div class="testimonial6-widget-boxarea owl-carousel">
+              <div class="testimonial-boxarea">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+                  <path
+                    d="M32.0204 20.6095C32.0204 22.8095 32.5954 24.657 33.7454 26.152C34.5604 27.182 35.6662 27.8586 37.0629 28.182C38.4379 28.502 39.7379 28.5245 40.9129 28.252C41.3129 30.627 40.6629 33.142 39.0129 35.807C37.3596 38.4703 35.2279 40.4728 32.6179 41.8145L36.5704 47.502C38.5704 46.512 40.4704 45.257 42.2204 43.7395C43.9954 42.222 45.5704 40.477 46.9704 38.5045C48.3704 36.532 49.4204 34.3045 50.0954 31.7795C50.7704 29.2545 50.9579 26.6795 50.6354 24.0295C50.2154 20.5295 49.0854 17.7295 47.2454 15.6544C45.4071 13.5528 43.1171 12.5019 40.3754 12.5019C37.9629 12.5019 35.9604 13.227 34.3754 14.6969C32.8071 16.137 32.0237 18.1103 32.0254 20.617L32.0204 20.6095ZM9.21039 20.6095C9.21039 22.8095 9.78539 24.657 10.9354 26.152C11.7521 27.202 12.8579 27.8828 14.2529 28.1945C15.6529 28.5028 16.9362 28.5211 18.1029 28.2495C18.5029 30.5995 17.8779 33.1245 16.2229 35.7995C14.5729 38.4495 12.4429 40.4495 9.83289 41.7995L13.7754 47.502C15.7771 46.512 17.6604 45.2578 19.4254 43.7395C21.2164 42.1993 22.8071 40.4406 24.1604 38.5045C25.5504 36.5295 26.5854 34.3045 27.2604 31.7795C27.9461 29.2564 28.1304 26.6234 27.8029 24.0295C27.3879 20.5295 26.2629 17.7295 24.4279 15.6544C22.5946 13.5678 20.3087 12.5245 17.5704 12.5245C15.1537 12.5211 13.1521 13.2519 11.5654 14.7169C9.99706 16.1569 9.21206 18.1303 9.21039 20.6369V20.6095Z"
+                    fill="#ed3237" />
+                </svg>
+                <div class="space28"></div>
+                <p>“Our clients' success is at the heart of everything we do. We pride ourselves on building
+                  long-lasting relationships & delivering results that make a real difference. One client shared,
+                  Finazze provided the strategic guidance.”</p>
+                <div class="space28"></div>
+                <div class="auhtor-text">
+                  <a href="#">Gabriel Krajcik</a>
+                  <div class="space12"></div>
+                  <p>Businessman</p>
+                </div>
+              </div>
+
+              <div class="testimonial-boxarea">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+                  <path
+                    d="M32.0204 20.6095C32.0204 22.8095 32.5954 24.657 33.7454 26.152C34.5604 27.182 35.6662 27.8586 37.0629 28.182C38.4379 28.502 39.7379 28.5245 40.9129 28.252C41.3129 30.627 40.6629 33.142 39.0129 35.807C37.3596 38.4703 35.2279 40.4728 32.6179 41.8145L36.5704 47.502C38.5704 46.512 40.4704 45.257 42.2204 43.7395C43.9954 42.222 45.5704 40.477 46.9704 38.5045C48.3704 36.532 49.4204 34.3045 50.0954 31.7795C50.7704 29.2545 50.9579 26.6795 50.6354 24.0295C50.2154 20.5295 49.0854 17.7295 47.2454 15.6544C45.4071 13.5528 43.1171 12.5019 40.3754 12.5019C37.9629 12.5019 35.9604 13.227 34.3754 14.6969C32.8071 16.137 32.0237 18.1103 32.0254 20.617L32.0204 20.6095ZM9.21039 20.6095C9.21039 22.8095 9.78539 24.657 10.9354 26.152C11.7521 27.202 12.8579 27.8828 14.2529 28.1945C15.6529 28.5028 16.9362 28.5211 18.1029 28.2495C18.5029 30.5995 17.8779 33.1245 16.2229 35.7995C14.5729 38.4495 12.4429 40.4495 9.83289 41.7995L13.7754 47.502C15.7771 46.512 17.6604 45.2578 19.4254 43.7395C21.2164 42.1993 22.8071 40.4406 24.1604 38.5045C25.5504 36.5295 26.5854 34.3045 27.2604 31.7795C27.9461 29.2564 28.1304 26.6234 27.8029 24.0295C27.3879 20.5295 26.2629 17.7295 24.4279 15.6544C22.5946 13.5678 20.3087 12.5245 17.5704 12.5245C15.1537 12.5211 13.1521 13.2519 11.5654 14.7169C9.99706 16.1569 9.21206 18.1303 9.21039 20.6369V20.6095Z"
+                    fill="#ed3237" />
+                </svg>
+                <div class="space28"></div>
+                <p>“Our clients' success is at the heart of everything we do. We pride ourselves on building
+                  long-lasting relationships & delivering results that make a real difference. One client shared,
+                  Finazze provided the strategic guidance.”</p>
+                <div class="space28"></div>
+                <div class="auhtor-text">
+                  <a href="team.html">Gabriel Krajcik</a>
+                  <div class="space12"></div>
+                  <p>Businessman</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===== TESTIMONIAL AREA ENDS =======-->
+    <!--===== BLOG AREA STARTS =======-->
+    <div class="vl-blog-4-area sp2">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="heading1 space-margin60 text-center">
+              <h5>Our Blog</h5>
+              <div class="space20"></div>
+              <h2 class="text-anime-style-3">Our Latest Blog & News </h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-12" data-aos="zoom-in-up" data-aos-duration="900">
+            <div class="vl-blog-1-item">
+              <div class="vl-blog-1-thumb image-anime">
+                <img src="assets/img/website-img/blog-1.jpg" alt="">
+              </div>
+              <div class="vl-blog-1-content">
+                <div class="vl-blog-meta">
+                  <ul>
+                    <li>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 20 22"
+                          fill="none">
+                          <g clip-path="url(#clip0_600_6756)">
+                            <path
+                              d="M5.61627 0C5.80006 0 5.97633 0.0811248 6.1063 0.225528C6.23626 0.369931 6.30927 0.565783 6.30927 0.77V2.2099H13.7511V0.7799C13.7511 0.575683 13.8241 0.379831 13.9541 0.235428C14.084 0.0910248 14.2603 0.0099 14.4441 0.0099C14.6279 0.0099 14.8042 0.0910248 14.9341 0.235428C15.0641 0.379831 15.1371 0.575683 15.1371 0.7799V2.2099H17.82C18.345 2.2099 18.8484 2.44153 19.2197 2.85388C19.591 3.26622 19.7997 3.82551 19.8 4.4088V19.8011C19.7997 20.3844 19.591 20.9437 19.2197 21.356C18.8484 21.7684 18.345 22 17.82 22H1.98C1.45504 22 0.951572 21.7684 0.580278 21.356C0.208985 20.9437 0.000262479 20.3844 0 19.8011L0 4.4088C0.000262479 3.82551 0.208985 3.26622 0.580278 2.85388C0.951572 2.44153 1.45504 2.2099 1.98 2.2099H4.92327V0.7689C4.92353 0.564874 4.99666 0.369304 5.12659 0.225139C5.25653 0.0809736 5.43265 -2.0819e-07 5.61627 0ZM1.386 8.5162V19.8011C1.386 19.8878 1.40136 19.9736 1.43122 20.0537C1.46107 20.1337 1.50482 20.2065 1.55998 20.2678C1.61514 20.3291 1.68062 20.3777 1.75269 20.4109C1.82475 20.444 1.90199 20.4611 1.98 20.4611H17.82C17.898 20.4611 17.9752 20.444 18.0473 20.4109C18.1194 20.3777 18.1849 20.3291 18.24 20.2678C18.2952 20.2065 18.3389 20.1337 18.3688 20.0537C18.3986 19.9736 18.414 19.8878 18.414 19.8011V8.5316L1.386 8.5162ZM6.60033 16.0809V17.9135H4.95V16.0809H6.60033ZM10.7247 16.0809V17.9135H9.07533V16.0809H10.7247ZM14.85 16.0809V17.9135H13.1997V16.0809H14.85ZM6.60033 11.7062V13.5388H4.95V11.7062H6.60033ZM10.7247 11.7062V13.5388H9.07533V11.7062H10.7247ZM14.85 11.7062V13.5388H13.1997V11.7062H14.85ZM4.92327 3.7488H1.98C1.90199 3.7488 1.82475 3.76587 1.75269 3.79904C1.68062 3.83221 1.61514 3.88082 1.55998 3.94211C1.50482 4.0034 1.46107 4.07615 1.43122 4.15623C1.40136 4.2363 1.386 4.32213 1.386 4.4088V6.9773L18.414 6.9927V4.4088C18.414 4.32213 18.3986 4.2363 18.3688 4.15623C18.3389 4.07615 18.2952 4.0034 18.24 3.94211C18.1849 3.88082 18.1194 3.83221 18.0473 3.79904C17.9752 3.76587 17.898 3.7488 17.82 3.7488H15.1371V4.7707C15.1371 4.97492 15.0641 5.17077 14.9341 5.31517C14.8042 5.45958 14.6279 5.5407 14.4441 5.5407C14.2603 5.5407 14.084 5.45958 13.9541 5.31517C13.8241 5.17077 13.7511 4.97492 13.7511 4.7707V3.7488H6.30927V4.7608C6.30927 4.96502 6.23626 5.16087 6.1063 5.30527C5.97633 5.44968 5.80006 5.5308 5.61627 5.5308C5.43247 5.5308 5.25621 5.44968 5.12624 5.30527C4.99628 5.16087 4.92327 4.96502 4.92327 4.7608V3.7488Z"
+                              fill="#061D19" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_600_6756">
+                              <rect width="19.8" height="22" fill="white" />
+                            </clipPath>
+                          </defs>
+                        </svg> 26 April 2025 <span> | </span></a>
+                    </li>
+                    <li>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"
+                          fill="none">
+                          <path
+                            d="M4.9668 17.5C4.9668 14.2783 7.57847 11.6667 10.8001 11.6667C14.0218 11.6667 16.6335 14.2783 16.6335 17.5M14.1335 5.83333C14.1335 7.67428 12.641 9.16667 10.8001 9.16667C8.95918 9.16667 7.4668 7.67428 7.4668 5.83333C7.4668 3.99238 8.95918 2.5 10.8001 2.5C12.641 2.5 14.1335 3.99238 14.1335 5.83333Z"
+                            stroke="#061D19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg> Alex Roy</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="space24"></div>
+                <h4 class="vl-blog-1-title"><a href="blog-single.html"> Possimus maxime similique excepturi cumque est
+                    aliquam.</a></h4>
+                <div class="vl-blog-1-icon">
+                  <a href="blog-single.html"><svg xmlns="http://www.w3.org/2000/svg" width="49" height="49"
+                      viewBox="0 0 49 49" fill="none">
+                      <path d="M16.0918 32.8674L32.426 16.5333" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M19.0605 16.5315H32.4249V29.8958" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12" data-aos="zoom-in-up" data-aos-duration="1000">
+            <div class="vl-blog-1-item">
+              <div class="vl-blog-1-thumb image-anime">
+                <img src="assets/img/website-img/blog-2.jpg" alt="">
+              </div>
+              <div class="vl-blog-1-content">
+                <div class="vl-blog-meta">
+                  <ul>
+                    <li>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 20 22"
+                          fill="none">
+                          <g clip-path="url(#clip0_600_6756)">
+                            <path
+                              d="M5.61627 0C5.80006 0 5.97633 0.0811248 6.1063 0.225528C6.23626 0.369931 6.30927 0.565783 6.30927 0.77V2.2099H13.7511V0.7799C13.7511 0.575683 13.8241 0.379831 13.9541 0.235428C14.084 0.0910248 14.2603 0.0099 14.4441 0.0099C14.6279 0.0099 14.8042 0.0910248 14.9341 0.235428C15.0641 0.379831 15.1371 0.575683 15.1371 0.7799V2.2099H17.82C18.345 2.2099 18.8484 2.44153 19.2197 2.85388C19.591 3.26622 19.7997 3.82551 19.8 4.4088V19.8011C19.7997 20.3844 19.591 20.9437 19.2197 21.356C18.8484 21.7684 18.345 22 17.82 22H1.98C1.45504 22 0.951572 21.7684 0.580278 21.356C0.208985 20.9437 0.000262479 20.3844 0 19.8011L0 4.4088C0.000262479 3.82551 0.208985 3.26622 0.580278 2.85388C0.951572 2.44153 1.45504 2.2099 1.98 2.2099H4.92327V0.7689C4.92353 0.564874 4.99666 0.369304 5.12659 0.225139C5.25653 0.0809736 5.43265 -2.0819e-07 5.61627 0ZM1.386 8.5162V19.8011C1.386 19.8878 1.40136 19.9736 1.43122 20.0537C1.46107 20.1337 1.50482 20.2065 1.55998 20.2678C1.61514 20.3291 1.68062 20.3777 1.75269 20.4109C1.82475 20.444 1.90199 20.4611 1.98 20.4611H17.82C17.898 20.4611 17.9752 20.444 18.0473 20.4109C18.1194 20.3777 18.1849 20.3291 18.24 20.2678C18.2952 20.2065 18.3389 20.1337 18.3688 20.0537C18.3986 19.9736 18.414 19.8878 18.414 19.8011V8.5316L1.386 8.5162ZM6.60033 16.0809V17.9135H4.95V16.0809H6.60033ZM10.7247 16.0809V17.9135H9.07533V16.0809H10.7247ZM14.85 16.0809V17.9135H13.1997V16.0809H14.85ZM6.60033 11.7062V13.5388H4.95V11.7062H6.60033ZM10.7247 11.7062V13.5388H9.07533V11.7062H10.7247ZM14.85 11.7062V13.5388H13.1997V11.7062H14.85ZM4.92327 3.7488H1.98C1.90199 3.7488 1.82475 3.76587 1.75269 3.79904C1.68062 3.83221 1.61514 3.88082 1.55998 3.94211C1.50482 4.0034 1.46107 4.07615 1.43122 4.15623C1.40136 4.2363 1.386 4.32213 1.386 4.4088V6.9773L18.414 6.9927V4.4088C18.414 4.32213 18.3986 4.2363 18.3688 4.15623C18.3389 4.07615 18.2952 4.0034 18.24 3.94211C18.1849 3.88082 18.1194 3.83221 18.0473 3.79904C17.9752 3.76587 17.898 3.7488 17.82 3.7488H15.1371V4.7707C15.1371 4.97492 15.0641 5.17077 14.9341 5.31517C14.8042 5.45958 14.6279 5.5407 14.4441 5.5407C14.2603 5.5407 14.084 5.45958 13.9541 5.31517C13.8241 5.17077 13.7511 4.97492 13.7511 4.7707V3.7488H6.30927V4.7608C6.30927 4.96502 6.23626 5.16087 6.1063 5.30527C5.97633 5.44968 5.80006 5.5308 5.61627 5.5308C5.43247 5.5308 5.25621 5.44968 5.12624 5.30527C4.99628 5.16087 4.92327 4.96502 4.92327 4.7608V3.7488Z"
+                              fill="#061D19" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_600_67561">
+                              <rect width="19.8" height="22" fill="white" />
+                            </clipPath>
+                          </defs>
+                        </svg> 26 march 2025 <span> | </span></a>
+                    </li>
+                    <li>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"
+                          fill="none">
+                          <path
+                            d="M4.9668 17.5C4.9668 14.2783 7.57847 11.6667 10.8001 11.6667C14.0218 11.6667 16.6335 14.2783 16.6335 17.5M14.1335 5.83333C14.1335 7.67428 12.641 9.16667 10.8001 9.16667C8.95918 9.16667 7.4668 7.67428 7.4668 5.83333C7.4668 3.99238 8.95918 2.5 10.8001 2.5C12.641 2.5 14.1335 3.99238 14.1335 5.83333Z"
+                            stroke="#061D19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg> Jos Butler</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="space24"></div>
+                <h4 class="vl-blog-1-title"><a href="blog-single.html">Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Repellendus.</a></h4>
+                <div class="vl-blog-1-icon">
+                  <a href="blog-single.html"><svg xmlns="http://www.w3.org/2000/svg" width="49" height="49"
+                      viewBox="0 0 49 49" fill="none">
+                      <path d="M16.0918 32.8674L32.426 16.5333" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M19.0605 16.5315H32.4249V29.8958" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===== BLOG AREA ENDS =======-->
+    <!--===== counter starts =======-->
+    <section class="counter-card funfact-area waypoint-tigger  promotion-banner-area background-image parallax"
+      data-aos="fade-up" data-aos-duration="900">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="counter-part">
+              <h1 class="number text-center" data-aos="fade-up" data-aos-duration="900"><span
+                  class="counter">2013</span></h1>
+              <h3 class="test" data-aos="fade-up" data-aos-duration="900">Year Of Establishment</h3>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="counter-part cp-1">
+              <h1 class="number text-center" data-aos="fade-up" data-aos-duration="900"><span
+                  class="counter">47</span><span class="counter">+</span></h1>
+              <h3 class="test" data-aos="fade-up" data-aos-duration="900">No. Of Employees</h3>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="counter-part">
+              <h1 class="number text-center" data-aos="fade-up" data-aos-duration="900"><span
+                  class="counter">2600</span><span class="counter">+</span></h1>
+              <h3 class="test" data-aos="fade-up" data-aos-duration="900">Total Clients</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--===== counter ENDS =======-->
+    <!--contact start-->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-outer">
+          <div class="row">
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-7 col-sm-12 col-12">
+              <div class="contact-form">
+
+                <div class="heading1 space-margin60">
+                  <h5>Get In Touch</h5>
+                  <div class="space20"></div>
+                  <h2 class="text-anime-style-3">Start Your Investment Journey with Us!</h2>
+                </div>
+
+                <form action="#" method="post" class="frm my-3" data-aos="fade-right" data-aos-duration="900"
+                  class="aos-init aos-animate">
+                  <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                      <div class="mb-3">
+                        <input type="text" name="fname" class="form-control" required="" placeholder="First Name"
+                          aria-describedby="nameHelp">
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                      <div class="mb-3">
+                        <input type="text" name="lname" class="form-control" required="" placeholder="Last Name"
+                          aria-describedby="nameHelp">
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                      <div class="mb-3">
+                        <input type="email" name="email" class="form-control" required="" placeholder="Email Address"
+                          aria-describedby="nameHelp">
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                      <div class="mb-3">
+                        <input type="text" name="phone" class="form-control" required=""
+                          placeholder="Your Mobile Number">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <input type="text" name="messagesubject" class="form-control" required="" placeholder="Subject"
+                      aria-describedby="nameHelp">
+                  </div>
+                  <div class="mb-3">
+                    <textarea name="message" class="form-control" rows="4" required="" placeholder="Message"></textarea>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="space10"></div>
+                    <div class="btn-area1">
+                      <button type="submit" class="vl-btn1">Send Message</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-5 col-sm-12 col-12">
+              <div class="contact-img" data-aos="fade-left" data-aos-duration="900" class="aos-init aos-animate">
+                <img src="assets/img/website-img/c-img.jpg" class="img-fluid cntct">
+              </div>
+              <div class="contact-img-tab" data-aos="fade-left" data-aos-duration="900" class="aos-init aos-animate">
+                <img src="assets/img/website-img/c-img-1.jpg" class="img-fluid cntct">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--contact end-->
+
+    <!--===== CTA AREA STARTS =======-->
+    <div class="cta1-section-area ">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-md-5 col-sm-12 col-12 py-5">
+            <div class="cta-header ">
+              <h2 class="text-anime-style-3">Let's Build Your Financial Future</h2>
+              <div class="space20"></div>
+              <p>We strive to maintain our reputation as a top service provider as we believe that our clients deserve
+                the
+                highest standards. Our operations rely on a small team whose focus is to provide the unbiased solutions
+                with the highest level of service.</p>
+              <div class="space32"></div>
+              <div class="btn-area1" data-aos="fade-left" data-aos-duration="1000">
+                <a href="contact.html" class="vl-btn1">Contact Us Now</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="video-section">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/jXjonyfw0KA?si=gv6Koom8ZMigyPul"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <!-- <div class="img1">
+      <img src="assets/img/website-img/add-1.jpg" alt="">
+      
+    </div> -->
+    </div>
+    <!--===== CTA AREA ENDS =======-->
+
+    <!--===== FOOTER AREA STARTS =======-->
+    <div class="vl-footer1-section-area sp8">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-logo1">
+              <img src="assets/img/logo/logo1.png" alt="" class="img-fluid" width="150">
+              <div class="space24"></div>
+              <p>We at BLUEANT help you identifying appropriate and tax compliant investing opportunities to
+                help you to fulfill your goals.</p>
+              <div class="space24"></div>
+              <ul>
+                <li><a href="https://www.facebook.com/blueantindia/" target="_blank"><img
+                      src="assets/img/website-img/icon/facebook-w.png" class="img-fluid" width="30"></a></li>
+                <li><a href="https://x.com/blueantfinserv?t=CWqEC2MxO7Hamk4s3wED5w&s=09" target="_blank"><img
+                      src="assets/img/website-img/icon/twitter-w.png" class="img-fluid" width="30"></a>
+                </li>
+                <li><a href="https://www.instagram.com/blueantindia/" target="_blank"><img
+                      src="assets/img/website-img/icon/instagram-w.png" class="img-fluid" width="30"></a></li>
+                <li><a href="https://www.youtube.com/@rohits-take" target="_blank" class="m-0"><img
+                      src="assets/img/website-img/icon/youtube-w.png" class="img-fluid" width="30"></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="space30 d-md-none d-block"></div>
+            <div class="vl-footer-widget first-padding">
+              <h3>Quick Links</h3>
+              <div class="space4"></div>
+              <ul>
+                <li><img src="assets/img/website-img/icon/next.png" class="img-fluid right-icn"><a href="index.html">
+                    Home</a></li>
+                <li><img src="assets/img/website-img/icon/next.png" class="img-fluid right-icn"><a href="about.html">
+                    About Us</a></li>
+                <li><img src="assets/img/website-img/icon/next.png" class="img-fluid right-icn"><a href="workshop.html">
+                    Our Workshop</a></li>
+                <li><img src="assets/img/website-img/icon/next.png" class="img-fluid right-icn"><a href="#">
+                    Impact Stories</a></li>
+                <li><img src="assets/img/website-img/icon/next.png" class="img-fluid right-icn"><a href="#">
+                    Blog</a></li>
+                <li><img src="assets/img/website-img/icon/next.png" class="img-fluid right-icn"><a href="contact.html">
+                    Contact Us</a></li>
+
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="space30 d-md-none d-block"></div>
+            <div class="vl-footer-widget first-padding">
+              <h3>Our Services</h3>
+              <div class="space4"></div>
+              <ul>
+                <!-- <li><a href="#">SIP</a></li> -->
+                <!-- <li><img src="assets/img/website-img/icon/next.png" class="img-fluid"><a href="#"> Personal Financial planning</a></li> -->
+                <li><img src="assets/img/website-img/icon/next.png" class="img-fluid right-icn"><a href="taxes.html">
+                    Taxes</a></li>
+                <li><img src="assets/img/website-img/icon/next.png" class="img-fluid right-icn"><a
+                    href="budgeting.html">
+                    Budgeting</a></li>
+                <li><img src="assets/img/website-img/icon/next.png" class="img-fluid right-icn"><a
+                    href="retirement.html">Retirement</a></li>
+
+                <li><img src="assets/img/website-img/icon/next.png" class="img-fluid right-icn"><a
+                    href="will-legacy.html"> Will & legacy</a></li>
+                <li><img src="assets/img/website-img/icon/next.png" class="img-fluid right-icn"><a
+                    href="loan-advisory.html"> Loan advisory</a></li>
+                <li><img src="assets/img/website-img/icon/next.png" class="img-fluid right-icn"><a
+                    href="insurance-advisory.html.html"> Insurance advisory</a></li>
+
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="vl-footer-widget">
+              <div class="space30 d-lg-none d-block"></div>
+              <h3>Contact Us</h3>
+              <ul>
+                <li class="mb-4"><img src="assets/img/website-img/icon/location.png" alt="">Unit-I :- H-113 Ground Floor
+                  Sector -63 Noida Uttar Pradesh -201301</a></li>
+
+                <li><img src="assets/img/website-img/icon/location.png" alt="">Unit-II :-738 F-2 1st Floor Niti Khand-1
+                  Indirapuram Ghaziabad U.P. 201014 (India)</a></li>
+
+                <li><a href="tel:9990218899"><img src="assets/img/website-img/icon/call.png" alt="">999-021-8899</a>
+                </li>
+                <li><a href="mailto:care@blueantindia.com"><img src="assets/img/website-img/icon/send-mail.png"
+                      alt="">care@blueantindia.com</a></li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="space60"></div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="vl-copyright-area">
+              <p>Copyright © 2025 BlueAnt. All rights reserved. | Powered By: <a href="https://www.keywordindia.com/"
+                  target="_blank">Keyword India Network Pvt. ltd</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===== FOOTER AREA ENDS =======-->
+
+    <!--===== JS SCRIPT LINK =======-->
+    <script src="assets/js/plugins/bootstrap.min.js"></script>
+    <script src="assets/js/plugins/fontawesome.js"></script>
+    <script src="assets/js/plugins/aos.js"></script>
+    <script src="assets/js/plugins/counter.js"></script>
+    <script src="assets/js/plugins/gsap.min.js"></script>
+    <script src="assets/js/plugins/ScrollTrigger.min.js"></script>
+    <script src="assets/js/plugins/Splitetext.js"></script>
+    <script src="assets/js/plugins/SmoothScroll.js"></script>
+    <script src="assets/js/plugins/sidebar.js"></script>
+    <script src="assets/js/plugins/magnific-popup.js"></script>
+    <script src="assets/js/plugins/mobilemenu.js"></script>
+    <script src="assets/js/plugins/owlcarousel.min.js"></script>
+    <script src="assets/js/plugins/nice-select.js"></script>
+    <script src="assets/js/plugins/waypoints.js"></script>
+    <script src="assets/js/plugins/slick-slider.js"></script>
+    <script src="assets/js/plugins/circle-progress.js"></script>
+    <script src="assets/js/plugins/swiper.js"></script>
+    <script src="assets/js/main.js"></script>
+
+
+</body>
+
+<!-- Mirrored from html.vikinglab.agency/finazze/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Feb 2025 06:38:10 GMT -->
+
+</html>

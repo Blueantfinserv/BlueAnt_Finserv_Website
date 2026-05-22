@@ -24,16 +24,9 @@ function HeroFigma() {
 
             <div className="hf-dynamic-headline-group">
               <h1 className="hf-dynamic-headline">
-                <span className="hf-text-gradient-1">Clarity</span>
-                <span className="hf-dynamic-dash" style={{ color: 'rgba(255,255,255,0.2)' }}> -</span>
-              </h1>
-              <h1 className="hf-dynamic-headline">
-                <span className="hf-text-gradient-2">Create</span>
-                <span className="hf-dynamic-dash" style={{ color: 'rgba(255,255,255,0.2)' }}> -</span>
-              </h1>
-              <h1 className="hf-dynamic-headline">
+                <span className="hf-text-gradient-1">Clarity, </span>
+                <span className="hf-text-gradient-2">Creates, </span>
                 <span className="hf-text-gradient-3">Wealth</span>
-                <span className="hf-dynamic-dash" style={{ color: '#3b82f6' }}> -</span>
               </h1>
             </div>
  
@@ -45,47 +38,10 @@ function HeroFigma() {
               <button onClick={openConsultationModal} className="hf-btn-primary">
                 Start a Conversation <span className="hf-arrow">→</span>
               </button>
-              <Link 
-                to="/services" 
-                className="hf-btn-outline-link"
-                style={{ textDecoration: 'none' }}
-              >
-                <button className="hf-btn-outline">
-                  Explore Our Services
-                </button>
-              </Link>
+
             </div>
 
-            <div className="hf-micro-trust" data-aos="fade-up" data-aos-delay="500">
-              <span>✔ No hidden charges</span>
-              <span className="hf-dot">•</span>
-              <span>✔ Transparent process</span>
-              <span className="hf-dot">•</span>
-              <span>✔ Regulation-aligned</span>
-            </div>
 
-            <div className="hf-trust-cards">
-              {[
-                { icon: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>, title: "AMFI Registered Distributor", sub: "ARN: 129543", color: "blue" },
-                { icon: <circle cx="12" cy="12" r="10"></circle>, title: "3,000+ Families", sub: "Trusted across India", color: "red" },
-                { icon: <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>, title: "4.9+ Rating", sub: "Rated 4.9★ APP users. Trusted digitally.", color: "purple" }
-              ].map((card, i) => (
-                <div key={i} className="hf-trust-card" data-aos="fade-up" data-aos-delay={600 + (i * 100)}>
-                  <div className={`hf-card-icon ${card.color}`}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      {card.icon}
-                      {card.color === 'red' && <path d="M12 8v4"></path>}
-                      {card.color === 'red' && <path d="M12 16h.01"></path>}
-                      {card.color === 'purple' && <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>}
-                    </svg>
-                  </div>
-                  <div className="hf-card-info">
-                    <strong>{card.title}</strong>
-                    <span>{card.sub}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Right Column: High-Fidelity Mockup */}

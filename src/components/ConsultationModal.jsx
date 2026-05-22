@@ -258,7 +258,7 @@ const ConsultationModal = () => {
                           SUBMITTING...
                         </>
                       ) : (
-                        <>GET FREE CONSULTATION <span style={{ fontSize: '24px', marginLeft: '5px' }}>→</span></>
+                        <>GET PERSONALIZED GUIDANCE <span style={{ fontSize: '24px', marginLeft: '5px' }}>→</span></>
                       )}
                     </button>
 

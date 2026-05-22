@@ -18,31 +18,50 @@ const WealthCreationPage = () => {
         <section className="wcp-hero">
           <div className="wcp-grid-bg"></div>
           <div className="max-w-[1200px] mx-auto px-8 md:px-12 lg:px-16 relative z-10">
-            <div className="max-w-4xl" data-aos="fade-right">
-              {/* Premium Fiduciary Focus Badge */}
-              <div className="wcp-fiduciary-badge">
-                <span className="wcp-live-dot"></span>
-                <span>Purely Educational Approach • Research-Driven Insights • Independent Financial Learning</span>
-              </div>
-              
-              <h1 className="wcp-title">
-                Wealth Creation Through <br />
-                <span className="wcp-title-gradient">Disciplined Financial Understanding.</span>
-              </h1>
-              
-              <p className="wcp-desc">
-                Build stronger financial decision-making with structured learning focused on long-term investing principles, portfolio balance, and cost-aware investment strategies. Our approach is centered around financial education designed to help individuals understand markets, investment structures, and wealth-building frameworks independently.
-              </p>
-
-              {/* Secure Info Widget */}
-              <div className="wcp-hero-widget" data-aos="zoom-in" data-aos-delay="200">
-                <div className="wcp-widget-icon">
-                  <Shield size={22} />
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+              <div className="w-full lg:w-1/2" data-aos="fade-right">
+                {/* Premium Fiduciary Focus Badge */}
+                <div className="wcp-fiduciary-badge mb-6">
+                  <span className="wcp-live-dot"></span>
+                  <span>Purely Educational Approach • Research-Driven Insights • Independent Financial Learning</span>
                 </div>
-                <div className="wcp-widget-content">
-                  <span className="text-[10px] font-black uppercase text-blue-600 tracking-wider">Structured Financial Learning</span>
-                  <h4 style={{ marginTop: '2px' }}>Understanding Long-Term Investing Principles</h4>
-                  <p>Explore how disciplined investing, consistency, and portfolio diversification contribute to long-term financial growth. Learn the fundamentals behind market participation, asset allocation, and sustainable investing habits.</p>
+                
+                <h1 className="wcp-title text-5xl lg:text-6xl font-black mb-6 leading-tight">
+                  Wealth Creation Through <br />
+                  <span className="wcp-title-gradient">Disciplined Financial Understanding.</span>
+                </h1>
+                
+                <p className="wcp-desc text-lg md:text-xl text-slate-500 font-medium leading-relaxed max-w-2xl mb-8">
+                  Build stronger financial decision-making with structured learning focused on long-term investing principles, portfolio balance, and cost-aware investment strategies. Our approach is centered around financial education designed to help individuals understand markets, investment structures, and wealth-building frameworks independently.
+                </p>
+
+                {/* Secure Info Widget */}
+                <div className="wcp-hero-widget mt-8" data-aos="zoom-in" data-aos-delay="200">
+                  <div className="wcp-widget-icon">
+                    <Shield size={22} />
+                  </div>
+                  <div className="wcp-widget-content">
+                    <span className="text-[10px] font-black uppercase text-blue-600 tracking-wider">Structured Financial Learning</span>
+                    <h4 style={{ marginTop: '2px' }}>Understanding Long-Term Investing Principles</h4>
+                    <p>Explore how disciplined investing, consistency, and portfolio diversification contribute to long-term financial growth. Learn the fundamentals behind market participation, asset allocation, and sustainable investing habits.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Hero Image - Top Right */}
+              <div className="w-full lg:w-1/2 hidden lg:block lg:-mt-28" data-aos="fade-left" data-aos-delay="300">
+                <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl group w-full aspect-[4/3] lg:aspect-[16/10]">
+                  <div className="absolute inset-0 bg-blue-500/0 group-hover:bg-blue-600/10 transition-colors duration-500 z-10 pointer-events-none"></div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=800&q=80" 
+                    alt="Wealth Creation" 
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:brightness-95"
+                  />
+                  <div className="absolute top-6 right-6 w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg z-20">
+                    <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>

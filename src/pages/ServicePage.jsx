@@ -1,12 +1,70 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Shield, HeartHandshake, Landmark, TrendingUp, ChevronLeft, ChevronRight, PieChart, ScrollText, Wallet, LineChart } from 'lucide-react';
 import ServicesCards from "../components/ServicesCards";
 import DetailedServices from "../components/DetailedServices";
 import CTASection from "../components/CTASection";
-import { openConsultationModal } from "../components/ConsultationModal";
+
+const serviceCarouselData = [
+  {
+    id: 1,
+    title: "RETIREMENT PLANNING",
+    img: "https://www.blueantindia.com/assets/img/website-img/service/retirement.jpg",
+    icon: <TrendingUp size={24} className="text-[#0ea5e9]" />
+  },
+  {
+    id: 2,
+    title: "MUTUAL FUNDS / SIP",
+    img: "https://www.blueantindia.com/assets/img/website-img/service/investment-finacial-freedom-1.jpg",
+    icon: <LineChart size={24} className="text-[#0ea5e9]" />
+  },
+  {
+    id: 3,
+    title: "TAX PLANNING",
+    img: "https://www.blueantindia.com/assets/img/website-img/service/tax.jpg",
+    icon: <PieChart size={24} className="text-[#0ea5e9]" />
+  },
+  {
+    id: 4,
+    title: "WILL & LEGACY",
+    img: "https://www.blueantindia.com/assets/img/website-img/service/will-legacy.jpg",
+    icon: <ScrollText size={24} className="text-[#0ea5e9]" />
+  },
+  {
+    id: 5,
+    title: "INSURANCE ADVISORY",
+    img: "https://www.blueantindia.com/assets/img/website-img/service/insurance-advisary.jpg",
+    icon: <Shield size={24} className="text-[#0ea5e9]" />
+  },
+  {
+    id: 6,
+    title: "KID'S NEEDS",
+    img: "https://www.blueantindia.com/assets/img/website-img/service/kids-need.jpg",
+    icon: <HeartHandshake size={24} className="text-[#0ea5e9]" />
+  },
+  {
+    id: 7,
+    title: "LOAN ADVISORY",
+    img: "https://www.blueantindia.com/assets/img/website-img/service/loan-advisary.jpg",
+    icon: <Landmark size={24} className="text-[#0ea5e9]" />
+  },
+  {
+    id: 8,
+    title: "BUDGETING",
+    img: "https://www.blueantindia.com/assets/img/website-img/service/budgeting.jpg",
+    icon: <Wallet size={24} className="text-[#0ea5e9]" />
+  }
+];
 
 const ServicePage = () => {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
   useEffect(() => {
     window.scrollTo(0, 0);
     AOS.init({ duration: 1000, once: true });
@@ -14,38 +72,85 @@ const ServicePage = () => {
 
   return (
     <div className="service-page font-outfit selection:bg-blue-100">
-      {/* Hero Section */}
-      <div className="relative h-[500px] lg:h-[650px] flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={`${import.meta.env.BASE_URL}financial_planning_hero_1778128026138.png`} 
-            alt="Financial Solutions Hero" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a] via-[#0f172a]/70 to-transparent"></div>
-        </div>
-
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-12 relative z-10 w-full">
-          <div className="max-w-2xl" data-aos="fade-right">
-            <div className="inline-flex items-center gap-3 px-6 py-2 bg-blue-600/20 backdrop-blur-md text-white rounded-full border border-blue-500/30 shadow-sm mb-8">
-              <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-              <span className="text-xs font-black uppercase tracking-widest">Our Solutions</span>
+      {/* New Hero Carousel Section */}
+      <section className="bg-gradient-to-br from-[#1c1c1c] to-[#0a0a0a] pt-28 pb-40 overflow-hidden relative border-b border-slate-800">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-slate-700/10 via-transparent to-transparent pointer-events-none"></div>
+        
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-12 relative z-10">
+          {/* Header Row */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+            <div className="max-w-[700px]" data-aos="fade-right">
+              <div className="inline-block px-4 py-1.5 bg-[#252525] rounded-md text-[#e2e8f0] text-xs font-black uppercase tracking-[0.1em] mb-6 shadow-sm border border-slate-700/50">
+                Our Service
+              </div>
+              <h1 className="text-[32px] md:text-[44px] lg:text-[48px] font-bold text-white leading-[1.25] tracking-tight">
+                We help you identify investment products for your different financial goals and priorities
+              </h1>
             </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] mb-8">
-              Expert <br />
-              <span className="text-blue-400">Financial Advice.</span>
-            </h1>
-            <p className="text-xl text-slate-300 font-medium mb-10 leading-relaxed max-w-lg">
-              We help you see the big picture and create a plan tailored to your life goals with professionally guided strategies.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <button onClick={openConsultationModal} className="px-10 py-5 bg-blue-600 text-white rounded-full font-black uppercase tracking-widest hover:bg-white hover:text-[#0f172a] transition-all shadow-xl shadow-blue-600/20 active:scale-95">
-                Talk to an Advisor
+            
+            {/* Custom Navigation */}
+            <div className="flex items-center gap-4 shrink-0" data-aos="fade-left">
+              <button ref={prevRef} className="w-12 h-12 flex items-center justify-center bg-[#e5e5e5] hover:bg-white text-black rounded-md transition-colors shadow-sm disabled:opacity-50">
+                <ChevronLeft size={24} />
+              </button>
+              <button ref={nextRef} className="w-12 h-12 flex items-center justify-center bg-[#e5e5e5] hover:bg-white text-black rounded-md transition-colors shadow-sm disabled:opacity-50">
+                <ChevronRight size={24} />
               </button>
             </div>
           </div>
+
+          {/* Swiper Carousel */}
+          <div data-aos="fade-up" data-aos-delay="200" className="mx-[-1.5rem] px-[1.5rem] lg:mx-0 lg:px-0">
+            <Swiper
+              modules={[Navigation, Autoplay]}
+              spaceBetween={24}
+              slidesPerView={1.2}
+              loop={true}
+              autoplay={{ delay: 4000, disableOnInteraction: false }}
+              navigation={{
+                prevEl: prevRef.current,
+                nextEl: nextRef.current,
+              }}
+              onInit={(swiper) => {
+                swiper.params.navigation.prevEl = prevRef.current;
+                swiper.params.navigation.nextEl = nextRef.current;
+                swiper.navigation.init();
+                swiper.navigation.update();
+              }}
+              breakpoints={{
+                640: { slidesPerView: 2.2 },
+                1024: { slidesPerView: 3.5 },
+                1280: { slidesPerView: 4.2 },
+              }}
+              className="!overflow-visible"
+            >
+              {serviceCarouselData.map((item) => (
+                <SwiperSlide key={item.id} className="h-auto">
+                  <div className="bg-white rounded-[16px] overflow-hidden h-[400px] flex flex-col group cursor-pointer shadow-2xl transition-transform duration-500 hover:-translate-y-2">
+                    {/* Image Area */}
+                    <div className="h-[68%] w-full relative overflow-hidden">
+                      <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                      <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors duration-500"></div>
+                    </div>
+                    
+                    {/* Content Area */}
+                    <div className="h-[32%] relative flex flex-col items-center justify-center px-6">
+                      {/* Floating Icon */}
+                      <div className="absolute -top-7 w-[52px] h-[52px] bg-[#f0f9ff] rounded-full flex items-center justify-center border-[4px] border-white shadow-sm z-10 group-hover:-translate-y-1 transition-transform duration-300">
+                        {item.icon}
+                      </div>
+                      
+                      <h3 className="text-[#0f172a] font-black text-[13px] tracking-wide text-center mt-5 group-hover:text-[#0ea5e9] transition-colors">
+                        {item.title}
+                      </h3>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Trust & Stats Bar */}
       <section className="bg-white border-b border-slate-100 relative z-20 -mt-12 mx-6 lg:mx-12 rounded-[2rem] shadow-xl">
