@@ -6,6 +6,7 @@ import AboutPreview from '../components/AboutPreview';
 const Youtube = lazy(() => import('../components/Youtube'));
 const FigmaSIPCalculator = lazy(() => import('../components/FigmaSIPCalculator'));
 const Testimonials = lazy(() => import('../components/Testimonials'));
+const WhyBlueant = lazy(() => import('../components/WhyBlueant'));
 
 const SectionLoader = () => (
   <div className="py-20 text-center opacity-50">
@@ -25,15 +26,18 @@ const Landing = () => {
         <AboutPreview />
 
         <Suspense fallback={<SectionLoader />}>
-          {/* 3. YouTube / Financial Freedom Section */}
+          {/* 3. SIP Calculator Section */}
+          <section className="py-24 bg-slate-50 border-t border-slate-100">
+            <FigmaSIPCalculator />
+          </section>
+
+          {/* 4. YouTube / Financial Freedom Section */}
           <section className="py-24 bg-white border-t border-slate-50">
             <Youtube />
           </section>
 
-          {/* 4. SIP Calculator Section */}
-          <section className="py-24 bg-slate-50 border-t border-slate-100">
-            <FigmaSIPCalculator />
-          </section>
+          {/* 4.5 Why Come to Blueant Section */}
+          <WhyBlueant />
 
           {/* 5. Testimonials / Success Stories Section */}
           <section className="py-24 bg-slate-50 border-t border-slate-100">

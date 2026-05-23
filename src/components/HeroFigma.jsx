@@ -23,10 +23,20 @@ function HeroFigma() {
             </div>
 
             <div className="hf-dynamic-headline-group">
-              <h1 className="hf-dynamic-headline">
-                <span className="hf-text-gradient-1">Clarity, </span>
-                <span className="hf-text-gradient-2">Creates, </span>
-                <span className="hf-text-gradient-3">Wealth</span>
+              <h1 className="hf-dynamic-headline hf-headline-sm">
+                <span className="hf-text-white">Clarity</span>
+                <div className="hf-glowing-dash"></div>
+              </h1>
+              <h1 className="hf-dynamic-headline hf-headline-sm">
+                <span className="hf-text-white">Creates</span>
+                <div className="hf-glowing-dash"></div>
+              </h1>
+              <h1 className="hf-dynamic-headline hf-headline-lg">
+                <div className="hf-wealth-wrapper">
+                  <span className="hf-text-wealth">Wealth</span>
+                  <div className="hf-wealth-glow-line"></div>
+                </div>
+                <div className="hf-glowing-dash"></div>
               </h1>
             </div>
  
