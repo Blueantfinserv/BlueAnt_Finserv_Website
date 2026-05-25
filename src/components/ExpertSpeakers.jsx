@@ -26,11 +26,11 @@ const expertData = [
   {
     id: 2,
     name: "Mr. Sachin Narang",
-    role: "Asst. Vice President",
+    role: "Vice President",
     title: "Wealth Preservation",
     image: "Sachin Narang.png",
     bio: [
-      "Mr. Sachin Narang serves as the Assistant Vice President, bringing his sharp analytical skills and extensive market knowledge to the forefront. He has been a trusted name in guiding high-net-worth individuals through complex financial landscapes.",
+      "Mr. Sachin Narang serves as the Vice President, bringing his sharp analytical skills and extensive market knowledge to the forefront. He has been a trusted name in guiding high-net-worth individuals through complex financial landscapes.",
       "He strongly advocates for structured portfolio planning, emphasizing that a well-diversified strategy is the key to weathering market volatility. Under his guidance, countless clients have achieved sustainable financial growth.",
       "Known for his approachable demeanor, he simplifies intricate financial concepts, making them accessible and actionable for everyday investors."
     ],
