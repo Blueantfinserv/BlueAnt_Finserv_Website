@@ -363,3 +363,39 @@
   display: block;
   margin-bottom: 24px;
 }
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .wpr-pillars-grid { grid-template-columns: 1fr; }
+  .wpr-blueprint-grid { grid-template-columns: 1fr; }
+  .wpr-hero-title { font-size: 40px; }
+  .wpr-hero { padding: 100px 0 60px; }
+}
+
+@media (max-width: 768px) {
+  .wpr-hero {
+    padding: 100px 16px 60px; /* Add horizontal padding to hero */
+  }
+  .wpr-advisory-section, .wpr-blueprint-section {
+    padding: 80px 16px; /* Add horizontal padding to sections */
+  }
+  .wpr-hero-title {
+    font-size: clamp(32px, 8vw, 40px);
+    word-wrap: break-word; /* Ensure long words wrap */
+    overflow-wrap: break-word;
+  }
+  .wpr-badge {
+    height: auto;
+    flex-wrap: wrap; /* Allow badge text to wrap */
+    line-height: 1.4;
+    text-align: left;
+  }
+  .wpr-glass-card {
+    padding: 30px 20px;
+    border-radius: 24px;
+  }
+  .wpr-blueprint-card, .wpr-pillar-card {
+    padding: 30px 20px;
+    border-radius: 24px;
+  }
+}

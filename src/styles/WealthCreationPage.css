@@ -513,6 +513,37 @@
   .wcp-hero { padding: 100px 0 60px; }
 }
 
+@media (max-width: 768px) {
+  .wcp-hero {
+    padding: 100px 16px 60px; /* Add horizontal padding to hero */
+  }
+  .wcp-section {
+    padding: 80px 16px; /* Add horizontal padding to sections */
+  }
+  .wcp-title {
+    font-size: clamp(32px, 8vw, 40px);
+    word-wrap: break-word; /* Ensure long words wrap */
+    overflow-wrap: break-word;
+  }
+  .wcp-fiduciary-badge {
+    height: auto;
+    flex-wrap: wrap; /* Allow badge text to wrap */
+    line-height: 1.4;
+    text-align: left;
+  }
+  .wcp-desc {
+    font-size: 16px;
+  }
+  .wcp-cta-card {
+    padding: 40px 24px;
+    border-radius: 24px;
+  }
+  .wcp-cta-glass-card {
+    padding: 30px 20px;
+    border-radius: 24px;
+  }
+}
+
 /* ==========================================================================
    New Premium Interactive Layout Components (Table & Progress Meters)
    ========================================================================== */

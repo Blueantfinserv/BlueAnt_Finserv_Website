@@ -49,7 +49,7 @@ const WealthCreationPage = () => {
               </div>
 
               {/* Hero Image - Top Right */}
-              <div className="w-full lg:w-1/2 hidden lg:block lg:-mt-28" data-aos="fade-left" data-aos-delay="300">
+              <div className="w-full lg:w-1/2 mt-12 lg:mt-0 lg:-mt-28" data-aos="fade-left" data-aos-delay="300">
                 <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl group w-full aspect-[4/3] lg:aspect-[16/10]">
                   <div className="absolute inset-0 bg-blue-500/0 group-hover:bg-blue-600/10 transition-colors duration-500 z-10 pointer-events-none"></div>
                   <img 
