@@ -7,6 +7,8 @@ const Youtube = lazy(() => import('../components/Youtube'));
 const FigmaSIPCalculator = lazy(() => import('../components/FigmaSIPCalculator'));
 const Testimonials = lazy(() => import('../components/Testimonials'));
 const WhyBlueant = lazy(() => import('../components/WhyBlueant'));
+const Milestones = lazy(() => import('../components/Milestones'));
+const ExpertSpeakers = lazy(() => import('../components/ExpertSpeakers'));
 
 const SectionLoader = () => (
   <div className="py-20 text-center opacity-50">
@@ -17,7 +19,7 @@ const SectionLoader = () => (
 
 const Landing = () => {
   return (
-    <div className="bg-white font-outfit selection:bg-blue-100 selection:text-blue-700 overflow-x-hidden">
+    <div className="bg-white font-outfit selection:bg-blue-100 selection:text-blue-700 overflow-clip">
       <main className="flex flex-col">
         {/* 1. Hero Section - Static */}
         <HeroFigma />
@@ -38,6 +40,12 @@ const Landing = () => {
 
           {/* 4.5 Why Come to Blueant Section */}
           <WhyBlueant />
+
+          {/* 4.6 Milestones Section */}
+          <Milestones />
+
+          {/* 4.7 Expert Speakers Section */}
+          <ExpertSpeakers />
 
           {/* 5. Testimonials / Success Stories Section */}
           <section className="py-24 bg-slate-50 border-t border-slate-100">

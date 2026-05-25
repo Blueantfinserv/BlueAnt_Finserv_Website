@@ -73,19 +73,30 @@ const ServicePage = () => {
   return (
     <div className="service-page font-outfit selection:bg-blue-100">
       {/* New Hero Carousel Section */}
-      <section className="bg-gradient-to-br from-[#1c1c1c] to-[#0a0a0a] pt-28 pb-40 overflow-hidden relative border-b border-slate-800">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-slate-700/10 via-transparent to-transparent pointer-events-none"></div>
+      <section className="bg-[#0b1120] overflow-x-clip relative border-b border-slate-800" style={{ paddingTop: '140px', paddingBottom: '100px' }}>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent pointer-events-none"></div>
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none"></div>
         
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-12 relative z-10">
+        <div className="max-w-[1200px] mx-auto px-8 md:px-12 lg:px-16 relative z-10">
           {/* Header Row */}
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-            <div className="max-w-[700px]" data-aos="fade-right">
-              <div className="inline-block px-4 py-1.5 bg-[#252525] rounded-md text-[#e2e8f0] text-xs font-black uppercase tracking-[0.1em] mb-6 shadow-sm border border-slate-700/50">
-                Our Service
+            <div className="max-w-[750px]" data-aos="fade-right">
+              {/* Premium Fiduciary-style Badge */}
+              <div className="inline-flex items-center gap-3 px-5 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-[11.5px] font-black uppercase tracking-[0.15em] mb-8 shadow-[0_4px_15px_rgba(37,99,235,0.1)] text-blue-400">
+                <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.9)] animate-pulse"></span>
+                Premium Financial Solutions
               </div>
-              <h1 className="text-[32px] md:text-[44px] lg:text-[48px] font-bold text-white leading-[1.25] tracking-tight">
-                We help you identify investment products for your different financial goals and priorities
+              
+              {/* Massive Attention-Grabbing Title */}
+              <h1 className="text-[48px] lg:text-[64px] font-black text-white leading-[1.05] tracking-tight relative mb-6">
+                Tailored Products For Your <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00afef] to-[#2563eb] drop-shadow-[0_0_15px_rgba(37,99,235,0.2)]">Financial Goals.</span>
               </h1>
+              
+              {/* Descriptive Paragraph */}
+              <p className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed max-w-[650px] mb-4">
+                We help you identify the right investment products tailored to your different priorities, ensuring a disciplined approach to wealth management and long-term success.
+              </p>
             </div>
             
             {/* Custom Navigation */}
@@ -100,11 +111,11 @@ const ServicePage = () => {
           </div>
 
           {/* Swiper Carousel */}
-          <div data-aos="fade-up" data-aos-delay="200" className="mx-[-1.5rem] px-[1.5rem] lg:mx-0 lg:px-0">
+          <div data-aos="fade-up" data-aos-delay="200" className="w-full">
             <Swiper
               modules={[Navigation, Autoplay]}
-              spaceBetween={24}
-              slidesPerView={1.2}
+              spaceBetween={32}
+              slidesPerView={1.15}
               loop={true}
               autoplay={{ delay: 4000, disableOnInteraction: false }}
               navigation={{
@@ -119,22 +130,22 @@ const ServicePage = () => {
               }}
               breakpoints={{
                 640: { slidesPerView: 2.2 },
-                1024: { slidesPerView: 3.5 },
-                1280: { slidesPerView: 4.2 },
+                1024: { slidesPerView: 2.8 },
+                1280: { slidesPerView: 3.2 },
               }}
-              className="!overflow-visible"
+              className="!pb-16"
             >
               {serviceCarouselData.map((item) => (
                 <SwiperSlide key={item.id} className="h-auto">
-                  <div className="bg-white rounded-[16px] overflow-hidden h-[400px] flex flex-col group cursor-pointer shadow-2xl transition-transform duration-500 hover:-translate-y-2">
+                  <div className="bg-white rounded-[32px] overflow-hidden h-[450px] flex flex-col group cursor-pointer border-[1.5px] border-slate-100 shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_60px_rgba(37,99,235,0.15)] hover:border-blue-500/30">
                     {/* Image Area */}
-                    <div className="h-[68%] w-full relative overflow-hidden">
+                    <div className="h-[65%] w-full relative overflow-hidden">
                       <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                      <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors duration-500"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-500"></div>
                     </div>
                     
                     {/* Content Area */}
-                    <div className="h-[32%] relative flex flex-col items-center justify-center px-6">
+                    <div className="h-[35%] relative flex flex-col items-center justify-center px-8">
                       {/* Floating Icon */}
                       <div className="absolute -top-7 w-[52px] h-[52px] bg-[#f0f9ff] rounded-full flex items-center justify-center border-[4px] border-white shadow-sm z-10 group-hover:-translate-y-1 transition-transform duration-300">
                         {item.icon}
@@ -152,77 +163,18 @@ const ServicePage = () => {
         </div>
       </section>
 
-      {/* Trust & Stats Bar */}
-      <section className="bg-white border-b border-slate-100 relative z-20 -mt-12 mx-6 lg:mx-12 rounded-[2rem] shadow-xl">
-        <div className="max-w-[1280px] mx-auto px-10 py-12">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-            <div className="flex items-center gap-6" data-aos="fade-up">
-              <div className="text-5xl font-black text-[#0f172a]">4.9<span className="text-blue-600 text-3xl">/5</span></div>
-              <div>
-                <div className="flex text-yellow-400 mb-1 text-sm">
-                  {"★★★★★".split("").map((s, i) => <span key={i}>{s}</span>)}
-                </div>
-                <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Client Satisfaction Rating</div>
-              </div>
-            </div>
-            <div className="h-12 w-px bg-slate-100 hidden lg:block"></div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-20">
-              <div data-aos="fade-up" data-aos-delay="100">
-                <div className="text-2xl font-black text-[#0f172a]">13+ Years</div>
-                <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Experience</div>
-              </div>
-              <div data-aos="fade-up" data-aos-delay="200">
-                <div className="text-2xl font-black text-[#0f172a]">5000+</div>
-                <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Families Served</div>
-              </div>
-              <div data-aos="fade-up" data-aos-delay="300" className="hidden md:block">
-                <div className="text-2xl font-black text-[#0f172a]">98%</div>
-                <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Retention</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Main Services Grid (Hub) */}
-      <div className="bg-slate-50 py-24">
+      <div className="w-full">
         <ServicesCards />
       </div>
 
-      {/* Intro Text */}
-      <section className="py-24 bg-white overflow-hidden">
-         <div className="max-w-[1280px] mx-auto px-6 lg:px-12 text-center">
-            <h2 className="text-3xl md:text-5xl font-black text-[#0f172a] mb-8 leading-tight">
-               Simplifying Complexity <br />
-               <span className="text-blue-600">For You.</span>
-            </h2>
-            <p className="text-xl text-slate-500 max-w-4xl mx-auto leading-relaxed font-medium">
-               At Blueant Finserv, our suite of specialized financial solutions is engineered to cut through market noise and deliver absolute clarity. Whether you are navigating intricate tax regulations, designing lifelong legacy plans, building an optimized stock portfolio, or securing structured loan facilities, our expert advisors work tirelessly to simplify the complexities of wealth management.
-            </p>
-         </div>
-      </section>
+
 
       {/* Detailed Services Overview */}
       <div className="bg-slate-50 py-24 border-t border-slate-100">
         <DetailedServices />
       </div>
 
-      {/* Footer Map & CTA */}
-      <div className="mt-24">
-         <CTASection />
-      </div>
-
-      <div className="w-full h-[400px] mt-24">
-        <iframe
-          src="https://maps.google.com/maps?q=28.6280253,77.3788567&z=17&output=embed"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen=""
-          loading="eager"
-          referrerPolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
     </div>
   );
 };

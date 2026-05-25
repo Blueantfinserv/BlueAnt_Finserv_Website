@@ -8,7 +8,7 @@ const teamMembers = [
   { id: 3, name: "Mr. Rahul Kumar", text: "Asst. Vice President", img: "Rahul Kumar.png" },
   { id: 4, name: "Mr. Avesh Prajapati", text: "Asst. Vice President", img: "Avesh Kumar Prajapati.png" },
   { id: 5, name: "Mr. Rajnish Kumar", text: "Asst. Vice President", img: "Rajnish Kumar.png" },
-  { id: 6, name: "", text: "", img: "" }, // Placeholder for Mr. Akash Yadav
+  { id: 6, name: "Mrs. Divya Gupta", text: "Asst. CRM", img: "Divya_Gupta.jpg" },
   { id: 7, name: "Mr. Vishnu Dutt", text: "Manager", img: "Vishnu Dutt.png" },
   { id: 8, name: "Mr. Jitendra Kumar", text: "Insurance Sales Manager", img: "Jitendra Kumar.png" },
   { id: 10, name: "Mr. Harsh Pandey", text: "Asst. RM", img: "Harsh Pandey.png" },
@@ -17,8 +17,8 @@ const teamMembers = [
   { id: 13, name: "Mr. Vikram Agarwal", text: "Asst. RM", img: "Vikram_Agarwal.png" },
   { id: 14, name: "Mr. Yogendra Kumar", text: "Asst. RM", img: "Yogendra_Kumar.png" },
   { id: 15, name: "Mr. Mukesh Kumar", text: "Asst. RM", img: "Mukesh_Kumar.png" },
-  { id: 16, name: "", text: "", img: "" }, // Placeholder for Mrs. Renu Verma
-  { id: 17, name: "", text: "", img: "" }, // Additional Empty Placeholder
+  { id: 16, name: "Mrs. Nidhi Belwal", text: "HR", img: "Nidhi_Belwal.png" },
+  { id: 17, name: "Mr. Vikash Kumar", text: "Trainer", img: "Vikash_Kumar.jpg" },
 ];
 
 const TeamSection = () => {
@@ -61,7 +61,8 @@ const TeamSection = () => {
                     className="team-image"
                     onError={(e) => {
                       e.target.onerror = null;
-                      e.target.src = 'https://ui-avatars.com/api/?name=' + member.name + '&background=0D8ABC&color=fff';
+                      const cleanName = member.name ? member.name.replace(/^(Mr\.|Mrs\.|Ms\.)\s+/i, '') : 'Placeholder';
+                      e.target.src = 'https://ui-avatars.com/api/?name=' + cleanName + '&background=0D8ABC&color=fff';
                     }}
                   />
                 )}

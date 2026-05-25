@@ -1,10 +1,6 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import '../styles/WhyBlueant.css';
 
 const whyBlueantData = [
@@ -26,7 +22,7 @@ const whyBlueantData = [
     id: 3,
     number: "03",
     title: "Your Dedicated Personal CFOs",
-    desc: "Focus on what matters mostfamily, passions, health, & peace of mind. As your personal CFOs, we manage your finances, anchoring your overall well-being.",
+    desc: "Focus on what matters most—family, passions, health, & peace of mind. As your personal CFOs, we manage your finances, anchoring your overall well-being.",
     img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop"
   },
   {
@@ -39,76 +35,34 @@ const whyBlueantData = [
 ];
 
 const WhyBlueant = () => {
-  const [isMounted, setIsMounted] = useState(false);
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
-  const paginationRef = useRef(null);
-
   useEffect(() => {
-    setIsMounted(true);
+    AOS.init({ duration: 800, once: true });
   }, []);
 
   return (
     <section className="why-blueant-section">
-      <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
+      <div className="container mx-auto px-4 lg:px-8 max-w-7xl relative">
         <h2 className="why-blueant-title" data-aos="fade-up">
           Why Come to Blueant?
         </h2>
 
-        {isMounted && (
-          <div data-aos="fade-up" data-aos-delay="100">
-            <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
-              spaceBetween={40}
-              slidesPerView={'auto'}
-              centeredSlides={true}
-              loop={true}
-              autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
-              }}
-              navigation={{
-                prevEl: prevRef.current,
-                nextEl: nextRef.current,
-              }}
-              pagination={{
-                el: paginationRef.current,
-                clickable: true,
-              }}
-              onBeforeInit={(swiper) => {
-                swiper.params.navigation.prevEl = prevRef.current;
-                swiper.params.navigation.nextEl = nextRef.current;
-                swiper.params.pagination.el = paginationRef.current;
-              }}
-              className="why-blueant-swiper"
+        <div className="why-blueant-stack">
+          {whyBlueantData.map((item, index) => (
+            <div 
+              key={item.id} 
+              className={`why-blueant-card sticky-card sticky-card-${index + 1}`}
             >
-              {whyBlueantData.map((item) => (
-                <SwiperSlide key={item.id}>
-                  <div className="why-blueant-card">
-                    <div className="why-blueant-image-wrapper">
-                      <img src={item.img} alt={item.title} loading="lazy" />
-                    </div>
-                    <div className="why-blueant-content">
-                      <div className="why-blueant-number">{item.number}</div>
-                      <h3 className="why-blueant-card-title">{item.title}</h3>
-                      <p className="why-blueant-card-desc">{item.desc}</p>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-
-            <div className="why-blueant-navigation">
-              <button ref={prevRef} className="why-blueant-nav-btn">
-                <ArrowLeft size={20} />
-              </button>
-              <div ref={paginationRef} className="why-blueant-pagination"></div>
-              <button ref={nextRef} className="why-blueant-nav-btn">
-                <ArrowRight size={20} />
-              </button>
+              <div className="why-blueant-image-wrapper">
+                <img src={item.img} alt={item.title} loading="lazy" />
+              </div>
+              <div className="why-blueant-content">
+                <div className="why-blueant-number">{item.number}</div>
+                <h3 className="why-blueant-card-title">{item.title}</h3>
+                <p className="why-blueant-card-desc">{item.desc}</p>
+              </div>
             </div>
-          </div>
-        )}
+          ))}
+        </div>
       </div>
     </section>
   );
