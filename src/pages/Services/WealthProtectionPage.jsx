@@ -13,7 +13,7 @@ const WealthProtectionPage = () => {
   }, []);
 
   return (
-    <div className="wpp-wrapper pt-20 font-outfit">
+    <div className="wpp-wrapper pt-20 font-outfit overflow-x-hidden">
       <main>
         {/* Hero Section */}
         <section className="wpp-hero">

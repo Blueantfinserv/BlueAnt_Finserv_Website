@@ -13,7 +13,7 @@ const WealthPreservationPage = () => {
   }, []);
 
   return (
-    <div className="wpr-wrapper pt-20 font-outfit">
+    <div className="wpr-wrapper pt-20 font-outfit overflow-x-hidden">
       <main>
         {/* Hero Section */}
         <section className="wpr-hero">

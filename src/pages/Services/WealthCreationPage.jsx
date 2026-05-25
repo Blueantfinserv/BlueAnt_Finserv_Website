@@ -12,7 +12,7 @@ const WealthCreationPage = () => {
   }, []);
 
   return (
-    <div className="wcp-wrapper pt-20">
+    <div className="wcp-wrapper pt-20 overflow-x-hidden">
       <main>
         {/* Hero Section */}
         <section className="wcp-hero">

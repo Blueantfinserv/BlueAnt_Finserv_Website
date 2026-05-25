@@ -11,7 +11,7 @@ const MissionPage = () => {
   }, []);
 
   return (
-    <div className="bg-white font-outfit pt-36">
+    <div className="bg-white font-outfit pt-36 overflow-x-hidden">
       <main className="flex flex-col">
         {/* MISSION & VISION SECTION - INDUSTRY LEVEL FINTECH UI */}
         <div className="section-wrapper about-belief-wrapper relative bg-[radial-gradient(circle_at_top_left,#eef4ff_0%,#f8fbff_40%,#ffffff_100%)]">

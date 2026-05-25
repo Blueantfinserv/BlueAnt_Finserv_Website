@@ -53,26 +53,6 @@ const Youtube = () => {
           
           {/* Video container */}
           <div className="video-container">
-            {/* Sleek Floating Mode Panel */}
-            <div className="video-mode-overlay">
-              <button 
-                onClick={() => setIsPlaying(!isPlaying)} 
-                className={`video-mode-btn ${isPlaying ? 'active' : ''}`}
-              >
-                <Tv size={11} />
-                {isPlaying ? 'Cover' : 'Watch Here'}
-              </button>
-              
-              <a 
-                href="https://www.youtube.com/watch?v=Mu6EV8TAEyI" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="video-mode-btn youtube-btn"
-              >
-                <ExternalLink size={11} />
-                YouTube
-              </a>
-            </div>
 
             {!isPlaying ? (
               <div 
