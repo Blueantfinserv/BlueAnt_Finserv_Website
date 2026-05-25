@@ -24,13 +24,14 @@
   position: relative;
   width: 100%;
   max-width: 700px;
+  max-height: 90vh;
   background: #F8F8F6;
   border-radius: 34px;
   box-shadow: 0 30px 60px rgba(0,0,0,0.18);
-  overflow: hidden;
+  overflow-y: auto;
   z-index: 10;
   border-top: 6px solid #F4B400;
-  padding: 38px 52px 42px;
+  padding: 32px 40px;
   display: flex;
   flex-direction: column;
 }
@@ -39,8 +40,8 @@
   position: absolute;
   top: 24px;
   right: 24px;
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,21 +60,21 @@
 
 .cm-header {
   text-align: left;
-  margin-bottom: 34px;
-  padding-right: 50px; /* Space for close button if needed on small screens */
+  margin-bottom: 24px;
+  padding-right: 40px;
 }
 
 .cm-title {
-  font-size: 42px;
+  font-size: 32px;
   font-weight: 800;
   color: #0F172A;
   line-height: 1.1;
-  margin: 0 0 10px 0;
+  margin: 0 0 8px 0;
   font-family: 'Outfit', 'Inter', sans-serif;
 }
 
 .cm-subtitle {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   color: #64748B;
   margin: 0;
@@ -81,13 +82,13 @@
 }
 
 .cm-tabs-container {
-  height: 64px;
+  height: 52px;
   background: #EDEFF4;
-  border-radius: 18px;
+  border-radius: 14px;
   padding: 6px;
   display: flex;
   gap: 4px;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .cm-tab-btn {
@@ -96,12 +97,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   color: #64748B;
   background: transparent;
   border: none;
-  border-radius: 14px;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -115,19 +116,19 @@
 .cm-form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 }
 
 .cm-form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 18px;
+  gap: 16px;
 }
 
 .cm-input-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .cm-label {
@@ -140,12 +141,12 @@
 }
 
 .cm-input, .cm-select {
-  height: 58px;
-  border-radius: 14px;
+  height: 48px;
+  border-radius: 12px;
   background: #FFFFFF;
   border: 1px solid #DCE3EC;
-  padding: 0 20px;
-  font-size: 16px;
+  padding: 0 16px;
+  font-size: 15px;
   font-weight: 500;
   color: #0F172A;
   outline: none;
@@ -165,16 +166,16 @@
 .cm-select {
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%230F172A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230F172A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 20px center;
+  background-position: right 16px center;
   background-size: 16px;
 }
 
 .cm-submit-btn {
-  height: 72px;
-  border-radius: 18px;
-  font-size: 20px;
+  height: 60px;
+  border-radius: 14px;
+  font-size: 16px;
   font-weight: 800;
   letter-spacing: -0.01em;
   color: #0F172A;
