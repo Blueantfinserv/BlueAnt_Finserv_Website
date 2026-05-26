@@ -42,6 +42,23 @@ const expertData = [
   },
   {
     id: 3,
+    name: "Mr. Rahul Kumar",
+    role: "Asst. Vice President",
+    title: "Wealth Management",
+    image: "Rahul Kumar.png",
+    bio: [
+      "Mr. Rahul Kumar, Assistant Vice President, brings a dynamic approach to comprehensive wealth management. He is dedicated to constructing tailored financial solutions that adapt to the evolving needs of our clients.",
+      "His expertise lies in aligning short-term goals with long-term financial security, ensuring a balanced and stress-free journey towards financial independence.",
+      "With a strong focus on client education and personalized service, he ensures every investor feels confident and empowered in their financial decisions."
+    ],
+    stats: [
+      { number: "10+", label: "Years Experience" },
+      { number: "2500+", label: "Portfolios Guided" },
+      { number: "100%", label: "Client Satisfaction" }
+    ]
+  },
+  {
+    id: 4,
     name: "Mr. Avesh Prajapati",
     role: "Asst. Vice President",
     title: "Risk Management",
@@ -58,7 +75,7 @@ const expertData = [
     ]
   },
   {
-    id: 4,
+    id: 5,
     name: "Mr. Rajnish Kumar",
     role: "Asst. Vice President",
     title: "Investment Strategy",
@@ -72,23 +89,6 @@ const expertData = [
       { number: "8+", label: "Years Experience" },
       { number: "3500+", label: "Plans Delivered" },
       { number: "50+", label: "Market Analyses" }
-    ]
-  },
-  {
-    id: 5,
-    name: "Mr. Rahul Kumar",
-    role: "Asst. Vice President",
-    title: "Wealth Management",
-    image: "Rahul Kumar.png",
-    bio: [
-      "Mr. Rahul Kumar, Assistant Vice President, brings a dynamic approach to comprehensive wealth management. He is dedicated to constructing tailored financial solutions that adapt to the evolving needs of our clients.",
-      "His expertise lies in aligning short-term goals with long-term financial security, ensuring a balanced and stress-free journey towards financial independence.",
-      "With a strong focus on client education and personalized service, he ensures every investor feels confident and empowered in their financial decisions."
-    ],
-    stats: [
-      { number: "10+", label: "Years Experience" },
-      { number: "2500+", label: "Portfolios Guided" },
-      { number: "100%", label: "Client Satisfaction" }
     ]
   }
 ];

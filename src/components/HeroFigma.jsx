@@ -27,7 +27,7 @@ function HeroFigma() {
                 <span className="hf-text-white">Clarity</span>
                 <div className="hf-glowing-dash"></div>
               </h1>
-              <h1 className="hf-dynamic-headline hf-headline-sm">
+              <h1 className="hf-dynamic-headline hf-headline-md">
                 <span className="hf-text-white">Creates</span>
                 <div className="hf-glowing-dash"></div>
               </h1>

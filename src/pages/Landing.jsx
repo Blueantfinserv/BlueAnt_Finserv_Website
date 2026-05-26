@@ -21,33 +21,33 @@ const Landing = () => {
   return (
     <div className="bg-white font-outfit selection:bg-blue-100 selection:text-blue-700 overflow-clip">
       <main className="flex flex-col">
-        {/* 1. Hero Section - Static */}
+        {/* 1. Hero Section */}
         <HeroFigma />
 
-        {/* 2. Trust & About Preview - Static */}
+        {/* 2 & 3. About Blueant & Credibility Number Cards */}
         <AboutPreview />
 
         <Suspense fallback={<SectionLoader />}>
-          {/* 3. SIP Calculator Section */}
+          {/* 5. Why Blueant */}
+          <WhyBlueant />
+
+          {/* 6. Expert / Founder Section */}
+          <ExpertSpeakers />
+
+          {/* 7. SIP Calculator */}
           <section className="py-24 bg-slate-50 border-t border-slate-100">
             <FigmaSIPCalculator />
           </section>
 
-          {/* 4. YouTube / Financial Freedom Section */}
+          {/* 8. CTA / Video Section */}
           <section className="py-24 bg-white border-t border-slate-50">
             <Youtube />
           </section>
 
-          {/* 4.5 Why Come to Blueant Section */}
-          <WhyBlueant />
-
-          {/* 4.6 Milestones Section */}
+          {/* 9. Milestones */}
           <Milestones />
 
-          {/* 4.7 Expert Speakers Section */}
-          <ExpertSpeakers />
-
-          {/* 5. Testimonials / Success Stories Section */}
+          {/* 10. Testimonials */}
           <section className="py-24 bg-slate-50 border-t border-slate-100">
             <Testimonials />
           </section>
