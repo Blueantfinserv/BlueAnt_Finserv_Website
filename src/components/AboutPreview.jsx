@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { CheckCircle2, ShieldCheck, UserCheck, TrendingUp, Clock, Users, Award, MapPin, ArrowRight } from "lucide-react";
+import ValuesDiagram from "./ValuesDiagram";
 import "../styles/AboutPreview.css";
 
 const AboutPreview = () => {
@@ -67,7 +68,7 @@ const AboutPreview = () => {
 
           {/* Right Visual/Illustration Column */}
           <div className="about-image-wrapper" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <img src={`${import.meta.env.BASE_URL}2.png`} alt="Core Values" className="w-full max-w-[500px] h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
+            <ValuesDiagram />
           </div>
         </div>
 
