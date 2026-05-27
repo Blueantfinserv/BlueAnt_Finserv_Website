@@ -1,0 +1,137 @@
+.values-diagram-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+/* Center Blue Circle */
+.center-circle {
+  width: 55%;
+  height: 55%;
+  background: #1e3a8a; /* Deep blue */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 10px rgba(30, 58, 138, 0.1), 0 0 0 20px rgba(30, 58, 138, 0.05);
+  position: relative;
+  z-index: 10;
+}
+
+.center-circle-inner {
+  text-align: center;
+  color: white;
+}
+
+.center-brand {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.center-subtitle {
+  font-size: 9px;
+  font-weight: 600;
+  margin-top: 4px;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+/* Outer Orbit Ring */
+.orbit-ring {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  bottom: 5%;
+  border: 1px dashed #cbd5e1;
+  border-radius: 50%;
+  z-index: 5;
+  /* subtle continuous rotation if desired, but image shows static. I'll keep it static for matching the image */
+}
+
+/* Floating Nodes */
+.orbit-node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transform: translate(-50%, -50%);
+}
+
+.node-icon {
+  width: 50px;
+  height: 50px;
+  background: #e0e7ff; /* Light blue */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border: 2px solid white;
+}
+
+.node-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+/* Positions for 5 nodes (approx angles: -54, 18, 90, 162, 234 degrees) */
+.node-trust {
+  top: 10%;
+  left: 75%;
+}
+
+.node-wealth {
+  top: 55%;
+  left: 98%;
+}
+
+.node-goal {
+  top: 95%;
+  left: 50%;
+}
+
+.node-discipline {
+  top: 75%;
+  left: 10%;
+}
+
+.node-growth {
+  top: 25%;
+  left: 8%;
+}
+
+/* Decorative dots on orbit */
+.orbit-ring::before,
+.orbit-ring::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #3b82f6;
+  border-radius: 50%;
+}
+
+.orbit-ring::before {
+  top: 20%;
+  left: 30%;
+}
+
+.orbit-ring::after {
+  bottom: 15%;
+  right: 25%;
+}

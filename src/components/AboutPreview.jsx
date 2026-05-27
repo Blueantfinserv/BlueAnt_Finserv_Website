@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { CheckCircle2, ShieldCheck, UserCheck, TrendingUp, Clock, Users, Award, MapPin, ArrowRight } from "lucide-react";
+import ValuesDiagram from "./ValuesDiagram";
 import "../styles/AboutPreview.css";
 
 const AboutPreview = () => {
@@ -66,28 +67,8 @@ const AboutPreview = () => {
           </div>
 
           {/* Right Visual/Illustration Column */}
-          <div className="about-image-wrapper">
-            {/* Center Radial Halo Glow */}
-            <div className="about-image-halo"></div>
-
-            {/* Circular Glass Frame */}
-            <div className="about-video-frame" data-aos="zoom-in" data-aos-delay="200">
-
-              <div className="about-video-overlay"></div>
-            </div>
-
-            {/* Premium Floating Badges: Balanced Coordinates (3 Badges) */}
-            <div className="badge-top-left">
-
-            </div>
-
-            <div className="badge-middle-right">
-
-            </div>
-
-            <div className="badge-bottom-left">
-
-            </div>
+          <div className="about-image-wrapper" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <ValuesDiagram />
           </div>
         </div>
 
