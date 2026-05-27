@@ -91,15 +91,15 @@
 }
 
 .hf-text-wealth {
-  background: linear-gradient(180deg, #81c2ff 0%, #3080ff 40%, #0d46d6 85%, #0023a1 100%);
+  background: linear-gradient(180deg, #81c2ff, #3080ff 40%, #0d46d6 85%, #84bafc, #93c4ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
   position: relative;
   z-index: 2;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
-  filter: drop-shadow(0 10px 20px rgba(0, 102, 255, 0.4));
+  -webkit-text-stroke: 1px rgba(255, 255, 255, .15);
+  filter: drop-shadow(0 10px 20px rgba(0, 102, 255, .4));
 }
 
 .hf-wealth-glow-line {
@@ -108,18 +108,19 @@
   left: 4%;
   width: 96%;
   height: 2px;
-  background: #bce1ff;
-  box-shadow: 0 0 8px 1px #0073ff, 0 0 16px 3px #0055ff;
+  background: #193981;
+  box-shadow: 0 0 85px 1px #0073ff, 0 0 23px 3px #05f;
   z-index: 1;
   border-radius: 2px;
 }
 
+
 .hf-glowing-dash {
   width: 45px;
   height: 3px;
-  background: linear-gradient(90deg, #7dd3fc 0%, #2563eb 45%, #1d4ed8 100%);
-  box-shadow: 0 0 10px 1px #2563eb;
-  border-radius: 2px;
+  background: linear-gradient(90deg, #2563eb, #101425 100%);
+  box-shadow: 0 0 10px 1px #101425;
+  border-radius: 1px;
   margin-left: 25px;
   opacity: 1;
 }
@@ -136,7 +137,7 @@
 }
 
 .hf-subtext {
-  font-size: 18px;
+  font-size: 16px;
   color: #cbd5e1;
   line-height: 1.8;
   letter-spacing: 0.2px;

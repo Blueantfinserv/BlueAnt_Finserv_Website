@@ -39,9 +39,10 @@ function HeroFigma() {
                 <div className="hf-glowing-dash"></div>
               </h1>
             </div>
- 
+
             <p className="hf-subtext" data-aos="fade-up" data-aos-delay="300">
-              When money decisions are clear, life feels more confident. Blueant helps families build that clarity with discipline, thoughtful protection, and long-term financial confidence.
+              When money decisions are clear, life feels more confident. <br />
+              Blueant helps families build that clarity with discipline, thoughtful protection, and long-term financial confidence.
             </p>
 
             <div className="hf-ctas" data-aos="fade-up" data-aos-delay="400">
@@ -75,7 +76,7 @@ function HeroFigma() {
                 <div className="hf-content-header">
                   <div>
                     <span className="hf-label-mini">Financial Goal</span>
-                    <h4 className="hf-value-main animate-pulse-slow">Retirement Goal Set</h4>
+                    <h4 className="hf-value-main animate-pulse-slow">Your Wealth Journey</h4>
                   </div>
                   <div className="hf-header-right">
                     <span className="hf-label-mini">Status</span>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "../styles/StickyWhatsApp.css";
 
 import { openConsultationModal } from "./ConsultationModal";
@@ -6,6 +7,11 @@ import { openConsultationModal } from "./ConsultationModal";
 function StickyWhatsApp() {
   const [visible, setVisible] = useState(false);
   const [isAtFooter, setIsAtFooter] = useState(false);
+  const location = useLocation();
+
+  if (location.pathname.startsWith('/about')) {
+    return null;
+  }
 
   useEffect(() => {
     const onScroll = () => {

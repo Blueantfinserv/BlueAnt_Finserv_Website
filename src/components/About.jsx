@@ -3,56 +3,56 @@ import { Link } from "react-router-dom";
 import { Check, Clock, Users, Award, MapPin, ArrowRight } from "lucide-react";
 
 const About = () => {
-  const stats = [
-    {
-      icon: <Clock className="w-5 h-5 text-blue-600" />,
-      number: "13+ Years",
-      label: "Blueant Legacy",
-      sub: "Delivering 13+ years of Blueant legacy.",
-    },
-    {
-      icon: <Users className="w-5 h-5 text-blue-600" />,
-      number: "3,000+",
-      label: "Happy Families",
-      sub: "Empowering households with investment support.",
-    },
-    {
-      icon: <Award className="w-5 h-5 text-blue-600" />,
-      number: "50+",
-      label: "Expert Team service",
-      sub: "Dedicated professionals guiding your wealth journey.",
-    },
-    {
-      icon: <MapPin className="w-5 h-5 text-blue-600" />,
-      number: "Pan-India",
-      label: "Presence",
-      sub: "Serving clients efficiently across 200+ pincodes nationwide.",
-    },
-  ];
+  // const stats = [
+  //   {
+  //     icon: <Clock className="w-5 h-5 text-blue-600" />,
+  //     number: "13+ Years",
+  //     label: "Blueant Legacy",
+  //     sub: "Delivering 13+ years of Blueant legacy.",
+  //   },
+  //   {
+  //     icon: <Users className="w-5 h-5 text-blue-600" />,
+  //     number: "3,000+",
+  //     label: "Happy Families",
+  //     sub: "Empowering households with investment support.",
+  //   },
+  //   {
+  //     icon: <Award className="w-5 h-5 text-blue-600" />,
+  //     number: "50+",
+  //     label: "Expert Team service",
+  //     sub: "Dedicated professionals guiding your wealth journey.",
+  //   },
+  //   {
+  //     icon: <MapPin className="w-5 h-5 text-blue-600" />,
+  //     number: "Pan-India",
+  //     label: "Presence",
+  //     sub: "Serving clients efficiently across 200+ pincodes nationwide.",
+  //   },
+  // ];
 
-  const features = [
-    "Disciplined investment approach",
-    "Long-term wealth planning",
-    "Transparent financial advisory",
-  ];
+  // const features = [
+  //   "Disciplined investment approach",
+  //   "Long-term wealth planning",
+  //   "Transparent financial advisory",
+  // ];
 
-  const badges = [
-    {
-      text: "We Don't Sell, We Educate",
-      icon: "🎓",
-      pos: "top-8 -left-4 sm:-left-12",
-    },
-    {
-      text: "Disciplined Guidance",
-      icon: "📊",
-      pos: "top-1/4 -right-4 sm:-right-8",
-    },
-    {
-      text: "Transparent & Aligned",
-      icon: "🛡️",
-      pos: "bottom-12 -left-2 sm:-left-8",
-    },
-  ];
+  // const badges = [
+  //   {
+  //     text: "We Don't Sell, We Educate",
+  //     icon: "🎓",
+  //     pos: "top-8 -left-4 sm:-left-12",
+  //   },
+  //   {
+  //     text: "Disciplined Guidance",
+  //     icon: "📊",
+  //     pos: "top-1/4 -right-4 sm:-right-8",
+  //   },
+  //   {
+  //     text: "Transparent & Aligned",
+  //     icon: "🛡️",
+  //     pos: "bottom-12 -left-2 sm:-left-8",
+  //   },
+  // ];
 
   return (
     <div className="about-stats-container">
@@ -60,7 +60,7 @@ const About = () => {
       <section className="mt-32 py-20 bg-gradient-to-b from-[#f8fafc] to-white border-t border-black/5 relative">
         <div className="max-w-[1200px] mx-auto px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-16 lg:gap-24">
-            
+
             {/* Left: Text Content */}
             <div data-aos="fade-right" className="pb-16 lg:pb-0">
               <div className="flex items-center gap-3 mb-6">
@@ -76,8 +76,8 @@ const About = () => {
               </h2>
 
               <p className="text-[#64748b] text-lg leading-relaxed mb-8 max-w-[540px]">
-                At Blueant Finserv, we believe in a simple yet powerful philosophy: <strong>"We don't sell, we educate."</strong> 
-                Our team empowers families to build long-term stability through disciplined SIP investments and 
+                At Blueant Finserv, we believe in a simple yet powerful philosophy: <strong>"We don't sell, we educate."</strong>
+                Our team empowers families to build long-term stability through disciplined SIP investments and
                 personalized financial planning, ensuring every decision is informed and confident.
               </p>
 
@@ -107,14 +107,14 @@ const About = () => {
             <div data-aos="zoom-in" className="flex justify-center lg:justify-end">
               <div className="relative w-[400px] h-[400px] sm:w-[460px] sm:h-[460px]">
                 <div className="w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-white bg-white relative z-10">
-                  <video
+                  {/* <video
                     src={`${import.meta.env.BASE_URL}Video.mp4`}
                     autoPlay
                     loop
                     muted
                     playsInline
                     className="w-full h-full object-cover"
-                  />
+                  /> */}
                 </div>
 
                 {badges.map((badge, idx) => (

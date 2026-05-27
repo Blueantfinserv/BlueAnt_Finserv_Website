@@ -28,6 +28,9 @@ const Landing = () => {
         <AboutPreview />
 
         <Suspense fallback={<SectionLoader />}>
+          {/* 9. Milestones */}
+          <Milestones />
+
           {/* 5. Why Blueant */}
           <WhyBlueant />
 
@@ -43,9 +46,6 @@ const Landing = () => {
           <section className="py-24 bg-white border-t border-slate-50">
             <Youtube />
           </section>
-
-          {/* 9. Milestones */}
-          <Milestones />
 
           {/* 10. Testimonials */}
           <section className="py-24 bg-slate-50 border-t border-slate-100">
