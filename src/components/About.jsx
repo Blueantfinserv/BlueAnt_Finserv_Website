@@ -76,7 +76,8 @@ const About = () => {
               </h2>
 
               <p className="text-[#64748b] text-lg leading-relaxed mb-8 max-w-[540px]">
-                At Blueant Finserv, we believe in a simple yet powerful philosophy: <strong>"We don't sell, we educate."</strong>
+                At Blueant Finserv, we believe in a simple yet powerful philosophy:
+                <strong className="block my-2 whitespace-nowrap">"We don't sell, we educate."</strong>
                 Our team empowers families to build long-term stability through disciplined SIP investments and
                 personalized financial planning, ensuring every decision is informed and confident.
               </p>
@@ -107,14 +108,14 @@ const About = () => {
             <div data-aos="zoom-in" className="flex justify-center lg:justify-end">
               <div className="relative w-[400px] h-[400px] sm:w-[460px] sm:h-[460px]">
                 <div className="w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-white bg-white relative z-10">
-                  {/* <video
+                  <video
                     src={`${import.meta.env.BASE_URL}Video.mp4`}
                     autoPlay
                     loop
                     muted
                     playsInline
                     className="w-full h-full object-cover"
-                  /> */}
+                  />
                 </div>
 
                 {badges.map((badge, idx) => (
@@ -133,10 +134,10 @@ const About = () => {
 
           </div>
         </div>
-      </section>
+      </section >
 
       {/* ── Stats Section (White Background + Elevated Cards) ── */}
-      <section className="bg-white pt-16 pb-20 mt-16 border-t border-[#f1f5f9]">
+      < section className="bg-white pt-16 pb-20 mt-16 border-t border-[#f1f5f9]" >
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-4">
             {stats.map((stat, idx) => (
@@ -162,8 +163,8 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 };
 

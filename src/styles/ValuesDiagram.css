@@ -1,137 +1,216 @@
+.values-diagram-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
 .values-diagram-container {
   position: relative;
-  width: 100%;
-  max-width: 400px;
-  aspect-ratio: 1 / 1;
-  margin: 0 auto;
+  width: 480px;
+  height: 480px;
   display: flex;
   align-items: center;
   justify-content: center;
   user-select: none;
 }
 
+/* Outer Orbit Ring */
+.orbit-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1.5px dashed rgba(100, 116, 139, 0.25);
+  border-radius: 50%;
+  animation: spin 45s linear infinite;
+  box-sizing: border-box;
+  /* Add a soft glow ring */
+  box-shadow: 0 0 60px rgba(59, 130, 246, 0.05), inset 0 0 60px rgba(59, 130, 246, 0.05);
+}
+
 /* Center Blue Circle */
 .center-circle {
-  width: 55%;
-  height: 55%;
-  background: #1e3a8a; /* Deep blue */
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle at 35% 35%, #1e3a8a, #050b14);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 0 10px rgba(30, 58, 138, 0.1), 0 0 0 20px rgba(30, 58, 138, 0.05);
+  box-shadow: 
+    0 30px 60px rgba(2, 6, 23, 0.4),
+    inset 0 2px 20px rgba(255, 255, 255, 0.08),
+    inset 0 -10px 30px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 0 0 15px rgba(30, 58, 138, 0.04);
   position: relative;
   z-index: 10;
 }
 
-.center-circle-inner {
-  text-align: center;
-  color: white;
-}
-
-.center-brand {
-  font-size: 32px;
-  font-weight: 800;
-  margin: 0;
-  line-height: 1;
-  letter-spacing: -1px;
-}
-
-.center-subtitle {
-  font-size: 9px;
-  font-weight: 600;
-  margin-top: 4px;
-  letter-spacing: 1px;
-  opacity: 0.8;
-}
-
-/* Outer Orbit Ring */
-.orbit-ring {
+.center-circle::before {
+  content: '';
   position: absolute;
-  top: 5%;
-  left: 5%;
-  right: 5%;
-  bottom: 5%;
-  border: 1px dashed #cbd5e1;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  z-index: 5;
-  /* subtle continuous rotation if desired, but image shows static. I'll keep it static for matching the image */
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  animation: pulse-ring 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  z-index: -1;
 }
 
-/* Floating Nodes */
-.orbit-node {
+.center-circle::after {
+  content: '';
   position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 80px rgba(59, 130, 246, 0.25);
+  z-index: -2;
+}
+
+.center-circle-inner img {
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4));
+  transform: scale(1.05);
+}
+
+/* Nodes on the ring */
+.orbit-node-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  z-index: 20;
+}
+
+.orbit-dot {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background-color: #3b82f6;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.8), 0 0 5px #fff;
+}
+
+.node-counter-spin {
+  position: absolute;
+  animation: counter-spin 45s linear infinite;
+}
+
+.node-content-upright {
+  position: absolute;
+  top: -55px;
+  left: -45px;
+  width: 90px;
+  height: 110px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  transform: translate(-50%, -50%);
+  justify-content: center;
+  gap: 14px;
 }
 
 .node-icon {
-  width: 50px;
-  height: 50px;
-  background: #e0e7ff; /* Light blue */
+  width: 68px;
+  height: 68px;
+  background: linear-gradient(145deg, #ffffff, #f1f5f9);
+  backdrop-filter: blur(10px);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  border: 2px solid white;
+  box-shadow: 
+    0 12px 24px rgba(15, 23, 42, 0.08),
+    0 4px 8px rgba(15, 23, 42, 0.04),
+    inset 0 2px 5px rgba(255, 255, 255, 1);
+  border: 1px solid rgba(226, 232, 240, 1);
+  color: #1e3a8a;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.node-content-upright:hover .node-icon {
+  transform: scale(1.15) translateY(-5px);
+  box-shadow: 
+    0 20px 40px rgba(37, 99, 235, 0.2),
+    inset 0 2px 4px rgba(255, 255, 255, 1);
+  border-color: rgba(59, 130, 246, 0.4);
+  color: #2563eb;
 }
 
 .node-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: #475569;
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #0f172a;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   white-space: nowrap;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 6px 14px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05), inset 0 1px 1px rgba(255,255,255,1);
+  border: 1px solid rgba(241, 245, 249, 1);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
 }
 
-/* Positions for 5 nodes (approx angles: -54, 18, 90, 162, 234 degrees) */
-.node-trust {
-  top: 10%;
-  left: 75%;
+.node-content-upright:hover .node-label {
+  color: #2563eb;
+  transform: translateY(2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.15);
+  border-color: rgba(219, 234, 254, 1);
 }
 
-.node-wealth {
-  top: 55%;
-  left: 98%;
+/* Animations */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.node-goal {
-  top: 95%;
-  left: 50%;
+@keyframes counter-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
 }
 
-.node-discipline {
-  top: 75%;
-  left: 10%;
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
 }
 
-.node-growth {
-  top: 25%;
-  left: 8%;
+@media (max-width: 1024px) {
+  .values-diagram-container {
+    transform: scale(0.85);
+  }
 }
 
-/* Decorative dots on orbit */
-.orbit-ring::before,
-.orbit-ring::after {
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: #3b82f6;
-  border-radius: 50%;
+@media (max-width: 768px) {
+  .values-diagram-container {
+    transform: scale(0.7);
+  }
 }
 
-.orbit-ring::before {
-  top: 20%;
-  left: 30%;
-}
-
-.orbit-ring::after {
-  bottom: 15%;
-  right: 25%;
+@media (max-width: 480px) {
+  .values-diagram-container {
+    transform: scale(0.55);
+  }
 }

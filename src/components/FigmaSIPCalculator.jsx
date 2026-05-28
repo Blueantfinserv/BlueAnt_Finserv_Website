@@ -256,42 +256,33 @@ export default function FigmaSIPCalculator() {
               </AreaChart>
             </ResponsiveContainer>
           </div>
-          {/* 💎 Elite High-Impact Summary */}
-          <div className="f-sip-chart-summary">
-            <span className="f-sip-summary-label">Estimated portfolio value after {years} years</span>
-            <div className="f-sip-summary-val">
-              <AnimatedNumber value={totalValue} formatter={formatCurrency} />
+          <div className="f-sip-results-row">
+            <div className="f-sip-result-box f-sip-blue">
+              <div className="f-sip-res-accent"></div>
+              <span className="f-sip-res-label">Invested</span>
+              <h4 className="f-sip-res-val">
+                <AnimatedNumber value={totalInvested} formatter={formatCurrency} />
+              </h4>
+              <span className="f-sip-res-subtext">Total contribution</span>
             </div>
-          </div>
-        </div>
 
-        {/* 3. Metrics Section (Redesigned as premium wealth pods) */}
-        <div className="f-sip-results-row">
-          <div className="f-sip-result-box f-sip-blue">
-            <div className="f-sip-res-accent"></div>
-            <span className="f-sip-res-label">Invested</span>
-            <h4 className="f-sip-res-val">
-              <AnimatedNumber value={totalInvested} formatter={formatCurrency} />
-            </h4>
-            <span className="f-sip-res-subtext">Total contribution</span>
-          </div>
+            <div className="f-sip-result-box f-sip-green">
+              <div className="f-sip-res-accent"></div>
+              <span className="f-sip-res-label">Returns</span>
+              <h4 className="f-sip-res-val">
+                <AnimatedNumber value={estimatedReturns} formatter={formatCurrency} />
+              </h4>
+              <span className="f-sip-res-subtext">Market growth</span>
+            </div>
 
-          <div className="f-sip-result-box f-sip-green">
-            <div className="f-sip-res-accent"></div>
-            <span className="f-sip-res-label">Returns</span>
-            <h4 className="f-sip-res-val">
-              <AnimatedNumber value={estimatedReturns} formatter={formatCurrency} />
-            </h4>
-            <span className="f-sip-res-subtext">Market growth</span>
-          </div>
-
-          <div className="f-sip-result-box f-sip-purple">
-            <div className="f-sip-res-accent"></div>
-            <span className="f-sip-res-label">Total Value</span>
-            <h4 className="f-sip-res-val">
-              <AnimatedNumber value={totalValue} formatter={formatCurrency} />
-            </h4>
-            <span className="f-sip-res-subtext">Estimated compounding value</span>
+            <div className="f-sip-result-box f-sip-purple">
+              <div className="f-sip-res-accent"></div>
+              <span className="f-sip-res-label">Total Value</span>
+              <h4 className="f-sip-res-val">
+                <AnimatedNumber value={totalValue} formatter={formatCurrency} />
+              </h4>
+              <span className="f-sip-res-subtext">Estimated compounding value</span>
+            </div>
           </div>
         </div>
 

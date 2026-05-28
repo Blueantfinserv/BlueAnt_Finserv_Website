@@ -56,9 +56,9 @@
 }
 
 .sticky-card-1 { top: 120px; z-index: 1; }
-.sticky-card-2 { top: 140px; z-index: 2; }
-.sticky-card-3 { top: 160px; z-index: 3; }
-.sticky-card-4 { top: 180px; z-index: 4; }
+.sticky-card-2 { top: 155px; z-index: 2; }
+.sticky-card-3 { top: 190px; z-index: 3; }
+.sticky-card-4 { top: 225px; z-index: 4; }
 
 .why-blueant-image-wrapper {
   height: 380px;

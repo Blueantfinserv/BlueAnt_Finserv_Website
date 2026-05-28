@@ -16,7 +16,7 @@ const ConsultationModal = () => {
     city: '',
     service: 'SIP / Mutual Funds'
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', null
 
@@ -47,12 +47,12 @@ const ConsultationModal = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!formData.name || !formData.email || !formData.whatsapp) {
       alert("Please fill in all required fields.");
       return;
     }
-    
+
     const phoneRegex = /^\d{10}$/;
     if (!phoneRegex.test(formData.whatsapp.replace(/\D/g, ''))) {
       alert("Please enter a valid 10-digit phone number.");
@@ -81,7 +81,7 @@ const ConsultationModal = () => {
       });
 
       const result = await response.json();
-      
+
       if (response.ok && result.success) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', whatsapp: '', city: '', service: 'SIP / Mutual Funds' });
@@ -106,7 +106,7 @@ const ConsultationModal = () => {
     <AnimatePresence>
       {isOpen && (
         <div className="cm-overlay">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -114,14 +114,14 @@ const ConsultationModal = () => {
             className="cm-backdrop"
             onClick={() => setIsOpen(false)}
           />
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 10 }}
             transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
             className="cm-modal"
           >
-            <button 
+            <button
               onClick={() => setIsOpen(false)}
               className="cm-close-btn"
               aria-label="Close modal"
@@ -131,10 +131,10 @@ const ConsultationModal = () => {
                 <line x1="6" y1="6" x2="18" y2="18"></line>
               </svg>
             </button>
-            
+
             <AnimatePresence mode="wait">
               {submitStatus === 'success' ? (
-                <motion.div 
+                <motion.div
                   key="success"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -150,7 +150,7 @@ const ConsultationModal = () => {
                   <p className="cm-success-desc">Our expert will contact you within 24 hours.</p>
                 </motion.div>
               ) : (
-                <motion.div 
+                <motion.div
                   key="form-content"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -178,22 +178,22 @@ const ConsultationModal = () => {
                     <div className="cm-form-row">
                       <div className="cm-input-group">
                         <label className="cm-label">Full Name</label>
-                        <input 
+                        <input
                           type="text"
                           required
                           value={formData.name}
-                          onChange={(e) => setFormData({...formData, name: e.target.value})}
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           placeholder="John Doe"
                           className="cm-input"
                         />
                       </div>
                       <div className="cm-input-group">
                         <label className="cm-label">Email Address</label>
-                        <input 
+                        <input
                           type="email"
                           required
                           value={formData.email}
-                          onChange={(e) => setFormData({...formData, email: e.target.value})}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="john@example.com"
                           className="cm-input"
                         />
@@ -203,21 +203,21 @@ const ConsultationModal = () => {
                     <div className="cm-form-row">
                       <div className="cm-input-group">
                         <label className="cm-label">WhatsApp Number</label>
-                        <input 
+                        <input
                           type="tel"
                           required
                           value={formData.whatsapp}
-                          onChange={(e) => setFormData({...formData, whatsapp: e.target.value})}
+                          onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
                           placeholder="10-digit mobile number"
                           className="cm-input"
                         />
                       </div>
                       <div className="cm-input-group">
                         <label className="cm-label">City / Location</label>
-                        <input 
+                        <input
                           type="text"
                           value={formData.city}
-                          onChange={(e) => setFormData({...formData, city: e.target.value})}
+                          onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                           placeholder="Mumbai, Maharashtra"
                           className="cm-input"
                         />
@@ -228,7 +228,7 @@ const ConsultationModal = () => {
                       <label className="cm-label">Service Interested In</label>
                       <select
                         value={formData.service}
-                        onChange={(e) => setFormData({...formData, service: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                         className="cm-select"
                       >
                         <option>SIP / Mutual Funds</option>
@@ -245,8 +245,8 @@ const ConsultationModal = () => {
                       </div>
                     )}
 
-                    <button 
-                      type="submit" 
+                    <button
+                      type="submit"
                       disabled={isSubmitting}
                       className="cm-submit-btn"
                     >

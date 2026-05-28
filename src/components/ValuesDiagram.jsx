@@ -1,55 +1,57 @@
 import React from "react";
-import { User, BarChart2, Target, Shield, Leaf } from "lucide-react";
+import { Users, Shield, Search, ShieldCheck, Sprout } from "lucide-react";
 import "../styles/ValuesDiagram.css";
+
+const points = [
+  { label: "TRUST", angle: 270, icon: <Users size={24} strokeWidth={1.5} /> },
+  { label: "DISCIPLINE", angle: 342, icon: <Shield size={24} strokeWidth={1.5} /> },
+  { label: "CLARITY", angle: 54, icon: <Search size={24} strokeWidth={1.5} /> },
+  { label: "PROTECTION", angle: 126, icon: <ShieldCheck size={24} strokeWidth={1.5} /> },
+  { label: "GROWTH", angle: 198, icon: <Sprout size={24} strokeWidth={1.5} /> },
+];
 
 const ValuesDiagram = () => {
   return (
-    <div className="values-diagram-container" data-aos="zoom-in" data-aos-delay="200">
-      {/* Center Circle */}
-      <div className="center-circle">
-        <div className="center-circle-inner">
-          <h3 className="center-brand">blueant</h3>
-          <p className="center-subtitle">FINANCIAL SERVICES</p>
-        </div>
-      </div>
-
-      {/* Orbit Ring */}
-      <div className="orbit-ring">
-        {/* Nodes */}
-        <div className="orbit-node node-trust">
-          <div className="node-icon">
-            <User className="w-5 h-5 text-[#1e3a8a]" />
-          </div>
-          <span className="node-label">TRUST</span>
-        </div>
-
-        <div className="orbit-node node-wealth">
-          <div className="node-icon">
-            <BarChart2 className="w-5 h-5 text-[#1e3a8a]" />
-          </div>
-          <span className="node-label">WEALTH</span>
-        </div>
-
-        <div className="orbit-node node-goal">
-          <div className="node-icon">
-            <Target className="w-5 h-5 text-[#1e3a8a]" />
-          </div>
-          <span className="node-label">GOAL</span>
+    <div className="values-diagram-wrapper" data-aos="zoom-in" data-aos-delay="200">
+      <div className="values-diagram-container">
+        
+        {/* Orbit Ring */}
+        <div className="orbit-ring">
+          {points.map((point, idx) => (
+            <div
+              key={idx}
+              className="orbit-node-container"
+              style={{
+                transform: `rotate(${point.angle}deg) translate(240px)`,
+              }}
+            >
+              <div className="orbit-dot" />
+              <div className="node-counter-spin">
+                <div
+                  className="node-content-upright"
+                  style={{
+                    transform: `rotate(-${point.angle}deg)`,
+                  }}
+                >
+                  <div className="node-icon">{point.icon}</div>
+                  <span className="node-label">{point.label}</span>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
-        <div className="orbit-node node-discipline">
-          <div className="node-icon">
-            <Shield className="w-5 h-5 text-[#1e3a8a]" />
+        {/* Center Circle */}
+        <div className="center-circle">
+          <div className="center-circle-inner">
+            <img 
+              src={`${import.meta.env.BASE_URL}blueAnt.png`} 
+              alt="Blueant Logo" 
+              style={{ width: "160px", height: "auto", display: "block" }} 
+            />
           </div>
-          <span className="node-label">DISCIPLINE</span>
         </div>
 
-        <div className="orbit-node node-growth">
-          <div className="node-icon">
-            <Leaf className="w-5 h-5 text-[#1e3a8a]" />
-          </div>
-          <span className="node-label">GROWTH</span>
-        </div>
       </div>
     </div>
   );

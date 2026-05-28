@@ -40,9 +40,9 @@ function HeroFigma() {
               </h1>
             </div>
 
-            <p className="hf-subtext" data-aos="fade-up" data-aos-delay="300">
-              When money decisions are clear, life feels more confident. <br />
-              Blueant helps families build that clarity with discipline, thoughtful protection, and long-term financial confidence.
+            <p className="hf-subtext" data-aos="fade-up" data-aos-delay="300" style={{ lineHeight: '1.2' }}>
+              <strong style={{ color: '#ffffff', fontWeight: '600', display: 'block', marginBottom: '4px' }}>When money decisions are clear, life feels more confident.</strong>
+              <span style={{ fontSize: '14px', display: 'block', lineHeight: '1.4' }}>Blueant helps families build that clarity with discipline, thoughtful <br /> protection, and long-term financial confidence.</span>
             </p>
 
             <div className="hf-ctas" data-aos="fade-up" data-aos-delay="400">
@@ -64,9 +64,8 @@ function HeroFigma() {
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
                 </div>
                 <div className="hf-sidebar-menu">
-                  <div className="hf-menu-item active">DASH</div>
+                  <div className="hf-menu-item active">DASHBOARD</div>
                   <div className="hf-menu-item">INVEST</div>
-                  <div className="hf-menu-item">TRADE</div>
                   <div className="hf-menu-item">LOANS</div>
                 </div>
               </div>
@@ -77,10 +76,6 @@ function HeroFigma() {
                   <div>
                     <span className="hf-label-mini">Financial Goal</span>
                     <h4 className="hf-value-main animate-pulse-slow">Your Wealth Journey</h4>
-                  </div>
-                  <div className="hf-header-right">
-                    <span className="hf-label-mini">Status</span>
-                    <span className="hf-status-green">Account Verified</span>
                   </div>
                 </div>
 
@@ -103,11 +98,7 @@ function HeroFigma() {
                 <div className="hf-content-footer">
                   <div className="hf-footer-card hover-lift">
                     <span className="hf-label-mini">Insurance Policy</span>
-                    <strong className="hf-status-green">Coverage Active</strong>
-                  </div>
-                  <div className="hf-footer-card hover-lift">
-                    <span className="hf-label-mini">Coverage Type</span>
-                    <strong className="hf-white">Comprehensive</strong>
+                    <strong className="hf-status-green">Person Coverage Active</strong>
                   </div>
                 </div>
               </div>
