@@ -42,7 +42,7 @@ const AboutPreview = () => {
 
             {/* 3. Paragraph: Compact and Readable */}
             <p className="about-description">
-              At BlueAnt Finserv, we believe in one simple philosophy — <span className="about-text-highlight">“We don’t sell, we educate.”</span>
+              At BlueAnt Finserv, we believe in one simple philosophy — <span className="about-text-highlight"><br></br>“We don’t sell, we educate.”</span>
               <br /><br />
               We empower individuals and families with <span className="about-text-bold">disciplined SIP investments</span>, personalized financial planning, and a transparent investment process to build long-term wealth with confidence.
             </p>

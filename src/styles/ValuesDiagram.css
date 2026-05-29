@@ -39,24 +39,26 @@
   align-items: center;
   justify-content: center;
   box-shadow: 
-    0 30px 60px rgba(2, 6, 23, 0.4),
+    0 34px 72px rgba(2, 6, 23, 0.72),
+    0 12px 28px rgba(0, 0, 0, 0.45),
     inset 0 2px 20px rgba(255, 255, 255, 0.08),
     inset 0 -10px 30px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(255, 255, 255, 0.05),
     0 0 0 15px rgba(30, 58, 138, 0.04);
   position: relative;
   z-index: 10;
+  animation: center-circle-zoom 3.8s ease-in-out infinite;
 }
 
 .center-circle::before {
-  content: '';
   position: absolute;
-  width: 100%;
+  content: '';
   height: 100%;
-  border-radius: 50%;
+  width: 100%;
   border: 1px solid rgba(59, 130, 246, 0.3);
-  animation: pulse-ring 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  border-radius: 50%;
   z-index: -1;
+  animation: pulse-ring 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .center-circle::after {
@@ -69,9 +71,26 @@
   z-index: -2;
 }
 
+.center-circle-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    inset 0 18px 32px rgba(255, 255, 255, 0.14),
+    inset 0 -28px 42px rgba(0, 0, 0, 0.62);
+}
+
 .center-circle-inner img {
-  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4));
-  transform: scale(1.05);
+  width: 100%;
+  height: 110%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  filter: none;
 }
 
 /* Nodes on the ring */
@@ -197,6 +216,16 @@
   }
 }
 
+@keyframes center-circle-zoom {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
 @media (max-width: 1024px) {
   .values-diagram-container {
     transform: scale(0.85);
@@ -213,4 +242,17 @@
   .values-diagram-container {
     transform: scale(0.55);
   }
+}
+.rotate-icon {
+    animation: spin 2s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

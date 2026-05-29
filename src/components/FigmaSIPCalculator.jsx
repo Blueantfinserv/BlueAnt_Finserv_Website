@@ -286,43 +286,7 @@ export default function FigmaSIPCalculator() {
           </div>
         </div>
 
-        {/* 4. Expert Insights & CTA */}
-        <div className="f-sip-card f-sip-info-card">
-          <div className="f-sip-insights-content">
-            <h3 className="f-sip-card-title">Disciplined Insights</h3>
-            <div className="f-sip-info-list">
-              <div className="f-sip-info-item">
-                <div className="f-sip-info-num-glow">
-                  <Sparkles className="w-4 h-4" />
-                </div>
-                <div className="f-sip-info-text">
-                  <h4>Compounding Potential</h4>
-                  <p>Exponential growth by reinvesting market returns over long intervals.</p>
-                </div>
-              </div>
-              <div className="f-sip-info-item">
-                <div className="f-sip-info-num-glow">
-                  <Shield className="w-4 h-4" />
-                </div>
-                <div className="f-sip-info-text">
-                  <h4>Timing Shield</h4>
-                  <p>Rupee-cost averaging filters market noise and volatile cycles.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="f-sip-cta-wrapper">
-            <button 
-              onClick={openConsultationModal} 
-              className="f-sip-action-btn"
-            >
-              Start Wealth Journey
-            </button>
-            <div className="f-sip-trust-strip">
-              Transparent Process • Free Consultation
-            </div>
-          </div>
-        </div>
+
       </div>
 
 

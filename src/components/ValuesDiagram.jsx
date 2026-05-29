@@ -44,10 +44,9 @@ const ValuesDiagram = () => {
         {/* Center Circle */}
         <div className="center-circle">
           <div className="center-circle-inner">
-            <img 
-              src={`${import.meta.env.BASE_URL}blueAnt.png`} 
-              alt="Blueant Logo" 
-              style={{ width: "160px", height: "auto", display: "block" }} 
+            <img
+              src={`${import.meta.env.BASE_URL}Ant (1).gif`}
+              alt="Blueant animated ant"
             />
           </div>
         </div>

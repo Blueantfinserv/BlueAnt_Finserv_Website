@@ -335,19 +335,19 @@
   grid-column: 1 / span 2;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 10px;
   margin-top: 8px;
 }
 
 .f-sip-result-box {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
-  padding: 24px;
-  border-radius: 20px;
-  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.95);
   box-shadow: 
-    0 10px 25px rgba(15, 23, 42, 0.01),
-    0 20px 40px rgba(37, 99, 235, 0.02);
+    0 4px 12px rgba(15, 23, 42, 0.02),
+    0 8px 20px rgba(37, 99, 235, 0.02);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -363,7 +363,7 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: 5px;
+  width: 3px;
   z-index: 5;
 }
 
@@ -402,21 +402,21 @@
 }
 
 .f-sip-res-label {
-  font-size: 11px;
+  font-size: 9px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: .15em;
   color: #64748b;
-  margin-bottom: 6px;
+  margin-bottom: 2px;
   padding-left: 4px;
 }
 
 .f-sip-res-val {
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: -0.5px;
-  margin: 0 0 4px;
+  margin: 0 0 1px;
   padding-left: 4px;
 }
 
@@ -425,7 +425,7 @@
 .f-sip-purple .f-sip-res-val { color: #8b5cf6; }
 
 .f-sip-res-subtext {
-  font-size: 12px;
+  font-size: 9.5px;
   font-weight: 500;
   color: #5b6475;
   padding-left: 4px;
