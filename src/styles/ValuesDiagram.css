@@ -121,22 +121,23 @@
 
 .node-content-upright {
   position: absolute;
-  top: -55px;
-  left: -45px;
-  width: 90px;
-  height: 110px;
+  top: -34px;
+  left: -75px;
+  width: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 14px;
+  justify-content: flex-start;
+  gap: 12px;
+  transform-origin: 75px 34px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .node-icon {
   width: 68px;
   height: 68px;
-  background: linear-gradient(145deg, #ffffff, #f1f5f9);
-  backdrop-filter: blur(10px);
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  backdrop-filter: blur(12px);
   border-radius: 50%;
   display: flex;
   align-items: center;
