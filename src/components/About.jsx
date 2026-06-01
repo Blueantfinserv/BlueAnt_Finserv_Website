@@ -75,12 +75,17 @@ const About = () => {
                 Guided by <span className="text-blue-600">Education.</span>
               </h2>
 
-              <p className="text-[#64748b] text-lg leading-relaxed mb-8 max-w-[540px]">
-                At Blueant Finserv, we believe in a simple yet powerful philosophy:
-                <strong className="block my-2 whitespace-nowrap">"We don't sell, we educate."</strong>
-                Our team empowers families to build long-term stability through disciplined SIP investments and
-                personalized financial planning, ensuring every decision is informed and confident.
-              </p>
+              <div className="text-[#64748b] text-lg leading-relaxed mb-8 max-w-[540px] space-y-4">
+                <p>
+                  At BlueAnt Finserv, we believe meaningful wealth is built through discipline, consistency, and thoughtful financial decisions — not shortcuts.
+                </p>
+                <p>
+                  Inspired by the steadiness of the blue sky and the discipline of an ant, we help individuals and families build long-term financial confidence with trust, clarity, and steady progress.
+                </p>
+                <p>
+                  Through disciplined SIP investments, transparent financial guidance, and personalized wealth planning, we focus on creating lasting value for every financial journey.
+                </p>
+              </div>
 
               <div className="space-y-4 mb-10">
                 {features.map((feature, idx) => (

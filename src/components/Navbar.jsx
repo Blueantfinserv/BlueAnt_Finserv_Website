@@ -63,10 +63,10 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 py-3 nav-bar-wrapper ${isScrolled ? "nav-bar-scrolled" : "bg-white"}`}>
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-12 lg:pl-28 flex items-center justify-between">
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-12 flex items-center justify-between">
 
         {/* Logo */}
-        <div className="flex items-center flex-shrink-0 lg:ml-16">
+        <div className="nav-logo logo-wrapper flex items-center flex-shrink-0">
           <Link to="/" className="block">
             <img src={`${import.meta.env.BASE_URL}blueAnt.png`} alt="Blueant Logo" style={{ height: "36px", width: "auto", display: "block", objectFit: "contain" }} />
           </Link>

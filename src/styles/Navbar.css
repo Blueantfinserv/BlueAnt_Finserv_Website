@@ -196,3 +196,33 @@
     transform: translateX(-50%) translateY(0) scale(1);
   }
 }
+
+/* ===== FINAL PREMIUM NAVBAR ALIGNMENT ===== */
+@media (min-width: 1024px) {
+  nav {
+    padding-left: 42px;
+    padding-right: 42px;
+  }
+
+  /* Logo */
+  .navbar-logo,
+  .logo-wrapper {
+    margin-right: 18px;
+  }
+
+  /* Navigation links */
+  .nav-menu-desktop,
+  .navbar-center,
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-left: 18px;
+  }
+
+  /* CTA Button */
+  .nav-cta-btn-3d {
+    margin-left: 24px;
+    padding: 13px 26px !important;
+  }
+}

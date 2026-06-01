@@ -96,73 +96,95 @@ const expertData = [
 const ExpertSpeakers = () => {
   return (
     <section className="expert-section">
-      <div className="container mx-auto px-4 lg:px-8 max-w-6xl">
-        <div className="expert-title-container" data-aos="fade-up">
-          <h2 className="expert-title">Meet Your Expert</h2>
-          <div className="expert-subtitle-line"></div>
-          <p className="expert-subtitle">
-            Get expert guidance on smart portfolio planning, risk management, and sustainable financial growth
-          </p>
-        </div>
+      <div
+        className="expert-title-container container mx-auto px-4 lg:px-8 max-w-6xl"
+        data-aos="fade-up"
+      >
+        <span className="expert-eyebrow">Expert Guidance</span>
+        <h2 className="expert-title">Meet Your Expert</h2>
+        <div className="expert-subtitle-line" />
+        <p className="expert-subtitle">
+          Get expert guidance on smart portfolio planning, risk management, and sustainable financial growth
+        </p>
+      </div>
 
-        <div data-aos="fade-up" data-aos-delay="100">
-          <Swiper
-            modules={[Autoplay, Pagination]}
-            spaceBetween={30}
-            slidesPerView={1}
-            loop={true}
-            pagination={{ clickable: true }}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-            }}
-            className="expert-swiper"
-          >
-            {expertData.map((expert) => (
-              <SwiperSlide key={expert.id}>
-                <div className="expert-slide-content">
-                  {/* Left Poster Side */}
-                  <div className="expert-poster">
-                    <div className="expert-poster-top">
-                      <span className="expert-poster-badge">EXPERT GUIDANCE</span>
-                      <h4 className="expert-poster-title">IS YOUR PORTFOLIO GROWING...<br/>OR JUST SURVIVING?</h4>
-                    </div>
-                    
-                    <div className="expert-image-wrapper">
-                      <img src={`${import.meta.env.BASE_URL}${expert.image}`} alt={expert.name} />
-                    </div>
-                    
-                    <div className="expert-poster-bottom">
-                      <h3 className="expert-poster-name">{expert.name}</h3>
-                      <p className="expert-poster-role">{expert.role}</p>
-                    </div>
+      <div
+        className="expert-slider-container"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <Swiper
+          modules={[Autoplay, Pagination]}
+          spaceBetween={40}
+          slidesPerView={1.5}
+          centeredSlides={true}
+          loop={true}
+          pagination={{ clickable: true }}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            320: { slidesPerView: 1.05, spaceBetween: 16 },
+            768: { slidesPerView: 1.2, spaceBetween: 28 },
+            1024: { slidesPerView: 1.4, spaceBetween: 40 },
+            1280: { slidesPerView: 1.6, spaceBetween: 50 },
+          }}
+          className="expert-swiper"
+        >
+          {expertData.map((expert) => (
+            <SwiperSlide key={expert.id}>
+              <div className="expert-slide-content">
+
+                {/* ── Left Panel ── */}
+                <div className="expert-poster">
+                  <div className="expert-poster-top">
+                    <span className="expert-poster-badge">Expert Guidance</span>
+                    <h4 className="expert-poster-title">
+                      Is your portfolio growing&hellip;<br />or just surviving?
+                    </h4>
                   </div>
 
-                  {/* Right Details Side */}
-                  <div className="expert-details">
-                    <h2 className="expert-name">{expert.name}</h2>
-                    <span className="expert-role-badge">{expert.role} &bull; {expert.title}</span>
-                    
-                    <div className="expert-bio">
-                      {expert.bio.map((paragraph, idx) => (
-                        <p key={idx}>{paragraph}</p>
-                      ))}
-                    </div>
+                  <div className="expert-image-wrapper">
+                    <img
+                      src={`${import.meta.env.BASE_URL}${expert.image}`}
+                      alt={expert.name}
+                    />
+                  </div>
 
-                    <div className="expert-stats">
-                      {expert.stats.map((stat, idx) => (
-                        <div key={idx} className="expert-stat-item">
-                          <span className="expert-stat-number">{stat.number}</span>
-                          <span className="expert-stat-label">{stat.label}</span>
-                        </div>
-                      ))}
-                    </div>
+                  <div className="expert-poster-bottom">
+                    <h3 className="expert-poster-name">{expert.name}</h3>
+                    <p className="expert-poster-role">{expert.role}</p>
                   </div>
                 </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+
+                {/* ── Right Panel ── */}
+                <div className="expert-details">
+                  <h2 className="expert-name">{expert.name}</h2>
+                  <span className="expert-role-badge">
+                    {expert.role} &bull; {expert.title}
+                  </span>
+
+                  <div className="expert-bio">
+                    {expert.bio.map((paragraph, idx) => (
+                      <p key={idx}>{paragraph}</p>
+                    ))}
+                  </div>
+
+                  <div className="expert-stats">
+                    {expert.stats.map((stat, idx) => (
+                      <div key={idx} className="expert-stat-item">
+                        <span className="expert-stat-number">{stat.number}</span>
+                        <span className="expert-stat-label">{stat.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
   );

@@ -36,16 +36,33 @@ const AboutPreview = () => {
 
             {/* 2. Heading: Tighter Typography Hierarchy */}
             <h2 className="about-heading">
-              <span className="block mb-1">Built on Trust.</span>
-              <span className="about-heading-accent">Driven by Discipline.</span>
+              <span className="block mb-1">Calm Decisions.</span>
+              <span className="about-heading-accent">Steady Steps.</span>
             </h2>
 
-            {/* 3. Paragraph: Compact and Readable */}
-            <p className="about-description">
-              At BlueAnt Finserv, we believe in one simple philosophy — <span className="about-text-highlight"><br></br>“We don’t sell, we educate.”</span>
-              <br /><br />
-              We empower individuals and families with <span className="about-text-bold">disciplined SIP investments</span>, personalized financial planning, and a transparent investment process to build long-term wealth with confidence.
-            </p>
+            <div className="about-description-container">
+              <h3 className="about-subtitle">
+                The BlueAnt Way to <span className="about-text-highlight">Meaningful Wealth.</span>
+              </h3>
+              
+              <div className="about-paragraphs">
+                <p>
+                  At BlueAnt Finserv, we believe meaningful wealth is built through discipline, consistency, and thoughtful financial decisions — not shortcuts.
+                </p>
+                <p>
+                  Inspired by the steadiness of the blue sky and the discipline of an ant, we help individuals and families build long-term financial confidence with trust, clarity, and steady progress.
+                </p>
+                <p>
+                  Through disciplined SIP investments, transparent financial guidance, and personalized wealth planning, we focus on creating lasting value for every financial journey.
+                </p>
+              </div>
+
+              <div className="about-slogan-box">
+                <div className="slogan-line">Steadiness of Blue.</div>
+                <div className="slogan-line">Discipline of an Ant.</div>
+                <div className="slogan-highlight">The Quiet Strength Behind Lasting Wealth.</div>
+              </div>
+            </div>
 
             {/* 4. Features Grid: Clean 2-column checklist */}
             <div className="features-grid">
