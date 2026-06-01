@@ -1,42 +1,151 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../styles/WhyBlueant.css';
 
 const whyBlueantData = [
+{
+  id: 1,
+  number: "01",
+  title: "Clarity That Deepens With Time",
+  desc: (
+    <>
+      Families stay when financial decisions become easier to understand, review, and refine.
+      <br />
+      Blueant keeps the conversation clear as life, goals, and markets change.
+    </>
+  ),
+  img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800&auto=format&fit=crop"
+},
   {
-    id: 1,
-    number: "01",
-    title: "SEBI Registered Investment Advisors",
-    desc: "As SEBI RIAs, we ensure your financial security with our top-tier standards in education, experience, & compliance, providing you with client-centric advice at all points.",
-    img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: 2,
-    number: "02",
-    title: "Fiduciary Standard of Care",
-    desc: "Your best interests come first! Guided by SEBI IA regulations, we prioritize integrity, trust, & ethics, ensuring your financial dreams are always safeguarded.",
+  id: 2,
+  number: "02",
+  title: "Calm Through Every Market Cycle",
+  desc: (
+    <>
+      Market phases change, but disciplined investors need steady conversations.
+      <br />Blueant helps families stay focused on long-term direction instead of short-term noise.
+
+    </>
+  ),
     img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 3,
     number: "03",
-    title: "Your Dedicated Personal CFOs",
-    desc: "Focus on what matters most—family, passions, health, & peace of mind. As your personal CFOs, we manage your finances, anchoring your overall well-being.",
+    title: "One View of the Financial Journey",
+    desc: (
+    <>
+      Investments, protection, goals, and family priorities are looked at together.
+      <br />This brings more structure to decisions that are often taken separately.
+
+    </>
+  ),
     img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 4,
     number: "04",
-    title: "Delivering Clarity & Peace of Mind",
-    desc: "Leave financial stress behind. Our experienced team provides clear, tailored & actionable advice, helping you navigate your financial path with confidence & ease.",
+    title: "A Relationship That Continues",
+        desc: (
+    <>
+      The association does not stop after paperwork or product selection.
+      <br />It continues through reviews, service support, education, and meaningful conversations.
+
+
+    </>
+  ),
     img: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?q=80&w=800&auto=format&fit=crop"
   }
 ];
 
 const WhyBlueant = () => {
+  const stackRef = useRef(null);
+
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
+  }, []);
+
+  useEffect(() => {
+    const stack = stackRef.current;
+    if (!stack) return;
+
+    let frameId = null;
+    let cardItems = [];
+    const clamp = (value) => Math.min(1, Math.max(0, value));
+
+    const measureCards = () => {
+      const cards = Array.from(stack.querySelectorAll('.why-blueant-card'));
+
+      cardItems = cards.map((card) => {
+        const content = card.querySelector('.why-blueant-content');
+        const image = card.querySelector('.why-blueant-image-wrapper');
+        const imageHeight = image?.getBoundingClientRect().height || 0;
+        const centerOffset = content ? Math.max(0, (imageHeight - content.scrollHeight) / 2) : 0;
+        const stickyTop = parseFloat(window.getComputedStyle(card).top) || 0;
+
+        return {
+          card,
+          content,
+          centerOffset,
+          stickyTop
+        };
+      });
+    };
+
+    const updateContentPositions = () => {
+      frameId = null;
+
+      cardItems.forEach((item, index) => {
+        const { card, content, centerOffset, stickyTop } = item;
+
+        if (!content) return;
+
+        const cardRect = card.getBoundingClientRect();
+        const nextItem = cardItems[index + 1];
+        let progress = 0;
+
+        if (nextItem) {
+          const nextTop = nextItem.card.getBoundingClientRect().top;
+          const start = stickyTop + cardRect.height + 120;
+          const end = stickyTop + cardRect.height * 0.48;
+
+          progress = clamp((start - nextTop) / (start - end));
+        } else {
+          const start = window.innerHeight * 0.8;
+          const end = stickyTop + cardRect.height * 0.35;
+
+          progress = clamp((start - cardRect.top) / (start - end));
+        }
+
+        content.style.setProperty('--content-offset', `${centerOffset * (1 - progress)}px`);
+      });
+    };
+
+    const requestUpdate = () => {
+      if (frameId === null) {
+        frameId = window.requestAnimationFrame(updateContentPositions);
+      }
+    };
+
+    const refreshMeasurements = () => {
+      measureCards();
+      requestUpdate();
+    };
+
+    refreshMeasurements();
+    requestUpdate();
+    window.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('resize', refreshMeasurements);
+
+    return () => {
+      if (frameId !== null) {
+        window.cancelAnimationFrame(frameId);
+      }
+
+      window.removeEventListener('scroll', requestUpdate);
+      window.removeEventListener('resize', refreshMeasurements);
+    };
   }, []);
 
   return (
@@ -46,7 +155,7 @@ const WhyBlueant = () => {
           Why Come to Blueant?
         </h2>
 
-        <div className="why-blueant-stack">
+        <div className="why-blueant-stack" ref={stackRef}>
           {whyBlueantData.map((item, index) => (
             <div 
               key={item.id} 
