@@ -1,8 +1,4 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import React, { useState } from 'react';
 import '../styles/ExpertSpeakers.css';
 
 const expertData = [
@@ -93,7 +89,16 @@ const expertData = [
   }
 ];
 
+const RightArrowIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="5" y1="12" x2="19" y2="12"></line>
+    <polyline points="12 5 19 12 12 19"></polyline>
+  </svg>
+);
+
 const ExpertSpeakers = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <section className="expert-section">
       <div
@@ -109,82 +114,68 @@ const ExpertSpeakers = () => {
       </div>
 
       <div
-        className="expert-slider-container"
+        className="expert-accordion-container container mx-auto px-4 lg:px-8 max-w-[1400px]"
         data-aos="fade-up"
         data-aos-delay="100"
       >
-        <Swiper
-          modules={[Autoplay, Pagination]}
-          spaceBetween={40}
-          slidesPerView={1.5}
-          centeredSlides={true}
-          loop={true}
-          pagination={{ clickable: true }}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
-          breakpoints={{
-            320: { slidesPerView: 1.05, spaceBetween: 16 },
-            768: { slidesPerView: 1.2, spaceBetween: 28 },
-            1024: { slidesPerView: 1.4, spaceBetween: 40 },
-            1280: { slidesPerView: 1.6, spaceBetween: 50 },
-          }}
-          className="expert-swiper"
-        >
-          {expertData.map((expert) => (
-            <SwiperSlide key={expert.id}>
-              <div className="expert-slide-content">
-
-                {/* ── Left Panel ── */}
-                <div className="expert-poster">
-                  <div className="expert-poster-top">
-                    <span className="expert-poster-badge">Expert Guidance</span>
-                    <h4 className="expert-poster-title">
-                      Is your portfolio growing&hellip;<br />or just surviving?
-                    </h4>
+        <div className="expert-accordion">
+          {expertData.map((expert, index) => {
+            const isActive = activeIndex === index;
+            return (
+              <div 
+                key={expert.id} 
+                className={`expert-accordion-item ${isActive ? 'active' : ''}`}
+                onClick={() => setActiveIndex(index)}
+              >
+                {!isActive ? (
+                  <div className="expert-collapsed">
+                    <div className="read_mode_rounded">
+                      <RightArrowIcon />
+                    </div>
+                    <div className="expert-collapsed-text">
+                      <h4>{expert.name}</h4>
+                    </div>
                   </div>
-
-                  <div className="expert-image-wrapper">
-                    <img
-                      src={`${import.meta.env.BASE_URL}${expert.image}`}
-                      alt={expert.name}
-                    />
-                  </div>
-
-                  <div className="expert-poster-bottom">
-                    <h3 className="expert-poster-name">{expert.name}</h3>
-                    <p className="expert-poster-role">{expert.role}</p>
-                  </div>
-                </div>
-
-                {/* ── Right Panel ── */}
-                <div className="expert-details">
-                  <h2 className="expert-name">{expert.name}</h2>
-                  <span className="expert-role-badge">
-                    {expert.role} &bull; {expert.title}
-                  </span>
-
-                  <div className="expert-bio">
-                    {expert.bio.map((paragraph, idx) => (
-                      <p key={idx}>{paragraph}</p>
-                    ))}
-                  </div>
-
-                  <div className="expert-stats">
-                    {expert.stats.map((stat, idx) => (
-                      <div key={idx} className="expert-stat-item">
-                        <span className="expert-stat-number">{stat.number}</span>
-                        <span className="expert-stat-label">{stat.label}</span>
+                ) : (
+                  <div className="expert-expanded">
+                    <div className="expert-expanded-image">
+                      <img
+                        src={`${import.meta.env.BASE_URL}${expert.image}`}
+                        alt={expert.name}
+                      />
+                    </div>
+                    <div className="expert-expanded-content">
+                      <div className="expert-expanded-header">
+                        <div className="read_mode_rounded close-icon" onClick={(e) => { e.stopPropagation(); setActiveIndex(-1); }}>
+                           <RightArrowIcon />
+                        </div>
                       </div>
-                    ))}
-                  </div>
-                </div>
+                      <h2 className="expert-name">{expert.name}</h2>
+                      <span className="expert-role-badge">
+                        {expert.role} &bull; {expert.title}
+                      </span>
 
+                      <div className="expert-bio">
+                        {expert.bio.map((paragraph, idx) => (
+                          <p key={idx}>{paragraph}</p>
+                        ))}
+                      </div>
+
+                      <div className="expert-stats">
+                        {expert.stats.map((stat, idx) => (
+                          <div key={idx} className="expert-stat-item">
+                            <span className="expert-stat-number">{stat.number}</span>
+                            <span className="expert-stat-label">{stat.label}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
