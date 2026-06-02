@@ -1,5 +1,5 @@
 .expert-section {
-  padding: 100px 0 120px;
+  padding: 60px 0 70px;
   background-color: #faf9f6;
   position: relative;
   overflow: hidden;
@@ -18,7 +18,7 @@
 /* ── Title Block ── */
 .expert-title-container {
   text-align: center;
-  margin-bottom: 72px;
+  margin-bottom: 40px;
   position: relative;
   z-index: 1;
 }
@@ -68,11 +68,11 @@
 .expert-accordion {
   display: flex;
   gap: 24px;
-  height: 580px;
+  height: 460px;
   transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 10px 10px 40px 10px;
+  padding: 10px 10px 24px 10px;
   margin: -10px;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
@@ -97,7 +97,7 @@
 @media (max-width: 991px) {
   .expert-accordion {
     flex-direction: row;
-    height: 580px;
+    height: 460px;
     min-height: auto;
   }
 }
@@ -134,12 +134,12 @@
 
 .expert-accordion-item.active {
   flex: 0 0 calc(66.666% - 16px); /* Expanded box takes up 2 slots */
-  min-width: 600px;
+  min-width: 520px;
   background: #ffffff;
   cursor: default;
-  padding: 2.5rem;
+  padding: 1.75rem 2rem;
   flex-direction: row;
-  gap: 40px;
+  gap: 28px;
   transform: translateY(-5px);
   box-shadow: 0 24px 48px rgba(0,0,0,0.08);
   border-color: rgba(200, 169, 110, 0.5);
@@ -256,12 +256,12 @@
 }
 
 .expert-expanded-image.dark-theme {
-  flex: 0 0 35%;
-  border-radius: 2rem;
+  flex: 0 0 33%;
+  border-radius: 1.5rem;
   overflow: hidden;
   position: relative;
   background: #0f0f0f;
-  padding: 40px 20px;
+  padding: 24px 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -297,13 +297,13 @@
 }
 
 .expert-circle-wrapper {
-  width: 160px;
-  height: 160px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   padding: 6px;
   border: 1px solid #c8a96e;
   position: relative;
-  margin: 20px 0;
+  margin: 12px 0;
   display: flex;
   justify-content: center;
   align-items: center;
