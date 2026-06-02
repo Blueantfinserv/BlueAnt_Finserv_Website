@@ -7,6 +7,7 @@
   padding: 100px 0 20px;
   color: #ffffff;
   font-family: "Outfit", sans-serif;
+  overflow: hidden;
 }
 
 .hf-container {
@@ -14,6 +15,7 @@
   margin: 0 auto;
   padding: 0 40px;
   z-index: 2;
+  width: 100%;
 }
 
 .hf-content {
@@ -21,12 +23,14 @@
   grid-template-columns: 1fr 1fr;
   gap: 100px;
   align-items: center;
+  width: 100%;
 }
 
 /* Left Column */
 .hf-left {
   flex: 0.85;
   /* Slightly smaller than right */
+  min-width: 0;
 }
 
 .hf-top-badge {
@@ -63,6 +67,7 @@
   margin: 0;
   display: flex;
   align-items: center;
+  max-width: 100%;
 }
 
 .hf-headline-sm {
@@ -143,6 +148,7 @@
   letter-spacing: 0.2px;
   max-width: 520px;
   margin-bottom: 40px;
+  overflow-wrap: break-word;
 }
 
 .hf-ctas {
@@ -256,6 +262,7 @@
   flex: 1.15;
   display: flex;
   justify-content: flex-end;
+  min-width: 0;
 }
 
 .hf-mockup-frame {
@@ -604,24 +611,61 @@
 
 @media (max-width: 768px) {
   .hf-section {
-    padding: 80px 0 20px;
+    padding: 92px 0 28px;
   }
 
   .hf-container {
-    padding: 0 20px;
+    padding: 0 clamp(16px, 5vw, 24px);
+  }
+
+  .hf-content {
+    gap: 44px;
+  }
+
+  .hf-top-badge {
+    max-width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  .hf-dynamic-headline-group {
+    gap: 14px;
+    margin-bottom: 24px;
   }
 
   .hf-headline-sm {
-    font-size: clamp(32px, 10vw, 54px);
+    font-size: clamp(40px, 13vw, 58px);
+  }
+
+  .hf-headline-md {
+    font-size: clamp(54px, 15vw, 72px);
   }
 
   .hf-headline-lg {
-    font-size: clamp(42px, 12vw, 70px);
+    font-size: clamp(58px, 17vw, 84px);
+  }
+
+  .hf-dynamic-headline {
+    letter-spacing: -1.8px;
+    justify-content: center;
+  }
+
+  .hf-glowing-dash {
+    width: clamp(28px, 12vw, 45px);
+    margin-left: clamp(8px, 3vw, 16px);
+    margin-top: 0;
   }
 
   .hf-subtext {
-    font-size: 16px;
+    font-size: 15px;
     margin-bottom: 30px;
+    max-width: 34rem;
+  }
+
+  .hf-subtext br {
+    display: none;
   }
 
   .hf-ctas {
@@ -633,6 +677,8 @@
   .hf-btn-primary {
     width: 100%;
     justify-content: center;
+    min-height: 56px;
+    padding: 15px 18px;
   }
 
   .hf-mockup-frame {
@@ -681,6 +727,31 @@
 }
 
 @media (max-width: 480px) {
+  .hf-section {
+    padding-top: 86px;
+  }
+
+  .hf-headline-sm {
+    font-size: clamp(34px, 12vw, 46px);
+  }
+
+  .hf-headline-md {
+    font-size: clamp(46px, 15vw, 58px);
+  }
+
+  .hf-headline-lg {
+    font-size: clamp(50px, 16vw, 66px);
+  }
+
+  .hf-dynamic-headline {
+    letter-spacing: -1.2px;
+  }
+
+  .hf-glowing-dash {
+    width: 30px;
+    margin-left: 8px;
+  }
+
   .hf-sidebar-menu {
     display: none;
   }

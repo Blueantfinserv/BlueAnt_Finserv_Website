@@ -21,6 +21,8 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: clip;
 }
 
 body {
@@ -30,6 +32,14 @@ body {
   background: var(--color-bg);
   overflow-x: hidden;
   line-height: 1.5;
+  width: 100%;
+  min-width: 0;
+}
+
+#root {
+  width: 100%;
+  min-width: 0;
+  overflow-x: clip;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -42,6 +52,10 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+svg {
+  max-width: 100%;
 }
 
 a {

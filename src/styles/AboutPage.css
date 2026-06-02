@@ -21,8 +21,7 @@
 .company-container {
     max-width: 1280px;
     margin: 0 auto;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-inline: clamp(18px, 5vw, 40px);
     width: 100%;
     position: relative;
 }
@@ -111,6 +110,8 @@
     border: 1px solid rgba(15, 23, 42, 0.04);
     margin-bottom: 36px;
     width: fit-content;
+    max-width: 100%;
+    flex-wrap: wrap;
 }
 
 .trust-rating-box {
@@ -187,6 +188,7 @@
     display: flex;
     gap: 16px;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .btn-primary-premium {
@@ -1509,6 +1511,138 @@
   }
 }
 
+@media (max-width: 768px) {
+  .company-hero {
+    padding-top: 116px;
+    padding-bottom: 64px;
+  }
+
+  .company-section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .company-hero-title {
+    font-size: clamp(2.35rem, 11vw, 3.3rem);
+    letter-spacing: -1.5px;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-trust-row {
+    gap: 14px;
+    padding: 14px 16px;
+  }
+
+  .hero-features-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .hero-cta-group {
+    align-items: stretch;
+  }
+
+  .btn-primary-premium,
+  .btn-secondary-glass {
+    width: 100%;
+    justify-content: center;
+    padding-inline: 20px;
+  }
+
+  .identity-card-premium {
+    padding: 32px 22px;
+    border-radius: 24px;
+  }
+
+  .ic-header {
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .ic-icon-wrapper {
+    width: 58px;
+    height: 58px;
+    border-radius: 18px;
+  }
+
+  .ic-title {
+    font-size: clamp(32px, 11vw, 42px);
+  }
+
+  .ic-desc {
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 28px;
+  }
+
+  .quote-area-refined {
+    padding: 24px 22px;
+  }
+
+  .analogy-banner-premium {
+    padding: 32px 0;
+  }
+
+  .analogy-banner-premium p {
+    font-size: clamp(20px, 7vw, 28px);
+  }
+
+  .about-hub-section {
+    padding-top: 112px;
+    padding-bottom: 72px;
+  }
+
+  .about-hub-section main {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  .about-hub-section h1 {
+    font-size: clamp(42px, 13vw, 64px) !important;
+    letter-spacing: -1.5px !important;
+  }
+
+  .about-hub-section p {
+    font-size: clamp(16px, 4.2vw, 20px) !important;
+  }
+
+  .about-hub-card {
+    padding: 28px 22px;
+    min-height: 250px;
+    border-radius: 22px;
+  }
+}
+
+@media (max-width: 420px) {
+  .company-container {
+    padding-inline: 16px;
+  }
+
+  .hero-top-badge {
+    max-width: 100%;
+  }
+
+  .hero-trust-row {
+    width: 100%;
+  }
+
+  .trust-divider {
+    display: none;
+  }
+
+  .trust-text {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .about-hub-card-action {
+    letter-spacing: 1.4px;
+  }
+}
 
 
 
