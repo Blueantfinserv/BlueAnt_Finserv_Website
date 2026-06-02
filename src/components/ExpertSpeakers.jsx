@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import '../styles/ExpertSpeakers.css';
 
 const expertData = [
@@ -24,7 +24,7 @@ const expertData = [
     name: "Mr. Sachin Narang",
     role: "Vice President",
     title: "Wealth Preservation",
-    image: "Sachin Narang.png",
+    image: "Sachin Narang.jpg",
     bio: [
       "Mr. Sachin Narang serves as the Vice President, bringing his sharp analytical skills and extensive market knowledge to the forefront. He has been a trusted name in guiding high-net-worth individuals through complex financial landscapes.",
       "He strongly advocates for structured portfolio planning, emphasizing that a well-diversified strategy is the key to weathering market volatility. Under his guidance, countless clients have achieved sustainable financial growth.",
@@ -97,7 +97,29 @@ const RightArrowIcon = () => (
 );
 
 const ExpertSpeakers = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const scrollRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    let animationFrameId;
+
+    const autoScroll = () => {
+      const container = scrollRef.current;
+      if (container && !isHovered && activeIndex === -1) {
+        container.scrollLeft += 1;
+
+        if (container.scrollLeft >= container.scrollWidth - container.clientWidth - 1) {
+          container.scrollLeft = 0;
+        }
+      }
+      animationFrameId = requestAnimationFrame(autoScroll);
+    };
+
+    animationFrameId = requestAnimationFrame(autoScroll);
+
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [isHovered, activeIndex]);
 
   return (
     <section className="expert-section">
@@ -115,15 +137,22 @@ const ExpertSpeakers = () => {
 
       <div
         className="expert-accordion-container container mx-auto px-4 lg:px-8 max-w-[1400px]"
-        data-aos="fade-up"
+        data-aos="fade-left"
         data-aos-delay="100"
       >
-        <div className="expert-accordion">
+        <div
+          className="expert-accordion"
+          ref={scrollRef}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onTouchStart={() => setIsHovered(true)}
+          onTouchEnd={() => setIsHovered(false)}
+        >
           {expertData.map((expert, index) => {
             const isActive = activeIndex === index;
             return (
-              <div 
-                key={expert.id} 
+              <div
+                key={expert.id}
                 className={`expert-accordion-item ${isActive ? 'active' : ''}`}
                 onClick={() => setActiveIndex(index)}
               >
@@ -138,16 +167,26 @@ const ExpertSpeakers = () => {
                   </div>
                 ) : (
                   <div className="expert-expanded">
-                    <div className="expert-expanded-image">
-                      <img
-                        src={`${import.meta.env.BASE_URL}${expert.image}`}
-                        alt={expert.name}
-                      />
+                    <div className="expert-expanded-image dark-theme">
+                      <div className="expert-image-top-text">
+                        <span className="expert-badge-gold">SUPERIOR ADVICE</span>
+                        <p className="expert-quote-white">Your wealth growing in excellent hands</p>
+                      </div>
+                      <div className="expert-circle-wrapper">
+                        <img
+                          src={`${import.meta.env.BASE_URL}${expert.image}`}
+                          alt={expert.name}
+                        />
+                      </div>
+                      <div className="expert-image-bottom-text">
+                        <h4 className="expert-bottom-name">{expert.name}</h4>
+                        <span className="expert-bottom-role">{expert.role}</span>
+                      </div>
                     </div>
                     <div className="expert-expanded-content">
                       <div className="expert-expanded-header">
                         <div className="read_mode_rounded close-icon" onClick={(e) => { e.stopPropagation(); setActiveIndex(-1); }}>
-                           <RightArrowIcon />
+                          <RightArrowIcon />
                         </div>
                       </div>
                       <h2 className="expert-name">{expert.name}</h2>

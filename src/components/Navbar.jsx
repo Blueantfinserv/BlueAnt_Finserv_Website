@@ -62,7 +62,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 py-3 nav-bar-wrapper ${isScrolled ? "nav-bar-scrolled" : "bg-white"}`}>
+    <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 nav-bar-wrapper ${isScrolled ? "nav-bar-scrolled py-2" : "bg-white py-4"}`}>
       <div className="max-w-[1280px] mx-auto px-6 lg:px-12 flex items-center justify-between">
 
         {/* Logo */}
@@ -155,7 +155,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-slate-100 shadow-xl px-6 py-4 max-h-[80vh] overflow-y-auto">
+        <div className="lg:hidden bg-white/95 backdrop-blur-md border-t border-slate-100 shadow-xl px-6 py-4 max-h-[80vh] overflow-y-auto">
           {navLinks.map((link) => (
             <div key={link.name} className="border-b border-slate-50 last:border-0">
               <button

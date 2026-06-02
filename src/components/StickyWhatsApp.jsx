@@ -9,10 +9,6 @@ function StickyWhatsApp() {
   const [isAtFooter, setIsAtFooter] = useState(false);
   const location = useLocation();
 
-  if (location.pathname.startsWith('/about')) {
-    return null;
-  }
-
   useEffect(() => {
     const onScroll = () => {
       // Show buttons after scrolling past the Hero section (approx 400px)
@@ -36,6 +32,10 @@ function StickyWhatsApp() {
       if (footer) observer.unobserve(footer);
     };
   }, []);
+
+  if (location.pathname.startsWith('/about')) {
+    return null;
+  }
 
   const showFabs = visible && !isAtFooter;
 

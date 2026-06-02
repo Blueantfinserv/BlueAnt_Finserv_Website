@@ -691,5 +691,5 @@
 }
 
 .animate-section-fade-up {
-  animation: sectionFadeUp 1s ease forwards;
+  animation: sectionFadeUp 0.8s ease 0.1s both;
 }

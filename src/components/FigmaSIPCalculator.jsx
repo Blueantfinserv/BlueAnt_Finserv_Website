@@ -204,7 +204,7 @@ export default function FigmaSIPCalculator() {
         </div>
 
         {/* 2. Growth Projection Chart */}
-        <div className="f-sip-card f-sip-chart-card">
+        <div className="f-sip-card f-sip-chart-card animate-float-dashboard">
           <div className="f-sip-chart-header">
             <h3 className="f-sip-card-title">Growth Projection</h3>
             <div className="f-sip-badges-container">

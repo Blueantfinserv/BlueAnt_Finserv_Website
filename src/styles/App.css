@@ -7,8 +7,8 @@
   --color-blue:     #00afef;
   --color-red:      #ed3237;
   --color-gold:     #FFD700;
-  --color-bg:       #000000; /* Deep Black */
-  --color-text:     #ffffff; /* White text for contrast */
+  --color-bg:       #f8fafc; /* Light Gray instead of Deep Black to prevent black flashes */
+  --color-text:     #0f172a; /* Dark text for contrast */
   --color-muted:    #94a3b8;
 }
 

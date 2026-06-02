@@ -122,3 +122,17 @@ section {
 .fintech-subtitle {
   margin-bottom: 40px;
 }
+
+@keyframes gradientMove {
+  0% { background-position: 100% 50%; }
+  100% { background-position: -100% 50%; }
+}
+
+@keyframes floatDashboard {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float-dashboard {
+  animation: floatDashboard 4s ease-in-out infinite;
+}
