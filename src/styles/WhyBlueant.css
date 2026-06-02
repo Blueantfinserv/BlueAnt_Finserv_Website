@@ -165,25 +165,52 @@
   }
 
   .why-blueant-stack {
-    padding: 40px 0 100px 0;
+    padding: 40px 0 60px 0;
+    gap: 32px;
   }
 
   .why-blueant-card {
     flex-direction: column;
     height: auto;
-    width: 90vw;
-    padding: 15px;
+    width: 95vw;
+    padding: 16px;
+    position: relative !important;
+    top: unset !important;
+    min-height: unset;
   }
 
   .why-blueant-image-wrapper {
     width: 100%;
-    height: 300px;
+    height: 260px;
     aspect-ratio: auto;
   }
 
   .why-blueant-content {
     width: 100%;
-    padding: 30px 20px;
+    padding: 24px 16px;
     transform: none;
+  }
+
+  .why-blueant-number {
+    font-size: 140px;
+  }
+}
+
+@media (max-width: 640px) {
+  .why-blueant-image-wrapper {
+    height: 200px;
+  }
+
+  .why-blueant-number {
+    display: none;
+  }
+
+  .why-blueant-card-title {
+    font-size: 22px;
+    letter-spacing: -0.5px;
+  }
+
+  .why-blueant-card-desc {
+    font-size: 14px;
   }
 }
