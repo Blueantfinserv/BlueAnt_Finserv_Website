@@ -49,27 +49,37 @@ export default function FigmaSIPCalculator() {
   const [chartData, setChartData] = useState([]);
 
   useEffect(() => {
-    const P = monthly;
-    const r = rate / 100 / 12;
-    const n = years * 12;
+    const P = monthly || 0;
+    const r = (rate || 0) / 100 / 12;
+    const n = (years || 0) * 12;
 
     const total = P * n;
     setTotalInvested(total);
 
-    const fv = P * ((Math.pow(1 + r, n) - 1) * (1 + r)) / r;
+    let fv = total;
+    if (r > 0 && n > 0) {
+      fv = P * ((Math.pow(1 + r, n) - 1) * (1 + r)) / r;
+    }
     setEstimatedReturns(fv - total);
 
     const data = [];
-    for (let i = 1; i <= years; i++) {
-      const currentMonths = i * 12;
-      const currentInvested = P * currentMonths;
-      const currentFv = P * ((Math.pow(1 + r, currentMonths) - 1) * (1 + r)) / r;
-      data.push({
-        year: i,
-        Invested: Math.round(currentInvested),
-        Returns: Math.round(currentFv - currentInvested),
-        total: Math.round(currentFv)
-      });
+    if (years === 0) {
+      data.push({ year: 0, Invested: 0, Returns: 0, total: 0 });
+    } else {
+      for (let i = 1; i <= years; i++) {
+        const currentMonths = i * 12;
+        const currentInvested = P * currentMonths;
+        let currentFv = currentInvested;
+        if (r > 0) {
+          currentFv = P * ((Math.pow(1 + r, currentMonths) - 1) * (1 + r)) / r;
+        }
+        data.push({
+          year: i,
+          Invested: Math.round(currentInvested),
+          Returns: Math.round(currentFv - currentInvested),
+          total: Math.round(currentFv)
+        });
+      }
     }
     setChartData(data);
   }, [monthly, years, rate]);
@@ -126,9 +136,9 @@ export default function FigmaSIPCalculator() {
             <div className="f-sip-input-container">
               <input
                 type="number"
-                min="500"
+                min="0"
                 max="1000000"
-                value={monthly || ""}
+                value={monthly === 0 ? 0 : (monthly || "")}
                 onChange={(e) => setMonthly(Number(e.target.value))}
                 className="f-sip-manual-input"
               />
@@ -136,10 +146,10 @@ export default function FigmaSIPCalculator() {
             </div>
             <input 
               type="range" 
-              min="500" 
+              min="0" 
               max="200000" 
               step="500" 
-              value={monthly} 
+              value={monthly || 0} 
               onChange={(e) => setMonthly(Number(e.target.value))}
               className="f-sip-range-slider"
             />
@@ -154,10 +164,10 @@ export default function FigmaSIPCalculator() {
             <div className="f-sip-input-container">
               <input
                 type="number"
-                min="1"
+                min="0"
                 max="30"
                 step="0.1"
-                value={rate || ""}
+                value={rate === 0 ? 0 : (rate || "")}
                 onChange={(e) => setRate(Number(e.target.value))}
                 className="f-sip-manual-input"
               />
@@ -165,10 +175,10 @@ export default function FigmaSIPCalculator() {
             </div>
             <input 
               type="range" 
-              min="5" 
+              min="0" 
               max="30" 
               step="0.5" 
-              value={rate} 
+              value={rate || 0} 
               onChange={(e) => setRate(Number(e.target.value))}
               className="f-sip-range-slider"
             />
@@ -183,9 +193,9 @@ export default function FigmaSIPCalculator() {
             <div className="f-sip-input-container">
               <input
                 type="number"
-                min="1"
+                min="0"
                 max="40"
-                value={years || ""}
+                value={years === 0 ? 0 : (years || "")}
                 onChange={(e) => setYears(Number(e.target.value))}
                 className="f-sip-manual-input"
               />
@@ -193,10 +203,10 @@ export default function FigmaSIPCalculator() {
             </div>
             <input 
               type="range" 
-              min="1" 
+              min="0" 
               max="40" 
               step="1" 
-              value={years} 
+              value={years || 0} 
               onChange={(e) => setYears(Number(e.target.value))}
               className="f-sip-range-slider"
             />

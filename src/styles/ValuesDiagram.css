@@ -3,13 +3,19 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 20px;
+  padding: clamp(16px, 4vw, 28px);
+  overflow: visible;
 }
 
 .values-diagram-container {
+  --diagram-size: min(480px, calc(100vw - 48px));
+  --orbit-radius: calc(var(--diagram-size) / 2);
+  --node-icon-size: 68px;
+  --node-label-width: 150px;
   position: relative;
-  width: 480px;
-  height: 480px;
+  width: var(--diagram-size);
+  height: var(--diagram-size);
+  aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,7 +28,7 @@
   width: 100%;
   height: 100%;
   border: 1.5px dashed rgba(100, 116, 139, 0.25);
-  border-radius: 360px;
+  border-radius: 50%;
   animation: spin 45s linear infinite;
   box-sizing: border-box;
   /* Add a soft glow ring */
@@ -31,10 +37,11 @@
 
 /* Center Blue Circle */
 .center-circle {
-  width: 250px;
-  height: 250px;
+  width: 52%;
+  height: 52%;
+  aspect-ratio: 1 / 1;
   background: radial-gradient(circle at 35% 35%, #1e3a8a, #050b14);
-  border-radius: 360px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,7 +63,7 @@
   height: 100%;
   width: 100%;
   border: 1px solid rgba(59, 130, 246, 0.3);
-  border-radius: 360px;
+  border-radius: 50%;
   z-index: -1;
   animation: pulse-ring 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
@@ -66,7 +73,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 360px;
+  border-radius: 50%;
   box-shadow: 0 0 80px rgba(59, 130, 246, 0.25);
   z-index: -2;
 }
@@ -74,7 +81,7 @@
 .center-circle-inner {
   width: 100%;
   height: 100%;
-  border-radius: 360px;
+  border-radius: 50%;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -110,7 +117,7 @@
   width: 10px;
   height: 10px;
   background-color: #3b82f6;
-  border-radius: 360px;
+  border-radius: 50%;
   box-shadow: 0 0 15px rgba(59, 130, 246, 0.8), 0 0 5px #fff;
 }
 
@@ -121,24 +128,24 @@
 
 .node-content-upright {
   position: absolute;
-  top: -34px;
-  left: -75px;
-  width: 150px;
+  top: calc(var(--node-icon-size) / -2);
+  left: calc(var(--node-label-width) / -2);
+  width: var(--node-label-width);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   gap: 12px;
-  transform-origin: 75px 34px;
+  transform-origin: calc(var(--node-label-width) / 2) calc(var(--node-icon-size) / 2);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .node-icon {
-  width: 68px;
-  height: 68px;
+  width: var(--node-icon-size, 68px);
+  height: var(--node-icon-size, 68px);
   background: linear-gradient(145deg, #ffffff, #f8fafc);
   backdrop-filter: blur(12px);
-  border-radius: 360px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -229,19 +236,35 @@
 
 @media (max-width: 1024px) {
   .values-diagram-container {
-    transform: scale(0.85);
+    --diagram-size: min(430px, calc(100vw - 44px));
+    --node-icon-size: 60px;
+    --node-label-width: 132px;
   }
 }
 
 @media (max-width: 768px) {
   .values-diagram-container {
-    transform: scale(0.7);
+    --diagram-size: min(380px, calc(100vw - 40px));
+    --node-icon-size: 54px;
+    --node-label-width: 118px;
   }
 }
 
 @media (max-width: 480px) {
   .values-diagram-container {
-    transform: scale(0.55);
+    --diagram-size: min(320px, calc(100vw - 36px));
+    --node-icon-size: 48px;
+    --node-label-width: 104px;
+  }
+
+  .node-content-upright {
+    gap: 8px;
+  }
+
+  .node-label {
+    font-size: 8.5px;
+    letter-spacing: 0.8px;
+    padding: 5px 8px;
   }
 }
 .rotate-icon {

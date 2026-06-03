@@ -418,6 +418,7 @@
   letter-spacing: -0.5px;
   margin: 0 0 1px;
   padding-left: 4px;
+  font-variant-numeric: tabular-nums;
 }
 
 .f-sip-blue .f-sip-res-val { color: #2563eb; }

@@ -7,7 +7,14 @@ import { openConsultationModal } from "./ConsultationModal";
 
 function HeroFigma() {
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true, offset: 100 });
+    AOS.init({
+      duration: 450,
+      once: true,
+      offset: 60,
+      throttleDelay: 99,
+      debounceDelay: 50,
+      disable: () => window.innerWidth < 640,
+    });
   }, []);
 
   return (

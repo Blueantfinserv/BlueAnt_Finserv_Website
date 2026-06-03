@@ -10,6 +10,8 @@
   border-top: 1px solid #f1f5f9;
   overflow: hidden;
   background: #ffffff;
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
 }
 
 /* Premium Glow at Section Center */
@@ -359,7 +361,19 @@
   }
 
   .about-image-wrapper {
-    max-width: 300px;
+    max-width: min(100%, 420px);
+  }
+
+  .about-ambient-light-1,
+  .about-ambient-light-2,
+  .about-section::before,
+  .about-image-halo {
+    display: none;
+  }
+
+  .animate-section-fade-up,
+  .about-badge-dot {
+    animation: none;
   }
 }
 

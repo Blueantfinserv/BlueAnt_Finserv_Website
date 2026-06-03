@@ -8,11 +8,16 @@ function StickyWhatsApp() {
   const [visible, setVisible] = useState(false);
   const [isAtFooter, setIsAtFooter] = useState(false);
   const location = useLocation();
+  const visibleRef = React.useRef(false);
 
   useEffect(() => {
     const onScroll = () => {
       // Show buttons after scrolling past the Hero section (approx 400px)
-      setVisible(window.scrollY > 400);
+      const nextVisible = window.scrollY > 400;
+      if (nextVisible !== visibleRef.current) {
+        visibleRef.current = nextVisible;
+        setVisible(nextVisible);
+      }
     };
 
     // Observer to detect when footer is reached
@@ -26,7 +31,8 @@ function StickyWhatsApp() {
 
     if (footer) observer.observe(footer);
     
-    window.addEventListener("scroll", onScroll);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", onScroll);
       if (footer) observer.unobserve(footer);

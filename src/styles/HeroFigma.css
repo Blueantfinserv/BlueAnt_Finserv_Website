@@ -8,6 +8,8 @@
   color: #ffffff;
   font-family: "Outfit", sans-serif;
   overflow: hidden;
+  content-visibility: auto;
+  contain-intrinsic-size: 760px;
 }
 
 .hf-container {
@@ -687,6 +689,8 @@
     max-width: 100%;
     border-radius: 16px;
     flex-direction: column;
+    animation: none;
+    transform: none;
   }
 
   .hf-mockup-sidebar {
@@ -760,6 +764,21 @@
     width: 100%;
     display: flex;
     justify-content: center;
+  }
+}
+
+@media (max-width: 768px), (prefers-reduced-motion: reduce) {
+  .hf-wealth-wrapper::before,
+  .hf-circle-progress,
+  .animate-spin-slow,
+  .animate-pulse-slow,
+  .animate-float,
+  .animate-ping-custom::after {
+    animation: none !important;
+  }
+
+  .hf-wealth-wrapper::before {
+    filter: blur(16px);
   }
 }
 .hf-wealth-wrapper::before {

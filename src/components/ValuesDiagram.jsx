@@ -22,7 +22,7 @@ const ValuesDiagram = () => {
               key={idx}
               className="orbit-node-container"
               style={{
-                transform: `rotate(${point.angle}deg) translate(240px)`,
+                transform: `rotate(${point.angle}deg) translate(var(--orbit-radius))`,
               }}
             >
               <div className="orbit-dot" />
