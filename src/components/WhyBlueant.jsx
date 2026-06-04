@@ -156,7 +156,7 @@ const WhyBlueant = () => {
         </h2>
 
         <div className="why-blueant-stack" ref={stackRef}>
-          {whyBlueantData.map((item, index) => (
+          {whyBlueantData.slice(0, 3).map((item, index) => (
             <div 
               key={item.id} 
               className={`why-blueant-card sticky-card sticky-card-${index + 1}`}
@@ -171,6 +171,20 @@ const WhyBlueant = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="why-blueant-final-wrapper">
+          <div className="why-blueant-card final-sticky-card">
+            <div className="why-blueant-image-wrapper">
+              <img src={whyBlueantData[3].img} alt={whyBlueantData[3].title} loading="lazy" />
+            </div>
+            <div className="why-blueant-content static-content">
+              <div className="why-blueant-number">{whyBlueantData[3].number}</div>
+              <h3 className="why-blueant-card-title">{whyBlueantData[3].title}</h3>
+              <p className="why-blueant-card-desc">{whyBlueantData[3].desc}</p>
+            </div>
+          </div>
+          <div className="final-sticky-spacer"></div>
         </div>
       </div>
     </section>
