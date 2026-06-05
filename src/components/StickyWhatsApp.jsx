@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import "../styles/StickyWhatsApp.css";
 
 import { openConsultationModal } from "./ConsultationModal";
@@ -8,16 +10,15 @@ function StickyWhatsApp() {
   const [visible, setVisible] = useState(false);
   const [isAtFooter, setIsAtFooter] = useState(false);
   const location = useLocation();
-  const visibleRef = React.useRef(false);
+
+  if (location.pathname.startsWith('/about')) {
+    return null;
+  }
 
   useEffect(() => {
     const onScroll = () => {
       // Show buttons after scrolling past the Hero section (approx 400px)
-      const nextVisible = window.scrollY > 400;
-      if (nextVisible !== visibleRef.current) {
-        visibleRef.current = nextVisible;
-        setVisible(nextVisible);
-      }
+      setVisible(window.scrollY > 400);
     };
 
     // Observer to detect when footer is reached
@@ -31,22 +32,39 @@ function StickyWhatsApp() {
 
     if (footer) observer.observe(footer);
     
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll);
     return () => {
       window.removeEventListener("scroll", onScroll);
       if (footer) observer.unobserve(footer);
     };
   }, []);
 
-  if (location.pathname.startsWith('/about')) {
-    return null;
-  }
-
   const showFabs = visible && !isAtFooter;
+  const socialLinks = [
+    { Icon: FaFacebookF, url: "https://www.facebook.com/blueantindia/", label: "Facebook", className: "sticky-fab-facebook" },
+    { Icon: FaInstagram, url: "https://www.instagram.com/blueantindia/", label: "Instagram", className: "sticky-fab-instagram" },
+    { Icon: FaXTwitter, url: "https://x.com/blueantfinserv", label: "X" },
+    { Icon: FaLinkedinIn, url: "https://www.linkedin.com/in/rohit-raman-0aa69490/", label: "LinkedIn", className: "sticky-fab-linkedin" },
+    { Icon: FaYoutube, url: "https://www.youtube.com/@RohitBlueant", label: "YouTube", className: "sticky-fab-youtube" },
+  ];
 
   return (
     <div className={`sticky-fab-group ${showFabs ? "sticky-fab-visible" : ""}`}>
+      {socialLinks.map(({ Icon, url, label, className = "" }) => (
+        <a
+          key={label}
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`sticky-fab sticky-fab-social ${className}`}
+          aria-label={label}
+          title={label}
+        >
+          <Icon />
+          <span className="sticky-fab-label">{label}</span>
+        </a>
+      ))}
+
       {/* Call Now */}
       <a
         href="tel:+919990218899"

@@ -30,20 +30,6 @@ const Youtube = () => {
             <a href="https://www.youtube.com/@RohitBlueant" className="contact-btn">Start Investing</a>
             
             {/* Small Trust Badges */}
-            <div className="trust-pills">
-              <div className="trust-pill">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>AMFI Registered – ARN: 129543</span>
-              </div>
-              <div className="trust-pill">
-                <Users className="w-3.5 h-3.5 text-blue-400" />
-                <span>3,000+ Families</span>
-              </div>
-              <div className="trust-pill">
-                <Lock className="w-3.5 h-3.5 text-indigo-400" />
-                <span>Transparent Process</span>
-              </div>
-            </div>
           </div>
         </div>
 

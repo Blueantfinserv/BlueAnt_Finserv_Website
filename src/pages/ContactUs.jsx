@@ -349,7 +349,7 @@ BlueAnt Finserv Team
       </section>
 
       <section className="cu-hq-section" data-aos="fade-up">
-        <h3>VISIT OUR HQ</h3>
+        <h3>VISIT OUR OFFICE</h3>
         <p>H-122, 2nd Floor, Sector-63, Noida, Uttar Pradesh-201301</p>
         <a 
           href="https://www.google.com/maps/place/28%C2%B037'40.9%22N+77%C2%B022'43.9%22E/@28.6280253,77.3762818,17z" 

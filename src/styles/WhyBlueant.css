@@ -1,5 +1,5 @@
 .why-blueant-section {
-  padding: 100px 0;
+  padding: 60px 0;
   background-color: #ffffff;
   position: relative;
 }
@@ -50,7 +50,7 @@
   min-height: 380px;
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease, border-color 0.5s ease;
   border: 1px solid rgba(226, 232, 240, 0.8);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), inset 0 2px 10px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), inset 0 2px 10px rgba(255,255,255,0.5);
   position: sticky;
   margin-bottom: 20px;
   overflow: hidden;
@@ -58,26 +58,14 @@
 
 .why-blueant-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.2), inset 0 2px 10px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.2), inset 0 2px 10px rgba(255,255,255,0.5);
   border-color: rgba(163, 135, 88, 0.4);
 }
 
-.sticky-card-1 {
-  top: 120px;
-  z-index: 1;
-}
-
-.sticky-card-2 {
-  top: 196px;
-  z-index: 2;
-}
-
-.sticky-card-3 {
-  top: 272px;
-  z-index: 3;
-}
-
-/* removed sticky-card-4 as per architectural fix */
+.sticky-card-1 { top: 90px; z-index: 1; }
+.sticky-card-2 { top: 160px; z-index: 2; }
+.sticky-card-3 { top: 230px; z-index: 3; }
+.sticky-card-4 { top: 300px; z-index: 4; }
 
 .why-blueant-image-wrapper {
   height: 380px;
@@ -86,7 +74,7 @@
   overflow: hidden;
   position: relative;
   flex-shrink: 0;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
 
 .why-blueant-image-wrapper img {
@@ -154,31 +142,8 @@
   margin-top: 0;
 }
 
-.why-blueant-final-wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.final-sticky-card {
-  position: sticky;
-  top: 120px;
-  z-index: 10;
-  margin-top: 100px;
-}
-
-.final-sticky-spacer {
-  height: 80vh;
-  width: 100%;
-}
-
-.static-content {
-  transform: translateY(90px) !important; 
-}
-
 /* Removed Navigation and Pagination Styles */
+
 @media (max-width: 991px) {
   .why-blueant-stack::after {
     display: none;
@@ -194,13 +159,13 @@
     width: 90vw;
     padding: 15px;
   }
-
+  
   .why-blueant-image-wrapper {
     width: 100%;
     height: 300px;
     aspect-ratio: auto;
   }
-
+  
   .why-blueant-content {
     width: 100%;
     padding: 30px 20px;

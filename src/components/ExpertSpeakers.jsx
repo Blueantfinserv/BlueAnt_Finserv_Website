@@ -1,11 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/ExpertSpeakers.css';
 
 const expertData = [
   {
     id: 1,
     name: "Mr. Rohit Raman",
-    role: "Founder",
+    role: "Founder & M.D.",
     title: "Leadership & Strategy",
     image: "Rohit Raman.png",
     bio: [
@@ -14,7 +14,7 @@ const expertData = [
       "His expertise lies in sharing simple, practical, and actionable insights on how clients can secure their own and their family's financial future."
     ],
     stats: [
-      { number: "15+", label: "Years Experience" },
+      { number: "24+", label: "Years Experience" },
       { number: "10k+", label: "Families Guided" },
       { number: "500+", label: "Webinars Hosted" }
     ]
@@ -24,14 +24,14 @@ const expertData = [
     name: "Mr. Sachin Narang",
     role: "Vice President",
     title: "Wealth Preservation",
-    image: "Sachin Narang.jpg",
+    image: "Sachin Narang.png",
     bio: [
       "Mr. Sachin Narang serves as the Vice President, bringing his sharp analytical skills and extensive market knowledge to the forefront. He has been a trusted name in guiding high-net-worth individuals through complex financial landscapes.",
       "He strongly advocates for structured portfolio planning, emphasizing that a well-diversified strategy is the key to weathering market volatility. Under his guidance, countless clients have achieved sustainable financial growth.",
       "Known for his approachable demeanor, he simplifies intricate financial concepts, making them accessible and actionable for everyday investors."
     ],
     stats: [
-      { number: "12+", label: "Years Experience" },
+      { number: "15+", label: "Years Experience" },
       { number: "5000+", label: "Portfolios Managed" },
       { number: "250+", label: "Strategy Sessions" }
     ]
@@ -48,7 +48,7 @@ const expertData = [
       "With a strong focus on client education and personalized service, he ensures every investor feels confident and empowered in their financial decisions."
     ],
     stats: [
-      { number: "10+", label: "Years Experience" },
+      { number: "11+", label: "Years Experience" },
       { number: "2500+", label: "Portfolios Guided" },
       { number: "100%", label: "Client Satisfaction" }
     ]
@@ -65,7 +65,7 @@ const expertData = [
       "He frequently leads educational workshops, dedicating his time to elevating the financial literacy of the community."
     ],
     stats: [
-      { number: "10+", label: "Years Experience" },
+      { number: "9+", label: "Years Experience" },
       { number: "4000+", label: "Risk Audits" },
       { number: "100%", label: "Client Commitment" }
     ]
@@ -82,7 +82,7 @@ const expertData = [
       "With a commitment to transparency and excellence, he continually refines our advisory processes to deliver an exceptional client experience."
     ],
     stats: [
-      { number: "8+", label: "Years Experience" },
+      { number: "10+", label: "Years Experience" },
       { number: "3500+", label: "Plans Delivered" },
       { number: "50+", label: "Market Analyses" }
     ]
@@ -97,29 +97,12 @@ const RightArrowIcon = () => (
 );
 
 const ExpertSpeakers = () => {
-  const [activeIndex, setActiveIndex] = useState(-1);
-  const scrollRef = useRef(null);
-  const [isHovered, setIsHovered] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [expandedBioIndex, setExpandedBioIndex] = useState(null);
 
   useEffect(() => {
-    let animationFrameId;
-
-    const autoScroll = () => {
-      const container = scrollRef.current;
-      if (container && !isHovered && activeIndex === -1) {
-        container.scrollLeft += 1;
-
-        if (container.scrollLeft >= container.scrollWidth - container.clientWidth - 1) {
-          container.scrollLeft = 0;
-        }
-      }
-      animationFrameId = requestAnimationFrame(autoScroll);
-    };
-
-    animationFrameId = requestAnimationFrame(autoScroll);
-
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [isHovered, activeIndex]);
+    setExpandedBioIndex(null);
+  }, [activeIndex]);
 
   return (
     <section className="expert-section">
@@ -137,80 +120,79 @@ const ExpertSpeakers = () => {
 
       <div
         className="expert-accordion-container container mx-auto px-4 lg:px-8 max-w-[1400px]"
-        data-aos="fade-left"
+        data-aos="fade-up"
         data-aos-delay="100"
       >
-        <div
-          className="expert-accordion"
-          ref={scrollRef}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          onTouchStart={() => setIsHovered(true)}
-          onTouchEnd={() => setIsHovered(false)}
-        >
+        <div className="expert-accordion">
           {expertData.map((expert, index) => {
             const isActive = activeIndex === index;
             return (
-              <div
-                key={expert.id}
+              <div 
+                key={expert.id} 
                 className={`expert-accordion-item ${isActive ? 'active' : ''}`}
-                onClick={() => setActiveIndex(index)}
+                onMouseEnter={() => setActiveIndex(index)}
               >
-                {!isActive ? (
-                  <div className="expert-collapsed">
-                    <div className="read_mode_rounded">
-                      <RightArrowIcon />
-                    </div>
-                    <div className="expert-collapsed-text">
-                      <h4>{expert.name}</h4>
-                    </div>
+                <div className="expert-collapsed">
+                  <div className="expert-collapsed-image">
+                    <img
+                      src={`${import.meta.env.BASE_URL}${expert.image}`}
+                      alt={expert.name}
+                    />
                   </div>
-                ) : (
-                  <div className="expert-expanded">
-                    <div className="expert-expanded-image dark-theme">
-                      <div className="expert-image-top-text">
-                        <span className="expert-badge-gold">SUPERIOR ADVICE</span>
-                        <p className="expert-quote-white">Your wealth growing in excellent hands</p>
-                      </div>
-                      <div className="expert-circle-wrapper">
-                        <img
-                          src={`${import.meta.env.BASE_URL}${expert.image}`}
-                          alt={expert.name}
-                        />
-                      </div>
-                      <div className="expert-image-bottom-text">
-                        <h4 className="expert-bottom-name">{expert.name}</h4>
-                        <span className="expert-bottom-role">{expert.role}</span>
-                      </div>
+                  <div className="expert-collapsed-text">
+                    <h6>{expert.name}</h6>
+                    <p className="expert-role">{expert.role}</p>
+                  </div>
+                </div>
+
+                <div className="expert-expanded">
+                  <div className="expert-profile-row">
+                    <div className="expert-expanded-image">
+                      <img
+                        src={`${import.meta.env.BASE_URL}${expert.image}`}
+                        alt={expert.name}
+                      />
                     </div>
-                    <div className="expert-expanded-content">
-                      <div className="expert-expanded-header">
-                        <div className="read_mode_rounded close-icon" onClick={(e) => { e.stopPropagation(); setActiveIndex(-1); }}>
-                          <RightArrowIcon />
+
+                    <div className="expert-stats">
+                      {expert.stats.map((stat, idx) => (
+                        <div key={idx} className="expert-stat-item">
+                          <span className="expert-stat-number">{stat.number}</span>
+                          <span className="expert-stat-label">{stat.label}</span>
                         </div>
-                      </div>
-                      <h2 className="expert-name">{expert.name}</h2>
-                      <span className="expert-role-badge">
-                        {expert.role} &bull; {expert.title}
-                      </span>
-
-                      <div className="expert-bio">
-                        {expert.bio.map((paragraph, idx) => (
-                          <p key={idx}>{paragraph}</p>
-                        ))}
-                      </div>
-
-                      <div className="expert-stats">
-                        {expert.stats.map((stat, idx) => (
-                          <div key={idx} className="expert-stat-item">
-                            <span className="expert-stat-number">{stat.number}</span>
-                            <span className="expert-stat-label">{stat.label}</span>
-                          </div>
-                        ))}
-                      </div>
+                      ))}
                     </div>
                   </div>
-                )}
+
+                  <div className="expert-expanded-content">
+                    <div className="expert-expanded-header">
+                      <div className="read_mode_rounded close-icon" onClick={(e) => { e.stopPropagation(); setActiveIndex(-1); }}>
+                        <RightArrowIcon />
+                      </div>
+                    </div>
+                    <h2 className="expert-name">{expert.name}</h2>
+                    <span className="expert-role-badge">
+                      {expert.role} &bull; {expert.title}
+                    </span>
+
+                    <div className={`expert-bio ${expandedBioIndex === index ? 'expanded' : 'collapsed'}`}>
+                      {expert.bio.map((paragraph, idx) => (
+                        <p key={idx}>{paragraph}</p>
+                      ))}
+                    </div>
+
+                    <button
+                      type="button"
+                      className="expert-bio-more"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setExpandedBioIndex(expandedBioIndex === index ? null : index);
+                      }}
+                    >
+                      {expandedBioIndex === index ? 'Less' : 'More'}
+                    </button>
+                  </div>
+                </div>
               </div>
             );
           })}

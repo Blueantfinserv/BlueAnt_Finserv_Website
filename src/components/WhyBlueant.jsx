@@ -15,7 +15,7 @@ const whyBlueantData = [
       Blueant keeps the conversation clear as life, goals, and markets change.
     </>
   ),
-  img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800&auto=format&fit=crop"
+  img: "01 whatsapp image.png"
 },
   {
   id: 2,
@@ -28,7 +28,7 @@ const whyBlueantData = [
 
     </>
   ),
-    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
+    img: "02 whatsapp.png"
   },
   {
     id: 3,
@@ -41,7 +41,7 @@ const whyBlueantData = [
 
     </>
   ),
-    img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop"
+    img: "03 whatsapp.png"
   },
   {
     id: 4,
@@ -55,7 +55,7 @@ const whyBlueantData = [
 
     </>
   ),
-    img: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?q=80&w=800&auto=format&fit=crop"
+    img: "04 whatsapp.png"
   }
 ];
 
@@ -156,7 +156,7 @@ const WhyBlueant = () => {
         </h2>
 
         <div className="why-blueant-stack" ref={stackRef}>
-          {whyBlueantData.slice(0, 3).map((item, index) => (
+          {whyBlueantData.map((item, index) => (
             <div 
               key={item.id} 
               className={`why-blueant-card sticky-card sticky-card-${index + 1}`}
@@ -171,20 +171,6 @@ const WhyBlueant = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="why-blueant-final-wrapper">
-          <div className="why-blueant-card final-sticky-card">
-            <div className="why-blueant-image-wrapper">
-              <img src={whyBlueantData[3].img} alt={whyBlueantData[3].title} loading="lazy" />
-            </div>
-            <div className="why-blueant-content static-content">
-              <div className="why-blueant-number">{whyBlueantData[3].number}</div>
-              <h3 className="why-blueant-card-title">{whyBlueantData[3].title}</h3>
-              <p className="why-blueant-card-desc">{whyBlueantData[3].desc}</p>
-            </div>
-          </div>
-          <div className="final-sticky-spacer"></div>
         </div>
       </div>
     </section>
