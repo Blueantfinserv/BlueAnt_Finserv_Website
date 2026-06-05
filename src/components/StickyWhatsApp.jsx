@@ -11,11 +11,14 @@ function StickyWhatsApp() {
   const [isAtFooter, setIsAtFooter] = useState(false);
   const location = useLocation();
 
-  if (location.pathname.startsWith('/about')) {
-    return null;
-  }
-
+  // ✅ All hooks must be called BEFORE any early return (Rules of Hooks)
   useEffect(() => {
+    // Don't attach listeners on /about pages
+    if (location.pathname.startsWith('/about')) {
+      setVisible(false);
+      return;
+    }
+
     const onScroll = () => {
       // Show buttons after scrolling past the Hero section (approx 400px)
       setVisible(window.scrollY > 400);
@@ -31,13 +34,19 @@ function StickyWhatsApp() {
     );
 
     if (footer) observer.observe(footer);
-    
+
     window.addEventListener("scroll", onScroll);
     return () => {
       window.removeEventListener("scroll", onScroll);
       if (footer) observer.unobserve(footer);
     };
-  }, []);
+  }, [location.pathname]); // re-run when route changes
+
+  // ✅ Early return is now AFTER all hooks
+  if (location.pathname.startsWith('/about')) {
+    return null;
+  }
+
 
   const showFabs = visible && !isAtFooter;
   const socialLinks = [

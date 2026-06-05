@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from "react";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import "./styles/App.css";
 
@@ -66,14 +66,28 @@ const LoadingFallback = () => (
   </div>
 );
 
+/**
+ * Resets the ErrorBoundary automatically when the user navigates to a
+ * different route. Without this, a crashed page would keep showing the
+ * error UI even after the user clicks a navbar link to another page.
+ */
+const LocationAwareErrorBoundary = ({ children }) => {
+  const location = useLocation();
+  // Changing the key unmounts + remounts ErrorBoundary, clearing any error state
+  return <ErrorBoundary key={location.pathname}>{children}</ErrorBoundary>;
+};
+
 function App() {
   return (
     <HashRouter>
       <ScrollToTop />
       <Navbar />
 
-      <Suspense fallback={<LoadingFallback />}>
-        <ErrorBoundary>
+      {/* ErrorBoundary is OUTSIDE Suspense so it catches both lazy-load
+          failures and runtime errors inside pages. It auto-resets on
+          every route change via LocationAwareErrorBoundary. */}
+      <LocationAwareErrorBoundary>
+        <Suspense fallback={<LoadingFallback />}>
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/about" element={<AboutPage />} />
@@ -97,8 +111,8 @@ function App() {
             {/* Debug 404 Route */}
             <Route path="*" element={<div className="flex items-center justify-center min-h-screen bg-red-500 text-white text-3xl font-bold">404 - Route Not Found: Check URL</div>} />
           </Routes>
-        </ErrorBoundary>
-      </Suspense>
+        </Suspense>
+      </LocationAwareErrorBoundary>
 
       <StickyWhatsApp />
       <ConsultationModal />
