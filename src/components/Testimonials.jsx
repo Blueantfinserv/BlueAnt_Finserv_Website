@@ -53,8 +53,8 @@ const testimonials = [
 ];
 
 const stats = [
-  { value: "4.9★", label: "Rated 4.9★ APP users. Trusted digitally.", stars: true },
-  { value: "3,000+", label: "Families across India" },
+  { value: "4.9★", label: "APP users.", stars: true },
+  { value: "3,000+", label: "Families pan India" },
   { value: "98.5%", label: "Satisfaction Rate" },
   { value: "3,000+", label: "Happy Families" },
 ];
