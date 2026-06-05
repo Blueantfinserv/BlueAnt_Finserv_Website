@@ -35,7 +35,7 @@
 .why-blueant-stack::after {
   content: '';
   display: block;
-  flex: 0 0 20vh;
+  flex: 0 0 80vh;
   width: 1px;
 }
 
@@ -62,10 +62,30 @@
   border-color: rgba(163, 135, 88, 0.4);
 }
 
-.sticky-card-1 { top: 90px; z-index: 1; }
-.sticky-card-2 { top: 160px; z-index: 2; }
-.sticky-card-3 { top: 230px; z-index: 3; }
-.sticky-card-4 { top: 300px; z-index: 4; }
+.sticky-card-1 { 
+  top: 90px; 
+  z-index: 1; 
+  margin-bottom: 230px;
+}
+.sticky-card-2 { 
+  top: 160px; 
+  z-index: 2; 
+  margin-top: -210px;
+  margin-bottom: 160px;
+}
+.sticky-card-3 { 
+  top: 230px; 
+  z-index: 3; 
+  margin-top: -140px;
+  margin-bottom: 90px;
+}
+.sticky-card-4 { 
+  top: 300px; 
+  z-index: 4; 
+  margin-top: -70px;
+  /* margin-bottom 20px is already on .why-blueant-card, so we just set it explicitly here to be safe */
+  margin-bottom: 20px; 
+}
 
 .why-blueant-image-wrapper {
   height: 380px;

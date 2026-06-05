@@ -1423,8 +1423,8 @@ const Footer = () => {
                   <Mail size={11} />
                 </div>
                 <div className="text-left">
-                  <span className="text-[#94a3b8]/50 text-[8.5px] font-black uppercase block tracking-wider leading-none">Email Us</span>
-                  <a href="mailto:info@blueantfinserv.com" className="text-slate-200 hover:text-[#38bdf8] text-[13.5px] font-bold transition-colors leading-none block mt-1">
+                  <span className="text-slate-400 text-[8.5px] font-black uppercase block tracking-wider leading-none">Email Us</span>
+                  <a href="mailto:info@blueantfinserv.com" className="text-white hover:text-[#38bdf8] text-[13.5px] font-bold transition-colors leading-none block mt-1">
                     info@blueantfinserv.com
                   </a>
                 </div>
@@ -1436,8 +1436,8 @@ const Footer = () => {
                   <Phone size={11} />
                 </div>
                 <div className="text-left">
-                  <span className="text-[#94a3b8]/50 text-[8.5px] font-black uppercase block tracking-wider leading-none">Call Us</span>
-                  <a href="tel:+919990218899" className="text-slate-200 hover:text-[#38bdf8] text-[13.5px] font-bold transition-colors leading-none block mt-1">
+                  <span className="text-slate-400 text-[8.5px] font-black uppercase block tracking-wider leading-none">Call Us</span>
+                  <a href="tel:+919990218899" className="text-white hover:text-[#38bdf8] text-[13.5px] font-bold transition-colors leading-none block mt-1">
                     +91-9990218899
                   </a>
                 </div>
@@ -1449,8 +1449,8 @@ const Footer = () => {
                   <Globe size={11} />
                 </div>
                 <div className="text-left">
-                  <span className="text-[#94a3b8]/50 text-[8.5px] font-black uppercase block tracking-wider leading-none">Visit Us</span>
-                  <a href="https://www.blueantfinserv.com" target="_blank" rel="noreferrer" className="text-slate-200 hover:text-[#38bdf8] text-[13.5px] font-bold transition-colors leading-none block mt-1">
+                  <span className="text-slate-400 text-[8.5px] font-black uppercase block tracking-wider leading-none">Visit Us</span>
+                  <a href="https://www.blueantfinserv.com" target="_blank" rel="noreferrer" className="text-white hover:text-[#38bdf8] text-[13.5px] font-bold transition-colors leading-none block mt-1">
                     blueantfinserv.com
                   </a>
                 </div>
