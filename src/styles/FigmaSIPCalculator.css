@@ -674,7 +674,7 @@
 
 @media (max-width: 480px) {
   .f-sip-section {
-    padding: 36px 14px;
+    padding: 20px 14px;
   }
 
   .f-sip-header {
@@ -702,41 +702,41 @@
   }
 
   .f-sip-card {
-    padding: 14px;
+    padding: 12px;
     border-radius: 18px;
   }
 
   .f-sip-card-title {
-    font-size: 10.5px;
-    margin-bottom: 10px;
+    font-size: 10px;
+    margin-bottom: 8px;
   }
 
   .f-sip-input-group {
-    margin-bottom: 12px;
+    margin-bottom: 9px;
   }
 
   .f-sip-label-row {
-    font-size: 10px;
+    font-size:9px;
   }
 
   .f-sip-live-indicator {
-    font-size: 11px;
-    padding: 2px 8px;
+    font-size: 10px;
+    padding: 2px 7px;
   }
 
   .f-sip-input-container {
-    height: 42px;
+    height: 35px;
     border-radius: 12px;
   }
 
   .f-sip-manual-input {
-    font-size: 14px;
-    padding: 0 12px;
+    font-size: 13px;
+    padding: 0 10px;
   }
 
   .f-sip-input-unit {
-    padding: 0 12px;
-    font-size: 10px;
+    padding: 0 10px;
+    font-size: 9px;
   }
 
   .f-sip-range-slider {
@@ -749,6 +749,8 @@
 
   .f-sip-chart-wrapper {
     margin-top: 2px;
+    width: calc(100% + 12vw);
+    margin-left: -12vw;
   }
 
   .f-sip-chart-wrapper svg,
