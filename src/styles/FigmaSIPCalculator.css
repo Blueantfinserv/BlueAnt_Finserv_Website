@@ -418,7 +418,6 @@
   letter-spacing: -0.5px;
   margin: 0 0 1px;
   padding-left: 4px;
-  font-variant-numeric: tabular-nums;
 }
 
 .f-sip-blue .f-sip-res-val { color: #2563eb; }
@@ -533,10 +532,284 @@
 
 @media (max-width: 1024px) {
   .f-sip-container { grid-template-columns: 1fr; gap: 24px; }
-  .f-sip-results-row { grid-template-columns: 1fr; gap: 16px; }
+  .f-sip-results-row { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
   .f-sip-info-card { grid-template-columns: 1fr; gap: 28px; padding: 24px; }
   .f-sip-info-list { flex-direction: column; gap: 20px; }
   .f-sip-title { font-size: 40px; }
   .f-sip-inputs-card { grid-column: 1; grid-row: 1; }
   .f-sip-chart-card { grid-column: 1; grid-row: 2; }
+}
+
+@media (max-width: 768px) {
+  .f-sip-section {
+    padding: 44px 20px;
+  }
+
+  .f-sip-header {
+    margin-bottom: 28px;
+  }
+
+  .f-sip-top-badge {
+    padding: 7px 14px;
+    font-size: 10px;
+    margin-bottom: 16px;
+  }
+
+  .f-sip-title {
+    font-size: 32px;
+    letter-spacing: -1.5px;
+    margin-bottom: 12px;
+  }
+
+  .f-sip-subtitle {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .f-sip-container {
+    gap: 18px;
+  }
+
+  .f-sip-card {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .f-sip-card-title {
+    margin-bottom: 12px;
+  }
+
+  .f-sip-input-group {
+    margin-bottom: 14px;
+  }
+
+  .f-sip-input-meta {
+    margin-bottom: 6px;
+  }
+
+  .f-sip-input-container {
+    height: 44px;
+    border-radius: 14px;
+  }
+
+  .f-sip-manual-input {
+    font-size: 15px;
+    padding: 0 14px;
+  }
+
+  .f-sip-input-unit {
+    padding: 0 14px;
+    font-size: 11px;
+  }
+
+  .f-sip-range-slider {
+    margin-top: 12px;
+    margin-bottom: 2px;
+  }
+
+  .f-sip-chart-card {
+    padding: 18px 18px 12px;
+  }
+
+  .f-sip-chart-header {
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .f-sip-badges-container {
+    flex-wrap: wrap;
+  }
+
+  .f-sip-chart-wrapper {
+    margin-top: 6px;
+  }
+
+  .f-sip-chart-summary {
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  .f-sip-summary-val {
+    font-size: 18px;
+  }
+
+  .f-sip-results-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .f-sip-result-box {
+    padding: 9px 8px;
+  }
+
+  .f-sip-info-card {
+    padding: 18px;
+    gap: 18px;
+  }
+
+  .f-sip-info-list {
+    gap: 14px;
+  }
+
+  .f-sip-info-item {
+    gap: 12px;
+  }
+
+  .f-sip-info-text h4 {
+    font-size: 14px;
+  }
+
+  .f-sip-info-text p {
+    font-size: 12px;
+  }
+
+  .f-sip-action-btn {
+    height: 44px;
+    padding: 0 22px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .f-sip-section {
+    padding: 36px 14px;
+  }
+
+  .f-sip-header {
+    margin-bottom: 22px;
+  }
+
+  .f-sip-top-badge {
+    padding: 6px 12px;
+    font-size: 9px;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+
+  .f-sip-title {
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  .f-sip-subtitle {
+    font-size: 13px;
+  }
+
+  .f-sip-container {
+    gap: 14px;
+  }
+
+  .f-sip-card {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .f-sip-card-title {
+    font-size: 10.5px;
+    margin-bottom: 10px;
+  }
+
+  .f-sip-input-group {
+    margin-bottom: 12px;
+  }
+
+  .f-sip-label-row {
+    font-size: 10px;
+  }
+
+  .f-sip-live-indicator {
+    font-size: 11px;
+    padding: 2px 8px;
+  }
+
+  .f-sip-input-container {
+    height: 42px;
+    border-radius: 12px;
+  }
+
+  .f-sip-manual-input {
+    font-size: 14px;
+    padding: 0 12px;
+  }
+
+  .f-sip-input-unit {
+    padding: 0 12px;
+    font-size: 10px;
+  }
+
+  .f-sip-range-slider {
+    height: 5px;
+  }
+
+  .f-sip-chart-card {
+    padding: 11px 10px 11px;
+  }
+
+  .f-sip-chart-wrapper {
+    margin-top: 2px;
+  }
+
+  .f-sip-chart-wrapper svg,
+  .f-sip-chart-wrapper canvas,
+  .f-sip-chart-wrapper .recharts-wrapper {
+    max-height: 240px;
+  }
+
+  .f-sip-live-badge,
+  .f-sip-cagr-pill {
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+
+  .f-sip-summary-label {
+    font-size: 9px;
+  }
+
+  .f-sip-summary-val {
+    font-size: 16px;
+  }
+
+  .f-sip-results-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    margin-top: -20px;
+  }
+
+  .f-sip-result-box {
+    padding: 8px 6px;
+  }
+
+  .f-sip-res-label {
+    font-size: 8px;
+  }
+
+  .f-sip-res-val {
+    font-size: 13px;
+  }
+
+  .f-sip-res-subtext {
+    font-size: 7px;
+  }
+
+  .f-sip-info-card {
+    padding: 14px;
+    gap: 14px;
+  }
+
+  .f-sip-info-item {
+    gap: 10px;
+  }
+
+  .f-sip-info-num-glow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .f-sip-action-btn {
+    width: 100%;
+    height: 42px;
+    padding: 0 18px;
+  }
 }
