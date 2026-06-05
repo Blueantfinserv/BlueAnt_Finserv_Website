@@ -42,13 +42,10 @@ const AboutPreview = () => {
 
             <div className="about-description-container">
               <h3 className="about-subtitle">
-                The BlueAnt Way to <span className="about-text-highlight">Meaningful Wealth.</span>
+                The BlueAnt Way to <span className="about-text-highlight">Meaningful Wealth Without Shortcuts.</span>
               </h3>
               
               <div className="about-paragraphs">
-                <p>
-                  At BlueAnt Finserv, we believe meaningful wealth is built through discipline, consistency, and thoughtful financial decisions — not shortcuts.
-                </p>
                 <p>
                   Inspired by the steadiness of the blue sky and the discipline of an ant, we help individuals and families build long-term financial confidence with trust, clarity, and steady progress.
                 </p>

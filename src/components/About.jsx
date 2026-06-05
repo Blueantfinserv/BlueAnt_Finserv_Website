@@ -3,56 +3,6 @@ import { Link } from "react-router-dom";
 import { Check, Clock, Users, Award, MapPin, ArrowRight } from "lucide-react";
 
 const About = () => {
-  const stats = [
-    {
-      icon: <Clock className="w-5 h-5 text-blue-600" />,
-      number: "13+ Years",
-      label: "Blueant Legacy",
-      sub: "Delivering 13+ years of Blueant legacy.",
-    },
-    {
-      icon: <Users className="w-5 h-5 text-blue-600" />,
-      number: "3,000+",
-      label: "Happy Families",
-      sub: "Empowering households with investment support.",
-    },
-    {
-      icon: <Award className="w-5 h-5 text-blue-600" />,
-      number: "50+",
-      label: "Expert Team service",
-      sub: "Dedicated professionals guiding your wealth journey.",
-    },
-    {
-      icon: <MapPin className="w-5 h-5 text-blue-600" />,
-      number: "Pan-India",
-      label: "Presence",
-      sub: "Serving clients efficiently across 200+ pincodes nationwide.",
-    },
-  ];
-
-  const features = [
-    "Disciplined investment approach",
-    "Long-term wealth planning",
-    "Transparent financial advisory",
-  ];
-
-  const badges = [
-    {
-      text: "We Don't Sell, We Educate",
-      icon: "🎓",
-      pos: "top-8 -left-4 sm:-left-12",
-    },
-    {
-      text: "Disciplined Guidance",
-      icon: "📊",
-      pos: "top-1/4 -right-4 sm:-right-8",
-    },
-    {
-      text: "Transparent & Aligned",
-      icon: "🛡️",
-      pos: "bottom-12 -left-2 sm:-left-8",
-    },
-  ];
 
   return (
     <div className="about-stats-container">
@@ -76,9 +26,6 @@ const About = () => {
               </h2>
 
               <div className="text-[#64748b] text-lg leading-relaxed mb-8 max-w-[540px] space-y-4">
-                <p>
-                  At BlueAnt Finserv, we believe meaningful wealth is built through discipline, consistency, and thoughtful financial decisions — not shortcuts.
-                </p>
                 <p>
                   Inspired by the steadiness of the blue sky and the discipline of an ant, we help individuals and families build long-term financial confidence with trust, clarity, and steady progress.
                 </p>
