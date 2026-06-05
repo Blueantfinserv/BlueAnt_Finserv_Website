@@ -8,7 +8,7 @@ const stats = [
 ];
 
 function Stats() {
-  const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
+  const { ref } = useInView({ threshold: 0.3, triggerOnce: true });
 
   return (
     <section className="py-20 bg-[#f7f9fc] overflow-hidden">

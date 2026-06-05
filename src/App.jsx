@@ -37,34 +37,7 @@ const WealthProtectionPage = lazy(() => import("./pages/Services/WealthProtectio
 const WealthPreservationPage = lazy(() => import("./pages/Services/WealthPreservationPage"));
 const StockMarketServicesPage = lazy(() => import("./pages/Services/StockMarketServicesPage"));
 
-const LoadingFallback = () => (
-  <div className="flex flex-col items-center justify-center min-h-screen bg-white/70 backdrop-blur-xl fixed inset-0 z-[9999] transition-all duration-500">
-    <div className="relative flex flex-col items-center">
-      <div className="absolute inset-0 bg-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
-      
-      <img 
-        src={`${import.meta.env.BASE_URL}blueAnt.png`} 
-        alt="Blueant Loading" 
-        className="h-14 mb-8 relative z-10"
-        style={{ animation: 'float 3s ease-in-out infinite' }}
-      />
-      
-      <div className="w-48 h-1 bg-slate-100 rounded-full overflow-hidden relative z-10 shadow-inner">
-        <div 
-          className="h-full bg-gradient-to-r from-blue-500 via-[#00afef] to-blue-500 w-full"
-          style={{ 
-            backgroundSize: '200% 100%',
-            animation: 'gradientMove 1.5s ease-in-out infinite'
-          }}
-        ></div>
-      </div>
-      
-      <span className="mt-5 text-[10px] font-black text-slate-400 tracking-[0.25em] uppercase relative z-10">
-        Loading...
-      </span>
-    </div>
-  </div>
-);
+const LoadingFallback = () => null;
 
 /**
  * Resets the ErrorBoundary automatically when the user navigates to a

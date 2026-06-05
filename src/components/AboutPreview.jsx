@@ -5,12 +5,6 @@ import ValuesDiagram from "./ValuesDiagram";
 import "../styles/AboutPreview.css";
 
 const AboutPreview = () => {
-  const bulletPoints = [
-    { text: "Disciplined investment approach" },
-    { text: "Transparent investment process" },
-    { text: "Long-term wealth planning" },
-
-  ];
 
   return (
     <section className="about-section animate-section-fade-up">
@@ -59,18 +53,6 @@ const AboutPreview = () => {
                 <div className="slogan-line">Discipline of an Ant.</div>
                 <div className="slogan-highlight">The Quiet Strength Behind Lasting Wealth.</div>
               </div>
-            </div>
-
-            {/* 4. Features Grid: Clean 2-column checklist */}
-            <div className="features-grid">
-              {bulletPoints.map((point, i) => (
-                <div key={i} className="feature-item">
-                  <div className="feature-icon-wrapper">
-                    <CheckCircle2 className="feature-icon" />
-                  </div>
-                  <span className="feature-text">{point.text}</span>
-                </div>
-              ))}
             </div>
 
             {/* 5. CTA Button: Placed exactly above cards section */}

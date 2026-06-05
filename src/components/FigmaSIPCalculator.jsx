@@ -38,7 +38,7 @@ const AnimatedNumber = ({ value, formatter }) => {
   return <span>{formatter(displayValue)}</span>;
 };
 
-import { openConsultationModal } from "./ConsultationModal";
+
 
 export default function FigmaSIPCalculator() {
   const [monthly, setMonthly] = useState(5000);

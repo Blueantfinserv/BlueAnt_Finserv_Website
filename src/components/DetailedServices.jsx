@@ -131,7 +131,7 @@ const DetailedServices = () => {
 
         {/* Alternating Services List */}
         <div className="space-y-32">
-          {detailedServices.map((service, idx) => (
+          {detailedServices.map((service) => (
             <div 
               key={service.id} 
               id={service.id}
