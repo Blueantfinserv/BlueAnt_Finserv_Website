@@ -37,7 +37,11 @@ const WealthProtectionPage = lazy(() => import("./pages/Services/WealthProtectio
 const WealthPreservationPage = lazy(() => import("./pages/Services/WealthPreservationPage"));
 const StockMarketServicesPage = lazy(() => import("./pages/Services/StockMarketServicesPage"));
 
-const LoadingFallback = () => null;
+const LoadingFallback = () => (
+  <div className="flex items-center justify-center min-h-screen bg-white">
+    <div className="animate-spin rounded-full h-12 w-12 border-4 border-slate-100 border-t-[#00afef]"></div>
+  </div>
+);
 
 /**
  * Resets the ErrorBoundary automatically when the user navigates to a
