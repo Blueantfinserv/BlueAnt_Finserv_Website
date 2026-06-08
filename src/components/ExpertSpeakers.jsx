@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/ExpertSpeakers.css';
 
 const expertData = [
@@ -88,14 +89,6 @@ const expertData = [
     ]
   }
 ];
-
-const RightArrowIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="5" y1="12" x2="19" y2="12"></line>
-    <polyline points="12 5 19 12 12 19"></polyline>
-  </svg>
-);
-
 const ExpertSpeakers = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [expandedBioIndex, setExpandedBioIndex] = useState(null);
@@ -166,9 +159,6 @@ const ExpertSpeakers = () => {
 
                   <div className="expert-expanded-content">
                     <div className="expert-expanded-header">
-                      <div className="read_mode_rounded close-icon" onClick={(e) => { e.stopPropagation(); setActiveIndex(-1); }}>
-                        <RightArrowIcon />
-                      </div>
                     </div>
                     <h2 className="expert-name">{expert.name}</h2>
                     <span className="expert-role-badge">
@@ -197,6 +187,12 @@ const ExpertSpeakers = () => {
             );
           })}
         </div>
+      </div>
+
+      <div className="expert-team-cta" data-aos="fade-up" data-aos-delay="150">
+        <Link to="/team" className="expert-team-button">
+          Meet Our Family
+        </Link>
       </div>
     </section>
   );

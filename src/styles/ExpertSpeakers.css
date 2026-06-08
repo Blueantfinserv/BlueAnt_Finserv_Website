@@ -412,6 +412,40 @@
   color: rgb(77, 77, 77);
 }
 
+.expert-team-cta {
+  display: flex;
+  justify-content: center;
+  padding: 4px 20px 18px;
+  position: relative;
+  z-index: 2;
+}
+
+.expert-team-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 32px;
+  border: 1px solid rgba(176, 138, 71, 0.38);
+  border-radius: 999px;
+  background: #141414;
+  color: #fff5d5;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 0 16px 34px rgba(20, 20, 20, 0.18);
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.expert-team-button:hover {
+  transform: translateY(-3px);
+  background: #8a6530;
+  box-shadow: 0 22px 44px rgba(138, 101, 48, 0.26);
+}
+
 @media (max-width: 1024px) {
   .expert-accordion {
     flex-direction: column;
