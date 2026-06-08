@@ -1,11 +1,14 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import viteCompression from 'vite-plugin-compression'
 
 export default defineConfig(({ command }) => ({
   plugins: [
     react(),
     tailwindcss(),
+    viteCompression({ algorithm: 'gzip' }),
+    viteCompression({ algorithm: 'brotliCompress' }),
   ],
 
   base: command === 'serve' ? '/' : '/BlueAnt_Finserv_Website/',

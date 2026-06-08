@@ -79,6 +79,8 @@ const Hero = () => {
                 src={`${import.meta.env.BASE_URL}first slider.jpg`} 
                 alt="Financial Growth" 
                 className="w-full h-full object-cover aspect-[4/5] lg:aspect-[5/6] group-hover:scale-110 transition-transform duration-1000" 
+                fetchpriority="high"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/60 via-transparent to-transparent"></div>
               

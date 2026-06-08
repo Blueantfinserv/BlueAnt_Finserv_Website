@@ -47,6 +47,8 @@ const ValuesDiagram = () => {
             <img
               src={`${import.meta.env.BASE_URL}Ant (1).gif`}
               alt="Blueant animated ant"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

@@ -49,6 +49,8 @@ const Youtube = () => {
                   src="https://img.youtube.com/vi/Mu6EV8TAEyI/maxresdefault.jpg" 
                   alt="Video Thumbnail"
                   className="youtube-cover-image" 
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="youtube-play-button-overlay">
                   <div className="youtube-play-button-pulse"></div>

@@ -130,6 +130,8 @@ const ExpertSpeakers = () => {
                     <img
                       src={`${import.meta.env.BASE_URL}${expert.image}`}
                       alt={expert.name}
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div className="expert-collapsed-text">
@@ -144,6 +146,8 @@ const ExpertSpeakers = () => {
                       <img
                         src={`${import.meta.env.BASE_URL}${expert.image}`}
                         alt={expert.name}
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
 

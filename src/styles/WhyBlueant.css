@@ -44,7 +44,7 @@
 .why-blueant-stack::after {
   content: '';
   display: block;
-  flex: 0 0 80vh;
+  flex: 0 0 40vh;
   width: 1px;
 }
 

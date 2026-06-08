@@ -103,7 +103,7 @@ function FigmaServiceDetails() {
           <div className={`fsd-inner ${svc.reverse ? "fsd-reverse" : ""}`}>
             
             <div className="fsd-image-col">
-              <img src={svc.image} alt={svc.title} className="fsd-image" />
+              <img src={svc.image} alt={svc.title} className="fsd-image" loading="lazy" decoding="async" />
             </div>
 
             <div className="fsd-content-col">
