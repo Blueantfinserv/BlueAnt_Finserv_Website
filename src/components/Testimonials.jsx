@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import styles from "../styles/Testimonials.module.scss";
 
 const testimonials = [
@@ -60,13 +62,17 @@ const stats = [
 ];
 
 function Testimonials() {
+  useEffect(() => {
+    AOS.init({ duration: 400, once: true });
+  }, []);
+
   return (
     <section className={styles.testimonialsSection}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <div className={styles.pill}>⭐ Trusted by 3,000+ Families</div>
-          <h2>Trusted by Families, Year After Year</h2>
-          <p>
+          <div data-aos="fade-up" className={styles.pill}>⭐ Trusted by 3,000+ Families</div>
+          <h2 data-aos="fade-up" data-aos-delay="100">Trusted by Families, Year After Year</h2>
+          <p data-aos="fade-up" data-aos-delay="200">
             Client experiences that reflect our focus on clarity, discipline, and long-term confidence.
           </p>
         </div>

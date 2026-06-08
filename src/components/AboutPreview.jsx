@@ -20,46 +20,57 @@ const AboutPreview = () => {
         <div className="about-wrapper">
 
           {/* Left Content Position: Strictly aligned to container edge */}
-          <div data-aos="fade-right" className="about-left">
+          <div className="about-left">
 
-            {/* 1. Badge: Ultra-Modern Fintech Label */}
-            <div className="about-badge">
-              <span className="about-badge-dot"></span>
-              About Blueant
+            {/* PART 1 */}
+            <div data-aos="fade-right" data-aos-duration="1200" data-aos-easing="ease-out-cubic" data-aos-once="true">
+              {/* 1. Badge: Ultra-Modern Fintech Label */}
+              <div className="about-badge">
+                <span className="about-badge-dot"></span>
+                About Blueant
+              </div>
+
+              {/* 2. Heading: Tighter Typography Hierarchy */}
+              <h2 className="about-heading">
+                <span className="block mb-1">Calm Decisions.</span>
+                <span className="about-heading-accent">Steady Steps.</span>
+              </h2>
             </div>
-
-            {/* 2. Heading: Tighter Typography Hierarchy */}
-            <h2 className="about-heading">
-              <span className="block mb-1">Calm Decisions.</span>
-              <span className="about-heading-accent">Steady Steps.</span>
-            </h2>
 
             <div className="about-description-container">
-              <h3 className="about-subtitle">
-                The BlueAnt Way to <span className="about-text-highlight">Meaningful Wealth Without Shortcuts.</span>
-              </h3>
-              
-              <div className="about-paragraphs">
-                <p>
-                  Inspired by the steadiness of the blue sky and the discipline of an ant, we help individuals and families build long-term financial confidence with trust, clarity, and steady progress.
-                </p>
-                <p>
-                  Through disciplined SIP investments, transparent financial guidance, and personalized wealth planning, we focus on creating lasting value for every financial journey.
-                </p>
+              {/* PART 2 */}
+              <div data-aos="fade-right" data-aos-delay="300" data-aos-duration="1200" data-aos-easing="ease-out-cubic" data-aos-once="true">
+                <h3 className="about-subtitle">
+                  The BlueAnt Way to <span className="about-text-highlight">Meaningful Wealth Without Shortcuts.</span>
+                </h3>
+                
+                <div className="about-paragraphs">
+                  <p>
+                    Inspired by the steadiness of the blue sky and the discipline of an ant, we help individuals and families build long-term financial confidence with trust, clarity, and steady progress.
+                  </p>
+                  <p>
+                    Through disciplined SIP investments, transparent financial guidance, and personalized wealth planning, we focus on creating lasting value for every financial journey.
+                  </p>
+                </div>
               </div>
 
-              <div className="about-slogan-box">
-                <div className="slogan-line">Steadiness of Blue.</div>
-                <div className="slogan-line">Discipline of an Ant.</div>
-                <div className="slogan-highlight">The Quiet Strength Behind Lasting Wealth.</div>
+              {/* PART 3 */}
+              <div data-aos="fade-right" data-aos-delay="600" data-aos-duration="1200" data-aos-easing="ease-out-cubic" data-aos-once="true">
+                <div className="about-slogan-box">
+                  <div className="slogan-line">Steadiness of Blue.</div>
+                  <div className="slogan-line">Discipline of an Ant.</div>
+                  <div className="slogan-highlight">The Quiet Strength Behind Lasting Wealth.</div>
+                </div>
               </div>
             </div>
 
-            {/* 5. CTA Button: Placed exactly above cards section */}
-            <Link to="/about" className="cta-btn">
-              <span>Explore Our Legacy</span>
-              <ArrowRight className="cta-btn-arrow" />
-            </Link>
+            {/* PART 3 (CTA) */}
+            <div data-aos="fade-right" data-aos-delay="600" data-aos-duration="1200" data-aos-easing="ease-out-cubic" data-aos-once="true">
+              <Link to="/about" className="cta-btn">
+                <span>Explore Our Legacy</span>
+                <ArrowRight className="cta-btn-arrow" />
+              </Link>
+            </div>
           </div>
 
           {/* Right Visual/Illustration Column */}

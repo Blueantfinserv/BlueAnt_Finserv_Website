@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "../styles/HeroFigma.css";
@@ -6,6 +6,8 @@ import "../styles/HeroFigma.css";
 import { openConsultationModal } from "./ConsultationModal";
 
 function HeroFigma() {
+  const [showCta, setShowCta] = useState(false);
+
   useEffect(() => {
     AOS.init({
       duration: 450,
@@ -13,8 +15,14 @@ function HeroFigma() {
       offset: 60,
       throttleDelay: 99,
       debounceDelay: 50,
-      disable: () => window.innerWidth < 640,
+      disable: false,
     });
+
+    const timer = setTimeout(() => {
+      setShowCta(true);
+    }, 850); // Matches the paragraph's AOS delay (300) + duration (450) + slight buffer
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -51,12 +59,13 @@ function HeroFigma() {
               <span style={{ fontSize: '14px', display: 'block', lineHeight: '1.4' }}>Blueant helps families build that clarity with discipline, thoughtful <br /> protection, and long-term financial confidence.</span>
             </p>
 
-            <div className="hf-ctas" data-aos="fade-up" data-aos-delay="400">
-              <button onClick={openConsultationModal} className="hf-btn-primary">
-                Start a Conversation <span className="hf-arrow">→</span>
-              </button>
-
-            </div>
+            {showCta && (
+              <div className="hf-ctas hf-cta-animate" style={{ marginTop: '30px' }}>
+                <button onClick={openConsultationModal} className="hf-btn-primary">
+                  Start a Conversation <span className="hf-arrow">→</span>
+                </button>
+              </div>
+            )}
 
 
           </div>

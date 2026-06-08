@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { AreaChart, Area, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from "recharts";
 import { TrendingUp, Shield, Sparkles, DollarSign, Percent, Calendar } from "lucide-react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "../styles/FigmaSIPCalculator.css";
 
 // 🚀 Animated Counter Helper for that "Expensive Product" feel
@@ -47,6 +49,10 @@ export default function FigmaSIPCalculator() {
   const [totalInvested, setTotalInvested] = useState(0);
   const [estimatedReturns, setEstimatedReturns] = useState(0);
   const [chartData, setChartData] = useState([]);
+
+  useEffect(() => {
+    AOS.init({ duration: 400, once: true });
+  }, []);
 
   useEffect(() => {
     const P = monthly || 0;
@@ -122,7 +128,7 @@ export default function FigmaSIPCalculator() {
         </p>
       </div>
 
-      <div className="f-sip-container">
+      <div className="f-sip-container" data-aos="fade-up">
         {/* 1. Investment Parameters */}
         <div className="f-sip-card f-sip-inputs-card">
           <h3 className="f-sip-card-title">Investment Parameters</h3>
@@ -138,8 +144,14 @@ export default function FigmaSIPCalculator() {
                 type="number"
                 min="0"
                 max="1000000"
-                value={monthly === 0 ? 0 : (monthly || "")}
-                onChange={(e) => setMonthly(Number(e.target.value))}
+                value={monthly.toString()}
+                onChange={(e) => {
+                  let val = e.target.value;
+                  if (val.length > 1 && val.startsWith('0') && !val.startsWith('0.')) {
+                    val = val.replace(/^0+/, '');
+                  }
+                  setMonthly(val === '' ? 0 : Number(val));
+                }}
                 className="f-sip-manual-input"
               />
               <span className="f-sip-input-unit">₹/mo</span>
@@ -167,8 +179,14 @@ export default function FigmaSIPCalculator() {
                 min="0"
                 max="30"
                 step="0.1"
-                value={rate === 0 ? 0 : (rate || "")}
-                onChange={(e) => setRate(Number(e.target.value))}
+                value={rate.toString()}
+                onChange={(e) => {
+                  let val = e.target.value;
+                  if (val.length > 1 && val.startsWith('0') && !val.startsWith('0.')) {
+                    val = val.replace(/^0+/, '');
+                  }
+                  setRate(val === '' ? 0 : Number(val));
+                }}
                 className="f-sip-manual-input"
               />
               <span className="f-sip-input-unit">% p.a.</span>
@@ -195,8 +213,14 @@ export default function FigmaSIPCalculator() {
                 type="number"
                 min="0"
                 max="40"
-                value={years === 0 ? 0 : (years || "")}
-                onChange={(e) => setYears(Number(e.target.value))}
+                value={years.toString()}
+                onChange={(e) => {
+                  let val = e.target.value;
+                  if (val.length > 1 && val.startsWith('0') && !val.startsWith('0.')) {
+                    val = val.replace(/^0+/, '');
+                  }
+                  setYears(val === '' ? 0 : Number(val));
+                }}
                 className="f-sip-manual-input"
               />
               <span className="f-sip-input-unit">Years</span>

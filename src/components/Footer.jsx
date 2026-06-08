@@ -712,8 +712,30 @@ const Footer = () => {
            ============================================================ */
         @media (min-width: 768px) and (max-width: 899px) {
           .footer-grid {
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 18px 14px;
+            grid-template-columns: 1.1fr 0.95fr 0.95fr;
+            gap: 16px 12px;
+          }
+          .footer-brand {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr 0.9fr;
+            gap: 18px;
+            align-items: start;
+          }
+          .brand-left,
+          .brand-info,
+          .brand-social {
+            min-width: 0;
+          }
+          .brand-left {
+            padding-right: 18px;
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+          }
+          .brand-info {
+            padding-left: 6px;
+            padding-right: 6px;
+          }
+          .brand-social {
+            padding-left: 6px;
           }
           /* Brand spans all 3 columns */
           .footer-brand.footer-column {
@@ -723,10 +745,17 @@ const Footer = () => {
             padding-bottom: 16px;
             padding-right: 0;
           }
+          .footer-links-row {
+            grid-column: 1 / span 2;
+          }
           /* Contact spans all columns */
           .footer-grid > div:last-child {
-            grid-column: 1 / -1;
+            grid-column: 3 / 4;
+            grid-row: 2;
             border-right: none;
+          }
+          .footer-links-row > .footer-column {
+            min-width: 0;
           }
           .footer-logo-img {
             height: 60px !important;
@@ -758,10 +787,47 @@ const Footer = () => {
            ============================================================ */
         @media (min-width: 900px) and (max-width: 1023px) {
           .footer-grid {
-            grid-template-columns: 1.1fr 0.85fr 1fr 1fr;
-            gap: 16px 12px;
+            grid-template-columns: 1.15fr 1fr 1fr;
+            gap: 14px 12px;
             padding-left: 24px;
             padding-right: 24px;
+          }
+          .footer-brand {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr 0.9fr;
+            gap: 18px;
+            align-items: start;
+          }
+          .brand-left,
+          .brand-info,
+          .brand-social {
+            min-width: 0;
+          }
+          .brand-left {
+            padding-right: 18px;
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+          }
+          .brand-info {
+            padding-left: 6px;
+            padding-right: 6px;
+          }
+          .brand-social {
+            padding-left: 6px;
+          }
+          .footer-brand.footer-column {
+            grid-column: 1 / -1;
+            border-right: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 16px;
+            padding-right: 0;
+          }
+          .footer-links-row {
+            grid-column: 1 / 3;
+          }
+          .footer-grid > div:last-child {
+            grid-column: 3 / 4;
+            grid-row: 2;
+            border-right: none;
           }
           .footer-logo-img {
             height: clamp(56px, 5.5vw, 66px) !important;
@@ -798,10 +864,25 @@ const Footer = () => {
             padding-bottom: 10px;
           }
           .footer-grid {
-            grid-template-columns: 1.15fr 0.85fr 1.1fr 1fr;
-            gap: 18px 14px;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 16px 12px;
             padding-left: 24px;
             padding-right: 24px;
+          }
+          .footer-brand.footer-column {
+            grid-column: 1 / -1;
+            border-right: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 16px;
+            padding-right: 0;
+          }
+          .footer-links-row {
+            grid-column: 1 / 3;
+          }
+          .footer-grid > div:last-child {
+            grid-column: 3 / 4;
+            grid-row: 2;
+            border-right: none;
           }
           .footer-logo-img {
             height: clamp(56px, 5vw, 68px) !important;
@@ -1338,12 +1419,15 @@ const Footer = () => {
           </div>
 
           {/* ── Right sub-col: Blueant IMF LLP + LLPIN + IRDAI + Social ── */}
-          <div className="brand-right">
+          <div className="brand-info">
             <strong className="text-slate-200 text-[18px] leading-tight block mb-2">Blueant IMF LLP</strong>
             <div className="text-[12px] text-[#94a3b8] leading-[1.6] flex flex-col gap-0.5">
               <span>LLPIN: <span className="text-[#38bdf8] font-semibold">ACD-1228</span></span>
               <span>IRDAI Reg. No.: <span className="text-[#38bdf8] font-semibold">IMF1776999</span></span>
             </div>
+          </div>
+
+          <div className="brand-social">
             {/* Social Icons */}
             <div className="flex gap-1 mt-3 flex-wrap">
               {socialLinks.map(({ Icon, url, label, color, hoverBg }, idx) => (
@@ -1423,7 +1507,7 @@ const Footer = () => {
                   <Mail size={11} />
                 </div>
                 <div className="text-left">
-                  <span className="text-slate-400 text-[8.5px] font-black uppercase block tracking-wider leading-none">Email Us</span>
+                  <span className="text-slate-300 text-[8.5px] font-black uppercase block tracking-wider leading-none">Email Us</span>
                   <a href="mailto:info@blueantfinserv.com" className="text-white hover:text-[#38bdf8] text-[13.5px] font-bold transition-colors leading-none block mt-1">
                     info@blueantfinserv.com
                   </a>
@@ -1436,7 +1520,7 @@ const Footer = () => {
                   <Phone size={11} />
                 </div>
                 <div className="text-left">
-                  <span className="text-slate-400 text-[8.5px] font-black uppercase block tracking-wider leading-none">Call Us</span>
+                  <span className="text-slate-300 text-[8.5px] font-black uppercase block tracking-wider leading-none">Call Us</span>
                   <a href="tel:+919990218899" className="text-white hover:text-[#38bdf8] text-[13.5px] font-bold transition-colors leading-none block mt-1">
                     +91-9990218899
                   </a>
@@ -1449,7 +1533,7 @@ const Footer = () => {
                   <Globe size={11} />
                 </div>
                 <div className="text-left">
-                  <span className="text-slate-400 text-[8.5px] font-black uppercase block tracking-wider leading-none">Visit Us</span>
+                  <span className="text-slate-300 text-[8.5px] font-black uppercase block tracking-wider leading-none">Visit Us</span>
                   <a href="https://www.blueantfinserv.com" target="_blank" rel="noreferrer" className="text-white hover:text-[#38bdf8] text-[13.5px] font-bold transition-colors leading-none block mt-1">
                     blueantfinserv.com
                   </a>
