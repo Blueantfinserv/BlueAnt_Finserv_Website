@@ -30,7 +30,7 @@
   box-shadow: 0 30px 60px rgba(0,0,0,0.18);
   overflow-y: auto;
   z-index: 10;
-  border-top: 6px solid #F4B400;
+  border-top: 6px solid #004ae0;
   padding: 32px 40px;
   display: flex;
   flex-direction: column;
@@ -159,8 +159,8 @@
 }
 
 .cm-input:focus, .cm-select:focus {
-  border-color: #F4B400;
-  box-shadow: 0 0 0 3px rgba(244,180,0,0.12);
+  border-color: #004ae0;
+  box-shadow: 0 0 0 3px rgba(0,74,224,0.12);
 }
 
 .cm-select {
@@ -178,9 +178,9 @@
   font-size: 16px;
   font-weight: 800;
   letter-spacing: -0.01em;
-  color: #0F172A;
-  background: linear-gradient(180deg, #FFC107, #F4B400);
-  box-shadow: 0 10px 24px rgba(244,180,0,0.22);
+  color: #FFFFFF;
+  background: linear-gradient(180deg, #0056ff, #004ae0);
+  box-shadow: 0 10px 24px rgba(0,74,224,0.22);
   border: none;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -193,8 +193,8 @@
 
 .cm-submit-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  background: linear-gradient(180deg, #FFD54F, #FFC107);
-  box-shadow: 0 14px 28px rgba(244,180,0,0.28);
+  background: linear-gradient(180deg, #1a6aff, #0056ff);
+  box-shadow: 0 14px 28px rgba(0,74,224,0.28);
 }
 
 .cm-submit-btn:active:not(:disabled) {
