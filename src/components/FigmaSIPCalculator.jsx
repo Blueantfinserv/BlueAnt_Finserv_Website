@@ -25,11 +25,11 @@ const AnimatedNumber = ({ value, formatter }) => {
       const easeProgress = 1 - Math.pow(2, -10 * progress);
       const current = start + (end - start) * easeProgress;
       
-      setDisplayValue(current);
-
       if (progress < 1) {
+        setDisplayValue(current);
         requestAnimationFrame(animate);
       } else {
+        setDisplayValue(end);
         prevValue.current = end;
       }
     };
@@ -56,34 +56,43 @@ export default function FigmaSIPCalculator() {
 
   useEffect(() => {
     const P = monthly || 0;
-    const r = (rate || 0) / 100 / 12;
-    const n = (years || 0) * 12;
+    const R = rate || 0;
+    const Y = years || 0;
 
-    const total = P * n;
-    setTotalInvested(total);
+    const r = (R / 100) / 12;
+    const n = Y * 12;
 
-    let fv = total;
+    const investedAmount = P * n;
+    setTotalInvested(Math.round(investedAmount));
+
+    let futureValue = investedAmount;
     if (r > 0 && n > 0) {
-      fv = P * ((Math.pow(1 + r, n) - 1) * (1 + r)) / r;
+      futureValue = P * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
     }
-    setEstimatedReturns(fv - total);
+    
+    const finalFv = Math.round(futureValue);
+    setEstimatedReturns(finalFv - Math.round(investedAmount));
 
     const data = [];
-    if (years === 0) {
+    if (Y === 0) {
       data.push({ year: 0, Invested: 0, Returns: 0, total: 0 });
     } else {
-      for (let i = 1; i <= years; i++) {
+      for (let i = 1; i <= Y; i++) {
         const currentMonths = i * 12;
         const currentInvested = P * currentMonths;
         let currentFv = currentInvested;
         if (r > 0) {
-          currentFv = P * ((Math.pow(1 + r, currentMonths) - 1) * (1 + r)) / r;
+          currentFv = P * ((Math.pow(1 + r, currentMonths) - 1) / r) * (1 + r);
         }
+        
+        const roundedTotal = Math.round(currentInvested);
+        const roundedFv = Math.round(currentFv);
+        
         data.push({
           year: i,
-          Invested: Math.round(currentInvested),
-          Returns: Math.round(currentFv - currentInvested),
-          total: Math.round(currentFv)
+          Invested: roundedTotal,
+          Returns: roundedFv - roundedTotal,
+          total: roundedFv
         });
       }
     }

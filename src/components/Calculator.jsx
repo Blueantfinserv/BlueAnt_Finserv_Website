@@ -13,13 +13,20 @@ export default function Calculator() {
 
   const calculateSIP = () => {
     const P = parseFloat(monthly);
-    const r = parseFloat(rate) / 100 / 12;
-    const n = parseInt(years) * 12;
+    const R = parseFloat(rate);
+    const Y = parseInt(years);
 
-    if (!P || !r || !n) return;
+    if (!P || !R || !Y) return;
 
-    const fv = P * ((Math.pow(1 + r, n) - 1) * (1 + r)) / r;
-    setFutureValue(fv.toFixed(0));
+    const r = (R / 100) / 12;
+    const n = Y * 12;
+
+    let fv = P * n;
+    if (r > 0 && n > 0) {
+      fv = P * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
+    }
+    
+    setFutureValue(Math.round(fv).toString());
   };
 
   useEffect(() => {
