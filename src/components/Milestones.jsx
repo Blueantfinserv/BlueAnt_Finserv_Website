@@ -53,9 +53,9 @@ const Milestones = () => {
             slidesPerView={'auto'}
             centeredSlides={true}
             loop={true}
-            speed={800}
+            speed={400}
             autoplay={{
-              delay: 3000,
+              delay: 1000,
               disableOnInteraction: false,
             }}
             className="milestones-swiper"

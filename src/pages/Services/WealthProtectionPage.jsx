@@ -18,7 +18,7 @@ const WealthProtectionPage = () => {
         {/* Hero Section */}
         <section className="wpp-hero">
           <div className="wpp-hero-glow"></div>
-          <div className="max-w-[1200px] mx-auto px-8 md:px-12 lg:px-16 relative z-10">
+          <div className="container relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
               <div className="w-full lg:w-1/2" data-aos="fade-right">
                 <div className="wpp-badge mb-6">
@@ -70,7 +70,7 @@ const WealthProtectionPage = () => {
         <section className="wpp-advisory-section">
           <div className="wpp-section-glow"></div>
           
-          <div className="max-w-[1200px] mx-auto px-8 md:px-12 lg:px-16">
+          <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
               
               {/* Left Column: Educational Risk Pillars */}
@@ -103,7 +103,7 @@ const WealthProtectionPage = () => {
                   </div>
                   
                   <h3 className="text-3xl font-black text-white mb-6 leading-snug">
-                    “We don’t sell, we educate.”
+                    â€œWe donâ€™t sell, we educate.â€
                   </h3>
                   
                   <p className="text-base text-slate-400 leading-relaxed mb-6 font-medium">
@@ -219,7 +219,7 @@ const WealthProtectionPage = () => {
 
         {/* New Section: Fiduciary Audit Blueprint */}
         <section className="wpp-blueprint-section">
-          <div className="max-w-[1200px] mx-auto px-8 md:px-12 lg:px-16">
+          <div className="container">
             <div className="text-center max-w-3xl mx-auto" data-aos="fade-up">
               <span className="text-emerald-400 text-xs font-black uppercase tracking-widest bg-emerald-500/10 px-4 py-1.5 rounded-full border border-emerald-500/20">Financial Stability Framework</span>
               <h2 className="text-4xl md:text-5xl font-black text-white mt-6 mb-6 leading-tight">
@@ -261,7 +261,7 @@ const WealthProtectionPage = () => {
 
         {/* Section 4: Customized Fiduciary Educational CTA Section */}
         <section className="wcp-section" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)' }}>
-          <div className="max-w-[1200px] mx-auto px-8 md:px-12 lg:px-16">
+          <div className="container">
             <div className="wcp-cta-card" data-aos="fade-up">
               {/* Premium background grid mesh and ambient radial glows */}
               <div className="wcp-cta-grid-pattern"></div>
@@ -319,7 +319,7 @@ const WealthProtectionPage = () => {
                         Start Learning Journey
                       </button>
                       <p className="text-[10px] text-center text-slate-400 font-bold">
-                        Pure Fiduciary Mandate • No hidden distribution commissions
+                        Pure Fiduciary Mandate â€¢ No hidden distribution commissions
                       </p>
                     </div>
 

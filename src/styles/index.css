@@ -104,7 +104,7 @@ section {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   padding-inline: clamp(16px, 5vw, 20px);
   width: 100%;

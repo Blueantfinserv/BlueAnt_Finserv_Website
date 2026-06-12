@@ -17,13 +17,13 @@ const WealthCreationPage = () => {
         {/* Hero Section */}
         <section className="wcp-hero">
           <div className="wcp-grid-bg"></div>
-          <div className="max-w-[1200px] mx-auto px-8 md:px-12 lg:px-16 relative z-10">
+          <div className="container relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
               <div className="w-full lg:w-1/2" data-aos="fade-right">
                 {/* Premium Fiduciary Focus Badge */}
                 <div className="wcp-fiduciary-badge mb-6">
                   <span className="wcp-live-dot"></span>
-                  <span>Purely Educational Approach • Research-Driven Insights • Independent Financial Learning</span>
+                  <span>Purely Educational Approach â€¢ Research-Driven Insights â€¢ Independent Financial Learning</span>
                 </div>
                 
                 <h1 className="wcp-title text-5xl lg:text-6xl font-black mb-6 leading-tight">
@@ -70,7 +70,7 @@ const WealthCreationPage = () => {
 
         {/* Section 1: Core Financial Education Areas */}
         <section className="wcp-section wcp-section-dark">
-          <div className="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-10">
+          <div className="container">
             <div className="wcp-section-header" data-aos="fade-up">
               <span className="wcp-section-subtitle">Academic Principles</span>
               <h2 className="wcp-section-title">Core Financial Education Areas</h2>
@@ -121,7 +121,7 @@ const WealthCreationPage = () => {
 
         {/* Section 2: Systematic Investing (Compounding Math Deep-Dive) */}
         <section className="wcp-section">
-          <div className="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-10">
+          <div className="container">
             <div className="wcp-split-container">
               {/* Left Column: Educational Content */}
               <div data-aos="fade-right">
@@ -213,12 +213,12 @@ const WealthCreationPage = () => {
 
         {/* Section 3: Financial Learning Tracks */}
         <section className="wcp-section wcp-section-dark">
-          <div className="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-10">
+          <div className="container">
             <div className="wcp-section-header" data-aos="fade-up">
               <span className="wcp-section-subtitle">Financial Learning Tracks</span>
               <h2 className="wcp-section-title">Academic Financial Literacy Tracks</h2>
               <p className="wcp-section-desc">
-                Invest in your greatest wealth generator—your own knowledge. Explore our curated portfolio management tracks.
+                Invest in your greatest wealth generatorâ€”your own knowledge. Explore our curated portfolio management tracks.
               </p>
             </div>
 
@@ -303,7 +303,7 @@ const WealthCreationPage = () => {
 
         {/* Section 4: Customized Fiduciary Educational CTA Section */}
         <section className="wcp-section" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)' }}>
-          <div className="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-10">
+          <div className="container">
             <div className="wcp-cta-card" data-aos="fade-up">
               {/* Premium background grid mesh and ambient radial glows */}
               <div className="wcp-cta-grid-pattern"></div>
@@ -361,7 +361,7 @@ const WealthCreationPage = () => {
                         Start Learning Journey
                       </button>
                       <p className="text-[10px] text-center text-slate-400 font-bold">
-                        Pure Fiduciary Mandate • No hidden distribution commissions
+                        Pure Fiduciary Mandate â€¢ No hidden distribution commissions
                       </p>
                     </div>
 

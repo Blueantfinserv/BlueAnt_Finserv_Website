@@ -16,13 +16,13 @@ const StockMarketServicesPage = () => {
         {/* Hero Section */}
         <section className="wcp-hero">
           <div className="wcp-grid-bg"></div>
-          <div className="max-w-[1200px] mx-auto px-8 md:px-12 lg:px-16 relative z-10">
+          <div className="container relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
               <div className="w-full lg:w-1/2" data-aos="fade-right">
                 {/* Premium Fiduciary Focus Badge */}
                 <div className="wcp-fiduciary-badge mb-6" style={{ color: '#ea580c', background: 'rgba(234, 88, 12, 0.04)', borderColor: 'rgba(234, 88, 12, 0.12)' }}>
                   <span className="wcp-live-dot" style={{ background: '#ea580c', boxShadow: '0 0 10px #ea580c' }}></span>
-                  <span style={{ color: '#ea580c' }}>Research-Led Market Guidance • Investor Education • Long-Term Wealth Clarity</span>
+                  <span style={{ color: '#ea580c' }}>Research-Led Market Guidance â€¢ Investor Education â€¢ Long-Term Wealth Clarity</span>
                 </div>
                 
                 <h1 className="wcp-title text-5xl lg:text-6xl font-black mb-6 leading-tight">
@@ -69,7 +69,7 @@ const StockMarketServicesPage = () => {
 
         {/* Section 1: Core Equities & Trading Areas */}
         <section className="wcp-section wcp-section-dark">
-          <div className="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-10">
+          <div className="container">
             <div className="wcp-section-header" data-aos="fade-up">
               <span className="wcp-section-subtitle" style={{ color: '#f97316' }}>Core Research & Guidance Areas</span>
               <h2 className="wcp-section-title">Equity Research & Market Insights</h2>
@@ -120,7 +120,7 @@ const StockMarketServicesPage = () => {
 
         {/* Section 2: Investing vs Trading Comparison */}
         <section className="wcp-section">
-          <div className="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-10">
+          <div className="container">
             <div className="wcp-split-container">
               {/* Left Column: Content */}
               <div data-aos="fade-right">
@@ -212,7 +212,7 @@ const StockMarketServicesPage = () => {
 
         {/* Section 3: Financial Learning Tracks */}
         <section className="wcp-section wcp-section-dark">
-          <div className="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-10">
+          <div className="container">
             <div className="wcp-section-header" data-aos="fade-up">
               <span className="wcp-section-subtitle" style={{ color: '#f97316' }}>Investor Education Tracks</span>
               <h2 className="wcp-section-title">Financial Market Learning Programs</h2>
@@ -299,7 +299,7 @@ const StockMarketServicesPage = () => {
 
         {/* Section 4: Final Fiduciary & Action Block */}
         <section className="wcp-section" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)' }}>
-          <div className="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-10">
+          <div className="container">
             <div className="wcp-cta-card" data-aos="fade-up">
               <div className="wcp-cta-grid-pattern"></div>
               <div className="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[100px] pointer-events-none"></div>
@@ -352,7 +352,7 @@ const StockMarketServicesPage = () => {
                         Start Your Financial Journey
                       </button>
                       <p className="text-[10px] text-center text-slate-400 font-bold">
-                        Research-Based Guidance • Investor Education • Long-Term Financial Clarity
+                        Research-Based Guidance â€¢ Investor Education â€¢ Long-Term Financial Clarity
                       </p>
                     </div>
 

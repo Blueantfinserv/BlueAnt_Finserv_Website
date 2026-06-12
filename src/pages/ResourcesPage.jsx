@@ -51,7 +51,7 @@ const ResourcesPage = () => {
         {/* Hero Section */}
         <section className="relative pt-48 pb-24 bg-slate-50 overflow-hidden">
           <div className="absolute top-0 right-0 w-[40%] h-full bg-blue/5 rounded-bl-[200px] -z-0"></div>
-          <div className="max-w-[1280px] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="container relative z-10">
             <div className="max-w-4xl" data-aos="fade-right">
               <div className="inline-flex items-center gap-3 px-6 py-2 bg-white text-blue rounded-full border border-blue/10 shadow-sm mb-8">
                 <span className="w-2 h-2 rounded-full bg-blue animate-pulse"></span>
@@ -70,7 +70,7 @@ const ResourcesPage = () => {
 
         {/* Commitment to Education */}
         <section className="py-16 bg-white border-b border-slate-100">
-          <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
+          <div className="container">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="flex-1" data-aos="fade-right">
                 <h2 className="text-3xl font-black text-navy mb-4">Our Commitment to Financial Literacy</h2>
@@ -98,7 +98,7 @@ const ResourcesPage = () => {
 
         {/* Resources Grid */}
         <section className="py-24 bg-white">
-          <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
+          <div className="container">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {resourceItems.map((item, i) => (
                 <Link 
@@ -133,7 +133,7 @@ const ResourcesPage = () => {
             <div className="absolute top-10 left-10 w-64 h-64 bg-blue-500 rounded-full blur-[100px]"></div>
             <div className="absolute bottom-10 right-10 w-64 h-64 bg-blue-400 rounded-full blur-[100px]"></div>
           </div>
-          <div className="max-w-[1280px] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="container relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div data-aos="fade-right">
                 <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Plan Your Future with Our <span className="text-[#00afef]">SIP Calculator</span></h2>

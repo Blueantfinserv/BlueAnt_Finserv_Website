@@ -53,7 +53,7 @@ const AboutPage = () => {
         to px-8 md:px-16 lg:px-24. This forces robust, luxurious margins 
         on both the left and right sides of the entire layout.
       */}
-      <main className="max-w-[1160px] mx-auto px-8 md:px-16 lg:px-24">
+      <main className="container">
         
         {/* Upper Header section */}
         <div className="max-w-3xl mb-16" data-aos="fade-right">

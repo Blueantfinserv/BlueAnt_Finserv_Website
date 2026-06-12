@@ -77,7 +77,7 @@ const ServicePage = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent pointer-events-none"></div>
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none"></div>
         
-        <div className="max-w-[1200px] mx-auto px-8 md:px-12 lg:px-16 relative z-10">
+        <div className="container relative z-10">
           {/* Header Row */}
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
             <div className="max-w-[750px]" data-aos="fade-right">

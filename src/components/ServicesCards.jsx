@@ -10,7 +10,7 @@ const ServicesCards = () => {
       <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:32px_32px] opacity-30"></div>
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-blue-300/10 rounded-full blur-[120px] pointer-events-none"></div>
       
-      <div className="max-w-[1200px] mx-auto px-8 md:px-12 lg:px-16 relative z-10">
+      <div className="container relative z-10">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-20" data-aos="fade-up">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200/60 shadow-[0_2px_10px_rgba(0,0,0,0.03)] mb-8">

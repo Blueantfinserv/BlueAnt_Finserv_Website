@@ -18,7 +18,7 @@ const WealthPreservationPage = () => {
         {/* Hero Section */}
         <section className="wpr-hero">
           <div className="wpr-hero-glow"></div>
-          <div className="max-w-[1200px] mx-auto px-8 md:px-12 lg:px-16 relative z-10">
+          <div className="container relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
               <div className="w-full lg:w-1/2" data-aos="fade-right">
                 <div className="wpr-badge mb-6">
@@ -30,7 +30,7 @@ const WealthPreservationPage = () => {
                   <span>Preservation.</span>
                 </h1>
                 <p className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed max-w-2xl mb-8">
-                  Wealth preservation is not only about growing assets — it is about sustaining financial stability, strengthening long-term continuity, and creating structured frameworks designed for future generations. At Blueant Finserv, our educational approach focuses on helping individuals understand legacy planning, capital stability, financial continuity, and preservation-oriented decision-making through research-driven learning frameworks.
+                  Wealth preservation is not only about growing assets â€” it is about sustaining financial stability, strengthening long-term continuity, and creating structured frameworks designed for future generations. At Blueant Finserv, our educational approach focuses on helping individuals understand legacy planning, capital stability, financial continuity, and preservation-oriented decision-making through research-driven learning frameworks.
                 </p>
 
                 {/* Secure Info Widget */}
@@ -68,7 +68,7 @@ const WealthPreservationPage = () => {
         <section className="wpr-advisory-section">
           <div className="wpr-section-glow"></div>
           
-          <div className="max-w-[1200px] mx-auto px-8 md:px-12 lg:px-16">
+          <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
               
               {/* Left Column: Educational Preservation Pillars */}
@@ -101,11 +101,11 @@ const WealthPreservationPage = () => {
                   </div>
                   
                   <h3 className="text-3xl font-black text-white mb-6 leading-snug">
-                    “We don’t sell, we educate.”
+                    â€œWe donâ€™t sell, we educate.â€
                   </h3>
                   
                   <p className="text-base text-slate-400 leading-relaxed mb-6 font-medium">
-                    At Blueant Finserv, our educational approach is designed to help individuals assess legacy structures and tax-efficiency strategies. We don't sell trust products or insurance—we educate you to preserve what you have built.
+                    At Blueant Finserv, our educational approach is designed to help individuals assess legacy structures and tax-efficiency strategies. We don't sell trust products or insuranceâ€”we educate you to preserve what you have built.
                   </p>
 
                   <div className="space-y-4 mb-2">
@@ -217,7 +217,7 @@ const WealthPreservationPage = () => {
 
         {/* Generational Continuity Framework Section */}
         <section className="wpr-blueprint-section">
-          <div className="max-w-[1200px] mx-auto px-8 md:px-12 lg:px-16">
+          <div className="container">
             <div className="text-center max-w-3xl mx-auto" data-aos="fade-up">
               <span className="text-purple-400 text-xs font-black uppercase tracking-widest bg-purple-500/10 px-4 py-1.5 rounded-full border border-purple-500/20">Generational Continuity Framework</span>
               <h2 className="text-4xl md:text-5xl font-black text-white mt-6 mb-6 leading-tight">
@@ -259,7 +259,7 @@ const WealthPreservationPage = () => {
 
         {/* Educational CTA Section */}
         <section className="wcp-section" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)' }}>
-          <div className="max-w-[1200px] mx-auto px-8 md:px-12 lg:px-16">
+          <div className="container">
             <div className="wcp-cta-card" data-aos="fade-up">
               {/* Premium background grid mesh and ambient radial glows */}
               <div className="wcp-cta-grid-pattern"></div>
@@ -317,7 +317,7 @@ const WealthPreservationPage = () => {
                         Start Learning Journey
                       </button>
                       <p className="text-[10px] text-center text-slate-400 font-bold">
-                        Pure Fiduciary Mandate • No hidden distribution commissions
+                        Pure Fiduciary Mandate â€¢ No hidden distribution commissions
                       </p>
                     </div>
 

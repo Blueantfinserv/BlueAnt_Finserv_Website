@@ -1,4 +1,4 @@
-/* ── Trust Bar — Figma style: light grey background with dark cards ── */
+/* â”€â”€ Trust Bar â€” Figma style: light grey background with dark cards â”€â”€ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 .trust-section {
@@ -11,7 +11,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
