@@ -38,17 +38,17 @@ const Landing = () => {
           <ExpertSpeakers />
 
           {/* 7. SIP Calculator */}
-          <section className="py-24 bg-slate-50 border-t border-slate-100">
+          <section className="bg-slate-50 border-t border-slate-100">
             <FigmaSIPCalculator />
           </section>
 
           {/* 8. CTA / Video Section */}
-          <section className="py-24 bg-white border-t border-slate-50">
+          <section className="bg-white border-t border-slate-50">
             <Youtube />
           </section>
 
           {/* 10. Testimonials */}
-          <section className="py-24 bg-slate-50 border-t border-slate-100">
+          <section className="bg-slate-50 border-t border-slate-100">
             <Testimonials />
           </section>
         </Suspense>

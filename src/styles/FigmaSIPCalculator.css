@@ -1,5 +1,5 @@
 .f-sip-section {
-  padding: 64px 6vw;
+  padding: 64px 0;
   background: 
     radial-gradient(circle at top right, rgba(0, 175, 239, 0.08), transparent 45%),
     radial-gradient(circle at bottom left, rgba(37, 99, 235, 0.04), transparent 45%),
@@ -81,8 +81,10 @@
 }
 
 .f-sip-container {
-  max-width: 1160px;
+  max-width: 1280px;
   margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 40px);
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px;
@@ -542,7 +544,7 @@
 
 @media (max-width: 768px) {
   .f-sip-section {
-    padding: 44px 20px;
+    padding: 44px 0;
   }
 
   .f-sip-header {
@@ -674,7 +676,7 @@
 
 @media (max-width: 480px) {
   .f-sip-section {
-    padding: 20px 14px;
+    padding: 20px 0;
   }
 
   .f-sip-header {

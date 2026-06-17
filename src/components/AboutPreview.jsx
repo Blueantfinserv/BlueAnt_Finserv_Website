@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { CheckCircle2, ShieldCheck, UserCheck, TrendingUp, Clock, Users, Award, MapPin, ArrowRight } from "lucide-react";
 import ValuesDiagram from "./ValuesDiagram";
+import { openConsultationModal } from "./ConsultationModal";
 import "../styles/AboutPreview.css";
 
 const AboutPreview = () => {
@@ -66,10 +67,10 @@ const AboutPreview = () => {
 
             {/* PART 3 (CTA) */}
             <div data-aos="fade-right" data-aos-delay="600" data-aos-duration="1200" data-aos-easing="ease-out-cubic" data-aos-once="true">
-              <Link to="/about" className="cta-btn">
+              <button onClick={openConsultationModal} className="cta-btn">
                 <span>Explore Our Legacy</span>
                 <ArrowRight className="cta-btn-arrow" />
-              </Link>
+              </button>
             </div>
           </div>
 

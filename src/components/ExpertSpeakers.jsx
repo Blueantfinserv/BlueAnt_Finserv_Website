@@ -100,7 +100,7 @@ const ExpertSpeakers = () => {
   return (
     <section className="expert-section">
       <div
-        className="expert-title-container container mx-auto px-4 lg:px-8 max-w-6xl"
+        className="expert-title-container container mx-auto w-full max-w-[1280px] px-[clamp(20px,5vw,40px)]"
         data-aos="fade-up"
       >
         <span className="expert-eyebrow">Expert Guidance</span>
@@ -112,7 +112,7 @@ const ExpertSpeakers = () => {
       </div>
 
       <div
-        className="expert-accordion-container container mx-auto px-4 lg:px-8 max-w-[1400px]"
+        className="expert-accordion-container container mx-auto w-full max-w-[1280px] px-[clamp(20px,5vw,40px)]"
         data-aos="fade-up"
         data-aos-delay="100"
       >

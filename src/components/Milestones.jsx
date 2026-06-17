@@ -41,7 +41,7 @@ const milestonesData = [
 const Milestones = () => {
   return (
     <section className="milestones-section">
-      <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
+      <div className="container mx-auto w-full max-w-[1280px] px-[clamp(20px,5vw,40px)]">
         <h2 className="milestones-title" data-aos="fade-up">
           Our Milestones<br />Over the Years
         </h2>
