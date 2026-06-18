@@ -5,12 +5,7 @@ import { openConsultationModal } from "./ConsultationModal";
 import "../styles/Navbar.css";
 
 const dropdowns = {
-  "About Us": [
-    { label: "Company Overview", desc: "Who we are & our story", path: "/about/company", icon: "🏢" },
-    { label: "Mission & Vision", desc: "Our purpose and goals", path: "/about/mission", icon: "🎯" },
-    { label: "Our Team", desc: "Meet the experts", path: "/about/team", icon: "👥" },
-    { label: "Impact Stories", desc: "Client success journeys", path: "/about/stories", icon: "🌟" },
-  ],
+  "About Us":[],
   Services: [
     { label: "Wealth Creation", desc: "Strategic investment solutions for long-term prosperity", path: "/services/wealth-creation", icon: "📈" },
     { label: "Wealth Protection", desc: "Secure your life, family, and financial goals", path: "/services/wealth-protection", icon: "🛡️" },
@@ -63,10 +58,10 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About Us", path: "/about", hasDropdown: true },
-    { name: "Services", path: "/services", hasDropdown: true },
-    { name: "Resources", path: "/resources", hasDropdown: true },
-    { name: "Careers", path: "/careers", hasDropdown: true },
+    { name: "About Us", path: "/coming-soon" },
+    { name: "Services", path: "/coming-soon" },
+    { name: "Resources", path: "/coming-soon" },
+    { name: "Careers", path: "/coming-soon" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -90,17 +85,24 @@ const Navbar = () => {
               onMouseEnter={() => handleMouseEnter(link.name)}
               onMouseLeave={handleMouseLeave}
             >
-              <Link
-                to={link.path}
-                className="nav-link-desktop"
-              >
-                <span>{link.name}</span>
-                {link.hasDropdown && (
+              {link.hasDropdown ? (
+                <button
+                  type="button"
+                  className="nav-link-desktop nav-link-button"
+                >
+                  <span>{link.name}</span>
                   <ChevronDown
                     className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${activeDropdown === link.name ? "rotate-180 text-[#00afef]" : ""}`}
                   />
-                )}
-              </Link>
+                </button>
+              ) : (
+                <Link
+                  to={link.path}
+                  className="nav-link-desktop"
+                >
+                  <span>{link.name}</span>
+                </Link>
+              )}
 
               {/* Dropdown Panel */}
               {link.hasDropdown && activeDropdown === link.name && (

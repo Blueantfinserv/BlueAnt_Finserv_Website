@@ -36,6 +36,13 @@
   padding: 8px 2px;
 }
 
+.nav-link-button {
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  cursor: pointer;
+}
+
 .nav-link-desktop::after {
   content: '';
   position: absolute;

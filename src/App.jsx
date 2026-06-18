@@ -24,6 +24,7 @@ const Careers = lazy(() => import("./pages/Careers"));
 const BlogPage = lazy(() => import("./pages/BlogPage"));
 const ResourcesPage = lazy(() => import("./pages/ResourcesPage"));
 const FAQPage = lazy(() => import("./pages/FAQPage"));
+const ComingSoon = lazy(() => import("./pages/ComingSoon"));
 
 // About Sub-pages
 const CompanyPage = lazy(() => import("./pages/About/CompanyPage"));
@@ -52,6 +53,16 @@ const LocationAwareErrorBoundary = ({ children }) => {
   const location = useLocation();
   // Changing the key unmounts + remounts ErrorBoundary, clearing any error state
   return <ErrorBoundary key={location.pathname}>{children}</ErrorBoundary>;
+};
+
+const ConditionalFooter = () => {
+  const location = useLocation();
+  const hiddenPaths = ['/about', '/services', '/resources', '/careers', '/coming-soon'];
+  
+  if (hiddenPaths.includes(location.pathname)) {
+    return null;
+  }
+  return <Footer />;
 };
 
 function App() {
@@ -85,6 +96,7 @@ function App() {
             <Route path="/careers" element={<Careers />} />
             <Route path="/blogs" element={<BlogPage />} />
             <Route path="/faq" element={<FAQPage />} />
+            <Route path="/coming-soon" element={<ComingSoon />} />
             {/* Debug 404 Route */}
             <Route path="*" element={<div className="flex items-center justify-center min-h-screen bg-red-500 text-white text-3xl font-bold">404 - Route Not Found: Check URL</div>} />
           </Routes>
@@ -93,7 +105,7 @@ function App() {
 
       <StickyWhatsApp />
       <ConsultationModal />
-      <Footer />
+      <ConditionalFooter />
     </HashRouter>
   );
 }

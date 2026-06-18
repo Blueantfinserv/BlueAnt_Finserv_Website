@@ -1,84 +1,105 @@
 import React, { useEffect } from "react";
-import { openConsultationModal } from "../components/ConsultationModal";
+import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { Building2, Target, Users2, Quote, ArrowRight } from "lucide-react";
+import "../styles/AboutPage.css";
 
 const AboutPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    AOS.init({ duration: 1000, once: true });
   }, []);
 
+  const aboutSections = [
+    {
+      title: "Company Overview",
+      desc: "Unbiased Financial Guidance. We empower you to make data-driven compounding decisions with zero sales push.",
+      icon: <Building2 className="w-6 h-6" />, // Reduced from w-7 h-7 to w-6 h-6 for compact scale
+      path: "/about/company",
+      iconColor: "icon-blue",
+      cardColor: "card-blue",
+    },
+    {
+      title: "Mission & Vision",
+      desc: "Empowering self-directed compounding. We guide you to master long-term wealth rhythms with pure clarity.",
+      icon: <Target className="w-6 h-6" />,
+      path: "/about/mission",
+      iconColor: "icon-red",
+      cardColor: "card-red",
+    },
+    {
+      title: "Our Team",
+      desc: "Meet the expert educators and distribution architects guiding your long-term wealth creation journey.",
+      icon: <Users2 className="w-6 h-6" />,
+      path: "/about/team",
+      iconColor: "icon-green",
+      cardColor: "card-green",
+    },
+    {
+      title: "Impact Stories",
+      desc: "Real wealth growth journeys of families who mastered compounding and protected their dreams with us.",
+      icon: <Quote className="w-6 h-6" />,
+      path: "/about/stories",
+      iconColor: "icon-purple",
+      cardColor: "card-purple",
+    },
+  ];
+
   return (
-    <div style={{
-      minHeight: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      background: 'linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%)',
-      fontFamily: "'Outfit', sans-serif",
-      padding: '120px 24px 60px',
-      textAlign: 'center',
-    }}>
-      <div style={{
-        background: 'rgba(0,175,239,0.08)',
-        border: '1px solid rgba(0,175,239,0.2)',
-        borderRadius: '99px',
-        padding: '8px 20px',
-        fontSize: '11px',
-        fontWeight: 900,
-        letterSpacing: '2px',
-        textTransform: 'uppercase',
-        color: '#00afef',
-        marginBottom: '28px',
-        display: 'inline-block',
-      }}>About Us</div>
+    <div className="about-hub-section selection:bg-blue-100 min-h-screen pt-32 pb-24">
+      {/* 
+        Compressed from max-w-1280px to max-w-1160px & expanded horizontal pads 
+        to px-8 md:px-16 lg:px-24. This forces robust, luxurious margins 
+        on both the left and right sides of the entire layout.
+      */}
+      <main className="container">
+        
+        {/* Upper Header section */}
+        <div className="max-w-3xl mb-16" data-aos="fade-right">
+          <div className="inline-flex items-center gap-3 px-6 py-2 bg-white/70 backdrop-blur text-[#00afef] rounded-full border border-blue-100/50 shadow-sm mb-8">
+            <span className="w-2 h-2 rounded-full bg-[#00afef] animate-pulse"></span>
+            <span className="text-xs font-black uppercase tracking-widest">About Blueant</span>
+          </div>
+          
+          <h1 className="text-6xl md:text-8xl font-black text-[#0f172a] leading-[0.95] tracking-tighter mb-8">
+            Everything You Need <br />
+            <span className="text-[#00afef]">To Know Us.</span>
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-slate-500 font-medium max-w-xl leading-relaxed">
+            Discover our identity, our education-driven mission, and the dedicated team making Blueant Finserv your premier wealth guidance partner.
+          </p>
+        </div>
 
-      <h1 style={{
-        fontSize: 'clamp(40px, 7vw, 80px)',
-        fontWeight: 900,
-        color: '#0f172a',
-        lineHeight: 1,
-        letterSpacing: '-2px',
-        marginBottom: '20px',
-      }}>
-        Coming<br />
-        <span style={{
-          background: 'linear-gradient(135deg, #00afef, #2563eb)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-        }}>Soon.</span>
-      </h1>
+        {/* Breathtaking High-Fidelity Hub Grid */}
+        <div className="about-hub-grid">
+          {aboutSections.map((item, i) => (
+            <Link 
+              to={item.path} 
+              key={i}
+              className={`about-hub-card ${item.cardColor}`}
+              data-aos="fade-up"
+              data-aos-delay={i * 100}
+            >
+              {/* Upper Section */}
+              <div>
+                <div className={`about-hub-card-icon-box ${item.iconColor}`}>
+                  {item.icon}
+                </div>
+                <h3 className="about-hub-card-title">{item.title}</h3>
+                <p className="about-hub-card-desc">{item.desc}</p>
+              </div>
 
-      <p style={{
-        fontSize: '18px',
-        color: '#64748b',
-        maxWidth: '480px',
-        lineHeight: 1.7,
-        marginBottom: '40px',
-        fontWeight: 500,
-      }}>
-        We're working on something great. In the meantime, feel free to reach out to us directly.
-      </p>
-
-      <button
-        onClick={openConsultationModal}
-        style={{
-          background: 'linear-gradient(135deg, #00afef, #2563eb)',
-          color: '#fff',
-          border: 'none',
-          borderRadius: '14px',
-          padding: '16px 36px',
-          fontSize: '15px',
-          fontWeight: 800,
-          cursor: 'pointer',
-          letterSpacing: '-0.3px',
-          boxShadow: '0 12px 30px rgba(37,99,235,0.25)',
-          transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-        }}
-        onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 18px 40px rgba(37,99,235,0.35)'; }}
-        onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 12px 30px rgba(37,99,235,0.25)'; }}
-      >
-        Book Free Consultation →
-      </button>
+              {/* Lower Section (Safe from bottom edge clipping) */}
+              <div className="about-hub-card-action">
+                <span>View Section</span>
+                <ArrowRight className="w-5 h-5 about-hub-action-arrow" />
+              </div>
+            </Link>
+          ))}
+        </div>
+      </main>
     </div>
   );
 };
