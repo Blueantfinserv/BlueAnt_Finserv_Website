@@ -11,7 +11,7 @@ export default defineConfig(({ command }) => ({
     viteCompression({ algorithm: 'brotliCompress' }),
   ],
 
-  base: command === 'serve' ? '/' : '/BlueAnt_Finserv_Website/',
+  base: '/',
 
   optimizeDeps: {
     include: ['lucide-react', 'aos', 'react-router-dom', 'recharts']
