@@ -29,10 +29,10 @@ const Footer = () => {
 
   const quickLinks = [
     { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
-    { name: "Services", path: "/services" },
-    { name: "Resources", path: "/resources" },
-    { name: "Careers", path: "/careers" },
+    { name: "About Us", path: "/coming-soon" },
+    { name: "Services", path: "/coming-soon" },
+    { name: "Resources", path: "/coming-soon" },
+    { name: "Careers", path: "/coming-soon" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -1478,8 +1478,7 @@ const Footer = () => {
                 {serviceLinks.map((service) => (
                   <li key={service.name} className="w-full text-left">
                     <Link
-                      to="/services"
-                      state={{ selectedIndex: service.selectedIndex }}
+                      to="/coming-soon"
                       className="text-slate-300 font-semibold text-[14.5px] hover:text-[#38bdf8] flex items-center justify-start"
                     >
                       <span className="quick-link-bullet shrink-0"></span>
