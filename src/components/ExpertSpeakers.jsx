@@ -194,7 +194,7 @@ const ExpertSpeakers = () => {
       </div>
 
       <div className="expert-team-cta" data-aos="fade-up" data-aos-delay="150">
-        <Link to="/team" className="expert-team-button">
+        <Link to="/coming-soon" className="expert-team-button">
           Meet Our Family
         </Link>
       </div>
