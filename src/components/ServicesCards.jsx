@@ -8,7 +8,7 @@ const ServicesCards = () => {
     <section className="bg-[#f4f7fb] mt-0 relative overflow-hidden border-t border-slate-100" style={{ paddingTop: '120px', paddingBottom: '120px' }}>
       {/* Modern dot grid background */}
       <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:32px_32px] opacity-30"></div>
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-blue-300/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[600px] bg-blue-300/10 rounded-full blur-[120px] pointer-events-none"></div>
       
       <div className="container relative z-10">
         {/* Section Header */}

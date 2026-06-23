@@ -40,14 +40,14 @@ const Hero = () => {
 
             <div className="flex flex-wrap items-center gap-4 md:gap-8">
               <button 
-                style={{ backgroundColor: '#0f172a', padding: '20px 56px', borderRadius: '9999px', color: 'white' }}
-                className="text-[13px] font-black uppercase tracking-[0.2em] transition-all shadow-[0_20px_50px_-10px_rgba(15,23,42,0.3)] hover:-translate-y-1.5 active:scale-95"
+                style={{ backgroundColor: '#0f172a', borderRadius: '9999px', color: 'white' }}
+                className="py-4 px-8 md:py-[20px] md:px-[56px] text-[13px] font-black uppercase tracking-[0.2em] transition-all shadow-[0_20px_50px_-10px_rgba(15,23,42,0.3)] hover:-translate-y-1.5 active:scale-95"
               >
                 Get Started Now
               </button>
               <button 
-                style={{ backgroundColor: 'white', padding: '20px 56px', borderRadius: '9999px', color: '#0f172a', border: '2px solid #f1f5f9' }}
-                className="text-[13px] font-black uppercase tracking-[0.2em] transition-all flex items-center justify-center gap-4 shadow-xl shadow-slate-200/50 hover:-translate-y-1.5 active:scale-95"
+                style={{ backgroundColor: 'white', borderRadius: '9999px', color: '#0f172a', border: '2px solid #f1f5f9' }}
+                className="py-4 px-8 md:py-[20px] md:px-[56px] text-[13px] font-black uppercase tracking-[0.2em] transition-all flex items-center justify-center gap-4 shadow-xl shadow-slate-200/50 hover:-translate-y-1.5 active:scale-95"
               >
                 Our Services
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
