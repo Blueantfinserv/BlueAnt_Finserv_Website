@@ -6,8 +6,6 @@ import "../styles/HeroFigma.css";
 import { openConsultationModal } from "./ConsultationModal";
 
 function HeroFigma() {
-  const [showCta, setShowCta] = useState(false);
-
   useEffect(() => {
     AOS.init({
       duration: 450,
@@ -17,12 +15,6 @@ function HeroFigma() {
       debounceDelay: 50,
       disable: false,
     });
-
-    const timer = setTimeout(() => {
-      setShowCta(true);
-    }, 850); // Matches the paragraph's AOS delay (300) + duration (450) + slight buffer
-
-    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -59,13 +51,11 @@ function HeroFigma() {
               <span style={{ fontSize: '14px', display: 'block', lineHeight: '1.4' }}>Blueant helps families build that clarity with discipline, thoughtful <br /> protection, and long-term financial confidence.</span>
             </p>
 
-            {showCta && (
-              <div className="hf-ctas hf-cta-animate" style={{ marginTop: '30px' }}>
+              <div className="hf-ctas hf-cta-animate" style={{ marginTop: '30px', animationDelay: '850ms', animationFillMode: 'both' }}>
                 <button onClick={openConsultationModal} className="hf-btn-primary">
                   Start a Conversation <span className="hf-arrow">→</span>
                 </button>
               </div>
-            )}
 
 
           </div>
