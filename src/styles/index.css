@@ -11,7 +11,8 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 140px;
   width: 100%;
-  overflow-x: clip;
+  overflow-x: hidden;
+  position: relative;
 }
 
 :root {
@@ -23,12 +24,14 @@ body {
   overflow-x: hidden;
   width: 100%;
   min-width: 0;
+  position: relative;
 }
 
 #root {
   width: 100%;
   min-width: 0;
-  overflow-x: clip;
+  overflow-x: hidden;
+  position: relative;
 }
 
 *, *::before, *::after {
