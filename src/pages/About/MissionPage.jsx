@@ -83,7 +83,7 @@ const LogoCarousel = () => {
 
   return (
     <div 
-      className="relative w-full min-h-screen lg:h-[90vh] flex flex-col items-center justify-center overflow-hidden py-24 lg:py-0" 
+      className="relative w-full min-h-screen lg:h-[90vh] flex flex-col items-center justify-center overflow-hidden pt-[100px] md:pt-[120px] lg:pt-[140px] pb-24 lg:pb-0" 
       style={{ backgroundColor: '#02040a' }} 
     >
       {/* Background Lighting Elements */}
@@ -92,7 +92,7 @@ const LogoCarousel = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.15)_0%,transparent_60%)] rounded-[50%] pointer-events-none"></div>
 
       {/* Header */}
-      <div className="relative z-20 flex flex-col items-center mb-12 px-4 lg:absolute lg:top-[12%] lg:mb-0" data-aos="fade-down">
+      <div className="relative z-20 flex flex-col items-center mb-12 px-4 lg:absolute lg:top-[140px] lg:mb-0" data-aos="fade-down">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-900/30 backdrop-blur-md border border-blue-400/30 text-blue-300 text-[10px] sm:text-[11px] font-extrabold uppercase tracking-[0.3em] mb-4 shadow-[0_0_20px_rgba(59,130,246,0.3)]">
           <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse shadow-[0_0_10px_rgba(96,165,250,1)]"></span>
           MISSION • VISION • VALUES
