@@ -1,26 +1,31 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Building2, Compass, Users, ShieldCheck, TrendingUp, Shield, Wallet, BarChart3, Image, Calculator, FileText, HelpCircle, Briefcase, HeartHandshake } from "lucide-react";
 import { openConsultationModal } from "./ConsultationModal";
 import "../styles/Navbar.css";
 
 const dropdowns = {
-  "About Us":[],
+  "About Us": [
+    { label: "Company Overview", desc: "Who we are & our story", path: "/about/company", icon: <Building2 className="w-5 h-5 text-blue-600" strokeWidth={1.5} /> },
+    { label: "Vision & Values", desc: "Purpose that drives us", path: "/about/mission", icon: <Compass className="w-5 h-5 text-blue-600" strokeWidth={1.5} /> },
+    { label: "Leadership Team", desc: "Meet our experts", path: "/about/team", icon: <Users className="w-5 h-5 text-blue-600" strokeWidth={1.5} /> },
+    { label: "Why BlueAnt", desc: "Built on trust & transparency", path: "/about/stories", icon: <ShieldCheck className="w-5 h-5 text-blue-600" strokeWidth={1.5} /> },
+  ],
   Services: [
-    { label: "Wealth Creation", desc: "Strategic investment solutions for long-term prosperity", path: "/services/wealth-creation", icon: "📈" },
-    { label: "Wealth Protection", desc: "Secure your life, family, and financial goals", path: "/services/wealth-protection", icon: "🛡️" },
-    { label: "Wealth Preservation", desc: "Maintain long-term financial stability and security", path: "/services/wealth-preservation", icon: "💰" },
-    { label: "Stock Market Services", desc: "Research-driven market insights and investment support", path: "/services/stock-market-services", icon: "📊" },
+    { label: "Wealth Creation", desc: "Strategic investment solutions for long-term prosperity", path: "/services/wealth-creation", icon: <TrendingUp className="w-5 h-5 text-emerald-600" strokeWidth={1.5} /> },
+    { label: "Wealth Protection", desc: "Secure your life, family, and financial goals", path: "/services/wealth-protection", icon: <Shield className="w-5 h-5 text-blue-600" strokeWidth={1.5} /> },
+    { label: "Wealth Preservation", desc: "Maintain long-term financial stability and security", path: "/services/wealth-preservation", icon: <Wallet className="w-5 h-5 text-purple-600" strokeWidth={1.5} /> },
+    { label: "Stock Market Services", desc: "Research-driven market insights and investment support", path: "/services/stock-market-services", icon: <BarChart3 className="w-5 h-5 text-amber-600" strokeWidth={1.5} /> },
   ],
   Resources: [
-    { label: "Gallery", desc: "Our journey in pictures", path: "/gallery", icon: "🖼️" },
-    { label: "Financial Calculators", desc: "SIP, EMI & more tools", path: "/calculators", icon: "🧮" },
-    { label: "Blogs", desc: "Expert financial insights", path: "/blogs", icon: "📰" },
-    { label: "FAQs", desc: "Common questions answered", path: "/faq", icon: "❓" },
+    { label: "Gallery", desc: "Our journey in pictures", path: "/gallery", icon: <Image className="w-5 h-5 text-pink-600" strokeWidth={1.5} /> },
+    { label: "Financial Calculators", desc: "SIP, EMI & more tools", path: "/calculators", icon: <Calculator className="w-5 h-5 text-blue-600" strokeWidth={1.5} /> },
+    { label: "Blogs", desc: "Expert financial insights", path: "/blogs", icon: <FileText className="w-5 h-5 text-indigo-600" strokeWidth={1.5} /> },
+    { label: "FAQs", desc: "Common questions answered", path: "/faq", icon: <HelpCircle className="w-5 h-5 text-slate-600" strokeWidth={1.5} /> },
   ],
   Careers: [
-    { label: "Open Positions", desc: "Join our growing team", path: "/careers#positions", icon: "💼" },
-    { label: "Life at BlueAnt", desc: "Culture & work environment", path: "/careers#life", icon: "🌱" },
+    { label: "Open Positions", desc: "Join our growing team", path: "/careers#positions", icon: <Briefcase className="w-5 h-5 text-blue-600" strokeWidth={1.5} /> },
+    { label: "Life at BlueAnt", desc: "Culture & work environment", path: "/careers#life", icon: <HeartHandshake className="w-5 h-5 text-rose-600" strokeWidth={1.5} /> },
   ],
 };
 
@@ -75,7 +80,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About Us", path: "/coming-soon" },
+    { name: "About Us", path: "/about", hasDropdown: true },
     { name: "Services", path: "/coming-soon" },
     { name: "Resources", path: "/coming-soon" },
     { name: "Careers", path: "/coming-soon" },
