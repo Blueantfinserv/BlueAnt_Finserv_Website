@@ -6,7 +6,6 @@ import "../../styles/AboutPage.css";
 
 const LogoCarousel = () => {
   const [angleOffset, setAngleOffset] = useState(0);
-  const [scaleFactor, setScaleFactor] = useState(1);
   const requestRef = useRef();
 
   useEffect(() => {
@@ -14,76 +13,51 @@ const LogoCarousel = () => {
     const animate = (time) => {
       const deltaTime = time - lastTime;
       lastTime = time;
-      setAngleOffset(prev => prev - 0.0003 * deltaTime); // Slowed down from 0.0007
+      setAngleOffset(prev => prev - 0.0003 * deltaTime);
       requestRef.current = requestAnimationFrame(animate);
     };
     requestRef.current = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(requestRef.current);
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      if (width < 1100) {
-        // Scale down proportionally for smaller screens
-        setScaleFactor(Math.max(0.25, width / 1100));
-      } else {
-        setScaleFactor(1);
-      }
+    
+    return () => {
+      cancelAnimationFrame(requestRef.current);
     };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const logos = [
     {
       id: 'item1',
-      baseSize: 130,
-      element: <span className="text-[#bf57ff] font-bold text-[18px] text-center leading-tight tracking-tight relative z-10 antialiased drop-shadow-md">Goal Based<br/>Planning</span>
+      element: <span className="text-[#bf57ff] font-bold text-center leading-tight tracking-tight relative z-10 antialiased drop-shadow-md text-[clamp(11px,3vw,18px)]">Goal Based<br/>Planning</span>
     },
     {
       id: 'item2',
-      baseSize: 130,
-      element: <span className="text-white font-bold text-[18px] text-center leading-tight tracking-tight relative z-10 antialiased drop-shadow-md">Financial<br/>Education</span>
+      element: <span className="text-white font-bold text-center leading-tight tracking-tight relative z-10 antialiased drop-shadow-md text-[clamp(11px,3vw,18px)]">Financial<br/>Education</span>
     },
     {
       id: 'item3',
-      baseSize: 130,
-      element: <span className="text-[#ff6b00] font-extrabold text-[18px] text-center leading-tight tracking-wide relative z-10 antialiased drop-shadow-md">Expert<br/>Guidance</span>
+      element: <span className="text-[#ff6b00] font-extrabold text-center leading-tight tracking-wide relative z-10 antialiased drop-shadow-md text-[clamp(11px,3vw,18px)]">Expert<br/>Guidance</span>
     },
     {
       id: 'item4',
-      baseSize: 130,
       glow: true,
-      element: <span className="text-[#ff0000] font-black text-[18px] text-center leading-tight tracking-tighter relative z-10 drop-shadow-[0_4px_25px_rgba(255,0,0,0.8)] antialiased">Personalized<br/>Consultation</span>
+      element: <span className="text-[#ff0000] font-black text-center leading-tight tracking-tighter relative z-10 drop-shadow-[0_4px_25px_rgba(255,0,0,0.8)] antialiased text-[clamp(11px,3vw,18px)]">Personalized<br/>Consultation</span>
     },
     {
       id: 'item5',
-      baseSize: 130,
-      element: <span className="text-[#00b0ff] font-bold text-[18px] text-center leading-tight tracking-wide relative z-10 antialiased drop-shadow-md">Financial<br/>Awareness</span>
+      element: <span className="text-[#00b0ff] font-bold text-center leading-tight tracking-wide relative z-10 antialiased drop-shadow-md text-[clamp(11px,3vw,18px)]">Financial<br/>Awareness</span>
     },
     {
       id: 'item6',
-      baseSize: 130,
-      element: <span className="text-[#ff3d00] font-bold text-[16px] text-center leading-tight tracking-tight relative z-10 antialiased drop-shadow-md">Smart Financial<br/>Planning</span>
+      element: <span className="text-[#ff3d00] font-bold text-center leading-tight tracking-tight relative z-10 antialiased drop-shadow-md text-[clamp(10px,2.8vw,16px)]">Smart Financial<br/>Planning</span>
     },
     {
       id: 'item7',
-      baseSize: 130,
-      element: <span className="text-white font-bold text-[18px] text-center leading-tight relative z-10 antialiased drop-shadow-md">Wealth<br/>Guidance</span>
+      element: <span className="text-white font-bold text-center leading-tight relative z-10 antialiased drop-shadow-md text-[clamp(11px,3vw,18px)]">Wealth<br/>Guidance</span>
     }
   ];
 
-  // Perspective math configuration
-  const tiltAngle = 75; // The 3D rotation of the podium
-  const radiusX = 420; // Increased radius of the orbit circle
-  const radiusY = radiusX * Math.cos(tiltAngle * (Math.PI / 180)); // Perfect perspective matching
-  const hoverHeight = 40; // Base hover height above the podium
-
   return (
     <div 
-      className="relative w-full min-h-screen lg:h-[90vh] flex flex-col items-center justify-center overflow-hidden pt-[100px] md:pt-[120px] lg:pt-[140px] pb-24 lg:pb-0" 
+      className="relative w-full min-h-screen lg:h-[90vh] flex flex-col items-center justify-center overflow-hidden pt-[100px] md:pt-[120px] lg:pt-[140px] pb-24 lg:pb-0 orbit-container" 
       style={{ backgroundColor: '#02040a' }} 
     >
       {/* Background Lighting Elements */}
@@ -104,38 +78,32 @@ const LogoCarousel = () => {
 
       {/* Scene Container */}
       <div 
-        className="relative w-full max-w-[1200px] flex flex-col items-center justify-center transition-all duration-300 mt-4 lg:mt-24"
-        style={{ height: `${Math.max(350, 500 * scaleFactor)}px` }} 
+        className="relative w-full flex flex-col items-center justify-center transition-all duration-300 mt-4 lg:mt-24"
+        style={{ height: `var(--container-height)` }} 
       >
         
-        {/* Scaled Wrapper */}
+        {/* Unscaled Wrapper */}
         <div 
-          className="absolute flex items-center justify-center" 
-          style={{ 
-            width: '1000px', 
-            height: '500px', 
-            transform: `scale(${scaleFactor})`, 
-            transformOrigin: 'center center' 
-          }}
+          className="absolute flex items-center justify-center w-[1000px] h-[500px]" 
         >
 
           {/* 3D Holographic Podium */}
           <div className="absolute flex justify-center items-center w-full" style={{ top: '70%' }}>
             {/* True 3D projection base - perfectly circular so it becomes an ellipse on rotation */}
-            <div className="relative -translate-y-1/2" style={{ width: '950px', height: '950px', perspective: '2000px' }}>
-              <div className="absolute inset-0" style={{ transformStyle: 'preserve-3d', transform: `rotateX(${tiltAngle}deg)` }}>
+            <div className="relative -translate-y-1/2 transition-all duration-500" style={{ width: `var(--podium-size)`, height: `var(--podium-size)`, perspective: '2000px' }}>
+              <div className="absolute inset-0" style={{ transformStyle: 'preserve-3d', transform: `rotateX(var(--tilt-angle))` }}>
                 
                 {/* Outer Aura */}
-                <div className="absolute inset-[-80px] rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.35)_0%,transparent_70%)] blur-[40px] transform translateZ(-60px)"></div>
+                <div className="absolute inset-[calc(var(--podium-size)*-0.08)] rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.35)_0%,transparent_70%)] blur-[40px] transform translateZ(-60px)"></div>
                 
                 {/* Layer 3 (Base) */}
                 <div className="absolute inset-0 rounded-full border-[2px] border-[rgba(59,130,246,0.35)] shadow-[0_0_50px_rgba(59,130,246,0.4),inset_0_0_30px_rgba(59,130,246,0.2)] bg-[#02040d]" style={{ transform: 'translateZ(-60px)' }}></div>
                 
                 {/* Layer 2 (Middle Tier) */}
-                <div className="absolute inset-[40px] rounded-full border-[2px] border-[rgba(96,165,250,0.5)] shadow-[0_0_40px_rgba(59,130,246,0.5),inset_0_0_30px_rgba(96,165,250,0.25)] bg-[#040713]" style={{ transform: 'translateZ(-30px)' }}></div>
+                <div className="absolute inset-[calc(var(--podium-size)*0.04)] rounded-full border-[2px] border-[rgba(96,165,250,0.5)] shadow-[0_0_40px_rgba(59,130,246,0.5),inset_0_0_30px_rgba(96,165,250,0.25)] bg-[#040713]" style={{ transform: 'translateZ(-30px)' }}></div>
                 
                 {/* Layer 1 (Surface) */}
-                <div className="absolute inset-[80px] rounded-full border-[2px] border-[rgba(147,197,253,0.7)] shadow-[inset_0_0_80px_rgba(59,130,246,0.5),0_0_30px_rgba(147,197,253,0.6)] bg-[#070b1a] overflow-hidden" style={{ transform: 'translateZ(0px)' }}>
+                <div className="absolute inset-[calc(var(--podium-size)*0.08)] rounded-full border-[2px] border-[rgba(147,197,253,0.7)] shadow-[inset_0_0_80px_rgba(59,130,246,0.5),0_0_30px_rgba(147,197,253,0.6)] bg-[#070b1a] overflow-hidden" style={{ transform: 'translateZ(0px)' }}>
                   {/* Surface Core Light */}
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[radial-gradient(circle_at_center,rgba(96,165,250,0.4)_0%,transparent_70%)] rounded-full animate-pulse-slow"></div>
                   {/* Cyber Grid with Radial Mask to fade out smoothly at edges */}
@@ -148,7 +116,7 @@ const LogoCarousel = () => {
                 {/* Glowing Orbital Ring exactly where the spheres orbit */}
                 <div 
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-[2px] border-blue-400/50 shadow-[0_0_30px_rgba(96,165,250,0.6),inset_0_0_20px_rgba(96,165,250,0.4)] pointer-events-none" 
-                  style={{ width: `${radiusX * 2}px`, height: `${radiusX * 2}px`, transform: 'translateZ(2px)' }}
+                  style={{ width: `calc(var(--radius-x) * 2)`, height: `calc(var(--radius-x) * 2)`, transform: 'translateZ(2px)' }}
                 ></div>
                 
               </div>
@@ -163,16 +131,12 @@ const LogoCarousel = () => {
                 const baseAngle = (index / total) * Math.PI * 2;
                 const currentAngle = baseAngle + angleOffset;
                 
-                const x = Math.cos(currentAngle) * radiusX;
-                const y = Math.sin(currentAngle) * radiusY;
+                const xCos = Math.cos(currentAngle);
+                const ySin = Math.sin(currentAngle);
                 
-                const depthProgress = (y + radiusY) / (radiusY * 2); // 0 (back) to 1 (front)
-                
-                // Scale range from 0.75 (back) to 1.15 (front) for more uniform sizing
+                const depthProgress = (ySin + 1) / 2; // 0 (back) to 1 (front)
                 const scale = 0.75 + depthProgress * 0.4;
                 const zIndex = Math.round(depthProgress * 100);
-                
-                // Floating sine wave bobbing effect
                 const bobbing = Math.sin(currentAngle * 4 + index) * 15;
                 
                 return (
@@ -180,10 +144,16 @@ const LogoCarousel = () => {
                     key={logo.id} 
                     className="absolute flex flex-col items-center pointer-events-auto"
                     style={{
-                      width: logo.baseSize,
-                      height: logo.baseSize,
-                      // Lift up by hoverHeight to sit above the podium surface
-                      transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y - hoverHeight}px)) scale(${scale})`,
+                      width: 'var(--circle-size)',
+                      height: 'var(--circle-size)',
+                      // Pure CSS mathematical positions
+                      transform: `
+                        translate(
+                          calc(-50% + (var(--radius-x) * ${xCos})), 
+                          calc(-50% + (var(--radius-y) * ${ySin}) - var(--hover-height))
+                        ) 
+                        scale(${scale})
+                      `,
                       zIndex: zIndex,
                     }}
                   >
@@ -202,7 +172,7 @@ const LogoCarousel = () => {
                     <div 
                       className="absolute w-[60%] h-[20%] bg-black rounded-[50%] pointer-events-none" 
                       style={{ 
-                        bottom: `-${hoverHeight}px`, // Place firmly on the podium level
+                        bottom: `calc(var(--hover-height) * -1)`, // Place firmly on the podium level
                         opacity: 0.3 + depthProgress * 0.4,
                         filter: `blur(${6 + depthProgress * 8}px)`,
                         transform: `scale(${1 - (bobbing / 30)})` // Shadow gets smaller as it bobs up
@@ -217,6 +187,43 @@ const LogoCarousel = () => {
       </div>
 
       <style>{`
+        /* Dynamic Responsive CSS Math for Orbiting Logos */
+        .orbit-container {
+          --podium-size: 950px;
+          --radius-x: 420px;
+          --tilt-angle: 75deg;
+          --tilt-ratio: 0.2588; /* cos(75deg) */
+          --radius-y: calc(var(--radius-x) * var(--tilt-ratio));
+          --hover-height: 40px;
+          --circle-size: 130px;
+          --container-height: 500px;
+        }
+        @media (max-width: 1024px) {
+          .orbit-container {
+            --podium-size: clamp(230px, 80vw, 950px);
+            --radius-x: calc(var(--podium-size) * 0.44);
+            --tilt-angle: 65deg;
+            --tilt-ratio: 0.4226;
+            --circle-size: clamp(80px, 12vw, 130px);
+            --container-height: calc(max(300px, var(--podium-size) * 0.55));
+          }
+        }
+        @media (max-width: 768px) {
+          .orbit-container {
+            --tilt-angle: 55deg;
+            --tilt-ratio: 0.5735;
+            --podium-size: clamp(240px, 85vw, 600px);
+          }
+        }
+        @media (max-width: 480px) {
+          .orbit-container {
+            --tilt-angle: 45deg;
+            --tilt-ratio: 0.7071;
+            --podium-size: clamp(200px, 80vw, 400px);
+            --circle-size: clamp(55px, 15vw, 85px);
+          }
+        }
+
         /* Premium Dark Glassmorphism Sphere */
         .premium-3d-sphere {
           border-radius: 50%;
@@ -448,12 +455,12 @@ const MissionPage = () => {
                   <div className="absolute bottom-[-20%] left-[-20%] w-32 h-32 bg-cyan-200/40 rounded-full blur-2xl group-hover:scale-110 transition-transform"></div>
 
                   <Star className="w-10 h-10 sm:w-12 sm:h-12 text-cyan-500 mb-2 drop-shadow-sm group-hover:rotate-12 transition-transform duration-500" strokeWidth={2.5} />
-                  <h3 className="text-2xl sm:text-3xl font-black text-[#0f172a] text-center leading-[1.1] tracking-tight">
+                  <h3 className="text-2xl sm:text-3xl font-black text-center leading-[1.1] tracking-tight values-hub-core-title">
                     CORE<br />VALUES
                   </h3>
                 </div>
               </div>
-
+ 
               {/* SVG Connecting Lines (Desktop only) with smooth curves and animations */}
               <div className="hidden lg:block w-32 h-[560px] relative z-0 shrink-0 -ml-4 mr-4" data-aos="fade-in" data-aos-delay="200">
                 <svg width="100%" height="100%" viewBox="0 0 100 560" preserveAspectRatio="none" style={{ filter: 'drop-shadow(0 0 4px rgba(255,255,255,0.8))' }}>
@@ -465,9 +472,9 @@ const MissionPage = () => {
                   <path d="M 0 280 C 40 280, 20 520, 100 520" fill="none" stroke="#10b981" strokeWidth="1.5" className="animate-dash-flow opacity-80 val-path-5" style={{ animationDelay: '1s' }} />
                 </svg>
               </div>
-
+ 
               {/* Values List - Premium Cards */}
-              <div className="flex flex-col gap-4 w-full lg:w-auto relative z-10 flex-grow max-w-[600px]">
+              <div className="flex flex-col gap-4 lg:gap-0 lg:h-[560px] lg:justify-between w-full lg:w-auto relative z-10 flex-grow max-w-[600px]">0px]">
                 {[
                   { icon: Users, themeClass: 'card-client-first', colorClass: 'bg-gradient-to-br from-rose-50 to-rose-100', borderClass: 'border-rose-200/50', textClass: 'text-rose-500', title: 'Trust', desc: 'Building lasting relationships with confidence.' },
                   { icon: Scale, themeClass: 'card-conflict-free', colorClass: 'bg-gradient-to-br from-blue-50 to-blue-100', borderClass: 'border-blue-200/50', textClass: 'text-blue-600', title: 'Transparency', desc: 'Providing clear, unbiased advice.' },

@@ -1,7 +1,7 @@
 .milestones-section {
-  padding: 80px 0;
+  padding: 100px 0;
   background-color: #faf7f2;
-  background-image: radial-gradient(#ebdcb9 1px, transparent 1px);
+  background-image: radial-gradient(#ebdcb9 1.2px, transparent 1.2px);
   background-size: 30px 30px;
   overflow: hidden;
   position: relative;
@@ -15,8 +15,8 @@
   font-family: 'Outfit', sans-serif;
   font-weight: 800;
   color: #1e293b;
-  margin-bottom: 50px;
-  line-height: 1.1;
+  margin-bottom: 60px;
+  line-height: 1.15;
   position: relative;
 }
 
@@ -28,13 +28,13 @@
   transform: translateX(-50%);
   width: 100px;
   height: 5px;
-  background: linear-gradient(90deg, #eaddc0, #a38758);
+  background: linear-gradient(90deg, #ebdcb9, #a38758);
   border-radius: 3px;
 }
 
 .milestones-swiper {
   width: 100%;
-  padding: 20px 0 60px 0 !important;
+  padding: 30px 0 60px 0 !important;
 }
 
 .milestones-swiper .swiper-slide {
@@ -43,22 +43,33 @@
 
 .milestone-slide {
   text-align: center;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  opacity: 0.3;
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.25;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  height: 240px;
+  height: 260px;
   width: auto;
-  min-width: 280px;
-  padding: 0 20px;
+  min-width: 300px;
+  padding: 30px 24px;
   transform: scale(0.85);
+  border-radius: 24px;
+  background: transparent;
+  border: 1px solid transparent;
 }
 
 .swiper-slide-active .milestone-slide {
   opacity: 1;
   transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 
+    0 15px 35px rgba(163, 135, 88, 0.08), 
+    0 5px 15px rgba(0, 0, 0, 0.02),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .milestone-icon-wrapper {
@@ -66,11 +77,11 @@
   width: 70px;
   border-radius: 50%;
   background: linear-gradient(135deg, #ffffff, #fbf5e6);
-  box-shadow: 0 15px 40px rgba(163, 135, 88, 0.4); /* Stronger glow */
-  margin-bottom: 15px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 10px 25px rgba(163, 135, 88, 0.25);
+  margin-bottom: 20px;
+  opacity: 0.4;
+  transform: translateY(10px) scale(0.9);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   color: #a38758;
   display: flex;
   justify-content: center;
@@ -80,36 +91,35 @@
 
 .swiper-slide-active .milestone-icon-wrapper {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+  box-shadow: 0 15px 35px rgba(163, 135, 88, 0.4);
 }
 
 .milestone-number {
-  font-size: clamp(60px, 9vw, 100px);
+  font-size: clamp(60px, 9vw, 92px);
   font-family: 'Outfit', sans-serif;
-  font-weight: 800;
+  font-weight: 900;
   line-height: 1;
   padding-top: 5px;
-  margin-bottom: 10px;
-  transition: all 0.6s ease;
+  margin-bottom: 12px;
+  transition: all 0.8s ease;
   white-space: nowrap;
-  /* Inactive styling (outline) */
   color: transparent;
-  -webkit-text-stroke: 1.5px #cfd6df;
+  -webkit-text-stroke: 1.5px rgba(163, 135, 88, 0.35);
 }
 
-/* Active styling (solid gradient) */
 .swiper-slide-active .milestone-number {
-  background: linear-gradient(135deg, #1e293b 0%, #826841 100%); /* Gold/Blue gradient */
+  background: linear-gradient(135deg, #1e293b 0%, #826841 100%);
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-stroke: 0px transparent;
-  filter: drop-shadow(0 8px 15px rgba(30, 41, 59, 0.15));
+  filter: drop-shadow(0 8px 15px rgba(30, 41, 59, 0.1));
 }
 
 .milestone-label {
-  font-size: 15px;
+  font-size: 14px;
   color: #94a3b8;
-  max-width: 220px;
+  max-width: 240px;
   margin: 0 auto;
   line-height: 1.5;
   font-family: 'Inter', sans-serif;
@@ -117,12 +127,12 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   transition: all 0.6s ease;
-  opacity: 0;
-  transform: translateY(10px);
+  opacity: 0.5;
+  transform: translateY(5px);
 }
 
 .swiper-slide-active .milestone-label {
-  color: #a38758;
+  color: #826841;
   font-weight: 700;
   opacity: 1;
   transform: translateY(0);
@@ -130,8 +140,8 @@
 
 @media (max-width: 768px) {
   .milestone-slide {
-    min-width: 200px;
-    height: 200px;
-    padding: 0 10px;
+    min-width: 220px;
+    height: 220px;
+    padding: 20px 10px;
   }
 }

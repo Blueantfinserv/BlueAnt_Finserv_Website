@@ -35,24 +35,24 @@ const CompanyPage = () => {
   ];
 
   return (
-    <div className="company-body font-outfit min-h-screen overflow-hidden">
+    <div className="company-body font-outfit min-h-screen overflow-x-hidden">
       <main className="flex flex-col">
         
         {/* 0. PRECIZE HERO SECTION */}
-        <section className="relative w-full min-h-[90vh] lg:min-h-[100vh] flex items-center justify-center overflow-hidden bg-[#030408]">
+        <section className="relative w-full min-h-[100vh] flex flex-col justify-start lg:justify-center overflow-hidden bg-[#030408] py-12 lg:pt-0 lg:pb-0">
           
           {/* Deep Base Layer */}
           <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(circle_at_center,#0a0d1a_0%,#030408_100%)]"></div>
           
           {/* Volumetric Light Blooms (Behind Image) */}
-          <div className="absolute top-[10%] left-[-10%] w-[500px] h-[500px] bg-[#0e1736] rounded-full mix-blend-screen filter blur-[120px] opacity-60 z-0 pointer-events-none"></div>
-          <div className="absolute bottom-[-10%] left-[20%] w-[600px] h-[600px] bg-[#080d24] rounded-full mix-blend-screen filter blur-[150px] opacity-80 z-0 pointer-events-none"></div>
+          <div className="absolute top-[10%] left-[-10%] w-[clamp(280px,80vw,500px)] aspect-square bg-[#0e1736] rounded-full mix-blend-screen filter blur-[120px] opacity-60 z-0 pointer-events-none"></div>
+          <div className="absolute bottom-[-10%] left-[20%] w-[clamp(320px,90vw,600px)] aspect-square bg-[#080d24] rounded-full mix-blend-screen filter blur-[150px] opacity-80 z-0 pointer-events-none"></div>
           
           <div className="max-w-[1280px] w-full mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
             {/* Left Content */}
             <div className="flex flex-col items-start text-left w-full lg:w-1/2 relative z-20" data-aos="fade-right">
-              <h1 className="text-white mb-12 leading-[1.2]" style={{ fontFamily: "'Times New Roman', Times, serif", fontSize: 'clamp(2.25rem, 4vw, 3.6rem)', letterSpacing: '0.5px', fontWeight: '400', textShadow: '0 4px 30px rgba(0,0,0,0.8)' }}>
-                Your Trusted Partner in <br /> Financial Growth
+              <h1 className="text-white mb-12 leading-[1.2]" style={{ fontFamily: "'Times New Roman', Times, serif", fontSize: 'clamp(2rem, 8vw, 3.6rem)', letterSpacing: '0.5px', fontWeight: '400', textShadow: '0 4px 30px rgba(0,0,0,0.8)' }}>
+                Your Trusted Partner in <br className="hidden sm:block" /> Financial Growth
               </h1>
               <p className="text-[#a0aabf] text-[15px] lg:text-[17px] mb-10 leading-[1.7] max-w-[550px]" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.8)' }}>
                 BlueAnt Finserv is a trusted financial services company focused on expert guidance, personalized wealth solutions, and an unwavering client-first approach.
@@ -60,11 +60,11 @@ const CompanyPage = () => {
               <p className="text-[#808a9f] text-[14px] lg:text-[15px] mb-16 leading-[1.7] max-w-[550px]">
                 Built on integrity and transparency, we foster long-term relationships that empower clients to make informed financial decisions with absolute confidence.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <button className="precize-reserve-btn relative shadow-[0_0_40px_rgba(255,255,255,0.1)] flex items-center justify-center" style={{ margin: 0, height: '51px', fontSize: '13.5px', padding: '0 28px' }}>
+              <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-4">
+                <button className="precize-reserve-btn relative shadow-[0_0_40px_rgba(255,255,255,0.1)] flex items-center justify-center w-full sm:w-auto" style={{ margin: 0, height: '51px', fontSize: '13.5px', padding: '0 28px' }}>
                   Explore Our Journey
                 </button>
-                <button className="precize-reserve-btn relative shadow-[0_0_40px_rgba(255,255,255,0.1)] bg-transparent border border-[rgba(255,255,255,0.2)] text-white hover:bg-[rgba(255,255,255,0.05)] flex items-center justify-center" style={{ margin: 0, background: 'transparent', height: '51px', fontSize: '13.5px', padding: '0 28px' }}>
+                <button className="precize-reserve-btn relative shadow-[0_0_40px_rgba(255,255,255,0.1)] bg-transparent border border-[rgba(255,255,255,0.2)] text-white hover:bg-[rgba(255,255,255,0.05)] flex items-center justify-center w-full sm:w-auto" style={{ margin: 0, background: 'transparent', height: '51px', fontSize: '13.5px', padding: '0 28px' }}>
                   Contact Our Team
                 </button>
               </div>
@@ -75,7 +75,7 @@ const CompanyPage = () => {
               <motion.img 
                 src={`${import.meta.env.BASE_URL}blueant_phone_mockup_colorful.png`} 
                 alt="BlueAnt Finserv Colorful Feature Cards Mockup" 
-                className="w-full max-w-[360px] lg:max-w-[460px] h-auto object-contain lg:translate-y-8 drop-shadow-2xl" 
+                className="w-full max-w-[calc(100vw-48px)] sm:max-w-[360px] lg:max-w-[460px] h-auto object-contain lg:translate-y-8 drop-shadow-2xl" 
                 style={{ 
                   WebkitMaskImage: 'radial-gradient(circle at 60% 50%, black 45%, transparent 75%)', 
                   maskImage: 'radial-gradient(circle at 60% 50%, black 45%, transparent 75%)',
@@ -98,8 +98,8 @@ const CompanyPage = () => {
           </div>
 
           {/* Cinematic Front Lighting & Haze (Over Image to blend edges) */}
-          <div className="absolute top-[20%] right-[-5%] w-[800px] h-[800px] bg-[#142352] rounded-full mix-blend-screen filter blur-[160px] opacity-40 z-20 pointer-events-none"></div>
-          <div className="absolute bottom-[10%] right-[10%] w-[400px] h-[400px] bg-[#1d3275] rounded-full mix-blend-screen filter blur-[140px] opacity-30 z-20 pointer-events-none"></div>
+          <div className="absolute top-[20%] right-[-5%] w-[clamp(300px,100vw,800px)] aspect-square bg-[#142352] rounded-full mix-blend-screen filter blur-[160px] opacity-40 z-20 pointer-events-none"></div>
+          <div className="absolute bottom-[10%] right-[10%] w-[clamp(200px,70vw,400px)] aspect-square bg-[#1d3275] rounded-full mix-blend-screen filter blur-[140px] opacity-30 z-20 pointer-events-none"></div>
           
           {/* Vignette Overlay */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,#010204_100%)] opacity-90 z-30 pointer-events-none"></div>
@@ -239,8 +239,18 @@ const CompanyPage = () => {
               <h2 className="text-4xl font-black text-slate-900 tracking-tight">A Name Inspired by <br /> Trust, Discipline & Consistency</h2>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} className="identity-card-premium ic-blue group">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 relative">
+              {/* Desktop Timeline Connector */}
+              <div className="timeline-connector-desktop"></div>
+
+              {/* Mobile Timeline Connector */}
+              <div className="timeline-connector-mobile">
+                <div className="timeline-connector-mobile-line"></div>
+                <div className="timeline-connector-mobile-dot"></div>
+                <div className="timeline-connector-mobile-line"></div>
+              </div>
+
+              <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} className="identity-card-premium ic-blue group z-10">
                 <div className="ic-bg-icon">
                   <Shield />
                 </div>
@@ -260,7 +270,7 @@ const CompanyPage = () => {
                 </div>
               </motion.div>
 
-              <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} className="identity-card-premium ic-ant group">
+              <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} className="identity-card-premium ic-ant group z-10">
                 <div className="ic-bg-icon">
                   <TrendingUp />
                 </div>

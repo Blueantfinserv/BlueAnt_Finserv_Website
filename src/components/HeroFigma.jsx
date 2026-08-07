@@ -24,7 +24,7 @@ function HeroFigma() {
           {/* Left Column: Text & CTAs */}
           <div className="hf-left" data-aos="fade-right">
             <div className="hf-top-badge" data-aos="fade-down" data-aos-delay="200">
-              <span className="hf-star">⭐</span>
+              <span className="hf-pulse-dot"></span>
               <span>Trusted by 3,000+ families across India</span>
             </div>
 
@@ -46,9 +46,9 @@ function HeroFigma() {
               </h1>
             </div>
 
-            <p className="hf-subtext" data-aos="fade-up" data-aos-delay="300" style={{ lineHeight: '1.2' }}>
-              <strong style={{ color: '#ffffff', fontWeight: '600', display: 'block', marginBottom: '4px' }}>When money decisions are clear, life feels more confident.</strong>
-              <span style={{ fontSize: '14px', display: 'block', lineHeight: '1.4' }}>Blueant helps families build that clarity with discipline, thoughtful <br /> protection, and long-term financial confidence.</span>
+            <p className="hf-subtext" data-aos="fade-up" data-aos-delay="300">
+              <strong className="hf-subtext-title">When money decisions are clear, life feels more confident.</strong>
+              <span className="hf-subtext-desc">Blueant helps families build that clarity with discipline, thoughtful protection, and long-term financial confidence.</span>
             </p>
 
               <div className="hf-ctas hf-cta-animate" style={{ marginTop: '30px', animationDelay: '850ms', animationFillMode: 'both' }}>

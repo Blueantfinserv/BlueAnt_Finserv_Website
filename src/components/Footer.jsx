@@ -67,14 +67,14 @@ const Footer = () => {
 
         .footer {
           background:
-            radial-gradient(circle at top left, rgba(37,99,235,0.10), transparent 30%),
-            radial-gradient(circle at bottom right, rgba(124,58,237,0.08), transparent 30%),
-            #020617;
+            radial-gradient(circle at top left, rgba(0, 175, 239, 0.12), transparent 45%),
+            radial-gradient(circle at bottom right, rgba(99, 102, 241, 0.10), transparent 45%),
+            #030712;
           position: relative;
           overflow: hidden;
-          padding-top: 28px;
-          padding-bottom: 10px;
-          border-top: 1px solid rgba(255, 255, 255, 0.04);
+          padding-top: 60px;
+          padding-bottom: 40px;
+          border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .footer-glow-top-right {
@@ -280,12 +280,12 @@ const Footer = () => {
         }
 
         .social-icon {
-          width: 30px;
-          height: 30px;
+          width: 36px;
+          height: 36px;
           border-radius: 50%;
           background: color-mix(in srgb, var(--social-color) 10%, transparent);
           border: 1px solid color-mix(in srgb, var(--social-color) 28%, transparent);
-          transition: all .35s ease;
+          transition: all .35s cubic-bezier(0.16, 1, 0.3, 1);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -475,40 +475,39 @@ const Footer = () => {
 
         /* Badges & Animations */
         .verified-amfi-badge-pill {
-          background: rgba(251, 191, 36, 0.04);
-          border: 1px solid rgba(251, 191, 36, 0.25);
-          color: #fbbf24;
-          font-size: 8px;
-          font-weight: 800;
-          letter-spacing: 0.5px;
+          background: rgba(245, 158, 11, 0.06);
+          border: 1px solid rgba(245, 158, 11, 0.3);
+          color: #f59e0b;
+          font-size: 9px;
+          font-weight: 700;
+          letter-spacing: 1px;
           text-transform: uppercase;
-          padding: 2px 6px;
+          padding: 3px 8px;
           border-radius: 6px;
           display: inline-flex;
           align-items: center;
-          gap: 5px;
-          transition: all 0.2s ease;
-          text-shadow: 0 0 4px rgba(251, 191, 36, 0.15);
+          gap: 6px;
+          transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .verified-amfi-badge-pill::before {
           content: '';
-          width: 4px;
-          height: 4px;
-          background-color: #fbbf24;
+          width: 5px;
+          height: 5px;
+          background-color: #f59e0b;
           border-radius: 50%;
           display: inline-block;
-          box-shadow: 0 0 5px #fbbf24;
+          box-shadow: 0 0 6px #f59e0b;
           animation: breathing-badge 2s infinite ease-in-out;
         }
         @keyframes breathing-badge {
           0%, 100% { transform: scale(0.85); opacity: 0.6; }
-          50% { transform: scale(1.25); opacity: 1; box-shadow: 0 0 8px #fbbf24; }
+          50% { transform: scale(1.25); opacity: 1; box-shadow: 0 0 8px #f59e0b; }
         }
         .verified-amfi-badge-pill:hover {
-          background: rgba(251, 191, 36, 0.08);
-          border-color: rgba(251, 191, 36, 0.45);
-          box-shadow: 0 0 10px rgba(251, 191, 36, 0.2);
-          transform: translateY(-0.5px);
+          background: rgba(245, 158, 11, 0.12);
+          border-color: rgba(245, 158, 11, 0.55);
+          box-shadow: 0 0 12px rgba(245, 158, 11, 0.25);
+          transform: translateY(-1px);
         }
 
         .pulse-indicator-dot {
@@ -659,13 +658,16 @@ const Footer = () => {
            Switch from stacked to 4-column horizontal layout
            ============================================================ */
         @media (min-width: 768px) {
-
-          /* Override the stacked flex back to a grid */
+          .footer {
+            padding-top: 90px;
+            padding-bottom: 50px;
+          }
           .footer-grid {
             display: grid;
+            grid-template-columns: 1.3fr 0.85fr 0.85fr 1.2fr;
             padding-left: 24px;
             padding-right: 24px;
-            gap: 16px 14px;
+            gap: 40px;
             align-items: flex-start;
           }
 
@@ -692,10 +694,10 @@ const Footer = () => {
             padding-right: 0;
           }
 
-          /* Add vertical right-border separators between columns */
+          /* Separators removed in favor of luxurious whitespace */
           .footer-column {
-            border-right: 1px solid rgba(255, 255, 255, 0.06);
-            padding-right: 12px;
+            border-right: none;
+            padding-right: 0;
           }
           .footer-grid > div:last-child,
           .footer-links-row > .footer-column:last-child {
@@ -1409,27 +1411,36 @@ const Footer = () => {
                 src={`${import.meta.env.BASE_URL}Footerlogo.png`} 
                 alt="Blueant Logo" 
                 className="footer-logo-img object-contain" 
-                style={{ filter: "drop-shadow(0 0 8px rgba(14, 165, 233, 0.25))" }}
               />
             </Link>
-            <div className="text-[12px] text-[#94a3b8] leading-[1.6] flex flex-col gap-0.5 mt-1">
-              <div>ARN: <span className="text-[#38bdf8] font-semibold">129543</span></div>
-              <div>APRN: <span className="text-[#38bdf8] font-semibold">APRN04678</span></div>
+            <div className="text-[11px] text-[#94a3b8] leading-[1.6] flex flex-col gap-2 mt-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 w-fit">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00afef] animate-pulse"></span>
+                <span>ARN: <strong className="text-white">129543</strong></span>
+              </div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 w-fit">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#6366f1] animate-pulse"></span>
+                <span>APRN: <strong className="text-white">APRN04678</strong></span>
+              </div>
             </div>
           </div>
 
           {/* ── Right sub-col: Blueant IMF LLP + LLPIN + IRDAI + Social ── */}
           <div className="brand-info">
-            <strong className="text-slate-200 text-[18px] leading-tight block mb-2">Blueant IMF LLP</strong>
-            <div className="text-[12px] text-[#94a3b8] leading-[1.6] flex flex-col gap-0.5">
-              <span>LLPIN: <span className="text-[#38bdf8] font-semibold">ACD-1228</span></span>
-              <span>IRDAI Reg. No.: <span className="text-[#38bdf8] font-semibold">IMF1776999</span></span>
+            <strong className="text-slate-200 text-[16px] font-black leading-tight block mb-3">Blueant IMF LLP</strong>
+            <div className="text-[11px] text-[#94a3b8] leading-[1.6] flex flex-col gap-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 w-fit">
+                <span>LLPIN: <strong className="text-white">ACD-1228</strong></span>
+              </div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 w-fit">
+                <span>IRDAI Reg. No.: <strong className="text-white">IMF1776999</strong></span>
+              </div>
             </div>
           </div>
 
           <div className="brand-social">
             {/* Social Icons */}
-            <div className="flex gap-1 mt-3 flex-wrap">
+            <div className="flex gap-2 mt-4 flex-wrap">
               {socialLinks.map(({ Icon, url, label, color, hoverBg }, idx) => (
                 <a 
                   key={idx} 

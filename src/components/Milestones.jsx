@@ -2,39 +2,45 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { Users, CheckCircle, TrendingUp, Star, Clock } from 'lucide-react';
+import CountUp from 'react-countup';
 import 'swiper/css';
 import '../styles/Milestones.css';
 
 const milestonesData = [
   {
     id: 1,
-    number: "2013",
+    number: 2013,
+    suffix: "",
     label: "Year Of Establishment",
-    icon: <TrendingUp size={48} strokeWidth={1.5} />
+    icon: <TrendingUp size={36} strokeWidth={1.5} />
   },
   {
     id: 2,
-    number: "50+",
+    number: 50,
+    suffix: "+",
     label: "No. Of Employees",
-    icon: <Users size={48} strokeWidth={1.5} />
+    icon: <Users size={36} strokeWidth={1.5} />
   },
   {
     id: 3,
-    number: "2600+",
+    number: 2600,
+    suffix: "+",
     label: "Total Clients",
-    icon: <Star size={48} strokeWidth={1.5} />
+    icon: <Star size={36} strokeWidth={1.5} />
   },
   {
     id: 4,
-    number: "200+",
+    number: 200,
+    suffix: "+",
     label: "Pincodes Served",
-    icon: <CheckCircle size={48} strokeWidth={1.5} />
+    icon: <CheckCircle size={36} strokeWidth={1.5} />
   },
   {
     id: 5,
-    number: "33,544+",
-    label: "Hours of personalized guidance delivered",
-    icon: <Clock size={48} strokeWidth={1.5} />
+    number: 33544,
+    suffix: "+",
+    label: "Hours of guidance delivered",
+    icon: <Clock size={36} strokeWidth={1.5} />
   }
 ];
 
@@ -55,7 +61,7 @@ const Milestones = () => {
             loop={true}
             speed={400}
             autoplay={{
-              delay: 1000,
+              delay: 1800,
               disableOnInteraction: false,
             }}
             className="milestones-swiper"
@@ -66,7 +72,10 @@ const Milestones = () => {
                   <div className="milestone-icon-wrapper">
                     {item.icon}
                   </div>
-                  <div className="milestone-number">{item.number}</div>
+                  <div className="milestone-number">
+                    <CountUp end={item.number} separator="," duration={2} enableScrollSpy scrollSpyOnce />
+                    {item.suffix}
+                  </div>
                   <div className="milestone-label">{item.label}</div>
                 </div>
               </SwiperSlide>

@@ -87,7 +87,7 @@ function Testimonials() {
                     <div className={styles.user}>
                       <div 
                         className={styles.avatar} 
-                        style={{ background: `linear-gradient(135deg, ${t.color} 0%, #1e293b 100%)` }}
+                        style={{ background: `linear-gradient(135deg, ${t.color} 0%, rgba(15, 23, 42, 0.75) 100%)` }}
                       >
                         {initials}
                       </div>

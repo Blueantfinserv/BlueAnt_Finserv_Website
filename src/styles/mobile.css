@@ -8,6 +8,7 @@
   padding: 0 0 0 10px;
   box-sizing: border-box;
   position: relative;
+  overflow: hidden;
 }
 .mobile-text {
   width: 60%;
@@ -108,30 +109,38 @@
 .bubbble {
   position: absolute;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.12) 50%, rgba(255, 255, 255, 0) 100%);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 
+    inset 0 1px 2px rgba(255, 255, 255, 0.4), 
+    inset -1px -1px 3px rgba(0, 0, 0, 0.05),
+    0 4px 12px rgba(255, 255, 255, 0.06);
   z-index: 0;
-  animation: floatUp 10s infinite ease-in-out;
+  pointer-events: none;
+  animation: floatUp 8s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 @keyframes floatUp {
   0% {
-    transform: translateY(0) scale(1);
-    opacity: 0.8;
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 0.65;
   }
   50% {
-    transform: translateY(-20px) scale(1.1);
-    opacity: 1;
+    transform: translateY(-24px) scale(1.08) rotate(180deg);
+    opacity: 0.95;
   }
   100% {
-    transform: translateY(0) scale(1);
-    opacity: 0.8;
+    transform: translateY(0) scale(1) rotate(360deg);
+    opacity: 0.65;
   }
 }
 .bubble16 { width: 30px; height: 30px; top: 20px; left: 80px; animation-delay: 0s; }
 .bubble15 { width: 20px; height: 20px; top: 100px; left: 660px; animation-delay: 2s; }
 .bubble14 { width: 25px; height: 25px; top: 150px; left: 320px; animation-delay: 0.4s; }
-.bubble13 { width: 15px; height: 15px; top: 50px; left: 500px; animation-delay: 0.1s; }
-.bubble12 { width: 35px; height: 35px; top: 200px; right: 450px; animation-delay: 0.1s; }
-.bubble11 { width: 35px; height: 35px; top: 80px; right: 50px; animation-delay: 0.1s; }
+.bubble13 { width: 15px; height: 15px; top: 50px; left: 500px; animation-delay: 0.8s; }
+.bubble12 { width: 35px; height: 35px; top: 200px; right: 450px; animation-delay: 1.2s; }
+.bubble11 { width: 35px; height: 35px; top: 80px; right: 50px; animation-delay: 0.2s; }
 @media (max-width: 768px) {
   .mobile-strip {
     flex-direction: row;

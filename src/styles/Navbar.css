@@ -79,7 +79,8 @@
     0 25px 60px rgba(15, 23, 42, 0.08),
     0 0 0 1px rgba(15, 23, 42, 0.01) inset;
   padding: 12px;
-  min-width: 320px;
+  min-width: min(320px, calc(100vw - 32px));
+  max-width: calc(100vw - 16px);
   z-index: 200;
   transform-origin: top center;
   animation: navFadeSlide 0.25s cubic-bezier(0.16, 1, 0.3, 1);
