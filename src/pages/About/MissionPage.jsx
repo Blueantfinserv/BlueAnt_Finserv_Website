@@ -474,7 +474,7 @@ const MissionPage = () => {
               </div>
  
               {/* Values List - Premium Cards */}
-              <div className="flex flex-col gap-4 lg:gap-0 lg:h-[560px] lg:justify-between w-full lg:w-auto relative z-10 flex-grow max-w-[600px]">0px]">
+              <div className="flex flex-col gap-4 lg:gap-0 lg:h-[560px] lg:justify-between w-full lg:w-auto relative z-10 flex-grow max-w-[600px]">
                 {[
                   { icon: Users, themeClass: 'card-client-first', colorClass: 'bg-gradient-to-br from-rose-50 to-rose-100', borderClass: 'border-rose-200/50', textClass: 'text-rose-500', title: 'Trust', desc: 'Building lasting relationships with confidence.' },
                   { icon: Scale, themeClass: 'card-conflict-free', colorClass: 'bg-gradient-to-br from-blue-50 to-blue-100', borderClass: 'border-blue-200/50', textClass: 'text-blue-600', title: 'Transparency', desc: 'Providing clear, unbiased advice.' },
