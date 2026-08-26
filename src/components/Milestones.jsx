@@ -12,7 +12,8 @@ const milestonesData = [
     number: 2013,
     suffix: "",
     label: "Year Of Establishment",
-    icon: <TrendingUp size={36} strokeWidth={1.5} />
+    icon: <TrendingUp size={36} strokeWidth={1.5} />,
+    separator: ""
   },
   {
     id: 2,
@@ -73,7 +74,7 @@ const Milestones = () => {
                     {item.icon}
                   </div>
                   <div className="milestone-number">
-                    <CountUp end={item.number} separator="," duration={2} enableScrollSpy scrollSpyOnce />
+                    <CountUp end={item.number} separator={item.separator !== undefined ? item.separator : ","} duration={2} enableScrollSpy scrollSpyOnce />
                     {item.suffix}
                   </div>
                   <div className="milestone-label">{item.label}</div>
