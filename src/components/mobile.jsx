@@ -23,7 +23,7 @@ function Mobile() {
             rel="noopener noreferrer"
             className="btn black"
           >
-            <img src="android.png" alt="Android" />
+            <img src="/android.png" alt="Android" />
             ANDROID
           </a>
           <a
@@ -32,7 +32,7 @@ function Mobile() {
             rel="noopener noreferrer"
             className="btn blacks"
           >
-            <img src="apple.png" alt="Apple" />
+            <img src="/apple.png" alt="Apple" />
             iOS
           </a>
         </div>

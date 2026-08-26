@@ -35,32 +35,32 @@ function Carousel() {
         >
           <SwiperSlide className={styles.swiperSlide}>
             <div className={styles.slide}>
-              <img src="first slider.jpg" alt="Slide 1" loading="lazy" />
+              <img src="/first slider.jpg" alt="Slide 1" loading="lazy" />
             </div>
           </SwiperSlide>
           <SwiperSlide className={styles.swiperSlide}>
             <div className={styles.slide}>
-              <img src="SIP slider.jpg" alt="Slide 2" loading="lazy" />
+              <img src="/SIP slider.jpg" alt="Slide 2" loading="lazy" />
             </div>
           </SwiperSlide>
           <SwiperSlide className={styles.swiperSlide}>
             <div className={styles.slide}>
-              <img src="complexity slider.jpg" alt="Slide 3" loading="lazy" />
+              <img src="/complexity slider.jpg" alt="Slide 3" loading="lazy" />
             </div>
           </SwiperSlide>
           <SwiperSlide className={styles.swiperSlide}>
             <div className={styles.slide}>
-              <img src="security sliders.jpg" alt="Slide 4" loading="lazy" />
+              <img src="/security sliders.jpg" alt="Slide 4" loading="lazy" />
             </div>
           </SwiperSlide>
           <SwiperSlide className={styles.swiperSlide}>
             <div className={styles.slide}>
-              <img src="loan slider.jpg" alt="Slide 5" loading="lazy" />
+              <img src="/loan slider.jpg" alt="Slide 5" loading="lazy" />
             </div>
           </SwiperSlide>
           <SwiperSlide className={styles.swiperSlide}>
             <div className={styles.slide}>
-              <img src="Tax slider.jpg" alt="Slide 6" loading="lazy" />
+              <img src="/Tax slider.jpg" alt="Slide 6" loading="lazy" />
             </div>
           </SwiperSlide>
         </Swiper>

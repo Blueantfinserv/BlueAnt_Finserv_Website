@@ -3,6 +3,12 @@ import { createRoot } from 'react-dom/client'
 import './styles/index.css'
 import App from './App.jsx'
 
+// SEO routing migration: Redirect legacy hash-based URLs to clean URLs
+if (window.location.hash && window.location.hash.startsWith('#/')) {
+  const cleanPath = window.location.hash.substring(2);
+  window.location.replace(window.location.origin + '/' + cleanPath);
+}
+
 class ChunkErrorBoundary extends React.Component {
   constructor(props) {
     super(props);

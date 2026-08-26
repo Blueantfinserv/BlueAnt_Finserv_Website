@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from "react";
-import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import "./styles/App.css";
 
@@ -67,7 +67,7 @@ const ConditionalFooter = () => {
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <ScrollToTop />
       <Navbar />
 
@@ -106,7 +106,7 @@ function App() {
       <StickyWhatsApp />
       <ConsultationModal />
       <ConditionalFooter />
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
