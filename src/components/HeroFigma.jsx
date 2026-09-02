@@ -108,14 +108,7 @@ function HeroFigma() {
                 </div>
               </div>
 
-              {/* Advisor Floating Box */}
-              <div className="hf-advisor-box animate-float">
-                <span className="hf-advisor-dot animate-ping-custom"></span>
-                <div className="hf-advisor-text">
-                  <p>Support</p>
-                  <strong>Available</strong>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>
