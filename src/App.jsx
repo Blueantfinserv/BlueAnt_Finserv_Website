@@ -7,6 +7,7 @@ import "./styles/App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import AnalyticsTracker from "./components/AnalyticsTracker";
 import StickyWhatsApp from "./components/StickyWhatsApp";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 
@@ -69,6 +70,7 @@ const ConditionalFooter = () => {
 function App() {
   return (
     <BrowserRouter>
+      <AnalyticsTracker />
       <ScrollToTop />
       <Navbar />
 
