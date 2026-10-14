@@ -1,8 +1,14 @@
 /* ── ELITE FINTECH GLOBAL NAVIGATION SYSTEM ── */
 .nav-bar-wrapper {
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   font-family: 'Inter', sans-serif;
-  border-bottom: 1px solid rgba(241, 245, 249, 0.6);
+  border-bottom: 1px solid rgba(241, 245, 249, 0.9);
 }
 
 .nav-logo img,
@@ -11,12 +17,12 @@
 }
 
 .nav-bar-scrolled {
-  background: rgba(255, 255, 255, 0.85) !important;
+  background: rgba(255, 255, 255, 0.96) !important;
   backdrop-filter: blur(28px) !important;
   -webkit-backdrop-filter: blur(28px) !important;
   border-bottom: 1px solid rgba(37, 99, 235, 0.08) !important;
   box-shadow: 
-    0 10px 30px rgba(15, 23, 42, 0.015),
+    0 10px 30px rgba(15, 23, 42, 0.03),
     0 1px 3px rgba(37, 99, 235, 0.03) !important;
 }
 
@@ -53,11 +59,13 @@
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.nav-link-desktop:hover {
+.nav-link-desktop:hover,
+.nav-link-desktop.active {
   color: #00afef !important;
 }
 
-.nav-link-desktop:hover::after {
+.nav-link-desktop:hover::after,
+.nav-link-desktop.active::after {
   width: 100%;
 }
 
@@ -208,45 +216,60 @@
   }
 }
 
-/* ===== FINAL PREMIUM NAVBAR ALIGNMENT ===== */
+/* ===== RESPONSIVE NAVBAR CONTAINER & HORIZONTAL PADDING ===== */
+.navbar-container {
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 18px;
+  padding-right: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .navbar-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 @media (min-width: 1024px) {
-  nav {
-    padding-left: 42px;
-    padding-right: 42px;
+  .navbar-container {
+    height: 84px;
+    padding-left: 36px;
+    padding-right: 36px;
   }
 
-  /* Logo */
-  .navbar-logo,
-  .logo-wrapper {
-    margin-right: 18px;
-  }
-
-  /* Navigation links */
-  .nav-menu-desktop,
-  .navbar-center,
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    margin-left: 18px;
-  }
-
-  /* CTA Button */
+  /* CTA Button spacing */
   .nav-cta-btn-3d {
-    margin-left: 24px;
+    margin-left: 16px;
     padding: 13px 26px !important;
   }
 }
 
-@media (max-width: 1023px) {
-  .nav-bar-wrapper > div {
-    padding-left: clamp(14px, 4vw, 24px) !important;
-    padding-right: clamp(14px, 4vw, 24px) !important;
+@media (min-width: 1280px) {
+  .navbar-container {
+    padding-left: 40px;
+    padding-right: 40px;
   }
+}
 
+@media (min-width: 1440px) {
+  .navbar-container {
+    padding-left: 52px;
+    padding-right: 52px;
+  }
+}
+
+@media (max-width: 1023px) {
   .nav-logo img,
   .logo-wrapper img {
-    height: clamp(30px, 8vw, 36px) !important;
+    height: clamp(32px, 8vw, 38px) !important;
     max-width: min(180px, 54vw);
   }
 

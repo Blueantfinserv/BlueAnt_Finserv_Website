@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ChevronDown, Building2, Compass, Users, ShieldCheck, TrendingUp, Shield, Wallet, BarChart3, Image, Calculator, FileText, HelpCircle, Briefcase, HeartHandshake } from "lucide-react";
 import { openConsultationModal } from "./ConsultationModal";
 import "../styles/Navbar.css";
@@ -43,6 +43,7 @@ const Navbar = () => {
   const scrolledRef = useRef(false);
   const loginRef = useRef(null);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -84,12 +85,13 @@ const Navbar = () => {
     { name: "Services", path: "/coming-soon" },
     { name: "Resources", path: "/coming-soon" },
     { name: "Careers", path: "/coming-soon" },
+    { name: "Blog", path: "/blogs" },
     { name: "Contact", path: "/contact" },
   ];
 
   return (
-    <nav className={`sticky lg:fixed top-0 left-0 w-full z-[100] transition-all duration-500 nav-bar-wrapper ${isScrolled ? "nav-bar-scrolled py-2" : "bg-white py-4"}`}>
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-12 flex items-center justify-between">
+    <nav className={`fixed top-0 left-0 right-0 w-full z-[100] transition-all duration-300 nav-bar-wrapper ${isScrolled ? "nav-bar-scrolled" : "bg-white"}`}>
+      <div className="navbar-container">
 
         {/* Logo */}
         <div className="nav-logo logo-wrapper flex items-center flex-shrink-0">
@@ -99,50 +101,55 @@ const Navbar = () => {
               <img
                 src={`${import.meta.env.BASE_URL}blueAnt.png`}
                 alt="Blueant Logo"
-                width="128"
-                height="36"
+                width="142"
+                height="40"
                 fetchPriority="high"
-                style={{ height: "36px", width: "auto", display: "block", objectFit: "contain" }}
+                style={{ height: "40px", width: "auto", display: "block", objectFit: "contain" }}
               />
             </picture>
           </Link>
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <div
-              key={link.name}
-              className="relative"
-              onMouseEnter={() => handleMouseEnter(link.name)}
-              onMouseLeave={handleMouseLeave}
-            >
-              {link.hasDropdown ? (
-                <button
-                  type="button"
-                  className="nav-link-desktop nav-link-button"
-                >
-                  <span>{link.name}</span>
-                  <ChevronDown
-                    className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${activeDropdown === link.name ? "rotate-180 text-[#00afef]" : ""}`}
-                  />
-                </button>
-              ) : (
-                <Link
-                  to={link.path}
-                  className="nav-link-desktop"
-                >
-                  <span>{link.name}</span>
-                </Link>
-              )}
+        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+          {navLinks.map((link) => {
+            const isActive = link.path === "/" 
+              ? location.pathname === "/"
+              : location.pathname.startsWith(link.path);
 
-              {/* Dropdown Panel */}
-              {link.hasDropdown && activeDropdown === link.name && (
-                <div
-                  className="nav-dropdown-card"
-                  onMouseEnter={() => clearTimeout(closeTimer.current)}
-                  onMouseLeave={handleMouseLeave}
-                >
+            return (
+              <div
+                key={link.name}
+                className="relative flex items-center"
+                onMouseEnter={() => handleMouseEnter(link.name)}
+                onMouseLeave={handleMouseLeave}
+              >
+                {link.hasDropdown ? (
+                  <button
+                    type="button"
+                    className={`nav-link-desktop nav-link-button ${isActive ? "active" : ""}`}
+                  >
+                    <span>{link.name}</span>
+                    <ChevronDown
+                      className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${activeDropdown === link.name ? "rotate-180 text-[#00afef]" : ""}`}
+                    />
+                  </button>
+                ) : (
+                  <Link
+                    to={link.path}
+                    className={`nav-link-desktop ${isActive ? "active" : ""}`}
+                  >
+                    <span>{link.name}</span>
+                  </Link>
+                )}
+
+                {/* Dropdown Panel */}
+                {link.hasDropdown && activeDropdown === link.name && (
+                  <div
+                    className="nav-dropdown-card"
+                    onMouseEnter={() => clearTimeout(closeTimer.current)}
+                    onMouseLeave={handleMouseLeave}
+                  >
                   {/* Triangle pointer */}
                   <div className="nav-dropdown-pointer" />
 
@@ -170,8 +177,9 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-          ))}
-        </div>
+          );
+        })}
+      </div>
 
         {/* CTA Button + Mobile Toggle */}
         <div className="flex items-center gap-4">
@@ -257,24 +265,29 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="lg:hidden bg-white/95 backdrop-blur-md border-t border-slate-100 shadow-xl px-6 py-4 max-h-[80vh] overflow-y-auto">
-          {navLinks.map((link) => (
-            <div key={link.name} className="border-b border-slate-50 last:border-0">
-              <button
-                className="w-full flex items-center justify-between py-4 text-left"
-                onClick={() => {
-                  if (link.hasDropdown) {
-                    setMobileExpanded(mobileExpanded === link.name ? null : link.name);
-                  } else {
-                    navigate(link.path);
-                    setIsMenuOpen(false);
-                  }
-                }}
-              >
-                <span className="font-black text-[15px] text-[#0F172A]">{link.name}</span>
-                {link.hasDropdown && (
-                  <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform ${mobileExpanded === link.name ? "rotate-180" : ""}`} />
-                )}
-              </button>
+          {navLinks.map((link) => {
+            const isActive = link.path === "/" 
+              ? location.pathname === "/"
+              : location.pathname.startsWith(link.path);
+
+            return (
+              <div key={link.name} className="border-b border-slate-50 last:border-0">
+                <button
+                  className="w-full flex items-center justify-between py-4 text-left"
+                  onClick={() => {
+                    if (link.hasDropdown) {
+                      setMobileExpanded(mobileExpanded === link.name ? null : link.name);
+                    } else {
+                      navigate(link.path);
+                      setIsMenuOpen(false);
+                    }
+                  }}
+                >
+                  <span className={`font-black text-[15px] ${isActive ? "text-[#00afef]" : "text-[#0F172A]"}`}>{link.name}</span>
+                  {link.hasDropdown && (
+                    <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform ${mobileExpanded === link.name ? "rotate-180" : ""}`} />
+                  )}
+                </button>
 
               {link.hasDropdown && mobileExpanded === link.name && (
                 <div className="pb-3 pl-2 flex flex-col gap-1">
@@ -296,7 +309,8 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-          ))}
+          );
+        })}
 
           {/* Mobile LOGIN Dropdown */}
           <div className="mt-4 border-t border-slate-100 pt-4 pb-4">
