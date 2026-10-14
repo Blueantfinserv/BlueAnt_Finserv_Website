@@ -29,9 +29,10 @@ export default defineConfig(({ command }) => ({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
-          ui: ['framer-motion', 'lucide-react', 'react-icons'],
-          charts: ['chart.js', 'react-chartjs-2', 'recharts'],
-          three: ['three', '@react-three/fiber', '@react-three/drei', '@react-spring/three']
+          icons: ['lucide-react', 'react-icons'],
+          motion: ['framer-motion'],
+          recharts: ['recharts'],
+          chartjs: ['chart.js', 'react-chartjs-2']
         }
       }
     }

@@ -9,6 +9,7 @@ const expertData = [
     role: "Founder & M.D.",
     title: "Leadership & Strategy",
     image: "Rohit Raman.png",
+    webp: "Rohit Raman.webp",
     bio: [
       "Mr. Rohit Raman, the visionary Founder of Blueant Finserv, brings a wealth of experience and a deep understanding of the financial landscape. His leadership is grounded in the core belief that financial freedom is achievable through disciplined planning and strategic risk management.",
       "Beyond advisory, he is deeply committed to financial awareness, leading initiatives that empower individuals and families to make informed, responsible financial decisions. His framework focuses on turning good returns into great returns.",
@@ -26,6 +27,7 @@ const expertData = [
     role: "Vice President",
     title: "Wealth Preservation",
     image: "Sachin Narang.png",
+    webp: "Sachin Narang.webp",
     bio: [
       "Mr. Sachin Narang serves as the Vice President, bringing his sharp analytical skills and extensive market knowledge to the forefront. He has been a trusted name in guiding high-net-worth individuals through complex financial landscapes.",
       "He strongly advocates for structured portfolio planning, emphasizing that a well-diversified strategy is the key to weathering market volatility. Under his guidance, countless clients have achieved sustainable financial growth.",
@@ -43,6 +45,7 @@ const expertData = [
     role: "Asst. Vice President",
     title: "Wealth Management",
     image: "Rahul Kumar.png",
+    webp: "Rahul Kumar.webp",
     bio: [
       "Mr. Rahul Kumar, Assistant Vice President, brings a dynamic approach to comprehensive wealth management. He is dedicated to constructing tailored financial solutions that adapt to the evolving needs of our clients.",
       "His expertise lies in aligning short-term goals with long-term financial security, ensuring a balanced and stress-free journey towards financial independence.",
@@ -60,6 +63,7 @@ const expertData = [
     role: "Asst. Vice President",
     title: "Risk Management",
     image: "Avesh Kumar Prajapati.png",
+    webp: "Avesh Kumar Prajapati.webp",
     bio: [
       "As Assistant Vice President, Mr. Avesh Prajapati specializes in holistic risk management and long-term asset allocation. His approach ensures that clients' portfolios are not just growing, but are securely protected against unforeseen downturns.",
       "He takes pride in building long-lasting relationships with clients, viewing every financial plan as a partnership. His proactive communication and strategic foresight have earned him immense trust.",
@@ -77,6 +81,7 @@ const expertData = [
     role: "Asst. Vice President",
     title: "Investment Strategy",
     image: "Rajnish Kumar.png",
+    webp: "Rajnish Kumar.webp",
     bio: [
       "Mr. Rajnish Kumar, Assistant Vice President, is a driving force behind our innovative investment strategies. He meticulously tracks market trends to identify unique growth opportunities that align with our clients' objectives.",
       "His philosophy centers on the power of compounding and the importance of starting early. He has successfully guided young professionals and seasoned investors alike in building robust retirement plans.",
@@ -127,12 +132,17 @@ const ExpertSpeakers = () => {
               >
                 <div className="expert-collapsed">
                   <div className="expert-collapsed-image">
-                    <img
-                      src={`${import.meta.env.BASE_URL}${expert.image}`}
-                      alt={expert.name}
-                      loading="lazy"
-                      decoding="async"
-                    />
+                    <picture>
+                      <source srcSet={`${import.meta.env.BASE_URL}${expert.webp}`} type="image/webp" />
+                      <img
+                        src={`${import.meta.env.BASE_URL}${expert.image}`}
+                        alt={expert.name}
+                        width="120"
+                        height="120"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </picture>
                   </div>
                   <div className="expert-collapsed-text">
                     <h6>{expert.name}</h6>
@@ -143,12 +153,17 @@ const ExpertSpeakers = () => {
                 <div className="expert-expanded">
                   <div className="expert-profile-row">
                     <div className="expert-expanded-image">
-                      <img
-                        src={`${import.meta.env.BASE_URL}${expert.image}`}
-                        alt={expert.name}
-                        loading="lazy"
-                        decoding="async"
-                      />
+                      <picture>
+                        <source srcSet={`${import.meta.env.BASE_URL}${expert.webp}`} type="image/webp" />
+                        <img
+                          src={`${import.meta.env.BASE_URL}${expert.image}`}
+                          alt={expert.name}
+                          width="400"
+                          height="400"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </picture>
                     </div>
 
                     <div className="expert-stats">

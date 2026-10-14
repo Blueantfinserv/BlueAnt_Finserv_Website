@@ -44,12 +44,17 @@ const ValuesDiagram = () => {
         {/* Center Circle */}
         <div className="center-circle">
           <div className="center-circle-inner">
-            <img
-              src={`${import.meta.env.BASE_URL}Ant (1).gif`}
-              alt="Blueant animated ant"
-              loading="lazy"
-              decoding="async"
-            />
+            <picture>
+              <source srcSet={`${import.meta.env.BASE_URL}ant_animated.webp`} type="image/webp" />
+              <img
+                src={`${import.meta.env.BASE_URL}Ant (1).gif`}
+                alt="Blueant animated ant"
+                width="280"
+                height="280"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </div>
         </div>
 

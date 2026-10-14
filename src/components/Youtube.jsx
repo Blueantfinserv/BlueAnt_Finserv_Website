@@ -49,6 +49,8 @@ const Youtube = () => {
                   src="https://img.youtube.com/vi/Mu6EV8TAEyI/maxresdefault.jpg" 
                   alt="Video Thumbnail"
                   className="youtube-cover-image" 
+                  width="1280"
+                  height="720"
                   loading="lazy"
                   decoding="async"
                 />

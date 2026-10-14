@@ -15,7 +15,8 @@ const whyBlueantData = [
         Blueant keeps the conversation clear as life, goals, and markets change.
       </>
     ),
-    img: "01 whatsapp image.png"
+    img: "01 whatsapp image.png",
+    webp: "01 whatsapp image.webp"
   },
   {
     id: 2,
@@ -27,7 +28,8 @@ const whyBlueantData = [
         <br />Blueant helps families stay focused on long-term direction instead of short-term noise.
       </>
     ),
-    img: "02 whatsapp.png"
+    img: "02 whatsapp.png",
+    webp: "02 whatsapp.webp"
   },
   {
     id: 3,
@@ -39,7 +41,8 @@ const whyBlueantData = [
         <br />This brings more structure to decisions that are often taken separately.
       </>
     ),
-    img: "03 whatsapp.png"
+    img: "03 whatsapp.png",
+    webp: "03 whatsapp.webp"
   },
   {
     id: 4,
@@ -51,7 +54,8 @@ const whyBlueantData = [
         <br />It continues through reviews, service support, education, and meaningful conversations.
       </>
     ),
-    img: "04 whatsapp.png"
+    img: "04 whatsapp.png",
+    webp: "04 whatsapp.webp"
   }
 ];
 
@@ -94,38 +98,31 @@ const WhyBlueant = () => {
     const update = () => {
       frameId = null;
 
-      // ── 1. Card stacking animation (unchanged) ──────────────────────────
+      // Batch all DOM reads first to eliminate forced synchronous layouts
+      const sectionRect = section.getBoundingClientRect();
+      const titleHeight = title.offsetHeight;
+      const cardRects = cardItems.map(item => item.card.getBoundingClientRect());
+
+      // ── 1. Card stacking animation ──────────────────────────
       cardItems.forEach((item, index) => {
         const { card, content, centerOffset, stickyTop } = item;
         if (!content) return;
 
-        const cardRect = card.getBoundingClientRect();
-        const nextItem = cardItems[index + 1];
+        const cardRect = cardRects[index];
+        const nextRect = cardRects[index + 1];
         let progress = 0;
 
-        if (nextItem) {
-          const nextTop = nextItem.card.getBoundingClientRect().top;
+        if (nextRect) {
+          const nextTop = nextRect.top;
           const start   = stickyTop + cardRect.height + 120;
           const end     = stickyTop + cardRect.height * 0.48;
           progress = clamp((start - nextTop) / (start - end));
         } else {
-          // Card 4 (last card): cardRect.top === stickyTop when stuck (e.g. 420px).
-          // The old formula used window.innerHeight * 0.8 as start — on most screens
-          // this is LESS than stickyTop, so progress instantly clamped to 1 and
-          // the content never animated from bottom to center.
-          //
-          // Fix: use sectionRect.bottom instead. As the user scrolls through the
-          // 80vh spacer after all cards have stacked, sectionRect.bottom drops
-          // from ~innerHeight toward stickyTop, giving a clean 0→1 range.
-          const sectionRect = section.getBoundingClientRect();
           const start = window.innerHeight + cardRect.height * 0.75;
           const end   = stickyTop + cardRect.height * 0.75;
           progress = clamp((start - sectionRect.bottom) / (start - end));
         }
 
-        // Interpolate content position:
-        //   progress=0 (active/front card)  → translateY(centerOffset) = vertically centered
-        //   progress=1 (fully covered card) → translateY(TOP_OFFSET)   = near top of image area
         const contentOffset = centerOffset * (1 - progress) + TOP_OFFSET * progress;
         content.style.setProperty('--content-offset', `${contentOffset}px`);
 
@@ -147,8 +144,6 @@ const WhyBlueant = () => {
       // By the time section bottom reaches ~0.6× viewport height, heading
       // is fully gone (translateY = -(its own height + navbar clearance)).
 
-      const sectionRect  = section.getBoundingClientRect();
-      const titleHeight  = title.offsetHeight;
       // How far above viewport top the section bottom currently is (negative = gone)
       // We want to start the exit when section bottom is still well in view.
       const exitStart    = window.innerHeight * 1.1;   // section bottom at 110vh → start
@@ -203,7 +198,17 @@ const WhyBlueant = () => {
           >
             <h3 className="why-blueant-card-title why-blueant-mobile-card-title">{item.title}</h3>
             <div className="why-blueant-image-wrapper">
-              <img src={item.img} alt={item.title} loading="lazy" />
+              <picture>
+                <source srcSet={item.webp} type="image/webp" />
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  width="800"
+                  height="800"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
             <div className="why-blueant-content">
               <div className="why-blueant-number">{item.number}</div>

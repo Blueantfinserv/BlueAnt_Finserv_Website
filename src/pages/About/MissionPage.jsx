@@ -5,23 +5,10 @@ import { Target, Eye, Check, Shield, TrendingUp, Rocket, Users, Scale, Lock, Gra
 import "../../styles/AboutPage.css";
 
 const LogoCarousel = () => {
-  const [angleOffset, setAngleOffset] = useState(0);
   const requestRef = useRef();
-
-  useEffect(() => {
-    let lastTime = performance.now();
-    const animate = (time) => {
-      const deltaTime = time - lastTime;
-      lastTime = time;
-      setAngleOffset(prev => prev - 0.0003 * deltaTime);
-      requestRef.current = requestAnimationFrame(animate);
-    };
-    requestRef.current = requestAnimationFrame(animate);
-    
-    return () => {
-      cancelAnimationFrame(requestRef.current);
-    };
-  }, []);
+  const itemRefs = useRef([]);
+  const sphereRefs = useRef([]);
+  const shadowRefs = useRef([]);
 
   const logos = [
     {
@@ -55,6 +42,55 @@ const LogoCarousel = () => {
     }
   ];
 
+  useEffect(() => {
+    let angle = 0;
+    let lastTime = performance.now();
+    const total = logos.length;
+
+    const updatePositions = () => {
+      for (let i = 0; i < total; i++) {
+        const el = itemRefs.current[i];
+        if (!el) continue;
+        const currentAngle = (i / total) * Math.PI * 2 + angle;
+        const xCos = Math.cos(currentAngle);
+        const ySin = Math.sin(currentAngle);
+        const depthProgress = (ySin + 1) / 2;
+        const scale = 0.75 + depthProgress * 0.4;
+        const zIndex = Math.round(depthProgress * 100);
+        const bobbing = Math.sin(currentAngle * 4 + i) * 15;
+
+        el.style.transform = `translate(calc(-50% + (var(--radius-x) * ${xCos})), calc(-50% + (var(--radius-y) * ${ySin}) - var(--hover-height))) scale(${scale})`;
+        el.style.zIndex = zIndex;
+
+        if (sphereRefs.current[i]) {
+          sphereRefs.current[i].style.transform = `translateY(${bobbing}px)`;
+        }
+        if (shadowRefs.current[i]) {
+          shadowRefs.current[i].style.opacity = String(0.3 + depthProgress * 0.4);
+          shadowRefs.current[i].style.filter = `blur(${6 + depthProgress * 8}px)`;
+          shadowRefs.current[i].style.transform = `scale(${1 - (bobbing / 30)})`;
+        }
+      }
+    };
+
+    updatePositions();
+
+    const animate = (time) => {
+      const deltaTime = time - lastTime;
+      lastTime = time;
+      angle -= 0.0003 * deltaTime;
+      updatePositions();
+      requestRef.current = requestAnimationFrame(animate);
+    };
+    requestRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (requestRef.current) {
+        cancelAnimationFrame(requestRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div 
       className="relative w-full min-h-screen lg:h-[90vh] flex flex-col items-center justify-center overflow-hidden pt-[100px] md:pt-[120px] lg:pt-[140px] pb-24 lg:pb-0 orbit-container" 
@@ -66,12 +102,15 @@ const LogoCarousel = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.15)_0%,transparent_60%)] rounded-[50%] pointer-events-none"></div>
 
       {/* Header */}
-      <div className="relative z-20 flex flex-col items-center mb-12 px-4 lg:absolute lg:top-[140px] lg:mb-0" data-aos="fade-down">
+      <div className="relative z-20 flex flex-col items-center mb-8 sm:mb-12 px-4 w-full max-w-4xl mx-auto lg:absolute lg:top-[130px] lg:left-1/2 lg:-translate-x-1/2 lg:mb-0" data-aos="fade-down">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-900/30 backdrop-blur-md border border-blue-400/30 text-blue-300 text-[10px] sm:text-[11px] font-extrabold uppercase tracking-[0.3em] mb-4 shadow-[0_0_20px_rgba(59,130,246,0.3)]">
           <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse shadow-[0_0_10px_rgba(96,165,250,1)]"></span>
           MISSION • VISION • VALUES
         </div>
-        <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center font-black tracking-tight drop-shadow-[0_0_40px_rgba(255,255,255,0.15)] leading-tight max-w-4xl">
+        <h2 
+          className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl text-center font-black tracking-tight drop-shadow-[0_0_40px_rgba(255,255,255,0.15)] leading-tight max-w-4xl"
+          style={{ color: '#ffffff' }}
+        >
           Empowering Financial Decisions <br className="hidden md:block"/> Through <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">Knowledge & Trust</span>
         </h2>
       </div>
@@ -129,19 +168,19 @@ const LogoCarousel = () => {
               {logos.map((logo, index) => {
                 const total = logos.length;
                 const baseAngle = (index / total) * Math.PI * 2;
-                const currentAngle = baseAngle + angleOffset;
                 
-                const xCos = Math.cos(currentAngle);
-                const ySin = Math.sin(currentAngle);
+                const xCos = Math.cos(baseAngle);
+                const ySin = Math.sin(baseAngle);
                 
                 const depthProgress = (ySin + 1) / 2; // 0 (back) to 1 (front)
                 const scale = 0.75 + depthProgress * 0.4;
                 const zIndex = Math.round(depthProgress * 100);
-                const bobbing = Math.sin(currentAngle * 4 + index) * 15;
+                const bobbing = Math.sin(baseAngle * 4 + index) * 15;
                 
                 return (
                   <div 
                     key={logo.id} 
+                    ref={el => itemRefs.current[index] = el}
                     className="absolute flex flex-col items-center pointer-events-auto"
                     style={{
                       width: 'var(--circle-size)',
@@ -159,6 +198,7 @@ const LogoCarousel = () => {
                   >
                     {/* Sphere wrapper with bobbing */}
                     <div 
+                      ref={el => sphereRefs.current[index] = el}
                       className={`w-full h-full premium-3d-sphere ${logo.glow ? 'center-glow-3d' : ''} group cursor-pointer`}
                       style={{ transform: `translateY(${bobbing}px)` }}
                     >
@@ -170,6 +210,7 @@ const LogoCarousel = () => {
                     
                     {/* Projected Ground Shadow (Moves inversely to bobbing) */}
                     <div 
+                      ref={el => shadowRefs.current[index] = el}
                       className="absolute w-[60%] h-[20%] bg-black rounded-[50%] pointer-events-none" 
                       style={{ 
                         bottom: `calc(var(--hover-height) * -1)`, // Place firmly on the podium level

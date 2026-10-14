@@ -69,12 +69,18 @@ const Gallery = () => {
               onClick={() => setSelectedImage(img)}
             >
               <div className="relative h-48 overflow-hidden bg-slate-100">
-                <img 
-                  src={`${import.meta.env.BASE_URL}${img.src}`} 
-                  alt={img.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
+                <picture>
+                  <source srcSet={`${import.meta.env.BASE_URL}${img.src.replace(/\.(png|jpg)$/i, '.webp')}`} type="image/webp" />
+                  <img 
+                    src={`${import.meta.env.BASE_URL}${img.src}`} 
+                    alt={img.title}
+                    width="400"
+                    height="192"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </div>
               <div className="p-5 flex-1 flex flex-col bg-white">
                 <span className="text-[#00afef] text-[10px] font-black uppercase tracking-widest mb-1.5 block">{img.category}</span>

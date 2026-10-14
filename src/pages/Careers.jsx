@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Briefcase, Clock, MapPin, X, CheckCircle2, Check, Mail, Phone } from 'lucide-react';
 import '../styles/Careers.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -173,9 +174,9 @@ const Careers = () => {
               <div className="posInfo">
                 <h3>{pos.title}</h3>
                 <div className="posMeta">
-                  <span><i className="fa-solid fa-briefcase"></i> {pos.department}</span>
-                  <span><i className="fa-solid fa-clock"></i> {pos.type}</span>
-                  <span><i className="fa-solid fa-location-dot"></i> {pos.location}</span>
+                  <span className="inline-flex items-center gap-1.5"><Briefcase size={14} /> {pos.department}</span>
+                  <span className="inline-flex items-center gap-1.5"><Clock size={14} /> {pos.type}</span>
+                  <span className="inline-flex items-center gap-1.5"><MapPin size={14} /> {pos.location}</span>
                 </div>
               </div>
               <button className="applyBtn">Apply Now</button>
@@ -189,14 +190,14 @@ const Careers = () => {
         <div className="modalOverlay" onClick={() => setSelectedJob(null)}>
           <div className="jobModal" onClick={(e) => e.stopPropagation()}>
             <button className="closeModal" onClick={() => setSelectedJob(null)}>
-              <i className="fa-solid fa-xmark"></i>
+              <X size={18} />
             </button>
             
             <div className="modalHeader">
               <h2>{selectedJob.title}</h2>
               <div className="modalMeta">
-                <span><i className="fa-solid fa-location-dot"></i> {selectedJob.location}</span>
-                <span><i className="fa-solid fa-briefcase"></i> {selectedJob.type}</span>
+                <span className="inline-flex items-center gap-1.5"><MapPin size={14} /> {selectedJob.location}</span>
+                <span className="inline-flex items-center gap-1.5"><Briefcase size={14} /> {selectedJob.type}</span>
               </div>
             </div>
 
@@ -210,7 +211,7 @@ const Careers = () => {
                 <h4>Key Responsibilities</h4>
                 <ul className="respList">
                   {selectedJob.responsibilities.map((item, i) => (
-                    <li key={i}><i className="fa-solid fa-circle-check" style={{ color: '#ED1C24' }}></i> {item}</li>
+                    <li key={i} className="flex items-center gap-2"><CheckCircle2 size={16} className="text-[#ED1C24] shrink-0" /> {item}</li>
                   ))}
                 </ul>
               </div>
@@ -219,7 +220,7 @@ const Careers = () => {
                 <h4>Key Requirements</h4>
                 <ul className="reqList">
                   {selectedJob.requirements.map((item, i) => (
-                    <li key={i}><i className="fa-solid fa-check" style={{ color: '#00AEEF' }}></i> {item}</li>
+                    <li key={i} className="flex items-center gap-2"><Check size={16} className="text-[#00AEEF] shrink-0" /> {item}</li>
                   ))}
                 </ul>
               </div>
@@ -228,11 +229,11 @@ const Careers = () => {
                 <h3>Ready to apply?</h3>
                 <p>To apply for this position, please send your updated resume along with your details to our HR team.</p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                  <a href="mailto:hr@blueantindia.com" className="modalApplyBtn">
-                    <i className="fa-solid fa-envelope"></i> Send Email to hr@blueantindia.com
+                  <a href="mailto:hr@blueantindia.com" className="modalApplyBtn" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                    <Mail size={16} /> Send Email to hr@blueantindia.com
                   </a>
-                  <a href="tel:+919311011267" className="modalApplyBtn" style={{ backgroundColor: '#00AEEF' }}>
-                    <i className="fa-solid fa-phone"></i> Call: +91 9311011267
+                  <a href="tel:+919311011267" className="modalApplyBtn" style={{ backgroundColor: '#00AEEF', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                    <Phone size={16} /> Call: +91 9311011267
                   </a>
                 </div>
               </div>

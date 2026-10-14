@@ -54,17 +54,23 @@ const TeamSection = () => {
             >
               <div className="team-image-wrapper">
                 {member.img && (
-                  <img 
-                    src={`${import.meta.env.BASE_URL}${member.img}`} 
-                    alt={member.name} 
-                    loading="lazy"
-                    className="team-image"
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      const cleanName = member.name ? member.name.replace(/^(Mr\.|Mrs\.|Ms\.)\s+/i, '') : 'Placeholder';
-                      e.target.src = 'https://ui-avatars.com/api/?name=' + cleanName + '&background=0D8ABC&color=fff';
-                    }}
-                  />
+                  <picture>
+                    <source srcSet={`${import.meta.env.BASE_URL}${member.img.replace(/\.(png|jpg)$/i, '.webp')}`} type="image/webp" />
+                    <img 
+                      src={`${import.meta.env.BASE_URL}${member.img}`} 
+                      alt={member.name}
+                      width="400"
+                      height="400" 
+                      loading="lazy"
+                      decoding="async"
+                      className="team-image"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        const cleanName = member.name ? member.name.replace(/^(Mr\.|Mrs\.|Ms\.)\s+/i, '') : 'Placeholder';
+                        e.target.src = 'https://ui-avatars.com/api/?name=' + cleanName + '&background=0D8ABC&color=fff';
+                      }}
+                    />
+                  </picture>
                 )}
               </div>
               <h3 className="team-name">

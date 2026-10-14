@@ -11,9 +11,9 @@ const Milestones = lazy(() => import('../components/Milestones'));
 const ExpertSpeakers = lazy(() => import('../components/ExpertSpeakers'));
 
 const SectionLoader = () => (
-  <div className="py-20 text-center opacity-50">
-    <div className="spinner-border spinner-border-sm text-primary me-2"></div>
-    Loading section...
+  <div className="py-20 text-center opacity-70 flex items-center justify-center gap-2 text-slate-500 font-medium">
+    <div className="animate-spin rounded-full h-5 w-5 border-2 border-slate-200 border-t-[#00afef]"></div>
+    <span>Loading section...</span>
   </div>
 );
 

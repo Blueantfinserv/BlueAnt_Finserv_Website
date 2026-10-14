@@ -94,7 +94,17 @@ const Navbar = () => {
         {/* Logo */}
         <div className="nav-logo logo-wrapper flex items-center flex-shrink-0">
           <Link to="/" className="block">
-            <img src={`${import.meta.env.BASE_URL}blueAnt.png`} alt="Blueant Logo" style={{ height: "36px", width: "auto", display: "block", objectFit: "contain" }} />
+            <picture>
+              <source srcSet={`${import.meta.env.BASE_URL}blueAnt.webp`} type="image/webp" />
+              <img
+                src={`${import.meta.env.BASE_URL}blueAnt.png`}
+                alt="Blueant Logo"
+                width="128"
+                height="36"
+                fetchPriority="high"
+                style={{ height: "36px", width: "auto", display: "block", objectFit: "contain" }}
+              />
+            </picture>
           </Link>
         </div>
 

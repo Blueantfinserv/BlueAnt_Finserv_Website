@@ -1,6 +1,4 @@
 /* ── CTA Banner — Figma Blue-to-Teal ── */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
 .cta-banner {
   padding: 80px 6vw;
   background: linear-gradient(135deg, #0b1f3a 0%, #1a3a6b 100%);

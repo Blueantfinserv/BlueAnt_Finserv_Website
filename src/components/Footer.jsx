@@ -1407,11 +1407,18 @@ const Footer = () => {
           {/* ── Left sub-col: Logo + ARN + APRN ── */}
           <div className="brand-left">
             <Link to="/" className="footer-logo-link">
-              <img 
-                src={`${import.meta.env.BASE_URL}Footerlogo.png`} 
-                alt="Blueant Logo" 
-                className="footer-logo-img object-contain" 
-              />
+              <picture>
+                <source srcSet={`${import.meta.env.BASE_URL}Footerlogo.webp`} type="image/webp" />
+                <img 
+                  src={`${import.meta.env.BASE_URL}Footerlogo.png`} 
+                  alt="Blueant Logo" 
+                  className="footer-logo-img object-contain"
+                  width="200"
+                  height="82"
+                  loading="lazy"
+                  decoding="async" 
+                />
+              </picture>
             </Link>
             <div className="text-[11px] text-[#94a3b8] leading-[1.6] flex flex-col gap-2 mt-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 w-fit">

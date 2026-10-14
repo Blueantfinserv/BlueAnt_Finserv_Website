@@ -8,8 +8,9 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import StickyWhatsApp from "./components/StickyWhatsApp";
-import ConsultationModal from "./components/ConsultationModal";
 import { ErrorBoundary } from "./components/ErrorBoundary";
+
+const ConsultationModal = lazy(() => import("./components/ConsultationModal"));
 
 // Direct Homepage Import
 import Landing from "./pages/Landing";
@@ -104,7 +105,9 @@ function App() {
       </LocationAwareErrorBoundary>
 
       <StickyWhatsApp />
-      <ConsultationModal />
+      <Suspense fallback={null}>
+        <ConsultationModal />
+      </Suspense>
       <ConditionalFooter />
     </BrowserRouter>
   );
